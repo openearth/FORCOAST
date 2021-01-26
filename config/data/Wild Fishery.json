@@ -1,0 +1,38 @@
+[
+  {
+    "id": "bay-of-biscay",
+    "name": "Bay of Biscay",
+    "children": [
+      {
+        "id": "chw2:BDTICM_M_250m_ll",
+        "name": "Fish Suitability Index",
+        "layer": "chw2:BDTICM_M_250m_ll",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Front Detection",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      }
+    ]
+  },
+  {
+    "id": "black-sea",
+    "name": "Black Sea",
+    "children": [
+      {
+        "id": "chw2:GLOBCOVER_L4_200901_200912_V2.3",
+        "name": "Fish Suitability Index",
+        "layer": "chw2:GLOBCOVER_L4_200901_200912_V2.3",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:corals",
+        "name": "Front Detection",
+        "layer": "chw2:corals",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      }
+    ]
+  }
+]

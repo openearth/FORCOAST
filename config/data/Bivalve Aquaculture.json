@@ -1,0 +1,218 @@
+[
+  {
+    "id": "sado-estuary",
+    "name": "Sado Estuary",
+    "children": [
+      {
+        "id": "DANK:DANK-002-Water_voor_Aquatische_natuur",
+        "name": "Land Pollution",
+        "layer": "DANK:DANK-002-Water_voor_Aquatische_natuur",
+        "url": "https://deltaresdata.openearth.eu/geoserver/DANK/ows"
+      },
+      {
+        "id": "DANK:DANK-005b-BeregeningsLocaties",
+        "name": "Operational Scheduler",
+        "layer": "DANK:DANK-005b-BeregeningsLocaties",
+        "url": "https://deltaresdata.openearth.eu/geoserver/DANK/ows"
+      },
+      {
+        "id": "DANK:DANK_023a_zandwinning_zee_ecotopen",
+        "name": "Prospection for New Sites",
+        "layer": "DANK:DANK_023a_zandwinning_zee_ecotopen",
+        "url": "https://deltaresdata.openearth.eu/geoserver/DANK/ows"
+      },
+      {
+        "id": "chw2:coast_segments_erosion",
+        "name": "Assistance for Spat Captures",
+        "layer": "chw2:coast_segments_erosion",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "DANK:DANK-024b_draagkracht_funderingsdiepte",
+        "name": "Marine Conditions",
+        "layer": "DANK:DANK-024b_draagkracht_funderingsdiepte",
+        "url": "https://deltaresdata.openearth.eu/geoserver/DANK/ows"
+      }
+    ]
+  },
+  {
+    "id": "north-sea",
+    "name": "North Sea",
+    "children": [
+      {
+        "id": "chw2:BDTICM_M_250m_ll",
+        "name": "Operational Scheduler",
+        "layer": "chw2:BDTICM_M_250m_ll",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Land Pollution",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Prospection for New Sites",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Assistance for Spat Captures",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Marine Conditions",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      }
+    ]
+  },
+  {
+    "id": "galway-bay",
+    "name": "Galway Bay",
+    "children": [
+      {
+        "id": "chw2:BDTICM_M_250m_ll",
+        "name": "Operational Scheduler",
+        "layer": "chw2:BDTICM_M_250m_ll",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Land Pollution",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Prospection for New Sites",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Assistance for Spat Captures",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Marine Conditions",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      }
+    ]
+  },
+  {
+    "id": "limfjord",
+    "name": "Limfjord",
+    "children": [
+      {
+        "id": "chw2:BDTICM_M_250m_ll",
+        "name": "Operational Scheduler",
+        "layer": "chw2:BDTICM_M_250m_ll",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Land Pollution",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Prospection for New Sites",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Assistance for Spat Captures",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Marine Conditions",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      }
+    ]
+  },
+  {
+    "id": "western-black-sea",
+    "name": "Western Black Sea",
+    "children": [
+      {
+        "id": "chw2:BDTICM_M_250m_ll",
+        "name": "Operational Scheduler",
+        "layer": "chw2:BDTICM_M_250m_ll",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Land Pollution",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Prospection for New Sites",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Assistance for Spat Captures",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Marine Conditions",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      }
+    ]
+  },
+  {
+    "id": "northern-adriatic-sea",
+    "name": "Northern Adriatic Sea",
+    "children": [
+      {
+        "id": "chw2:BDTICM_M_250m_ll",
+        "name": "Operational Scheduler",
+        "layer": "chw2:BDTICM_M_250m_ll",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Land Pollution",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Prospection for New Sites",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Assistance for Spat Captures",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      },
+      {
+        "id": "chw2:elevtn_1k",
+        "name": "Marine Conditions",
+        "layer": "chw2:elevtn_1k",
+        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+      }
+    ]
+  }
+]

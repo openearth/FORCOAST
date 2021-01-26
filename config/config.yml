@@ -1,0 +1,9 @@
+name: FORCOAST Central Platform
+shortName: FORCOAST
+
+i18n:
+  locale: en-US
+
+map:
+  center: [19.04548, 47.50709]
+  zoom: 3

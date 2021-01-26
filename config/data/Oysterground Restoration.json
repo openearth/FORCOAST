@@ -1,0 +1,15 @@
+[
+    {
+        "id": "galway-bay",
+        "name": "Galway Bay",
+        "children": [
+            {
+                "id": "chw2:BDTICM_M_250m_ll",
+                "name": "Source of Contaminant",
+                "layer": "chw2:BDTICM_M_250m_ll",
+                "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+            }
+            
+        ]
+    }
+]
