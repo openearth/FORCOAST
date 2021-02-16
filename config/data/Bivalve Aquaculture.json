@@ -36,26 +36,26 @@
     ]
   },
   {
-    "id": "north-sea",
-    "name": "North Sea",
+    "id": "Test-data",
+    "name": "Test Data",
     "children": [
       {
-        "id": "chw2:BDTICM_M_250m_ll",
-        "name": "Operational Scheduler",
-        "layer": "chw2:BDTICM_M_250m_ll",
-        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+        "id": "BIO_DatasetScan/2020/07/1_NWS_1d_20200701_20200731_btrc_T_20200701-20200701.nc",
+        "name": "Romanian Data",
+        "layer": "botfluxAGG",
+        "url": "http://www.seamod.ro:8080/thredds/catalog/BIO/2020/07/catalog.html?dataset=BIO_DatasetScan/2020/07/1_NWS_1d_20200701_20200731_btrc_T_20200701-20200701.nc"
       },
       {
-        "id": "chw2:elevtn_1k",
-        "name": "Land Pollution",
-        "layer": "chw2:elevtn_1k",
-        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+        "id": "bathymetry",
+        "name": "Portugal",
+        "layer": "bathymetry",
+        "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/2020101800.nc"
       },
       {
-        "id": "chw2:elevtn_1k",
-        "name": "Prospection for New Sites",
-        "layer": "chw2:elevtn_1k",
-        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+        "id": "bathymetry_local",
+        "name": "Portugal_local",
+        "layer": "bathymetry",
+        "url": "/usr/local/data/2020101800.nc"
       },
       {
         "id": "chw2:elevtn_1k",
