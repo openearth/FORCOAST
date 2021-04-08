@@ -52,10 +52,10 @@
         "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
       },
       {
-        "id": "chw2:elevtn_1k",
-        "name": "Prospection for New Sites",
-        "layer": "chw2:elevtn_1k",
-        "url": "https://deltaresdata.openearth.eu/geoserver/chw2/ows"
+        "id": "testgridportugal",
+        "name": "Portugal_local",
+        "layer": "bathymetry",
+        "url": "http://192.168.56.101:8080/thredds/wms/testAll/testgridportugal.nc"
       },
       {
         "id": "chw2:elevtn_1k",
