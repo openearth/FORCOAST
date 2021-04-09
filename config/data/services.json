@@ -1,0 +1,24 @@
+[
+    {
+        "id": "wild_fishery",
+        "name": "Wild Fishery",
+        "areas": [
+            {
+                "id": "bay_of_biscay",
+                "name": "Bay of Biscay (Spain)",
+                "services": [
+                    "Suitable fishing area",
+                    "Fronts detection"
+                ]
+            },
+            {
+                "id": "bay_of_biscay",
+                "name": "Bay of Biscay (Spain)",
+                "services": [
+                    "Suitable fishing area",
+                    "Fronts detection"
+                ]
+            }
+        ]
+    }
+]
