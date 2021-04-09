@@ -1,15 +1,6 @@
 <template>
   <v-app-bar app color="primary" dark clipped-left>
 
-    <a href="https://forcoast.eu" target="_blank">
-      <v-img :src="require('./assets/forcoastlogo.png')"
-          contain 
-          height="70px"
-          width="105px"
-      >
-      </v-img>
-    </a>
-
     <v-toolbar-title>
       <router-link
         to="/"
