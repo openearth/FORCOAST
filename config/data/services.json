@@ -7,16 +7,88 @@
                 "id": "bay_of_biscay",
                 "name": "Bay of Biscay (Spain)",
                 "services": [
-                    "Suitable fishing area",
+                    "Suitable fishing areas",
                     "Fronts detection"
                 ]
             },
             {
-                "id": "bay_of_biscay",
-                "name": "Bay of Biscay (Spain)",
+                "id": "western_black_sea_bulgaria",
+                "name": "Western Black Sea (Bulgaria)",
                 "services": [
-                    "Suitable fishing area",
+                    "Suitable fishing areas",
                     "Fronts detection"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "oysterground_restoration",
+        "name": "Oysterground Restoration",
+        "areas": [
+            {
+                "id": "galway_bay",
+                "name": "Galway Bay (Ireland)",
+                "services": [
+                    "Marine conditions",
+                    "Land pollution",
+                    "Site prospection",
+                    "Spat captures assistance"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "bivalve_aquaculture",
+        "name": "Bivalve Aquaculture",
+        "areas": [
+            {
+                "id": "sado_estuary",
+                "name": "Sado Estuary (Portugal)",
+                "services": [
+                    "Marine conditions",
+                    "Land pollution",
+                    "Site prospection",
+                    "Spat captures assistance"
+                ]
+            },
+            {
+                "id": "southern_north_sea",
+                "name": "Southern North Sea (Belgium)",
+                "services": [
+                    "Marine conditions",
+                    "Land pollution",
+                    "Site prospection",
+                    "Spat captures assistance"
+                ]
+            },
+            {
+                "id": "limfjord",
+                "name": "Limfjord (Denmark)",
+                "services": [
+                    "Marine conditions",
+                    "Land pollution",
+                    "Site prospection",
+                    "Spat captures assistance"
+                ]
+            },
+            {
+                "id": "western_black_sea_romania",
+                "name": "Western Black Sea (Romania)",
+                "services": [
+                    "Marine conditions",
+                    "Land pollution",
+                    "Site prospection",
+                    "Spat captures assistance"
+                ]
+            },
+            {
+                "id": "northern_adriatic_sea",
+                "name": "Northern Adriatic Sea (Italy)",
+                "services": [
+                    "Marine conditions",
+                    "Land pollution",
+                    "Site prospection",
+                    "Spat captures assistance"
                 ]
             }
         ]
