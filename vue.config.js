@@ -6,8 +6,8 @@ const projectConfig = yaml.safeLoad(
   fs.readFileSync(path.join(__dirname, configDir, "config.yml"), "utf8")
 );
 
-const layerPages = fs.readdirSync(
-  path.resolve(configDir, "data")
+const services = fs.readdirSync(
+  path.resolve(configDir, "services")
 );
 
 const locales = fs.readdirSync(
@@ -49,7 +49,7 @@ module.exports = {
 
     config.plugin("define").tap((definitions) => {
       definitions[0] = Object.assign(definitions[0], {
-        LAYER_PAGES: JSON.stringify(layerPages),
+        SERVICES: JSON.stringify(services),
         LOCALES: JSON.stringify(locales),
       });
 

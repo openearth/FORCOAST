@@ -11,8 +11,8 @@ const routes = [
   },
   {
     path: "/:id",
-    name: "LayerGroup",
-    component: () => import(/* webpackChunkName: "LayerGroup" */ "../views/LayerGroup.vue"),
+    name: "Services",
+    component: () => import(/* webpackChunkName: "Services" */ "../views/Services.vue"),
   },
 ];
 
