@@ -1,4 +1,4 @@
-# dr-viewer
+# FORCOAST
 
 ## Project setup
 ```
@@ -32,8 +32,8 @@ The configuration of this project lives in the /config directory.
 This file contains the general configuration of the project. This file should contain the following properties:
 
 ```yaml
-name: DR Viewer # full name of the application
-shortName: DR # short name (will be used as title of the application in the header)
+name: FORCOAST # full name of the application
+shortName: FORCOAST # short name (will be used as title of the application in the header)
 
 i18n: # overwrites the default i18n configuration. Allowed properties can be found here: https://kazupon.github.io/vue-i18n/api/#properties
   locale: es 
