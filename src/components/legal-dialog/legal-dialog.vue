@@ -8,7 +8,7 @@
   >
     <v-card class="d-flex flex-column" style="max-height: 100%;overflow:hidden">
       <v-card-title class="pa-5">
-        <v-toolbar-title>{{ $t('user_agreement') }}</v-toolbar-title>
+        <v-toolbar-title> User agreement </v-toolbar-title>
       </v-card-title>
 
       <div class="px-5 flex-grow-1 overflow-y-auto" v-html="content" />
@@ -17,13 +17,13 @@
         <div class="pa-2" style="width:100%">
           <form action="" submit.prevent>
             <v-checkbox
-              :label="conditionsLabel"
+              label="I agree with the conditions of use"
               class="ma-0"
               v-model="acceptedConditions"
               hide-details
             />
             <v-checkbox
-              :label="cookiesLabel"
+              label="I consent with the use of cookies"
               class="ma-0"
               v-model="acceptedCookies"
               hide-details
@@ -36,7 +36,7 @@
               :disabled="!allAccepted"
               @click="onStartClick"
             >
-              {{ $t('i_agree') }}
+              I agree
             </v-btn>
           </div>
         </div>
@@ -59,14 +59,15 @@ export default {
       return this.acceptedConditions && this.acceptedCookies;
     },
     content() {
-      return importConfig(`content/${this.$i18n.locale}/legal.md`)
+      return importConfig(`content/legal.md`)
     },
-    conditionsLabel() {
+/*     conditionsLabel() {
+      console.log('this.$i18n',this.$i18n)
       return this.$i18n.t('conditions_label')
     },
     cookiesLabel() {
       return this.$i18n.t('cookies_label')
-    }
+    } */
   },
   methods: {
     onStartClick() {
