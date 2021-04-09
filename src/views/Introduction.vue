@@ -15,7 +15,7 @@ export default {
 
   computed: {
     content() {
-      return importConfig(`content/${this.$i18n.locale}/introduction.md`)
+      return importConfig(`content/introduction.md`)
     }
   }
 };
