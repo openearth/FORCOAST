@@ -61,13 +61,6 @@ export default {
     content() {
       return importConfig(`content/legal.md`)
     },
-/*     conditionsLabel() {
-      console.log('this.$i18n',this.$i18n)
-      return this.$i18n.t('conditions_label')
-    },
-    cookiesLabel() {
-      return this.$i18n.t('cookies_label')
-    } */
   },
   methods: {
     onStartClick() {
