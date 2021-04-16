@@ -7,10 +7,60 @@
                 "id": "bay_of_biscay",
                 "name": "Bay of Biscay (Spain)",
                 "services": [
-                    "Suitable fishing areas",
-                    "Fronts detection"
+                    {
+                        "id": "suitable_fishing_areas",
+                        "name": "Suitable fishing areas",
+                        "layers": [
+                            {
+                                "id": "chw2-vector:gar_economy",
+                                "name": "Total capital stock",
+                                "layer": "chw2-vector:gar_economy",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows"
+                            },
+                            {
+                                "id": "chw2-vector:gar_economy",
+                                "name": "Total capital stock",
+                                "layer": "chw2-vector:gar_economy",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows"
+                            }
+                        ],
+                        "description": "This service is about... ",
+                        "date_span": true,
+                        "execute": "Create graph",
+                        "point_selection": true
+                    },
+                    {
+                        "id": "fronts_detection",
+                        "name": "Fronts detection",
+                        "layers": [
+                            {
+                                "id": "chw2-vector:gar_economy",
+                                "name": "Total capital stock",
+                                "layer": "chw2-vector:gar_economy",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows"
+                            },
+                            {
+                                "id": "chw2-vector:gar_economy",
+                                "name": "Total capital stock",
+                                "layer": "chw2-vector:gar_economy",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows"
+                            }
+                        ],
+                        "description": "This service is about...",
+                        "date": true,
+                        "execute": "Show layers on map"
+                    }
                 ],
-                "bbox":[[-5.64, 43.37],[-1.37, 45.89]]
+                "bbox": [
+                    [
+                        10.16,
+                        37.73
+                    ],
+                    [
+                        18.59,
+                        47.90
+                    ]
+                ]
             },
             {
                 "id": "western_black_sea_bulgaria",
@@ -19,8 +69,19 @@
                     "Suitable fishing areas",
                     "Fronts detection"
                 ],
-                "bbox":[[28.27, 43.22],[30.46, 45.18]]
-            },
+                "bbox": [
+                    [
+                        28.27,
+                        43.22
+                    ],
+                    [
+                        30.46,
+                        45.18
+                    ]
+                ]
+            }
+        ]
+    },
     {
         "id": "oysterground_restoration",
         "name": "Oysterground Restoration",
@@ -34,7 +95,16 @@
                     "Site prospection",
                     "Spat captures assistance"
                 ],
-                "bbox":[[-10.15, 52.55],[-8.78, 53.44]]
+                "bbox": [
+                    [
+                        -10.15,
+                        52.55
+                    ],
+                    [
+                        -8.78,
+                        53.44
+                    ]
+                ]
             }
         ]
     },
@@ -51,7 +121,16 @@
                     "Site prospection",
                     "Spat captures assistance"
                 ],
-                "bbox":[[-8.91, 38.35],[-8.68, 38.62]]
+                "bbox": [
+                    [
+                        -8.91,
+                        38.35
+                    ],
+                    [
+                        -8.68,
+                        38.62
+                    ]
+                ]
             },
             {
                 "id": "southern_north_sea",
@@ -62,7 +141,16 @@
                     "Site prospection",
                     "Spat captures assistance"
                 ],
-                "bbox":[[2.49, 51.18],[3.12, 51.6]]
+                "bbox": [
+                    [
+                        2.49,
+                        51.18
+                    ],
+                    [
+                        3.12,
+                        51.6
+                    ]
+                ]
             },
             {
                 "id": "limfjord",
@@ -73,7 +161,16 @@
                     "Site prospection",
                     "Spat captures assistance"
                 ],
-                "bbox":[[8.05, 56.44],[9.86, 57.19]]
+                "bbox": [
+                    [
+                        8.05,
+                        56.44
+                    ],
+                    [
+                        9.86,
+                        57.19
+                    ]
+                ]
             },
             {
                 "id": "western_black_sea_romania",
@@ -84,7 +181,16 @@
                     "Site prospection",
                     "Spat captures assistance"
                 ],
-                "bbox":[[28.27, 43.22],[30.46, 45.18]]
+                "bbox": [
+                    [
+                        28.27,
+                        43.22
+                    ],
+                    [
+                        30.46,
+                        45.18
+                    ]
+                ]
             },
             {
                 "id": "northern_adriatic_sea",
@@ -95,7 +201,16 @@
                     "Site prospection",
                     "Spat captures assistance"
                 ],
-                "bbox":[[12.13, 44.27],[13.85, 45.90]]
+                "bbox": [
+                    [
+                        12.13,
+                        44.27
+                    ],
+                    [
+                        13.85,
+                        45.90
+                    ]
+                ]
             }
         ]
     }
