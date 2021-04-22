@@ -10,10 +10,14 @@
     <collapsible-card v-if="service.layers"
       title="Select a layer" 
     >
-     <layers-list></layers-list>
+     <layers-list
+      :layers="service.layers"
+      @active-layers-change="onActiveLayerChange"
+      @active-legend-change="onActiveLegendChange"
+     ></layers-list>
     </collapsible-card>
     <collapsible-card v-if="service.date_span"
-      title="Date" 
+      title="Select a start and an end date" 
     >
      <date-span></date-span>
     </collapsible-card>
@@ -22,7 +26,7 @@
     >
      <single-date></single-date>
     </collapsible-card>
-    <div class="d-flex pt-4"> <!-- TODO: Fixed position of button I prefer at the button -->
+    <div v-if="service.execute" class="align-self-center position-fixed"> <!-- TODO: Fixed position of button I prefer at the button -->
       <v-btn 
         color = "primary"
         dark
@@ -57,6 +61,14 @@ export default {
             title: "Select a layer",
             layersOn: [],
         }
+    },
+    methods: {
+      onActiveLayerChange(activelayers) { 
+        this.$emit("active-layers-change", activelayers)
+      },
+      onActiveLegendChange(legend) {
+        this.$emit("active-legend-change", legend)
+      }
     },
     mounted() {
       console.log('service-viewer prop service passed', this.service)

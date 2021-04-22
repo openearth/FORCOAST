@@ -2,8 +2,8 @@
   <v-app>
     <app-header />
     <app-sidebar
-      @active-layers-update="onActiveLayersUpdate"
-      @legend-update="onLegendUpdate"
+      @active-layers-change="onActiveLayersUpdate"
+      @active-legend-change="onActiveLegendChange"
     />
     <v-main>
       <mapbox-map
@@ -54,7 +54,7 @@ export default {
     onActiveLayersUpdate(event) {
       this.layers = event
     },
-    onLegendUpdate(event) {
+    onActiveLegendChange(event) {
       this.legendLayer = event
     }
   },

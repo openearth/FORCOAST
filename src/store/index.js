@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     selectedCategory: null,
     selectedService:null,
+    selectedAreaBBox: null,
     },
   mutations: { 
     SET_CATEGORY(state, category) { 
@@ -17,7 +18,10 @@ export default new Vuex.Store({
     },
     CLEAR_SELECTED_SERVICE(state) {
       state.selectedService = null
-    }
+    },
+    SET_SELECTED_AREA_BBOX(state, bbox) {
+      state.selectedAreaBBox = bbox
+    },
 
   }
 

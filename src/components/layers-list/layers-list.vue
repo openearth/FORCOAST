@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="layers.length" ref="root">
     <v-list class="pa-2" flat >
       <v-list-item-group>
         <template
@@ -7,16 +7,31 @@
         >
           <v-list-item 
             :key="layer.id" 
+            :ripple="false"
           >  
             <v-list-item-action>
-              <v-switch></v-switch>
+              <v-switch
+                v-model="selectedIds"
+                :value="layer.id"
+              ></v-switch>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>
                 {{ layer.name }}
               </v-list-item-title>
             </v-list-item-content>
-            <v-list-item-avatar>
+            <v-btn
+                icon
+                class="ml-auto"
+                @click="setActiveLegend(layer.id)"
+              >
+                  <v-icon>
+                    mdi-card-bulleted{{
+                    layer.id === activeLegend ? '' : '-off'
+                    }}-outline
+                </v-icon>
+            </v-btn>
+            <v-list-item-avatar >
               <img :src="require(`@/assets/${layer.icon}`)">
             </v-list-item-avatar>
           </v-list-item>
@@ -28,28 +43,24 @@
 </template>
 
 <script>
+import { ref, watch, toRefs, computed } from '@vue/composition-api'
+import useLegend from './useLegend'
+
 export default {
-    data() { 
-      return {
-        layers:[
-          {
-          id: "chw2-vector:gar_economy",
-          name: "Total capital stock",
-          layer: "chw2-vector:gar_economy",
-          url: "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
-          icon:"fish.png"
-        },
-        {
-          id: "chw2-vector:test_layer",
-          name: "Total capital stock",
-          layer: "chw2-vector:gar_economy",
-          url: "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
-          icon:"fish.png"
-        }
-          ],
-        icon:"@/assets/fish.png"
-      }
-       
-    }
+  props: { layers: Array },
+  setup(props, context) {
+    const root = ref(null)
+    const selectedIds = ref([])
+    const { layers } = toRefs(props)
+    
+    const { activeLegend, setActiveLegend } = useLegend(selectedIds)
+    const selectedLayers = computed(() => {
+        return selectedIds.value
+          .map(id => layers.value.find(layer => layer.id === id))
+    })
+    watch(activeLegend, newActiveLegend => context.emit('active-legend-change', newActiveLegend))
+    watch(selectedLayers, newSelectedLayers => context.emit('active-layers-change', newSelectedLayers))
+    return { root, activeLegend, setActiveLegend, selectedIds, selectedLayers }
+  }, 
 }
  </script>
