@@ -17,7 +17,7 @@
         <div class="pa-2" style="width:100%">
           <form action="" submit.prevent>
             <v-checkbox
-              label="I agree with the conditions of use"
+              label="I agree with the Conditions of Use"
               class="ma-0"
               v-model="acceptedConditions"
               hide-details
