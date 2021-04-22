@@ -37,6 +37,7 @@ import { getProjectConfig } from '@/lib/config-utils'
 import MapControlBaselayer from './map-control-baselayer'
 import MapLayer from './map-layer'
 import MapLegend from './map-legend'
+import { mapState } from 'vuex';
 
 const config = getProjectConfig()
 
@@ -59,6 +60,11 @@ export default {
   watch: {
     layers() {
       this.sortLayers()
+    },
+    selectedAreaBBox() { 
+      if (this.selectedAreaBBox.length) {
+        this.zoomToExtend()
+      }
     }
   },
   computed: {
@@ -86,7 +92,10 @@ export default {
       }
 
       return ''
-    }
+    },
+    ...mapState({
+      selectedAreaBBox: (state) => state.selectedAreaBBox 
+    })
   },
   methods: {
     onMapCreated(map) {
@@ -135,6 +144,10 @@ export default {
           map.on('sourcedata', this.cb);
         })
       }
+    },
+    zoomToExtend() {
+      const { map } = this.$root
+      map.fitBounds(this.selectedAreaBBox)
     }
   }
 };

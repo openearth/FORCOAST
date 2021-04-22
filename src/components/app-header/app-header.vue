@@ -39,6 +39,7 @@
             no-action
             sub-group
             v-for="(area, index) in category.areas"
+            @click="setSelectedAreaBBox(area.bbox)"
             :key="index"
             link
           >
@@ -94,16 +95,15 @@ export default {
       this.closeMenu=false
     },
     setService (area, service) {
-      console.log("area", area )
       const selectedService = service
       // append selectedService object with area name
       this.$store.commit("SET_SERVICE", selectedService)
       // close menu after clicked
       this.closeMenu=true
+    },
+    setSelectedAreaBBox(bbox) {
+      this.$store.commit("SET_SELECTED_AREA_BBOX", bbox)
     }
   },
-/*   mounted() { 
-    console.log("loaded", JSON.stringify(this.categories))
-  } */
 };
 </script>
