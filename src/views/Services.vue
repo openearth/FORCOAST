@@ -7,6 +7,8 @@
     <div>
       <service-viewer
         :service="selectedService"
+        @active-layers-change="onActiveLayerChange"
+        @active-legend-change="onActiveLegendChange"
       ></service-viewer>
     </div>
   </div>
@@ -30,6 +32,14 @@ export default {
       selectedService: state => state.selectedService
 
     })
+  },
+  methods: {
+    onActiveLayerChange(activelayers) { 
+      this.$emit("active-layers-change", activelayers)
+    },
+    onActiveLegendChange(legend) {
+      this.$emit("active-legend-change", legend)
+    }
   },
 }
 

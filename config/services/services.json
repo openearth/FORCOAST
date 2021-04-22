@@ -12,16 +12,18 @@
                         "name": "Suitable fishing areas",
                         "layers": [
                             {
-                                "id": "chw2-vector:gar_economy",
-                                "name": "Total capital stock",
-                                "layer": "chw2-vector:gar_economy",
-                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows"
+                                "id": "chw2-vector:saltmarshes",
+                                "name": "Fish suitability",
+                                "layer": "chw2-vector:saltmarshes",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                                "icon": "fish.png"
                             },
                             {
                                 "id": "chw2-vector:gar_economy",
-                                "name": "Total capital stock",
+                                "name": "Upwelling Events",
                                 "layer": "chw2-vector:gar_economy",
-                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows"
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                                "icon": "upwelling.png"
                             }
                         ],
                         "description": "This service is about... ",
@@ -34,16 +36,18 @@
                         "name": "Fronts detection",
                         "layers": [
                             {
-                                "id": "chw2-vector:gar_economy",
-                                "name": "Total capital stock",
-                                "layer": "chw2-vector:gar_economy",
-                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows"
+                                "id": "chw2-vector:saltmarshes",
+                                "name": "Chlorophyll",
+                                "layer": "chw2-vector:saltmarshes",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                                "icon": "chlorophyll_a.png"
                             },
                             {
                                 "id": "chw2-vector:gar_economy",
                                 "name": "Total capital stock",
                                 "layer": "chw2-vector:gar_economy",
-                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows"
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                                "icon": "sea_temp.png"
                             }
                         ],
                         "description": "This service is about...",
@@ -66,8 +70,53 @@
                 "id": "western_black_sea_bulgaria",
                 "name": "Western Black Sea (Bulgaria)",
                 "services": [
-                    "Suitable fishing areas",
-                    "Fronts detection"
+                    {
+                        "id": "suitable_fishing_areas",
+                        "name": "Suitable fishing areas",
+                        "layers": [
+                            {
+                                "id": "chw2-vector:saltmarshes",
+                                "name": "Fish suitability",
+                                "layer": "chw2-vector:saltmarshes",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                                "icon": "fish.png"
+                            },
+                            {
+                                "id": "chw2-vector:gar_economy",
+                                "name": "Upwelling Events",
+                                "layer": "chw2-vector:gar_economy",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                                "icon": "upwelling.png"
+                            }
+                        ],
+                        "description": "This service is about... ",
+                        "date_span": true,
+                        "execute": "Create graph",
+                        "point_selection": true
+                    },
+                    {
+                        "id": "fronts_detection",
+                        "name": "Fronts detection",
+                        "layers": [
+                            {
+                                "id": "chw2-vector:saltmarshes",
+                                "name": "Chlorophyll",
+                                "layer": "chw2-vector:saltmarshes",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                                "icon": "chlorophyll_a.png"
+                            },
+                            {
+                                "id": "chw2-vector:gar_economy",
+                                "name": "Total capital stock",
+                                "layer": "chw2-vector:gar_economy",
+                                "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                                "icon": "sea_temp.png"
+                            }
+                        ],
+                        "description": "This service is about...",
+                        "date": true,
+                        "execute": "Show layers on map"
+                    }
                 ],
                 "bbox": [
                     [
@@ -90,10 +139,26 @@
                 "id": "galway_bay",
                 "name": "Galway Bay (Ireland)",
                 "services": [
-                    "Marine conditions",
-                    "Land pollution",
-                    "Site prospection",
-                    "Spat captures assistance"
+                    {
+                        "id": "marine_conditions",
+                        "name": "Marine conditions",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "land_pollution",
+                        "name": "Land Pollution",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "site_protection",
+                        "name": "Site protection",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "spat_captures_assistance",
+                        "name": "Spat captures asssistance",
+                        "description": "This service is about... "
+                    }
                 ],
                 "bbox": [
                     [
@@ -116,10 +181,26 @@
                 "id": "sado_estuary",
                 "name": "Sado Estuary (Portugal)",
                 "services": [
-                    "Marine conditions",
-                    "Land pollution",
-                    "Site prospection",
-                    "Spat captures assistance"
+                    {
+                        "id": "marine_conditions",
+                        "name": "Marine conditions",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "land_pollution",
+                        "name": "Land Pollution",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "site_protection",
+                        "name": "Site protection",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "spat_captures_assistance",
+                        "name": "Spat captures asssistance",
+                        "description": "This service is about... "
+                    }
                 ],
                 "bbox": [
                     [
@@ -136,10 +217,26 @@
                 "id": "southern_north_sea",
                 "name": "Southern North Sea (Belgium)",
                 "services": [
-                    "Marine conditions",
-                    "Land pollution",
-                    "Site prospection",
-                    "Spat captures assistance"
+                    {
+                        "id": "marine_conditions",
+                        "name": "Marine conditions",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "land_pollution",
+                        "name": "Land Pollution",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "site_protection",
+                        "name": "Site protection",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "spat_captures_assistance",
+                        "name": "Spat captures asssistance",
+                        "description": "This service is about... "
+                    }
                 ],
                 "bbox": [
                     [
@@ -156,10 +253,26 @@
                 "id": "limfjord",
                 "name": "Limfjord (Denmark)",
                 "services": [
-                    "Marine conditions",
-                    "Land pollution",
-                    "Site prospection",
-                    "Spat captures assistance"
+                    {
+                        "id": "marine_conditions",
+                        "name": "Marine conditions",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "land_pollution",
+                        "name": "Land Pollution",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "site_protection",
+                        "name": "Site protection",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "spat_captures_assistance",
+                        "name": "Spat captures asssistance",
+                        "description": "This service is about... "
+                    }
                 ],
                 "bbox": [
                     [
@@ -176,10 +289,26 @@
                 "id": "western_black_sea_romania",
                 "name": "Western Black Sea (Romania)",
                 "services": [
-                    "Marine conditions",
-                    "Land pollution",
-                    "Site prospection",
-                    "Spat captures assistance"
+                    {
+                        "id": "marine_conditions",
+                        "name": "Marine conditions",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "land_pollution",
+                        "name": "Land Pollution",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "site_protection",
+                        "name": "Site protection",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "spat_captures_assistance",
+                        "name": "Spat captures asssistance",
+                        "description": "This service is about... "
+                    }
                 ],
                 "bbox": [
                     [
@@ -196,10 +325,26 @@
                 "id": "northern_adriatic_sea",
                 "name": "Northern Adriatic Sea (Italy)",
                 "services": [
-                    "Marine conditions",
-                    "Land pollution",
-                    "Site prospection",
-                    "Spat captures assistance"
+                    {
+                        "id": "marine_conditions",
+                        "name": "Marine conditions",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "land_pollution",
+                        "name": "Land Pollution",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "site_protection",
+                        "name": "Site protection",
+                        "description": "This service is about... "
+                    },
+                    {
+                        "id": "spat_captures_assistance",
+                        "name": "Spat captures asssistance",
+                        "description": "This service is about... "
+                    }
                 ],
                 "bbox": [
                     [
