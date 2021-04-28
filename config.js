@@ -1,3 +1,3 @@
 module.exports = {
-  configDir: './config'
+	configDir: "./config"
 }
