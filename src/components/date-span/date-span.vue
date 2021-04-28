@@ -92,11 +92,11 @@
 </template>
 <script>
 export default {
-    data: () => ({
-    startDate: new Date().toISOString().substr(0, 10),
-    endDate: new Date().toISOString().substr(0, 10),
-    menu: false,
-    menu2: false,
-  }), 
+	data: () => ({
+		startDate: new Date().toISOString().substr(0, 10),
+		endDate: new Date().toISOString().substr(0, 10),
+		menu: false,
+		menu2: false,
+	}), 
 }
 </script>

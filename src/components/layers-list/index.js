@@ -1,1 +1,1 @@
-export { default } from "./layers-list.vue";
+export { default } from "./layers-list.vue"

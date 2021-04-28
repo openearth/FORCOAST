@@ -64,46 +64,46 @@
 </template>
 
 <script>
-import { getProjectConfig } from "@/lib/config-utils";
-import { importConfig } from "@/lib/config-utils";
+import { getProjectConfig } from "@/lib/config-utils"
+import { importConfig } from "@/lib/config-utils"
 
-import { mapState } from "vuex";
+import { mapState } from "vuex"
 
 const config = getProjectConfig()
 
 export default {
-  data() {
-    return {
-      title: config.shortName,
-      closeMenu: false
-    };
-  },
-  computed: {
-    categories() { // it is confusing to name it categories while it contains the services
-      return importConfig(`services/services.json`)
-    },
-    ...mapState({
-      selectedCategory: state => state.selectedCategory 
-    })
-  }, 
-  methods: { 
-    setCategory (category) {
-      if (this.selectedCategory !== category) {
-        this.$store.commit("CLEAR_SELECTED_SERVICE")
-        this.$store.commit( "SET_CATEGORY", category)
-      }
-      this.closeMenu=false
-    },
-    setService (area, service) {
-      const selectedService = service
-      // append selectedService object with area name
-      this.$store.commit("SET_SERVICE", selectedService)
-      // close menu after clicked
-      this.closeMenu=true
-    },
-    setSelectedAreaBBox(bbox) {
-      this.$store.commit("SET_SELECTED_AREA_BBOX", bbox)
-    }
-  },
-};
+	data() {
+		return {
+			title: config.shortName,
+			closeMenu: false
+		}
+	},
+	computed: {
+		categories() { // it is confusing to name it categories while it contains the services
+			return importConfig("services/services.json")
+		},
+		...mapState({
+			selectedCategory: state => state.selectedCategory 
+		})
+	}, 
+	methods: { 
+		setCategory (category) {
+			if (this.selectedCategory !== category) {
+				this.$store.commit("CLEAR_SELECTED_SERVICE")
+				this.$store.commit( "SET_CATEGORY", category)
+			}
+			this.closeMenu=false
+		},
+		setService (area, service) {
+			const selectedService = service
+			// append selectedService object with area name
+			this.$store.commit("SET_SERVICE", selectedService)
+			// close menu after clicked
+			this.closeMenu=true
+		},
+		setSelectedAreaBBox(bbox) {
+			this.$store.commit("SET_SELECTED_AREA_BBOX", bbox)
+		}
+	},
+}
 </script>

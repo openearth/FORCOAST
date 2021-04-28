@@ -43,24 +43,24 @@
 </template>
 
 <script>
-import { ref, watch, toRefs, computed } from '@vue/composition-api'
-import useLegend from './useLegend'
+import { ref, watch, toRefs, computed } from "@vue/composition-api"
+import useLegend from "./useLegend"
 
 export default {
-  props: { layers: Array },
-  setup(props, context) {
-    const root = ref(null)
-    const selectedIds = ref([])
-    const { layers } = toRefs(props)
+	props: { layers: Array },
+	setup(props, context) {
+		const root = ref(null)
+		const selectedIds = ref([])
+		const { layers } = toRefs(props)
     
-    const { activeLegend, setActiveLegend } = useLegend(selectedIds)
-    const selectedLayers = computed(() => {
-        return selectedIds.value
-          .map(id => layers.value.find(layer => layer.id === id))
-    })
-    watch(activeLegend, newActiveLegend => context.emit('active-legend-change', newActiveLegend))
-    watch(selectedLayers, newSelectedLayers => context.emit('active-layers-change', newSelectedLayers))
-    return { root, activeLegend, setActiveLegend, selectedIds, selectedLayers }
-  }, 
+		const { activeLegend, setActiveLegend } = useLegend(selectedIds)
+		const selectedLayers = computed(() => {
+			return selectedIds.value
+				.map(id => layers.value.find(layer => layer.id === id))
+		})
+		watch(activeLegend, newActiveLegend => context.emit("active-legend-change", newActiveLegend))
+		watch(selectedLayers, newSelectedLayers => context.emit("active-layers-change", newSelectedLayers))
+		return { root, activeLegend, setActiveLegend, selectedIds, selectedLayers }
+	}, 
 }
- </script>
+</script>

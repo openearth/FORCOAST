@@ -1,1 +1,1 @@
-export { default } from "./date-span.vue";
+export { default } from "./date-span.vue"
