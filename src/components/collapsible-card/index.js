@@ -1,1 +1,1 @@
-export { default } from "./collapsible-card.vue";
+export { default } from "./collapsible-card.vue"
