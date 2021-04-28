@@ -46,27 +46,27 @@
 </template>
 
 <script>
-import { importConfig } from '@/lib/config-utils'
+import { importConfig } from "@/lib/config-utils"
 
 export default {
-  data: () => ({
-    show: true,
-    acceptedConditions: false,
-    acceptedCookies: false,
-  }),
-  computed: {
-    allAccepted() {
-      return this.acceptedConditions && this.acceptedCookies;
-    },
-    content() {
-      return importConfig(`content/legal.md`)
-    },
-  },
-  methods: {
-    onStartClick() {
-      this.show = false
-      this.$emit('accepted')
-    },
-  },
-};
+	data: () => ({
+		show: true,
+		acceptedConditions: false,
+		acceptedCookies: false,
+	}),
+	computed: {
+		allAccepted() {
+			return this.acceptedConditions && this.acceptedCookies
+		},
+		content() {
+			return importConfig("content/legal.md")
+		},
+	},
+	methods: {
+		onStartClick() {
+			this.show = false
+			this.$emit("accepted")
+		},
+	},
+}
 </script>

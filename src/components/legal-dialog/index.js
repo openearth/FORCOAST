@@ -1,1 +1,1 @@
-export { default } from './legal-dialog.vue'
+export { default } from "./legal-dialog.vue"
