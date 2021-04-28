@@ -1,1 +1,1 @@
-export { default } from './single-date.vue'
+export { default } from "./single-date.vue"

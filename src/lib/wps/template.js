@@ -11,10 +11,10 @@ export const xmlRequestTemplate = ({ functionId, lineData, ...rest }) => `
       </wps:RawDataOutput>
     </wps:ResponseForm>
   </wps:Execute>
-`;
+`
 
 function wpsInput(identifier, data) {
-  return `
+	return `
     <wps:Input>
       <ows:Identifier xmlns:ows="http://www.opengis.net/ows/1.1">${identifier}</ows:Identifier>
       <ows:Title xmlns:ows="http://www.opengis.net/ows/1.1">${identifier}</ows:Title>
@@ -22,15 +22,15 @@ function wpsInput(identifier, data) {
         <wps:LiteralData>${data}</wps:LiteralData>
       </wps:Data>
     </wps:Input>
-  `;
+  `
 }
 
 function inputsToWpsInputs(inputs) {
-  return Object.keys(inputs).reduce((xml, key) => {
-    const value = inputs[key];
-    return `${xml}${wpsInput(
-      key,
-      typeof value === "object" ? JSON.stringify(value) : value
-    )}\n`;
-  }, "");
+	return Object.keys(inputs).reduce((xml, key) => {
+		const value = inputs[key]
+		return `${xml}${wpsInput(
+			key,
+			typeof value === "object" ? JSON.stringify(value) : value
+		)}\n`
+	}, "")
 }
