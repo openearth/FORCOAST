@@ -17,8 +17,13 @@
       :center="centerPoint"
     ></map-control-marker>
     <map-control-draw v-if="drawPolygon"></map-control-draw>
-
-    <map-layer v-for="layer in wmsLayers" :key="layer.id" :options="layer" />
+    <div v-if="renderComponent">
+      <map-layer
+        v-for="(layer, index) in wmsLayers"
+        :key="index"
+        :options="layer"
+      />
+    </div>
     <map-legend
       v-if="legendLayer"
       :base-url="legendLayerUrl"
@@ -36,7 +41,7 @@ import MapControlDraw from "./map-control-draw";
 import MapControlMarker from "./map-control-marker";
 import MapLayer from "./map-layer";
 import MapLegend from "./map-legend";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 import center from "@turf/center";
 import { points } from "@turf/helpers";
@@ -72,6 +77,7 @@ export default {
   data() {
     return {
       centerPoint: [0, 0],
+      renderComponent: true,
     };
   },
   watch: {
@@ -83,6 +89,16 @@ export default {
         this.zoomToExtend();
         this.calcCenterPoint();
       }
+    },
+    wmsLayers: {
+      deep: true,
+      handler() {
+        console.log("Detected change in wmslayers");
+        this.renderComponent = false;
+        this.$nextTick(() => {
+          this.renderComponent = true;
+        });
+      },
     },
   },
   computed: {
