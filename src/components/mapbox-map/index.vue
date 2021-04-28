@@ -9,19 +9,16 @@
     id="map"
     ref="map"
   >
-    <v-mapbox-navigation-control
-      position="bottom-right"
-    />
+    <v-mapbox-navigation-control position="bottom-right" />
     <!-- custom map components -->
-    <map-control-baselayer
-      :layers="mapBaseLayers" 
-      position="bottom-right"
-    />
-    <map-layer
-      v-for="layer in wmsLayers"
-      :key="layer.id"
-      :options="layer"
-    />
+    <map-control-baselayer :layers="mapBaseLayers" position="bottom-right" />
+    <map-control-marker
+      v-if="draggableMarker"
+      :center="centerPoint"
+    ></map-control-marker>
+    <map-control-draw v-if="drawPolygon"></map-control-draw>
+
+    <map-layer v-for="layer in wmsLayers" :key="layer.id" :options="layer" />
     <map-legend
       v-if="legendLayer"
       :base-url="legendLayerUrl"
@@ -31,76 +28,99 @@
 </template>
 
 <script>
-import { MAP_BASELAYERS, MAP_BASELAYER_DEFAULT } from '@/lib/constants';
-import buildWmsLayer from '@/lib/build-wms-layer';
-import { getProjectConfig } from '@/lib/config-utils'
-import MapControlBaselayer from './map-control-baselayer'
-import MapLayer from './map-layer'
-import MapLegend from './map-legend'
-import { mapState } from 'vuex';
+import { MAP_BASELAYERS, MAP_BASELAYER_DEFAULT } from "@/lib/constants";
+import buildWmsLayer from "@/lib/build-wms-layer";
+import { getProjectConfig } from "@/lib/config-utils";
+import MapControlBaselayer from "./map-control-baselayer";
+import MapControlDraw from "./map-control-draw";
+import MapControlMarker from "./map-control-marker";
+import MapLayer from "./map-layer";
+import MapLegend from "./map-legend";
+import { mapState } from "vuex";
 
-const config = getProjectConfig()
+import center from "@turf/center";
+import { points } from "@turf/helpers";
+
+const config = getProjectConfig();
 
 export default {
   components: {
     MapControlBaselayer,
     MapLayer,
-    MapLegend
+    MapLegend,
+    MapControlDraw,
+    MapControlMarker,
   },
   props: {
     layers: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     legendLayer: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
+    draggableMarker: {
+      type: Boolean,
+      default: false,
+    },
+    drawPolygon: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      centerPoint: [0, 0],
+    };
   },
   watch: {
     layers() {
-      this.sortLayers()
+      this.sortLayers();
     },
-    selectedAreaBBox() { 
+    selectedAreaBBox() {
       if (this.selectedAreaBBox.length) {
-        this.zoomToExtend()
+        this.zoomToExtend();
+        this.calcCenterPoint();
       }
-    }
+    },
   },
   computed: {
     accessToken() {
-      return process.env.VUE_APP_MAPBOX_TOKEN
+      return process.env.VUE_APP_MAPBOX_TOKEN;
     },
     mapConfig() {
       return {
         center: config.map.center,
         zoom: config.map.zoom,
-        style: MAP_BASELAYER_DEFAULT.style
+        style: MAP_BASELAYER_DEFAULT.style,
       };
     },
     mapBaseLayers() {
       return MAP_BASELAYERS;
     },
-    wmsLayers() {
-      return this.layers.map(buildWmsLayer)
-    },
+    /*     wmsLayers() {
+      return this.layers.map(buildWmsLayer);
+    }, */
     legendLayerUrl() {
-      const layer = this.layers.find(layer => layer.id === this.legendLayer)
+      const layer = this.layers.find((layer) => layer.id === this.legendLayer);
 
       if (layer) {
-        return layer.url
+        return layer.url;
       }
 
-      return ''
+      return "";
     },
     ...mapState({
-      selectedAreaBBox: (state) => state.selectedAreaBBox 
-    })
+      selectedAreaBBox: (state) => state.selectedAreaBBox,
+      timeSelected: (state) => state.timeSelected,
+      wmsLayers: (state) => state.wmsLayers,
+    }),
   },
   methods: {
     onMapCreated(map) {
       this.$root.map = map;
-      
+
       map.on("load", () => {
         this.$root.mapLoaded = true;
       });
@@ -108,53 +128,60 @@ export default {
     // makes sure the layers are rendered in the order or the wmsLayers array
     // position 1 gets rendered on top, 2 below that etc.
     sortLayers() {
-      const { map } = this.$root
+      const { map } = this.$root;
 
       // processing needs te be done in order, otherwise the internal layer order
       // of mapbox will be messed up
       this.layers.map(async (layer, index) => {
-        const before = this.layers[index - 1] && this.layers[index - 1].id
+        const before = this.layers[index - 1] && this.layers[index - 1].id;
 
         // wait until layers are both loaded before proceeding
-        await Promise.all([layer.id, before].map(async id => {
-          await this.layerLoaded(id) 
-        }))
+        await Promise.all(
+          [layer.id, before].map(async (id) => {
+            await this.layerLoaded(id);
+          })
+        );
 
         map.moveLayer(layer.id, before);
-      })
+      });
     },
     // listens for when a layer is loaded by mapbox
     async layerLoaded(id) {
-      const { map } = this.$root
+      const { map } = this.$root;
 
       if (!map.getLayer(id)) {
         // we need to wait for when a layer is loaded, hence the Promise
         await new Promise((resolve) => {
-          this.cb = e => {
+          this.cb = (e) => {
             // check if the loaded layer has the current id
-            if (e.sourceDataType === 'metadata' && e.sourceId === id) {
-              resolve()
+            if (e.sourceDataType === "metadata" && e.sourceId === id) {
+              resolve();
             }
 
             // remove callback since it will likely be re-added later
-            map.off('sourcedata', this.cb)
-          }
+            map.off("sourcedata", this.cb);
+          };
 
           // add callback when sourcedata is updated
-          map.on('sourcedata', this.cb);
-        })
+          map.on("sourcedata", this.cb);
+        });
       }
     },
     zoomToExtend() {
-      const { map } = this.$root
-      map.fitBounds(this.selectedAreaBBox)
-    }
-  }
+      const { map } = this.$root;
+      map.fitBounds(this.selectedAreaBBox);
+    },
+    calcCenterPoint() {
+      const features = points(this.selectedAreaBBox);
+      const cntr = center(features);
+      this.centerPoint = cntr.geometry.coordinates;
+    },
+  },
 };
 </script>
 
 <style>
 .mapboxgl-map {
-  height: 100%
+  height: 100%;
 }
 </style>
