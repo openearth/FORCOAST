@@ -1,0 +1,468 @@
+[
+  {
+    "id": "wild_fishery",
+    "name": "Wild Fishery",
+    "icon": "FORCOAST_Fish_Logo.png",
+    "areas": [
+      {
+        "id": "bay_of_biscay",
+        "name": "Bay of Biscay (Spain)",
+        "services": [
+          {
+            "id": "suitable_fishing_areas",
+            "name": "Suitable fishing areas",
+            "description": "This service is about... ",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "name": "Chlorophyll",
+                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png"
+                },
+                {
+                  "id": "chw2-vector:gar_economy",
+                  "name": "Upwelling Events",
+                  "layer": "chw2-vector:gar_economy",
+                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                  "icon": "upwelling.png"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": true
+            },
+            "execute_action": "Create graph"
+          },
+          {
+            "id": "fronts_detection",
+            "name": "Fronts detection",
+            "description": "This service is about...",
+            "components": {
+              "layers": [
+                {
+                  "id": "chw2-vector:saltmarshes",
+                  "name": "Chlorophyll",
+                  "layer": "chw2-vector:saltmarshes",
+                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                  "icon": "chlorophyll_a.png"
+                },
+                {
+                  "id": "chw2-vector:gar_economy",
+                  "name": "Total capital stock",
+                  "layer": "chw2-vector:gar_economy",
+                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                  "icon": "sea_temp.png"
+                }
+              ],
+              "date": true
+            },
+            "execute_action": "Show layers on map"
+          }
+        ],
+        "bbox": [
+          [
+            10.16,
+            37.73
+          ],
+          [
+            18.59,
+            47.90
+          ]
+        ]
+      },
+      {
+        "id": "northern_adriatic_sea_pilot",
+        "name": "Northern adriatic sea (pilot)",
+        "services": [
+          {
+            "id": "suitable_fishing_areas",
+            "name": "Suitable fishing areas",
+            "description": "This service is about... ",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "name": " Chlorophyll (chl)",
+                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "chlorophyll_a.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_t_forecast",
+                  "name": "T - temperature [degC]",
+                  "layer": "forcoast:northern_adriatic_sea_t_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": true
+            },
+            "execute_action": "Create graph"
+          },
+          {
+            "id": "fronts_detection",
+            "name": "Fronts detection",
+            "description": "This service is about...",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "name": " Chlorophyll (chl)",
+                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "chlorophyll_a.png",
+                  "time": "2021-01-26"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_t_forecast",
+                  "name": "T - temperature [degC]",
+                  "layer": "forcoast:northern_adriatic_sea_t_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "time": "2021-01-26"
+                }
+              ],
+              "date": true
+            },
+            "execute_action": "Show layers on map"
+          }
+        ],
+        "bbox": [
+          [
+            10.16,
+            37.73
+          ],
+          [
+            18.59,
+            47.90
+          ]
+        ]
+      },
+      {
+        "id": "western_black_sea_bulgaria",
+        "name": "Western Black Sea (Bulgaria)",
+        "services": [
+          {
+            "id": "suitable_fishing_areas",
+            "name": "Suitable fishing areas",
+            "description": "This service is about... ",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "name": "Chlorophyll",
+                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png"
+                },
+                {
+                  "id": "chw2-vector:gar_economy",
+                  "name": "Upwelling Events",
+                  "layer": "chw2-vector:gar_economy",
+                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                  "icon": "upwelling.png"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": true
+            },
+            "execute_action": "Create graph"
+          },
+          {
+            "id": "fronts_detection",
+            "name": "Fronts detection",
+            "description": "This service is about...",
+            "components": {
+              "layers": [
+                {
+                  "id": "chw2-vector:saltmarshes",
+                  "name": "Chlorophyll",
+                  "layer": "chw2-vector:saltmarshes",
+                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                  "icon": "chlorophyll_a.png"
+                },
+                {
+                  "id": "chw2-vector:gar_economy",
+                  "name": "Total capital stock",
+                  "layer": "chw2-vector:gar_economy",
+                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                  "icon": "sea_temp.png"
+                }
+              ],
+              "date": true
+            },
+            "execute_action": "Show layers on map"
+          }
+        ],
+        "bbox": [
+          [
+            28.27,
+            43.22
+          ],
+          [
+            30.46,
+            45.18
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "oysterground_restoration",
+    "name": "Oysterground Restoration",
+    "icon": "FORCOAST_Oyster_Logo.png",
+    "areas": [
+      {
+        "id": "galway_bay",
+        "name": "Galway Bay (Ireland)",
+        "services": [
+          {
+            "id": "marine_conditions",
+            "name": "Marine conditions",
+            "description": "This service is about... "
+          },
+          {
+            "id": "land_pollution",
+            "name": "Land Pollution",
+            "description": "This service is about... "
+          },
+          {
+            "id": "site_protection",
+            "name": "Site protection",
+            "description": "This service is about... "
+          },
+          {
+            "id": "spat_captures_assistance",
+            "name": "Spat captures asssistance",
+            "description": "This service is about... ",
+            "components": {
+              "draw_polygon": {
+                "text": "Select your farming area of interest by drawing it on the map",
+                "title": "Farming area"
+              },
+              "selectable_lists": [
+                {
+                  "title": "Species",
+                  "values": [
+                    "Oyster",
+                    "Mussel"
+                  ]
+                },
+                {
+                  "title": "Sources of arrival",
+                  "values": [
+                    "Source A",
+                    "Source B",
+                    "Source C",
+                    "Source D",
+                    "All sources"
+                  ]
+                }
+              ]
+            },
+            "execute_action": "Run"
+          }
+        ],
+        "bbox": [
+          [
+            -10.15,
+            52.55
+          ],
+          [
+            -8.78,
+            53.44
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bivalve_aquaculture",
+    "name": "Bivalve Aquaculture",
+    "icon": "FORCOAST_Mussel_Logo.png",
+    "areas": [
+      {
+        "id": "sado_estuary",
+        "name": "Sado Estuary (Portugal)",
+        "services": [
+          {
+            "id": "marine_conditions",
+            "name": "Marine conditions",
+            "description": "This service is about... "
+          },
+          {
+            "id": "land_pollution",
+            "name": "Land Pollution",
+            "description": "This service is about... "
+          },
+          {
+            "id": "site_protection",
+            "name": "Site protection",
+            "description": "This service is about... "
+          },
+          {
+            "id": "spat_captures_assistance",
+            "name": "Spat captures asssistance",
+            "description": "This service is about... "
+          }
+        ],
+        "bbox": [
+          [
+            -8.91,
+            38.35
+          ],
+          [
+            -8.68,
+            38.62
+          ]
+        ]
+      },
+      {
+        "id": "southern_north_sea",
+        "name": "Southern North Sea (Belgium)",
+        "services": [
+          {
+            "id": "marine_conditions",
+            "name": "Marine conditions",
+            "description": "This service is about... "
+          },
+          {
+            "id": "land_pollution",
+            "name": "Land Pollution",
+            "description": "This service is about... "
+          },
+          {
+            "id": "site_protection",
+            "name": "Site protection",
+            "description": "This service is about... "
+          },
+          {
+            "id": "spat_captures_assistance",
+            "name": "Spat captures asssistance",
+            "description": "This service is about... "
+          }
+        ],
+        "bbox": [
+          [
+            2.49,
+            51.18
+          ],
+          [
+            3.12,
+            51.6
+          ]
+        ]
+      },
+      {
+        "id": "limfjord",
+        "name": "Limfjord (Denmark)",
+        "services": [
+          {
+            "id": "marine_conditions",
+            "name": "Marine conditions",
+            "description": "This service is about... "
+          },
+          {
+            "id": "land_pollution",
+            "name": "Land Pollution",
+            "description": "This service is about... "
+          },
+          {
+            "id": "site_protection",
+            "name": "Site protection",
+            "description": "This service is about... "
+          },
+          {
+            "id": "spat_captures_assistance",
+            "name": "Spat captures asssistance",
+            "description": "This service is about... "
+          }
+        ],
+        "bbox": [
+          [
+            8.05,
+            56.44
+          ],
+          [
+            9.86,
+            57.19
+          ]
+        ]
+      },
+      {
+        "id": "western_black_sea_romania",
+        "name": "Western Black Sea (Romania)",
+        "services": [
+          {
+            "id": "marine_conditions",
+            "name": "Marine conditions",
+            "description": "This service is about... "
+          },
+          {
+            "id": "land_pollution",
+            "name": "Land Pollution",
+            "description": "This service is about... "
+          },
+          {
+            "id": "site_protection",
+            "name": "Site protection",
+            "description": "This service is about... "
+          },
+          {
+            "id": "spat_captures_assistance",
+            "name": "Spat captures asssistance",
+            "description": "This service is about... "
+          }
+        ],
+        "bbox": [
+          [
+            28.27,
+            43.22
+          ],
+          [
+            30.46,
+            45.18
+          ]
+        ]
+      },
+      {
+        "id": "northern_adriatic_sea",
+        "name": "Northern Adriatic Sea (Italy)",
+        "services": [
+          {
+            "id": "marine_conditions",
+            "name": "Marine conditions",
+            "description": "This service is about... "
+          },
+          {
+            "id": "land_pollution",
+            "name": "Land Pollution",
+            "description": "This service is about... "
+          },
+          {
+            "id": "site_protection",
+            "name": "Site protection",
+            "description": "This service is about... "
+          },
+          {
+            "id": "spat_captures_assistance",
+            "name": "Spat captures asssistance",
+            "description": "This service is about... "
+          }
+        ],
+        "bbox": [
+          [
+            12.13,
+            44.27
+          ],
+          [
+            13.85,
+            45.90
+          ]
+        ]
+      }
+    ]
+  }
+]

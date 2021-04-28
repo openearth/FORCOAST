@@ -1,33 +1,27 @@
 <template>
   <div class="pa-4 home d-flex flex-column">
     <div>
-      <h2 class="h2">{{ $t('introduction') }}</h2>
-
+      <h2 class="h2">Home</h2>
       <v-divider class="mt-4 mb-4" />
     </div>
-
-    <div v-html="content" />
-
-    <div class="d-flex pt-4">
-      <v-btn class="primary ml-auto" :to="nextPage.id">{{ $t('get_started') }}</v-btn>
-    </div>
+    <div v-html="content" class="introduction" />
   </div>
 </template>
 
 <script>
-import pages from '@/lib/get-data-pages'
-import { importConfig } from '@/lib/config-utils'
+import { importConfig } from "@/lib/config-utils";
 
 export default {
-  data() {
-    return {
-      nextPage: pages[0]
-    }
-  },
   computed: {
     content() {
-      return importConfig(`content/${this.$i18n.locale}/introduction.md`)
-    }
-  }
+      return importConfig("content/introduction.md");
+    },
+  },
 };
 </script>
+<style>
+.v-application ul,
+.v-application ol {
+  margin-bottom: 16px;
+}
+</style>

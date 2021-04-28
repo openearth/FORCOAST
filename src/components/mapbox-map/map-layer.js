@@ -20,6 +20,7 @@ export default {
   },
   mounted() {
     // only execute when map is available and layer is not already initialized
+    console.log("map-layer.js")
     if (this.getMap()) {
       this.rerender();
       this.isInitialized = true;
@@ -30,6 +31,7 @@ export default {
   },
   methods: {
     deferredMountedTo() {
+      console.log("map-layer.js diff mounted")
       // only execute when layer is not already initialized
       if (!this.isInitialized) {
         this.rerender();
@@ -53,7 +55,7 @@ export default {
     },
     addLayer() {
       const map = this.getMap();
-
+      console.log("map-layer.js add map")
       if (this.before && map.getLayer(this.before)) {
         map.addLayer(this.options, this.before);
       } else {
