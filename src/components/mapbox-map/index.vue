@@ -17,18 +17,18 @@
       :center="centerPoint"
     ></map-control-marker>
     <map-control-draw v-if="drawPolygon"></map-control-draw>
-    <div v-if="renderComponent">
-      <map-layer
-        v-for="(layer, index) in wmsLayers"
-        :key="index"
-        :options="layer"
-      />
-    </div>
+    <map-layer
+      v-for="layer in wmsLayers"
+      :key="layer.request"
+      :options="layer"
+    />
     <map-legend
       v-if="legendLayer"
       :base-url="legendLayerUrl"
       :legend-layer="legendLayer"
     />
+    <!-- I have to
+    ensure that wmsLayers have only one layer when this service is selected. -->
   </v-mapbox>
 </template>
 
@@ -41,7 +41,7 @@ import MapControlDraw from "./map-control-draw";
 import MapControlMarker from "./map-control-marker";
 import MapLayer from "./map-layer";
 import MapLegend from "./map-legend";
-import { mapState, mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 import center from "@turf/center";
 import { points } from "@turf/helpers";
@@ -77,7 +77,6 @@ export default {
   data() {
     return {
       centerPoint: [0, 0],
-      renderComponent: true,
     };
   },
   watch: {
@@ -89,16 +88,6 @@ export default {
         this.zoomToExtend();
         this.calcCenterPoint();
       }
-    },
-    wmsLayers: {
-      deep: true,
-      handler() {
-        console.log("Detected change in wmslayers");
-        this.renderComponent = false;
-        this.$nextTick(() => {
-          this.renderComponent = true;
-        });
-      },
     },
   },
   computed: {
@@ -115,9 +104,9 @@ export default {
     mapBaseLayers() {
       return MAP_BASELAYERS;
     },
-    /*     wmsLayers() {
+    wmsLayers() {
       return this.layers.map(buildWmsLayer);
-    }, */
+    },
     legendLayerUrl() {
       const layer = this.layers.find((layer) => layer.id === this.legendLayer);
 
@@ -129,8 +118,6 @@ export default {
     },
     ...mapState({
       selectedAreaBBox: (state) => state.selectedAreaBBox,
-      timeSelected: (state) => state.timeSelected,
-      wmsLayers: (state) => state.wmsLayers,
     }),
   },
   methods: {
