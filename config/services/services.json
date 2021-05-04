@@ -11,7 +11,7 @@
           {
             "id": "suitable_fishing_areas",
             "name": "Suitable fishing areas",
-            "description": "This service is about... ",
+            "description": "  ",
             "components": {
               "layers": [
                 {
@@ -20,24 +20,16 @@
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
                   "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png"
-                },
-                {
-                  "id": "chw2-vector:gar_economy",
-                  "name": "Upwelling Events",
-                  "layer": "chw2-vector:gar_economy",
-                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
-                  "icon": "upwelling.png"
                 }
               ],
               "date_span": true,
               "draggable_marker": true
-            },
-            "execute_action": "Create graph"
+            }
           },
           {
             "id": "fronts_detection",
             "name": "Fronts detection",
-            "description": "This service is about...",
+            "description": "",
             "components": {
               "layers": [
                 {
@@ -56,8 +48,7 @@
                 }
               ],
               "date": true
-            },
-            "execute_action": "Show layers on map"
+            }
           }
         ],
         "bbox": [
@@ -78,7 +69,20 @@
           {
             "id": "suitable_fishing_areas",
             "name": "Suitable fishing areas",
-            "description": "This service is about... ",
+            "description": "  ",
+            "dates": [
+              "2021-01-20",
+              "2021-01-21",
+              "2021-01-22",
+              "2021-01-23",
+              "2021-01-24",
+              "2021-01-25",
+              "2021-01-26",
+              "2021-01-27",
+              "2021-01-28",
+              "2021-01-29",
+              "2021-01-30"
+            ],
             "components": {
               "layers": [
                 {
@@ -94,17 +98,64 @@
                   "layer": "forcoast:northern_adriatic_sea_t_forecast",
                   "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_s_forecast",
+                  "name": "S - salinity [psu] ",
+                  "layer": "forcoast:northern_adriatic_sea_s_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_alk_forecast",
+                  "name": "ALK - alkalinity [mmol/m3]",
+                  "layer": "forcoast:northern_adriatic_sea_alk_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_dic_forecast",
+                  "name": "DIC - dissolved inorganic carbon [mmol/m3]",
+                  "layer": "forcoast:northern_adriatic_sea_dic_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_pco2_forecast",
+                  "name": "pCO2 - seawater pCO2 [micro atm]",
+                  "layer": "forcoast:northern_adriatic_sea_pco2_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_ph_forecast",
+                  "name": "pH - seawater acidity [total scale]",
+                  "layer": "forcoast:northern_adriatic_sea_ph_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
                 }
               ],
               "date_span": true,
               "draggable_marker": true
-            },
-            "execute_action": "Create graph"
+            }
           },
           {
             "id": "fronts_detection",
             "name": "Fronts detection",
-            "description": "This service is about...",
+            "description": " ",
+            "dates": [
+              "2021-01-20",
+              "2021-01-21",
+              "2021-01-22",
+              "2021-01-23",
+              "2021-01-24",
+              "2021-01-25",
+              "2021-01-26",
+              "2021-01-27",
+              "2021-01-28",
+              "2021-01-29",
+              "2021-01-30"
+            ],
             "components": {
               "layers": [
                 {
@@ -112,21 +163,53 @@
                   "name": " Chlorophyll (chl)",
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
                   "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "chlorophyll_a.png",
-                  "time": "2021-01-26"
+                  "icon": "chlorophyll_a.png"
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_t_forecast",
                   "name": "T - temperature [degC]",
                   "layer": "forcoast:northern_adriatic_sea_t_forecast",
                   "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "time": "2021-01-26"
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_s_forecast",
+                  "name": "S - salinity [psu] ",
+                  "layer": "forcoast:northern_adriatic_sea_s_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_alk_forecast",
+                  "name": "ALK - alkalinity [mmol/m3]",
+                  "layer": "forcoast:northern_adriatic_sea_alk_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_dic_forecast",
+                  "name": "DIC - dissolved inorganic carbon [mmol/m3]",
+                  "layer": "forcoast:northern_adriatic_sea_dic_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_pco2_forecast",
+                  "name": "pCO2 - seawater pCO2 [micro atm]",
+                  "layer": "forcoast:northern_adriatic_sea_pco2_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_ph_forecast",
+                  "name": "pH - seawater acidity [total scale]",
+                  "layer": "forcoast:northern_adriatic_sea_ph_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
                 }
               ],
               "date": true
-            },
-            "execute_action": "Show layers on map"
+            }
           }
         ],
         "bbox": [
@@ -147,7 +230,7 @@
           {
             "id": "suitable_fishing_areas",
             "name": "Suitable fishing areas",
-            "description": "This service is about... ",
+            "description": "  ",
             "components": {
               "layers": [
                 {
@@ -167,13 +250,12 @@
               ],
               "date_span": true,
               "draggable_marker": true
-            },
-            "execute_action": "Create graph"
+            }
           },
           {
             "id": "fronts_detection",
             "name": "Fronts detection",
-            "description": "This service is about...",
+            "description": " ",
             "components": {
               "layers": [
                 {
@@ -192,8 +274,7 @@
                 }
               ],
               "date": true
-            },
-            "execute_action": "Show layers on map"
+            }
           }
         ],
         "bbox": [
@@ -221,22 +302,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "site_protection",
             "name": "Site protection",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "spat_captures_assistance",
             "name": "Spat captures asssistance",
-            "description": "This service is about... ",
+            "description": "  ",
             "components": {
               "draw_polygon": {
                 "text": "Select your farming area of interest by drawing it on the map",
@@ -261,8 +342,7 @@
                   ]
                 }
               ]
-            },
-            "execute_action": "Run"
+            }
           }
         ],
         "bbox": [
@@ -290,22 +370,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "site_protection",
             "name": "Site protection",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "spat_captures_assistance",
             "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "description": "  "
           }
         ],
         "bbox": [
@@ -326,22 +406,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "site_protection",
             "name": "Site protection",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "spat_captures_assistance",
             "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "description": "  "
           }
         ],
         "bbox": [
@@ -362,22 +442,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "site_protection",
             "name": "Site protection",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "spat_captures_assistance",
             "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "description": "  "
           }
         ],
         "bbox": [
@@ -398,22 +478,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "site_protection",
             "name": "Site protection",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "spat_captures_assistance",
             "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "description": "  "
           }
         ],
         "bbox": [
@@ -434,22 +514,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "site_protection",
             "name": "Site protection",
-            "description": "This service is about... "
+            "description": "  "
           },
           {
             "id": "spat_captures_assistance",
             "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "description": "  "
           }
         ],
         "bbox": [
