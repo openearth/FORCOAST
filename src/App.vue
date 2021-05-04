@@ -24,7 +24,6 @@
 import AppHeader from "@/components/app-header";
 import AppSidebar from "@/components/app-sidebar";
 import LegalDialog from "@/components/legal-dialog";
-import buildWmsLayer from "@/lib/build-wms-layer";
 
 import { mapState } from "vuex";
 
@@ -43,6 +42,7 @@ export default {
       acceptedLegal: false,
       draggableMarker: false,
       drawPolygon: false,
+      boxPlot: false,
     };
   },
   watch: {
@@ -50,15 +50,11 @@ export default {
       this.reset();
     },
     timeSelected() {
-      // remove wms layer with this id and add it again.
-      console.log("watch time changing this.layers", this.layers);
-      this.layers = this.layers.map((layer) => ({
+      const modifiedLayers = this.layers.map((layer) => ({
         ...layer,
         time: this.timeSelected,
       }));
-      const wmslayers = this.layers.map(buildWmsLayer);
-      this.$store.commit("REMOVE_WMS_LAYERS");
-      this.$store.commit("ADD_WMS_LAYERS", wmslayers);
+      this.layers = modifiedLayers;
     },
   },
   computed: {
@@ -75,12 +71,8 @@ export default {
       this.acceptedLegal = true;
     },
     onActiveLayersUpdate(event) {
-      console.log("event", event);
       // active layers
       this.layers = event;
-      const wmslayers = this.layers.map(buildWmsLayer);
-      this.$store.commit("FILTER_WMS_LAYERS", this.layers);
-      this.$store.commit("ADD_WMS_LAYERS", wmslayers);
     },
     onActiveLegendChange(event) {
       this.legendLayer = event;
