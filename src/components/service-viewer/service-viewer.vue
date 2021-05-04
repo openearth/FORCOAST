@@ -60,10 +60,21 @@
     >
       <single-date></single-date>
     </collapsible-card>
-    <div v-if="service.execute_action" class="align-self-center position-fixed">
-      <v-btn color="primary" dark class="ml-auto">{{
-        service.execute_action
-      }}</v-btn>
+    <!-- It cant be general -->
+    <div v-if="service.components.date_span">
+      <div v-if="timeSpan.length && activeLayer">
+        <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
+        <timeseries-graph
+          v-if="dialog"
+          :lngLat="markerLngLat"
+          :layer="activeLayer"
+          :timeSpan="timeSpan"
+          @close-dialog="dialog = false"
+        ></timeseries-graph>
+      </div>
+      <div v-else>
+        <v-btn disabled block color="primary">Create graph</v-btn>
+      </div>
     </div>
   </div>
 </template>
@@ -75,6 +86,8 @@ import DateSpan from "@/components/date-span";
 import SelectableList from "@/components/selectable-list";
 import DraggableMarker from "@/components/draggable-marker";
 import DrawPolygon from "@/components/draw-polygon";
+import TimeseriesGraph from "@/components/timeseries-graph";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -85,6 +98,7 @@ export default {
     DraggableMarker,
     DrawPolygon,
     SelectableList,
+    TimeseriesGraph,
   },
   props: {
     service: {
@@ -95,11 +109,24 @@ export default {
   data() {
     return {
       title: "Select a layer",
-      layersOn: [],
+      activeLayer: null,
+      dialog: false,
     };
+  },
+  watch: {
+    dialog() {
+      console.log("this.dialog", this.dialog);
+    },
+  },
+  computed: {
+    ...mapState({
+      markerLngLat: (state) => state.markerLngLat,
+      timeSpan: (state) => state.timeSpan,
+    }),
   },
   methods: {
     onActiveLayerChange(activelayers) {
+      this.activeLayer = activelayers[0];
       this.$emit("active-layers-change", activelayers);
     },
     onActiveLegendChange(legend) {
