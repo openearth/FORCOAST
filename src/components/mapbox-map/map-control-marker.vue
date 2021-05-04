@@ -44,6 +44,7 @@ export default {
 
       this.marker.on("dragend", () => {
         const lngLat = this.marker.getLngLat();
+        this.$store.commit("SET_MARKER_COORDINATES", lngLat);
       });
     },
   },
