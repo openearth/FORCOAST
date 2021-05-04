@@ -21,6 +21,7 @@ export default ({ url, id, layer, time, style="", paint={} }) => {
 	return wms({
 		id,
 		layer,
+    request: tile, // added in order to realize both changes of id and time.
 		tiles: [ tile ],
 		tileSize: 256,
 		paint
