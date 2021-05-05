@@ -1,5 +1,9 @@
 <template>
   <v-app-bar app color="primary" dark clipped-left>
+    <img :src="require(`@/assets/FORCOAST_Fish_Logo_White.png`)" height="30">
+    <img :src="require(`@/assets/FORCOAST_Mussel_Logo_White.png`)" height="30">
+    <img :src="require(`@/assets/FORCOAST_Oyster_Logo_White.png`)" height="30">
+    <img :src="require(`@/assets/empty.png`)" height="10">
     <v-toolbar-title>
       <router-link to="/" class="white--text text-decoration-none">{{
         title

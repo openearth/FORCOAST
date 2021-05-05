@@ -4,7 +4,7 @@
       <v-card height="600" width="700">
         <div id="graph-container"></div>
         <v-card-actions>
-          <v-btn color="primary" bottom text @click="closeDialog">
+          <v-btn block color="primary" bottom text @click="closeDialog">
             CLOSE
           </v-btn>
         </v-card-actions>
@@ -100,20 +100,43 @@ export default {
         title: {
           text: this.layer.name,
           left: "center",
+          top: 20,
         },
         xAxis: {
           type: "category",
           data: this.timeSpan,
           name: "Date",
+          nameLocation: 'center',
+          nameTextStyle: {
+            fontSize: 16,
+            padding: 10,
+          }
         },
         yAxis: {
           type: "value",
           name: "Value",
+          nameLocation: 'center',
+          nameTextStyle: {
+            fontSize: 16,
+            padding: 10,
+          }
+        },
+        grid: {
+          show: "true",
+          width: 'auto',
+          height: 'auto'
         },
         series: [
           {
             data: this.featuresInfo,
             type: "line",
+            tooltip: {
+              show: "true",
+              trigger: 'axis',
+              axisPointer: {
+                type: 'shadow'
+              }
+            }
           },
         ],
       };
@@ -125,7 +148,7 @@ export default {
 </script>
 <style>
 #graph-container {
-  width: 500px;
+  width: 700px;
   height: 500px;
 }
 </style>

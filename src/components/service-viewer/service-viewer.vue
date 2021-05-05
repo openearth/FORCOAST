@@ -2,8 +2,8 @@
   <div class="d-flex flex-column">
     <div>
       <!-- <h2 class="h2">TEST</h2> -->
-      <p>{{ service.name }}</p>
-      <p>{{ service.description }}</p>
+      <p>Service module: {{ service.name }}</p>
+      <p>{{ service.description }} <a href="https://forcoast.eu/">here</a></p>
       <v-divider class="mt-4 mb-4" />
     </div>
     <!-- .sync -->
@@ -75,6 +75,9 @@
       <div v-else>
         <v-btn disabled block color="primary">Create graph</v-btn>
       </div>
+    </div>
+    <div v-if="service.components.run_task">
+      <v-btn disabled block color="primary">Run</v-btn>
     </div>
   </div>
 </template>

@@ -1,17 +1,18 @@
 import buildGeoserverUrl from "./build-geoserver-url"
 import wms from "./wms"
 
-export default ({ url, id, layer, time, style="", paint={} }) => {
+export default ({ url, id, layer, time, styles="", paint={} }) => {
 	const tile = buildGeoserverUrl({
 		url,
 		service: "WMS",
 		request: "GetMap",
 		layers: layer,
-		style,
+		styles,
 		width: 256,
 		height: 256,
-		srs: "EPSG:3857",
+		crs: "EPSG:3857",
 		transparent: true,
+		version: "1.3.0",
     time,
 		bbox: "{bbox-epsg-3857}",
 		format: "image/png",
