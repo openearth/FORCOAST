@@ -14,19 +14,20 @@
           <template v-slot:activator="{ on, attrs }">
             <v-text-field
               v-model="startDate"
-              label="Select a start date"
+              label="Start date"
               prepend-icon="mdi-calendar"
               readonly
               v-bind="attrs"
               v-on="on"
             ></v-text-field>
           </template>
+          <!-- min max should not be hardcoded any more -->
           <v-date-picker
             v-model="startDate"
             no-title
             scrollable
-            min="2021-01-20"
-            max="2021-01-30"
+            :min="startDate"
+            :max="endDate"
           >
             <v-spacer></v-spacer>
             <v-btn text color="primary" @click="menu = false"> Cancel </v-btn>
@@ -49,19 +50,20 @@
           <template v-slot:activator="{ on, attrs }">
             <v-text-field
               v-model="endDate"
-              label="Select an end date"
+              label="End date"
               prepend-icon="mdi-calendar"
               readonly
               v-bind="attrs"
               v-on="on"
             ></v-text-field>
           </template>
+          <!-- min max should not be hardcoded anymore but equal to a parameter -->
           <v-date-picker
             v-model="endDate"
             no-title
             scrollable
-            min="2021-01-20"
-            max="2021-01-30"
+            :min="startDate"
+            :max="endDate"
           >
             <v-spacer></v-spacer>
             <v-btn text color="primary" @click="menu2 = false"> Cancel </v-btn>
@@ -75,24 +77,32 @@
   </div>
 </template>
 <script>
-import createTimeSpan from "@/lib/create-time-span";
-import { parseISO, format } from "date-fns";
+import createTimeSpan from "@/lib/create-time-span"; // NOTE. If the DescribeCoverage retrieves the timespan perhaps this can be removed.
+//TODO when I will get the ok to proceed with time, I will use the full extent that the capabilities return so I will not need the createTimeSpan function
+
 export default {
   data: () => ({
-    startDate: "2021-01-20",
-    endDate: "2021-01-30",
+    startDate: "",
+    endDate: "",
     menu: false,
     menu2: false,
     timeSpan: [],
   }),
+  props: {
+    timeExtent: {
+      type: Array,
+    },
+  },
+
   watch: {
     startDate() {
       this.timeSpan.push(this.startDate);
-      console.log("this.timespan", this.timeSpan);
     },
     endDate() {
       this.timeSpan.push(this.endDate);
-      console.log("this.timespan end date", this.timeSpan);
+    },
+    timeExtent() {
+      this.extractStartEndDate();
     },
     timeSpan() {
       if (this.timeSpan.length > 1) {
@@ -103,6 +113,17 @@ export default {
         days = days.map((day) => day.toISOString().substr(0, 10));
         this.$store.commit("SET_TIME_SPAN", days);
       }
+    },
+  },
+  methods: {
+    extractStartEndDate() {
+      this.startDate = this.timeExtent[0].slice(0, 10);
+      this.endDate = this.timeExtent[this.timeExtent.length - 1].slice(0, 10);
+      console.log(
+        "date-span component: start end date",
+        this.startDate,
+        this.endDate
+      );
     },
   },
 };
