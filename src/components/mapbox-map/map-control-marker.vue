@@ -18,6 +18,16 @@ export default {
       required: true,
     },
   },
+  watch: {
+    center() {
+      // if it is already loaded then remove it and move it and re-add it to the correct center
+      this.marker.remove();
+      const map = this.getMap();
+      if (map) {
+        this.addToMap(map);
+      }
+    },
+  },
   mounted() {
     const map = this.getMap();
     // if we are already loaded
