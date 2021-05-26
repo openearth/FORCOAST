@@ -120,7 +120,9 @@ export default {
   },
   watch: {
     activeLayer() {
-      this.getActiveLayerTimeExtent();
+      if (this.activeLayer) {
+        this.getActiveLayerTimeExtent();
+      }
     },
   },
   computed: {
@@ -142,7 +144,6 @@ export default {
       this.$emit("active-legend-change", legend);
     },
     onShowDraggableMarker(event) {
-      console.log("service-viewer component: onShowDraggableMarker", event);
       this.$emit("show-draggable-marker", event);
     },
     onShowDrawPolygon(event) {
@@ -153,7 +154,6 @@ export default {
       // its a getcapabilities
       try {
         const response = await getWMSCapabilities({
-          //TODO rename it If I see that it is working
           url: this.activeLayer.url,
         });
         const capabilities = response.WMT_MS_Capabilities.Capability;
