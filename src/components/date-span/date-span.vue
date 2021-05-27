@@ -117,7 +117,10 @@ export default {
   },
   methods: {
     extractStartEndDate() {
-      this.startDate = this.timeExtent[0].slice(0, 10);
+      this.startDate = this.timeExtent[0]
+        .replace("\r\n", "")
+        .trim()
+        .slice(0, 10);
       this.endDate = this.timeExtent[this.timeExtent.length - 1].slice(0, 10);
       console.log(
         "date-span component: start end date",

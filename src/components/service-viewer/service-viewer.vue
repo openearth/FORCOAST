@@ -157,6 +157,7 @@ export default {
           url: this.activeLayer.url,
         });
         const capabilities = response.WMT_MS_Capabilities.Capability;
+        console.log("capabilities:", capabilities);
         return capabilities;
       } catch (error) {
         console.log("error:", error);
@@ -164,13 +165,25 @@ export default {
     },
     async getActiveLayerTimeExtent() {
       const capabilities = await this.getCapabilities();
-      const allLayers = capabilities.Layer.Layer;
-      const layer = allLayers.find(
-        (layer) => layer.Name._text === this.activeLayer.id
-      );
-
-      const extent = layer.Extent[0]._text.split(",");
-
+      let allLayers;
+      let layer;
+      let extent;
+      // TODO same getCapabilities request has different format in the response (Tredd or Geoserver)
+      if (capabilities.Layer.Layer.Layer) {
+        allLayers = capabilities.Layer.Layer.Layer;
+        console.log("case Thredd", allLayers);
+        layer = allLayers.find(
+          (layer) => layer.Name._text === this.activeLayer.id
+        );
+        extent = layer.Extent._text.split(",");
+      } else {
+        allLayers = capabilities.Layer.Layer;
+        console.log("case Geoserver", allLayers);
+        layer = allLayers.find(
+          (layer) => layer.Name._text === this.activeLayer.id
+        );
+        extent = layer.Extent[0]._text.split(",");
+      }
       this.$store.commit("SET_TIME_EXTENT", extent);
     },
   },
