@@ -41,7 +41,7 @@
             {{ category.name }}
           </v-tab>
         </template>
-        <v-list>
+        <v-list style="overflow-y: auto; max-height: 500px">
           <v-list-group
             no-action
             sub-group
@@ -108,7 +108,6 @@ export default {
     },
     setService(area, service) {
       const selectedService = service;
-      // append selectedService object with area name
       this.$store.commit("SET_SERVICE", selectedService);
       // close menu after clicked
       this.closeMenu = true;
