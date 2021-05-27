@@ -1,11 +1,11 @@
 import axios from "axios"
-import { describeCoverage } from "./build-get-wms-capabilities"
+import { getCapabilities } from "./build-get-wms-capabilities"
 
 const convert = require("xml-js");
 
 export default function({ url }) {
   
-	const request = describeCoverage({ url })
+	const request = getCapabilities({ url })
 
   return axios({
     method: "get",
