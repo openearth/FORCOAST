@@ -50,16 +50,9 @@ export default {
 
   watch: {
     featuresInfo() {
-      console.log("featuresInfo", this.featuresInfo);
       // call graph
       this.createGraph();
       this.updateGraph();
-    },
-    lngLat() {
-      console.log("watch lnglat", this.lngLat);
-    },
-    dialog() {
-      console.log("dialog prop in the component", this.dialog);
     },
   },
   methods: {
@@ -77,6 +70,7 @@ export default {
         console.log("error:", error);
       }
     },
+    // calls the getFeatureinfo for every element in the timeSpan array
     async getAllFeatureInfo() {
       this.featuresInfo = await Promise.all(
         this.timeSpan.map(async (time) => {
@@ -91,9 +85,7 @@ export default {
     },
     createGraph() {
       var dom = document.getElementById("graph-container");
-      console.log("dom", dom);
       this.graph = echarts.init(dom);
-      console.log("graph created", this.graph);
     },
     updateGraph() {
       const option = {
@@ -106,25 +98,25 @@ export default {
           type: "category",
           data: this.timeSpan,
           name: "Date",
-          nameLocation: 'center',
+          nameLocation: "center",
           nameTextStyle: {
             fontSize: 16,
             padding: 10,
-          }
+          },
         },
         yAxis: {
           type: "value",
           name: "Value",
-          nameLocation: 'center',
+          nameLocation: "center",
           nameTextStyle: {
             fontSize: 16,
             padding: 10,
-          }
+          },
         },
         grid: {
           show: "true",
-          width: 'auto',
-          height: 'auto'
+          width: "auto",
+          height: "auto",
         },
         series: [
           {
@@ -132,11 +124,11 @@ export default {
             type: "line",
             tooltip: {
               show: "true",
-              trigger: 'axis',
+              trigger: "axis",
               axisPointer: {
-                type: 'shadow'
-              }
-            }
+                type: "shadow",
+              },
+            },
           },
         ],
       };

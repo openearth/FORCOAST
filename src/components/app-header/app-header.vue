@@ -1,9 +1,15 @@
 <template>
   <v-app-bar app color="primary" dark clipped-left>
-    <img :src="require(`@/assets/FORCOAST_Fish_Logo_White.png`)" height="30">
-    <img :src="require(`@/assets/FORCOAST_Mussel_Logo_White.png`)" height="30">
-    <img :src="require(`@/assets/FORCOAST_Oyster_Logo_White.png`)" height="30">
-    <img :src="require(`@/assets/empty.png`)" height="10">
+    <img :src="require(`@/assets/FORCOAST_Fish_Logo_White.png`)" height="30" />
+    <img
+      :src="require(`@/assets/FORCOAST_Mussel_Logo_White.png`)"
+      height="30"
+    />
+    <img
+      :src="require(`@/assets/FORCOAST_Oyster_Logo_White.png`)"
+      height="30"
+    />
+    <img :src="require(`@/assets/empty.png`)" height="10" />
     <v-toolbar-title>
       <router-link to="/" class="white--text text-decoration-none">{{
         title
@@ -35,7 +41,7 @@
             {{ category.name }}
           </v-tab>
         </template>
-        <v-list>
+        <v-list style="overflow-y: auto; max-height: 500px">
           <v-list-group
             no-action
             sub-group
@@ -53,7 +59,10 @@
               v-for="(service, index) in area.services"
               :key="index"
               link
-              @click="setService(area.name, service)"
+              @click="
+                setService(area.name, service);
+                setSelectedAreaBBox(area.bbox);
+              "
             >
               <v-list-item-title v-text="service.name"></v-list-item-title>
             </v-list-item>
@@ -99,7 +108,6 @@ export default {
     },
     setService(area, service) {
       const selectedService = service;
-      // append selectedService object with area name
       this.$store.commit("SET_SERVICE", selectedService);
       // close menu after clicked
       this.closeMenu = true;

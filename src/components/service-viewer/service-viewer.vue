@@ -48,10 +48,10 @@
     </collapsible-card>
     <collapsible-card
       v-if="service.components.date_span"
-      title="Select a start and an end date"
+      title="Select start and end date"
       :expand="0"
     >
-      <date-span></date-span>
+      <date-span :timeExtent="timeExtent"></date-span>
     </collapsible-card>
     <collapsible-card
       v-if="service.components.date"
@@ -92,6 +92,8 @@ import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
 import { mapState } from "vuex";
 
+import getWMSCapabilities from "@/lib/getWmsCapabilities";
+
 export default {
   components: {
     CollapsibleCard,
@@ -117,18 +119,24 @@ export default {
     };
   },
   watch: {
-    dialog() {
-      console.log("this.dialog", this.dialog);
+    activeLayer() {
+      if (this.activeLayer) {
+        this.getActiveLayerTimeExtent();
+      }
     },
   },
   computed: {
     ...mapState({
       markerLngLat: (state) => state.markerLngLat,
+      timeExtent: (state) => state.timeExtent,
       timeSpan: (state) => state.timeSpan,
     }),
   },
   methods: {
     onActiveLayerChange(activelayers) {
+      //NOTE temporal solution. activeLayer is used only for the GetFeatureInfo request.
+      // In later stage I might need to implement a getFeatureInfo for every open layer.
+      // it is not clarified yet.
       this.activeLayer = activelayers[0];
       this.$emit("active-layers-change", activelayers);
     },
@@ -140,6 +148,43 @@ export default {
     },
     onShowDrawPolygon(event) {
       this.$emit("show-draw-polygon", event);
+    },
+    // rename to getLayerExtend?
+    async getCapabilities() {
+      // its a getcapabilities
+      try {
+        const response = await getWMSCapabilities({
+          url: this.activeLayer.url,
+        });
+        const capabilities = response.WMT_MS_Capabilities.Capability;
+        console.log("capabilities:", capabilities);
+        return capabilities;
+      } catch (error) {
+        console.log("error:", error);
+      }
+    },
+    async getActiveLayerTimeExtent() {
+      const capabilities = await this.getCapabilities();
+      let allLayers;
+      let layer;
+      let extent;
+      // TODO same getCapabilities request has different format in the response (Tredd or Geoserver)
+      if (capabilities.Layer.Layer.Layer) {
+        allLayers = capabilities.Layer.Layer.Layer;
+        console.log("case Thredd", allLayers);
+        layer = allLayers.find(
+          (layer) => layer.Name._text === this.activeLayer.id
+        );
+        extent = layer.Extent._text.split(",");
+      } else {
+        allLayers = capabilities.Layer.Layer;
+        console.log("case Geoserver", allLayers);
+        layer = allLayers.find(
+          (layer) => layer.Name._text === this.activeLayer.id
+        );
+        extent = layer.Extent[0]._text.split(",");
+      }
+      this.$store.commit("SET_TIME_EXTENT", extent);
     },
   },
 };

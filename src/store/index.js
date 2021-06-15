@@ -11,8 +11,9 @@ export default new Vuex.Store({
     polygon: null,
     timeSelected: null,
     markerLngLat: {},
-    timeSpan: [],
+    timeExtent: [],
     iconCategory: null,
+    timeSpan: [],
 	},
 	mutations: { 
 		SET_CATEGORY(state, category) { 
@@ -36,8 +37,11 @@ export default new Vuex.Store({
     SET_MARKER_COORDINATES(state, lnglat) {
       state.markerLngLat = lnglat
     },
-    SET_TIME_SPAN(state, array) {
-      state.timeSpan = array
+    SET_TIME_EXTENT(state, extent) {
+      state.timeExtent = extent
+    },
+    SET_TIME_SPAN(state, timespan) {
+      state.timeSpan = timespan
     },
     SET_ICON_CATEGORY(state, icon) {
       state.iconCategory = icon
