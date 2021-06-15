@@ -11,63 +11,68 @@
           {
             "id": "suitable_fishing_areas",
             "name": "Suitable fishing areas",
-            "description": "This service is about... ",
+            "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
+            "dates": [
+              "2021-05-01",
+              "2021-05-02",
+              "2021-05-03",
+              "2021-05-04"
+            ],
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "id": "CHL",
                   "name": "Chlorophyll",
-                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "layer": "CHL",
+                  "url": "https://my.cmems-du.eu/thredds/wms/dataset-oc-atl-chl-multi_cci-l4-chl_1km_monthly-rep-v02",
                   "icon": "fish.png"
                 },
                 {
-                  "id": "chw2-vector:gar_economy",
-                  "name": "Upwelling Events",
-                  "layer": "chw2-vector:gar_economy",
-                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
-                  "icon": "upwelling.png"
+                  "id": "analysed_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "analysed_sst",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
+                  "icon": "fish.png"
                 }
               ],
               "date_span": true,
               "draggable_marker": true
-            },
-            "execute_action": "Create graph"
+            }
           },
           {
             "id": "fronts_detection",
             "name": "Fronts detection",
-            "description": "This service is about...",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "components": {
               "layers": [
                 {
-                  "id": "chw2-vector:saltmarshes",
+                  "id": "CHL",
                   "name": "Chlorophyll",
-                  "layer": "chw2-vector:saltmarshes",
-                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
-                  "icon": "chlorophyll_a.png"
+                  "layer": "CHL",
+                  "url": "https://my.cmems-du.eu/thredds/wms/dataset-oc-atl-chl-multi_cci-l4-chl_1km_monthly-rep-v02",
+                  "icon": "fish.png"
                 },
                 {
-                  "id": "chw2-vector:gar_economy",
-                  "name": "Total capital stock",
-                  "layer": "chw2-vector:gar_economy",
-                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
-                  "icon": "sea_temp.png"
+                  "id": "analysed_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "analysed_sst",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
+                  "icon": "fish.png"
                 }
               ],
-              "date": true
-            },
-            "execute_action": "Show layers on map"
+              "date_span": true,
+              "draggable_marker": true
+            }
           }
         ],
         "bbox": [
           [
-            10.16,
-            37.73
+            -5.0,
+            42
           ],
           [
-            18.59,
-            47.90
+            0.5,
+            48
           ]
         ]
       },
@@ -78,7 +83,79 @@
           {
             "id": "suitable_fishing_areas",
             "name": "Suitable fishing areas",
-            "description": "This service is about... ",
+            "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
+            "dates": [
+              "2021-01-20",
+              "2021-01-21",
+              "2021-01-22",
+              "2021-01-23",
+              "2021-01-24",
+              "2021-01-25",
+              "2021-01-26",
+              "2021-01-27",
+              "2021-01-28",
+              "2021-01-29",
+              "2021-01-30"
+            ],
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "name": " Chlorophyll (CNR)",
+                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "chlorophyll_a.png"
+                },
+                {
+                  "id": "CHL",
+                  "name": "Chlorophyll (CMEMS)",
+                  "layer": "CHL",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-med-chl-olci-l4-chl_300m_monthly-rt",
+                  "icon": "fish.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_t_forecast",
+                  "name": "Sea Surface Temperature",
+                  "layer": "forcoast:northern_adriatic_sea_t_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_s_forecast",
+                  "name": "Salinity",
+                  "layer": "forcoast:northern_adriatic_sea_s_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                },
+                {
+                  "id": "forcoast:northern_adriatic_sea_ph_forecast",
+                  "name": "pH - seawater acidity",
+                  "layer": "forcoast:northern_adriatic_sea_ph_forecast",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": true
+            }
+          },
+          {
+            "id": "fronts_detection",
+            "name": "Fronts detection",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
+            "dates": [
+              "2021-01-20",
+              "2021-01-21",
+              "2021-01-22",
+              "2021-01-23",
+              "2021-01-24",
+              "2021-01-25",
+              "2021-01-26",
+              "2021-01-27",
+              "2021-01-28",
+              "2021-01-29",
+              "2021-01-30"
+            ],
             "components": {
               "layers": [
                 {
@@ -90,7 +167,7 @@
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_t_forecast",
-                  "name": "T - temperature [degC]",
+                  "name": "Sea Surface Temperature",
                   "layer": "forcoast:northern_adriatic_sea_t_forecast",
                   "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png"
@@ -98,45 +175,17 @@
               ],
               "date_span": true,
               "draggable_marker": true
-            },
-            "execute_action": "Create graph"
-          },
-          {
-            "id": "fronts_detection",
-            "name": "Fronts detection",
-            "description": "This service is about...",
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "name": " Chlorophyll (chl)",
-                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "chlorophyll_a.png",
-                  "time": "2021-01-26"
-                },
-                {
-                  "id": "forcoast:northern_adriatic_sea_t_forecast",
-                  "name": "T - temperature [degC]",
-                  "layer": "forcoast:northern_adriatic_sea_t_forecast",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "time": "2021-01-26"
-                }
-              ],
-              "date": true
-            },
-            "execute_action": "Show layers on map"
+            }
           }
         ],
         "bbox": [
           [
-            10.16,
-            37.73
+            12,
+            43.5
           ],
           [
-            18.59,
-            47.90
+            16,
+            46.5
           ]
         ]
       },
@@ -147,33 +196,32 @@
           {
             "id": "suitable_fishing_areas",
             "name": "Suitable fishing areas",
-            "description": "This service is about... ",
+            "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "id": "CHL",
                   "name": "Chlorophyll",
-                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "layer": "CHL",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-bs-chl-multi-l3-chl_1km_daily-rt-v02",
                   "icon": "fish.png"
                 },
                 {
-                  "id": "chw2-vector:gar_economy",
-                  "name": "Upwelling Events",
-                  "layer": "chw2-vector:gar_economy",
-                  "url": "https://coastalhazardwheel.avi.deltares.nl/geoserver/ows",
+                  "id": "analyses_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "analyses_sst",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_BS_SST_L4_NRT_OBSERVATIONS_010_006_a_V2",
                   "icon": "upwelling.png"
                 }
               ],
               "date_span": true,
               "draggable_marker": true
-            },
-            "execute_action": "Create graph"
+            }
           },
           {
             "id": "fronts_detection",
             "name": "Fronts detection",
-            "description": "This service is about...",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "components": {
               "layers": [
                 {
@@ -191,9 +239,9 @@
                   "icon": "sea_temp.png"
                 }
               ],
-              "date": true
-            },
-            "execute_action": "Show layers on map"
+              "date_span": true,
+              "draggable_marker": true
+            }
           }
         ],
         "bbox": [
@@ -221,22 +269,43 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
+            "components": {
+              "layers": [
+                {
+                  "id": "VHM0",
+                  "name": "Significant Wave Height",
+                  "layer": "VHM0",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/med-hcmr-wav-an-fc-h",
+                  "icon": "fish.png"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": true
+            }
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
+            "components": {
+              "draw_polygon": {
+                "text": "Specify discharge location on the map",
+                "title": "Discharge location"
+              },
+              "date": true,
+              "run_task": true
+            }
           },
           {
-            "id": "site_protection",
-            "name": "Site protection",
-            "description": "This service is about... "
+            "id": "site_prospection",
+            "name": "Site prospection",
+            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
             "id": "spat_captures_assistance",
-            "name": "Spat captures asssistance",
-            "description": "This service is about... ",
+            "name": "Spat captures assistance",
+            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click ",
             "components": {
               "draw_polygon": {
                 "text": "Select your farming area of interest by drawing it on the map",
@@ -260,9 +329,9 @@
                     "All sources"
                   ]
                 }
-              ]
-            },
-            "execute_action": "Run"
+              ],
+              "run_task": true
+            }
           }
         ],
         "bbox": [
@@ -290,22 +359,35 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
+            "components": {
+              "layers": [
+                {
+                  "id": "VHM0",
+                  "name": "Significant Wave Height",
+                  "layer": "VHM0",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/med-hcmr-wav-an-fc-h",
+                  "icon": "fish.png"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": true
+            }
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_protection",
-            "name": "Site protection",
-            "description": "This service is about... "
+            "id": "site_prospection",
+            "name": "Site prospection",
+            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
             "id": "spat_captures_assistance",
-            "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "name": "Spat captures assistance",
+            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
         ],
         "bbox": [
@@ -326,22 +408,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_protection",
-            "name": "Site protection",
-            "description": "This service is about... "
+            "id": "site_prospection",
+            "name": "Site prospection",
+            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
             "id": "spat_captures_assistance",
-            "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "name": "Spat captures assistance",
+            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
         ],
         "bbox": [
@@ -362,22 +444,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_protection",
-            "name": "Site protection",
-            "description": "This service is about... "
+            "id": "site_prospection",
+            "name": "Site prospection",
+            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
             "id": "spat_captures_assistance",
-            "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "name": "Spat captures assistance",
+            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
         ],
         "bbox": [
@@ -398,22 +480,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_protection",
-            "name": "Site protection",
-            "description": "This service is about... "
+            "id": "site_prospection",
+            "name": "Site prospection",
+            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
             "id": "spat_captures_assistance",
-            "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "name": "Spat captures assistance",
+            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
         ],
         "bbox": [
@@ -434,22 +516,22 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "This service is about... "
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
           },
           {
             "id": "land_pollution",
             "name": "Land Pollution",
-            "description": "This service is about... "
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_protection",
-            "name": "Site protection",
-            "description": "This service is about... "
+            "id": "site_prospection",
+            "name": "Site prospection",
+            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
             "id": "spat_captures_assistance",
-            "name": "Spat captures asssistance",
-            "description": "This service is about... "
+            "name": "Spat captures assistance",
+            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
         ],
         "bbox": [

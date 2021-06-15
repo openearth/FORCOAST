@@ -8,7 +8,7 @@
   >
     <v-card class="d-flex flex-column" style="max-height: 100%;overflow:hidden">
       <v-card-title class="pa-5">
-        <v-toolbar-title> User agreement </v-toolbar-title>
+        <v-toolbar-title>FORCOAST Platform (beta) User Agreement</v-toolbar-title>
       </v-card-title>
 
       <div class="px-5 flex-grow-1 overflow-y-auto" v-html="content" />
@@ -59,7 +59,7 @@ export default {
 			return this.acceptedConditions && this.acceptedCookies
 		},
 		content() {
-			return importConfig("content/legal.md")
+			return importConfig("content/user-agreements.md")
 		},
 	},
 	methods: {
