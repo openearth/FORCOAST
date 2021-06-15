@@ -18,7 +18,7 @@
                   "id": "forcoast:northern_adriatic_sea_chl_satellite",
                   "name": "Chlorophyll",
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png"
                 },
                 {
