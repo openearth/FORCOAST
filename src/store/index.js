@@ -10,7 +10,10 @@ export default new Vuex.Store({
 		selectedAreaBBox: null,
     polygon: null,
     timeSelected: null,
-    wmsLayers: [],
+    markerLngLat: {},
+    timeExtent: [],
+    iconCategory: null,
+    timeSpan: [],
 	},
 	mutations: { 
 		SET_CATEGORY(state, category) { 
@@ -26,27 +29,22 @@ export default new Vuex.Store({
 			state.selectedAreaBBox = bbox
 		},
     SET_POLYGON(state, polygon) {
-      console.log("STATE OF POLYGON", polygon)
       state.polygon = polygon
     },
     SET_TIME_SELECTED(state, time) {
       state.timeSelected = time
     },
-    ADD_WMS_LAYERS(state, layers) {
-      console.log("ADD_WMS_LAYERS", layers)
-      state.wmsLayers = layers
-      console.log("AND STATE", state.wmsLayers)
+    SET_MARKER_COORDINATES(state, lnglat) {
+      state.markerLngLat = lnglat
     },
-    FILTER_WMS_LAYERS(state, layers) {
-      
-      state.wmsLayers = state.wmsLayers.filter(layer => layers.includes(layer));
-      // state.wmsLayers = state.wmsLayers.filter(layer => layer.id !== id);
+    SET_TIME_EXTENT(state, extent) {
+      state.timeExtent = extent
     },
-    REMOVE_WMS_LAYERS(state) {
-      console.log("REMOVE WMS LAYERS")
-      state.wmsLayers = []
-      console.log("state.wmsLayers", state.wmsLayers)
+    SET_TIME_SPAN(state, timespan) {
+      state.timeSpan = timespan
+    },
+    SET_ICON_CATEGORY(state, icon) {
+      state.iconCategory = icon
     }
-	}
-
+	},
 }) 

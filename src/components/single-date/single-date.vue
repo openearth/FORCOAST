@@ -12,14 +12,20 @@
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
           v-model="date"
-          label="Select a date"
+          label="Date of the data"
           prepend-icon="mdi-calendar"
           readonly
           v-bind="attrs"
           v-on="on"
         ></v-text-field>
       </template>
-      <v-date-picker v-model="date" no-title scrollable>
+      <v-date-picker
+        v-model="date"
+        no-title
+        scrollable
+        min="2021-01-20"
+        max="2021-01-30"
+      >
         <v-spacer></v-spacer>
         <v-btn text color="primary" @click="menu = false"> Cancel </v-btn>
         <v-btn text color="primary" @click="$refs.menu.save(date)"> OK </v-btn>
@@ -30,7 +36,7 @@
 <script>
 export default {
   data: () => ({
-    date: new Date().toISOString().substr(0, 10),
+    date: "2021-01-26", // TODO take from the services.json
     menu: false,
     menu2: false,
   }),

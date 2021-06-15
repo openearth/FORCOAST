@@ -31,9 +31,6 @@
                     }}-outline
                 </v-icon>
             </v-btn>
-            <v-list-item-avatar >
-              <img :src="require(`@/assets/${layer.icon}`)">
-            </v-list-item-avatar>
           </v-list-item>
           <v-divider :key="index" v-if="index !== layers.length - 1"/>
         </template>

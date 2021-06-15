@@ -2,8 +2,8 @@
   <div class="d-flex flex-column">
     <div>
       <!-- <h2 class="h2">TEST</h2> -->
-      <p>{{ service.name }}</p>
-      <p>{{ service.description }}</p>
+      <p>Service module: {{ service.name }}</p>
+      <p>{{ service.description }} <a href="https://forcoast.eu/">here</a></p>
       <v-divider class="mt-4 mb-4" />
     </div>
     <!-- .sync -->
@@ -48,10 +48,10 @@
     </collapsible-card>
     <collapsible-card
       v-if="service.components.date_span"
-      title="Select a start and an end date"
+      title="Select start and end date"
       :expand="0"
     >
-      <date-span></date-span>
+      <date-span :timeExtent="timeExtent"></date-span>
     </collapsible-card>
     <collapsible-card
       v-if="service.components.date"
@@ -60,10 +60,24 @@
     >
       <single-date></single-date>
     </collapsible-card>
-    <div v-if="service.execute_action" class="align-self-center position-fixed">
-      <v-btn color="primary" dark class="ml-auto">{{
-        service.execute_action
-      }}</v-btn>
+    <!-- It cant be general -->
+    <div v-if="service.components.date_span">
+      <div v-if="timeSpan.length && activeLayer">
+        <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
+        <timeseries-graph
+          v-if="dialog"
+          :lngLat="markerLngLat"
+          :layer="activeLayer"
+          :timeSpan="timeSpan"
+          @close-dialog="dialog = false"
+        ></timeseries-graph>
+      </div>
+      <div v-else>
+        <v-btn disabled block color="primary">Create graph</v-btn>
+      </div>
+    </div>
+    <div v-if="service.components.run_task">
+      <v-btn disabled block color="primary">Run</v-btn>
     </div>
   </div>
 </template>
@@ -75,6 +89,10 @@ import DateSpan from "@/components/date-span";
 import SelectableList from "@/components/selectable-list";
 import DraggableMarker from "@/components/draggable-marker";
 import DrawPolygon from "@/components/draw-polygon";
+import TimeseriesGraph from "@/components/timeseries-graph";
+import { mapState } from "vuex";
+
+import getWMSCapabilities from "@/lib/getWmsCapabilities";
 
 export default {
   components: {
@@ -85,6 +103,7 @@ export default {
     DraggableMarker,
     DrawPolygon,
     SelectableList,
+    TimeseriesGraph,
   },
   props: {
     service: {
@@ -95,11 +114,30 @@ export default {
   data() {
     return {
       title: "Select a layer",
-      layersOn: [],
+      activeLayer: null,
+      dialog: false,
     };
+  },
+  watch: {
+    activeLayer() {
+      if (this.activeLayer) {
+        this.getActiveLayerTimeExtent();
+      }
+    },
+  },
+  computed: {
+    ...mapState({
+      markerLngLat: (state) => state.markerLngLat,
+      timeExtent: (state) => state.timeExtent,
+      timeSpan: (state) => state.timeSpan,
+    }),
   },
   methods: {
     onActiveLayerChange(activelayers) {
+      //NOTE temporal solution. activeLayer is used only for the GetFeatureInfo request.
+      // In later stage I might need to implement a getFeatureInfo for every open layer.
+      // it is not clarified yet.
+      this.activeLayer = activelayers[0];
       this.$emit("active-layers-change", activelayers);
     },
     onActiveLegendChange(legend) {
@@ -110,6 +148,43 @@ export default {
     },
     onShowDrawPolygon(event) {
       this.$emit("show-draw-polygon", event);
+    },
+    // rename to getLayerExtend?
+    async getCapabilities() {
+      // its a getcapabilities
+      try {
+        const response = await getWMSCapabilities({
+          url: this.activeLayer.url,
+        });
+        const capabilities = response.WMT_MS_Capabilities.Capability;
+        console.log("capabilities:", capabilities);
+        return capabilities;
+      } catch (error) {
+        console.log("error:", error);
+      }
+    },
+    async getActiveLayerTimeExtent() {
+      const capabilities = await this.getCapabilities();
+      let allLayers;
+      let layer;
+      let extent;
+      // TODO same getCapabilities request has different format in the response (Tredd or Geoserver)
+      if (capabilities.Layer.Layer.Layer) {
+        allLayers = capabilities.Layer.Layer.Layer;
+        console.log("case Thredd", allLayers);
+        layer = allLayers.find(
+          (layer) => layer.Name._text === this.activeLayer.id
+        );
+        extent = layer.Extent._text.split(",");
+      } else {
+        allLayers = capabilities.Layer.Layer;
+        console.log("case Geoserver", allLayers);
+        layer = allLayers.find(
+          (layer) => layer.Name._text === this.activeLayer.id
+        );
+        extent = layer.Extent[0]._text.split(",");
+      }
+      this.$store.commit("SET_TIME_EXTENT", extent);
     },
   },
 };
