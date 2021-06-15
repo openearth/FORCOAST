@@ -103,7 +103,7 @@
                   "id": "forcoast:northern_adriatic_sea_chl_satellite",
                   "name": " Chlorophyll (CNR)",
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "chlorophyll_a.png"
                 },
                 {
@@ -117,21 +117,21 @@
                   "id": "forcoast:northern_adriatic_sea_t_forecast",
                   "name": "Sea Surface Temperature",
                   "layer": "forcoast:northern_adriatic_sea_t_forecast",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png"
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_s_forecast",
                   "name": "Salinity",
                   "layer": "forcoast:northern_adriatic_sea_s_forecast",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png"
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_ph_forecast",
                   "name": "pH - seawater acidity",
                   "layer": "forcoast:northern_adriatic_sea_ph_forecast",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png"
                 }
               ],
@@ -162,14 +162,14 @@
                   "id": "forcoast:northern_adriatic_sea_chl_satellite",
                   "name": " Chlorophyll (chl)",
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "chlorophyll_a.png"
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_t_forecast",
                   "name": "Sea Surface Temperature",
                   "layer": "forcoast:northern_adriatic_sea_t_forecast",
-                  "url": "http://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png"
                 }
               ],
