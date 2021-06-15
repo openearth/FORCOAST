@@ -90,6 +90,7 @@ import SelectableList from "@/components/selectable-list";
 import DraggableMarker from "@/components/draggable-marker";
 import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
+
 import { mapState } from "vuex";
 
 import getWMSCapabilities from "@/lib/getWmsCapabilities";
@@ -116,6 +117,7 @@ export default {
       title: "Select a layer",
       activeLayer: null,
       dialog: false,
+      //layers: [],
     };
   },
   watch: {
@@ -125,6 +127,7 @@ export default {
       }
     },
   },
+
   computed: {
     ...mapState({
       markerLngLat: (state) => state.markerLngLat,
@@ -157,7 +160,6 @@ export default {
           url: this.activeLayer.url,
         });
         const capabilities = response.WMT_MS_Capabilities.Capability;
-        console.log("capabilities:", capabilities);
         return capabilities;
       } catch (error) {
         console.log("error:", error);
@@ -168,7 +170,7 @@ export default {
       let allLayers;
       let layer;
       let extent;
-      // TODO same getCapabilities request has different format in the response (Tredd or Geoserver)
+      // NOTE same getCapabilities request has different format in the response (Thredd or Geoserver)
       if (capabilities.Layer.Layer.Layer) {
         allLayers = capabilities.Layer.Layer.Layer;
         console.log("case Thredd", allLayers);
@@ -184,7 +186,22 @@ export default {
         );
         extent = layer.Extent[0]._text.split(",");
       }
-      this.$store.commit("SET_TIME_EXTENT", extent);
+      // NOTE for now they dont want to use the time. So I keep only the days.
+      let daysExtent = extent.map(this.formatTime);
+      let uniqueDaysExtent = daysExtent.reduce(
+        (unique, day) => (unique.includes(day) ? unique : [...unique, day]),
+        []
+      );
+
+      this.$store.commit("SET_TIME_EXTENT", uniqueDaysExtent);
+      this.$store.commit(
+        "SET_SELECTED_TIME",
+        uniqueDaysExtent[uniqueDaysExtent.length - 1]
+      );
+    },
+    formatTime(time) {
+      const newFormat = time.replace("\r\n", "").trim().slice(0, 10);
+      return newFormat;
     },
   },
 };
