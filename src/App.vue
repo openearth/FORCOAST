@@ -8,6 +8,12 @@
       @show-draw-polygon="onShowDrawPolygon"
     />
     <v-main>
+      <layer-timestamp-card
+        v-if="layers.length && timeExtent.length"
+        :timeExtent="timeExtent"
+        :originalTime="selectedTime"
+        @selected-time-change="onSelectedTimeChange"
+      ></layer-timestamp-card>
       <mapbox-map
         v-if="acceptedLegal"
         :layers="layers"
@@ -15,8 +21,8 @@
         :draggableMarker="draggableMarker"
         :drawPolygon="drawPolygon"
       />
+      <legal-dialog @accepted="onLegalAccepted" />
     </v-main>
-    <legal-dialog @accepted="onLegalAccepted" />
   </v-app>
 </template>
 
@@ -24,7 +30,7 @@
 import AppHeader from "@/components/app-header";
 import AppSidebar from "@/components/app-sidebar";
 import LegalDialog from "@/components/legal-dialog";
-
+import LayerTimestampCard from "@/components/layer-timestamp-card";
 import { mapState } from "vuex";
 
 export default {
@@ -34,6 +40,7 @@ export default {
     AppHeader,
     AppSidebar,
     LegalDialog,
+    LayerTimestampCard,
   },
   data() {
     return {
@@ -49,17 +56,18 @@ export default {
     $route() {
       this.reset();
     },
-    timeSelected() {
+    selectedTime() {
       const modifiedLayers = this.layers.map((layer) => ({
         ...layer,
-        time: this.timeSelected,
+        time: this.selectedTime,
       }));
       this.layers = modifiedLayers;
     },
   },
   computed: {
     ...mapState({
-      timeSelected: (state) => state.timeSelected,
+      selectedTime: (state) => state.selectedTime,
+      timeExtent: (state) => state.timeExtent,
     }),
   },
   methods: {
@@ -82,6 +90,9 @@ export default {
     },
     onShowDrawPolygon(event) {
       this.drawPolygon = event;
+    },
+    onSelectedTimeChange(event) {
+      this.$store.commit("SET_SELECTED_TIME", event);
     },
   },
 };

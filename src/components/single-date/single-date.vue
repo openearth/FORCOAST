@@ -42,8 +42,7 @@ export default {
   }),
   watch: {
     date() {
-      console.log(this.date);
-      this.$store.commit("SET_TIME_SELECTED", this.date);
+      this.$store.commit("SET_SELECTED_TIME", this.date);
     },
   },
 };

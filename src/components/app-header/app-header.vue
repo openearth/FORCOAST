@@ -108,6 +108,11 @@ export default {
     },
     setService(area, service) {
       const selectedService = service;
+
+      if (selectedService !== this.selectedService) {
+        this.$store.commit("CLEAR_SELECTED_SERVICE");
+      }
+
       this.$store.commit("SET_SERVICE", selectedService);
       // close menu after clicked
       this.closeMenu = true;
