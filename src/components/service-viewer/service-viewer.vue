@@ -42,6 +42,7 @@
     >
       <layers-list
         :layers="service.components.layers"
+        :key="service.id"
         @active-layers-change="onActiveLayerChange"
         @active-legend-change="onActiveLegendChange"
       ></layers-list>
@@ -116,6 +117,7 @@ export default {
       title: "Select a layer",
       activeLayer: null,
       dialog: false,
+      destroyLayersList: false,
     };
   },
   watch: {
@@ -138,7 +140,12 @@ export default {
       // In later stage I might need to implement a getFeatureInfo for every open layer.
       // it is not clarified yet.
       this.activeLayer = activelayers[0];
+      if (this.activeLayer == "undefined") {
+        activelayers = [];
+      }
+
       this.$emit("active-layers-change", activelayers);
+      this.layers = activelayers;
     },
     onActiveLegendChange(legend) {
       this.$emit("active-legend-change", legend);

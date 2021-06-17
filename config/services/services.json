@@ -9,7 +9,7 @@
         "name": "Bay of Biscay (Spain)",
         "services": [
           {
-            "id": "suitable_fishing_areas",
+            "id": "bay_of_biscay_suitable_fishing_areas",
             "name": "Suitable fishing areas",
             "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "dates": [
@@ -40,7 +40,7 @@
             }
           },
           {
-            "id": "fronts_detection",
+            "id": "bay_of_biscay_fronts_detection",
             "name": "Fronts detection",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "components": {
@@ -81,7 +81,7 @@
         "name": "Northern adriatic sea (pilot)",
         "services": [
           {
-            "id": "suitable_fishing_areas",
+            "id": "northern_adriatic_sea_pilot_suitable_fishing_areas",
             "name": "Suitable fishing areas",
             "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "dates": [
@@ -140,22 +140,9 @@
             }
           },
           {
-            "id": "fronts_detection",
+            "id": "northern_adriatic_sea_pilot_fronts_detection",
             "name": "Fronts detection",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
-            "dates": [
-              "2021-01-20",
-              "2021-01-21",
-              "2021-01-22",
-              "2021-01-23",
-              "2021-01-24",
-              "2021-01-25",
-              "2021-01-26",
-              "2021-01-27",
-              "2021-01-28",
-              "2021-01-29",
-              "2021-01-30"
-            ],
             "components": {
               "layers": [
                 {
@@ -194,7 +181,7 @@
         "name": "Western Black Sea (Bulgaria)",
         "services": [
           {
-            "id": "suitable_fishing_areas",
+            "id": "western_black_sea_bulgaria_suitable_fishing_areas",
             "name": "Suitable fishing areas",
             "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "components": {
@@ -219,7 +206,7 @@
             }
           },
           {
-            "id": "fronts_detection",
+            "id": "western_black_sea_bulgaria_fronts_detection",
             "name": "Fronts detection",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "components": {
@@ -258,7 +245,7 @@
     ]
   },
   {
-    "id": "oysterground_restoration",
+    "id": "western_black_sea_bulgaria_oysterground_restoration",
     "name": "Oysterground Restoration",
     "icon": "FORCOAST_Oyster_Logo.png",
     "areas": [
@@ -348,7 +335,7 @@
     ]
   },
   {
-    "id": "bivalve_aquaculture",
+    "id": "western_black_sea_bulgaria_bivalve_aquaculture",
     "name": "Bivalve Aquaculture",
     "icon": "FORCOAST_Mussel_Logo.png",
     "areas": [
@@ -406,22 +393,22 @@
         "name": "Southern North Sea (Belgium)",
         "services": [
           {
-            "id": "marine_conditions",
+            "id": "southern_north_sea_marine_conditions",
             "name": "Marine conditions",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
           },
           {
-            "id": "land_pollution",
+            "id": "southern_north_sea_land_pollution",
             "name": "Land Pollution",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_prospection",
+            "id": "southern_north_sea_site_prospection",
             "name": "Site prospection",
             "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
-            "id": "spat_captures_assistance",
+            "id": "southern_north_sea_spat_captures_assistance",
             "name": "Spat captures assistance",
             "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
@@ -442,22 +429,22 @@
         "name": "Limfjord (Denmark)",
         "services": [
           {
-            "id": "marine_conditions",
+            "id": "limfjord_marine_conditions",
             "name": "Marine conditions",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
           },
           {
-            "id": "land_pollution",
+            "id": "limfjord_land_pollution",
             "name": "Land Pollution",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_prospection",
+            "id": "limfjord_site_prospection",
             "name": "Site prospection",
             "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
-            "id": "spat_captures_assistance",
+            "id": "limfjord_spat_captures_assistance",
             "name": "Spat captures assistance",
             "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
@@ -478,22 +465,22 @@
         "name": "Western Black Sea (Romania)",
         "services": [
           {
-            "id": "marine_conditions",
+            "id": "western_black_sea_romania_marine_conditions",
             "name": "Marine conditions",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
           },
           {
-            "id": "land_pollution",
+            "id": "western_black_sea_romania_land_pollution",
             "name": "Land Pollution",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_prospection",
+            "id": "western_black_sea_romania_site_prospection",
             "name": "Site prospection",
             "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
-            "id": "spat_captures_assistance",
+            "id": "western_black_sea_romania_spat_captures_assistance",
             "name": "Spat captures assistance",
             "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
@@ -514,22 +501,22 @@
         "name": "Northern Adriatic Sea (Italy)",
         "services": [
           {
-            "id": "marine_conditions",
+            "id": "northern_adriatic_sea_marine_conditions",
             "name": "Marine conditions",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
           },
           {
-            "id": "land_pollution",
+            "id": "northern_adriatic_sea_land_pollution",
             "name": "Land Pollution",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
           },
           {
-            "id": "site_prospection",
+            "id": "northern_adriatic_sea_site_prospection",
             "name": "Site prospection",
             "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
           },
           {
-            "id": "spat_captures_assistance",
+            "id": "northern_adriatic_sea_spat_captures_assistance",
             "name": "Spat captures assistance",
             "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
