@@ -12,9 +12,25 @@ export default new Vuex.Store({
     selectedTime: null,
     markerLngLat: {},
     iconCategory: null,
-    timeSpan: [], // service-viewer data() timeSpan has replaced the state. Check if needed as state
-    timeExtent: []
+    timeSpan: [], //TODO service-viewer data() timeSpan has replaced the state. Check if needed as state
+    timeExtent: [],
+    activeLayers: null
 	},
+  getters: {
+    activeLayers(state) {
+      
+      const selectedTime = state.selectedTime
+      const activeLayers = state.activeLayers
+      if (selectedTime && activeLayers) {
+              const modifiedActiveLayers = activeLayers.map((layer) => ({
+                ...layer,
+                time: selectedTime,
+              }));
+              return modifiedActiveLayers;
+      }
+
+    }
+  },
 	mutations: { 
 		SET_CATEGORY(state, category) { 
 			state.selectedCategory = category
@@ -34,6 +50,9 @@ export default new Vuex.Store({
     SET_SELECTED_TIME(state, time) {
       state.selectedTime = time
     },
+    CLEAR_SELECTED_TIME(state, time) {
+      state.selectedTime = null
+    },
     SET_MARKER_COORDINATES(state, lnglat) {
       state.markerLngLat = lnglat
     },
@@ -43,8 +62,18 @@ export default new Vuex.Store({
     SET_TIME_EXTENT(state, extent) {
       state.timeExtent = extent
     },
+    CLEAR_TIME_EXTENT(state) {
+      state.timeExtent = []
+    },
     SET_ICON_CATEGORY(state, icon) {
       state.iconCategory = icon
+    },
+    SET_ACTIVE_LAYERS(state, layers) {
+      state.activeLayers = layers
+    },
+    CLEAR_ACTIVE_LAYERS(state, layers) { 
+      state.activeLayers = null
     }
+
 	},
 }) 

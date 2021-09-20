@@ -1,9 +1,9 @@
 <template>
   <v-card class="time-stamp pa-1">
     <v-card-title class="h4"> Date of the layer </v-card-title>
-    <!-- rename timestemp to selectedTime because at my tool this is that I update -->
     <time-slider
       :dates="timeExtent"
+      :set-time-index="dateIndex"
       startAt="end"
       @update-timestep="updateSelectedTime"
     >
@@ -50,28 +50,23 @@ export default {
       required: true,
     },
   },
-  mounted() {
-    console.log(
-      "original time mounted layer-timestamp-card.vue",
-      this.originalTime,
-      typeof this.originalTime
-    );
-  },
+
   data() {
     return {
       selectedTime: this.originalTime,
       getLoadingState: false,
       loadingRasterLayers: false,
+      dateIndex: 0
     };
   },
   watch: {
     selectedTime() {
-      console.log("selectedTime");
       this.$emit("selected-time-change", this.selectedTime);
+      this.dateIndex =  this.timeExtent.indexOf(this.selectedTime)
+
     },
     originalTime() {
       this.selectedTime = this.originalTime;
-      console.log("originalTime", this.originalTime);
     },
   },
   methods: {
@@ -88,6 +83,6 @@ export default {
   left: calc(56px + var(--spacing-default));
   max-width: 20rem;
   margin-right: calc(var(--spacing-default));
-  z-index: 1;
+  z-index: 2;
 }
 </style>

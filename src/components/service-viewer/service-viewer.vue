@@ -60,7 +60,7 @@
     >
       <single-date></single-date>
     </collapsible-card>
-    <!-- It cant be general -->
+    <!--It cant be general -->
     <div v-if="service.components.date_span">
       <div v-if="timeSpan.length && activeLayer">
         <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
@@ -116,16 +116,10 @@ export default {
     return {
       title: "Select a layer",
       activeLayer: null,
+      //activeLayers: [],
       dialog: false,
       //layers: [],
     };
-  },
-  watch: {
-    activeLayer() {
-      if (this.activeLayer) {
-        this.getActiveLayerTimeExtent();
-      }
-    },
   },
 
   computed: {
@@ -136,12 +130,34 @@ export default {
     }),
   },
   methods: {
-    onActiveLayerChange(activelayers) {
-      //NOTE temporal solution. activeLayer is used only for the GetFeatureInfo request.
+    async onActiveLayerChange(layers) {
+      // Every time the layer changes. 
+      this.$store.commit("CLEAR_TIME_EXTENT");
+      this.$store.commit("CLEAR_SELECTED_TIME");
+      
+      this.$store.commit("SET_ACTIVE_LAYERS", layers );
+      this.activeLayer = layers[0];
+
+      if (this.activeLayer) {
+        const layerTimeExtent = await this.getActiveLayerTimeExtent();
+        
+        this.$store.commit("SET_TIME_EXTENT", layerTimeExtent);
+        let lastTime = layerTimeExtent[layerTimeExtent.length - 1];
+        
+        this.$store.commit("SET_SELECTED_TIME", lastTime);
+        
+/*         const modifiedActiveLayers = this.activeLayers.map((layer) => ({
+          ...layer,
+          time: lastTime,
+        }));
+        this.activeLayers = modifiedActiveLayers; */
+      }
+     
+      //this.$emit("active-layers-change", this.activelayers); move layers to state. I need a getter. 
+
+      //TODO temporal solution. activeLayer is used only for the GetFeatureInfo request.
       // In later stage I might need to implement a getFeatureInfo for every open layer.
       // it is not clarified yet.
-      this.activeLayer = activelayers[0];
-      this.$emit("active-layers-change", activelayers);
     },
     onActiveLegendChange(legend) {
       this.$emit("active-legend-change", legend);
@@ -152,7 +168,6 @@ export default {
     onShowDrawPolygon(event) {
       this.$emit("show-draw-polygon", event);
     },
-    // rename to getLayerExtend?
     async getCapabilities() {
       // its a getcapabilities
       try {
@@ -165,12 +180,14 @@ export default {
         console.log("error:", error);
       }
     },
+    //TODO: rename to getActiveLayersInformation, in the future we will need also to read the depths from
+    // the getCapabilities response
     async getActiveLayerTimeExtent() {
       const capabilities = await this.getCapabilities();
       let allLayers;
       let layer;
       let extent;
-      // NOTE same getCapabilities request has different format in the response (Thredd or Geoserver)
+      //TODO same getCapabilities request has different format in the response (Thredd or Geoserver)
       if (capabilities.Layer.Layer.Layer) {
         allLayers = capabilities.Layer.Layer.Layer;
         console.log("case Thredd", allLayers);
@@ -186,18 +203,13 @@ export default {
         );
         extent = layer.Extent[0]._text.split(",");
       }
-      // NOTE for now they dont want to use the time. So I keep only the days.
+      //TODO for now they dont want to use the time. So I keep only the days.
       let daysExtent = extent.map(this.formatTime);
       let uniqueDaysExtent = daysExtent.reduce(
         (unique, day) => (unique.includes(day) ? unique : [...unique, day]),
         []
       );
-
-      this.$store.commit("SET_TIME_EXTENT", uniqueDaysExtent);
-      this.$store.commit(
-        "SET_SELECTED_TIME",
-        uniqueDaysExtent[uniqueDaysExtent.length - 1]
-      );
+      return uniqueDaysExtent;
     },
     formatTime(time) {
       const newFormat = time.replace("\r\n", "").trim().slice(0, 10);

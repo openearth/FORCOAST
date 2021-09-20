@@ -2,21 +2,20 @@
   <v-app>
     <app-header />
     <app-sidebar
-      @active-layers-change="onActiveLayersUpdate"
       @active-legend-change="onActiveLegendChange"
       @show-draggable-marker="onShowDraggableMarker"
       @show-draw-polygon="onShowDrawPolygon"
     />
     <v-main>
       <layer-timestamp-card
-        v-if="layers.length && timeExtent.length"
+        v-if="activeLayers && timeExtent.length"
         :timeExtent="timeExtent"
         :originalTime="selectedTime"
         @selected-time-change="onSelectedTimeChange"
       ></layer-timestamp-card>
       <mapbox-map
         v-if="acceptedLegal"
-        :layers="layers"
+        :layers="activeLayers"
         :legendLayer="legendLayer"
         :draggableMarker="draggableMarker"
         :drawPolygon="drawPolygon"
@@ -31,7 +30,7 @@ import AppHeader from "@/components/app-header";
 import AppSidebar from "@/components/app-sidebar";
 import LegalDialog from "@/components/legal-dialog";
 import LayerTimestampCard from "@/components/layer-timestamp-card";
-import { mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   name: "App",
@@ -44,24 +43,18 @@ export default {
   },
   data() {
     return {
-      layers: [],
+ 
       legendLayer: null,
       acceptedLegal: false,
       draggableMarker: false,
       drawPolygon: false,
       boxPlot: false,
+
     };
   },
   watch: {
     $route() {
       this.reset();
-    },
-    selectedTime() {
-      const modifiedLayers = this.layers.map((layer) => ({
-        ...layer,
-        time: this.selectedTime,
-      }));
-      this.layers = modifiedLayers;
     },
   },
   computed: {
@@ -69,18 +62,15 @@ export default {
       selectedTime: (state) => state.selectedTime,
       timeExtent: (state) => state.timeExtent,
     }),
+    ...mapGetters(['activeLayers'])
   },
   methods: {
     reset() {
-      this.layers = [];
+      this.$store.commit("CLEAR_ACTIVE_LAYERS")
       this.legendLayer = "";
     },
     onLegalAccepted() {
       this.acceptedLegal = true;
-    },
-    onActiveLayersUpdate(event) {
-      // active layers
-      this.layers = event;
     },
     onActiveLegendChange(event) {
       this.legendLayer = event;

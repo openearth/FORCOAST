@@ -19,7 +19,7 @@ export default {
     };
   },
   mounted() {
-    // only execute when map is available and layer is not already initialized
+
     if (this.getMap()) {
       this.rerender();
       this.isInitialized = true;

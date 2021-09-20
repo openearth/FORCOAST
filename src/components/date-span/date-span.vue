@@ -26,8 +26,9 @@
             v-model="startDate"
             no-title
             scrollable
-            :min="startDate"
-            :max="endDate"
+            :min="min"
+            :max="max"
+            :allowed-dates="allowedDates"
           >
             <v-spacer></v-spacer>
             <v-btn text color="primary" @click="menu = false"> Cancel </v-btn>
@@ -62,8 +63,9 @@
             v-model="endDate"
             no-title
             scrollable
-            :min="startDate"
-            :max="endDate"
+            :min="min"
+            :max="max"
+            :allowed-dates="allowedDates"
           >
             <v-spacer></v-spacer>
             <v-btn text color="primary" @click="menu2 = false"> Cancel </v-btn>
@@ -87,6 +89,8 @@ export default {
     menu: false,
     menu2: false,
     timeSpan: [],
+    min: "",
+    max: "",
   }),
   props: {
     timeExtent: {
@@ -103,21 +107,33 @@ export default {
     },
     timeExtent() {
       this.startDate = this.timeExtent[0];
+      this.min = this.startDate;
       this.endDate = this.timeExtent[this.timeExtent.length - 1];
-      /* this.timeSpan = this.timeExtent; */
+      this.max = this.endDate;
     },
     timeSpan() {
-      /* NOTE default timeSpan for now is set to days. I dont take into account the time value.
-       */
-      if (this.timeSpan.length > 1) {
+      if (this.timeSpan.length && this.timeSpan.length > 1) {
+        
         const start = new Date(this.startDate);
         const end = new Date(this.endDate);
         let days = createTimeSpan(start, end);
 
         days = days.map((day) => day.toISOString().substr(0, 10));
-        this.$store.commit("SET_TIME_SPAN", days);
+        const filteredDays = days.filter(day => this.timeExtent.includes(day))
+        
+        this.$store.commit("SET_TIME_SPAN", filteredDays);
+        
       }
     },
   },
+  methods: { 
+       allowedDates (val) {
+        if (this.timeExtent.length && this.timeExtent.indexOf(val) !== -1) {
+          return true
+        } else {
+          return false
+        }
+      },
+  }
 };
 </script>
