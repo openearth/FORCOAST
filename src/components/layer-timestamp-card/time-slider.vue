@@ -19,7 +19,7 @@
 </template>
 
 <script>
-/* import _ from "lodash"; */
+import _ from "lodash";
 
 export default {
   props: {
@@ -55,6 +55,21 @@ export default {
       return this.dates[this.timeIndex];
     },
   },
+  watch: {
+  dates(newVal, oldVal) {
+        // When the dates have changed, change timeIndex
+        const newObj = _.get(newVal, this.timeIndex)
+        const oldObj = _.get(oldVal, this.timeIndex)
+        if (!_.isEqual(oldObj, newObj)) {
+          this.setInitialTimeIndex()
+        } else {
+          this.timeIndex = this.setTimeIndex
+        }
+      },
+      setTimeIndex(val) {
+        this.timeIndex = val
+      },
+    },
   mounted() {
     this.setInitialTimeIndex();
   },

@@ -2,11 +2,11 @@
   <v-app-bar app color="primary" dark clipped-left>
     <img :src="require(`@/assets/FORCOAST_Fish_Logo_White.png`)" height="30" />
     <img
-      :src="require(`@/assets/FORCOAST_Mussel_Logo_White.png`)"
+      :src="require(`@/assets/FORCOAST_Oyster_Logo_White.png`)"
       height="30"
     />
     <img
-      :src="require(`@/assets/FORCOAST_Oyster_Logo_White.png`)"
+      :src="require(`@/assets/FORCOAST_Mussel_Logo_White.png`)"
       height="30"
     />
     <img :src="require(`@/assets/empty.png`)" height="10" />

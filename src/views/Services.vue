@@ -7,7 +7,6 @@
     <div>
       <service-viewer
         :service="selectedService"
-        @active-layers-change="onActiveLayerChange"
         @active-legend-change="onActiveLegendChange"
         @show-draggable-marker="onShowDraggableMarker"
         @show-draw-polygon="onShowDrawPolygon"
