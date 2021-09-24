@@ -9,11 +9,11 @@ export default new Vuex.Store({
 		selectedService:null,
 		selectedAreaBBox: null,
     polygon: null,
-    timeSelected: null,
+    selectedTime: null,
     markerLngLat: {},
-    timeExtent: [],
     iconCategory: null,
-    timeSpan: [],
+    timeSpan: [], // service-viewer data() timeSpan has replaced the state. Check if needed as state
+    timeExtent: []
 	},
 	mutations: { 
 		SET_CATEGORY(state, category) { 
@@ -31,17 +31,17 @@ export default new Vuex.Store({
     SET_POLYGON(state, polygon) {
       state.polygon = polygon
     },
-    SET_TIME_SELECTED(state, time) {
-      state.timeSelected = time
+    SET_SELECTED_TIME(state, time) {
+      state.selectedTime = time
     },
     SET_MARKER_COORDINATES(state, lnglat) {
       state.markerLngLat = lnglat
     },
-    SET_TIME_EXTENT(state, extent) {
-      state.timeExtent = extent
-    },
     SET_TIME_SPAN(state, timespan) {
       state.timeSpan = timespan
+    },
+    SET_TIME_EXTENT(state, extent) {
+      state.timeExtent = extent
     },
     SET_ICON_CATEGORY(state, icon) {
       state.iconCategory = icon

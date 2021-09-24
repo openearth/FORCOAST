@@ -102,9 +102,13 @@ export default {
       this.timeSpan.push(this.endDate);
     },
     timeExtent() {
-      this.extractStartEndDate();
+      this.startDate = this.timeExtent[0];
+      this.endDate = this.timeExtent[this.timeExtent.length - 1];
+      /* this.timeSpan = this.timeExtent; */
     },
     timeSpan() {
+      /* NOTE default timeSpan for now is set to days. I dont take into account the time value.
+       */
       if (this.timeSpan.length > 1) {
         const start = new Date(this.startDate);
         const end = new Date(this.endDate);
@@ -113,20 +117,6 @@ export default {
         days = days.map((day) => day.toISOString().substr(0, 10));
         this.$store.commit("SET_TIME_SPAN", days);
       }
-    },
-  },
-  methods: {
-    extractStartEndDate() {
-      this.startDate = this.timeExtent[0]
-        .replace("\r\n", "")
-        .trim()
-        .slice(0, 10);
-      this.endDate = this.timeExtent[this.timeExtent.length - 1].slice(0, 10);
-      console.log(
-        "date-span component: start end date",
-        this.startDate,
-        this.endDate
-      );
     },
   },
 };
