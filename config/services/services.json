@@ -31,7 +31,7 @@
                   "id": "analysed_sst",
                   "name": "Sea Surface Temperature",
                   "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
+                  "url": "https://thredds.euskoos.eus/thredds/catalog/testAll/catalog.html?dataset=testDatasetScan/20210925_forcoast_2_exp.nc",
                   "icon": "fish.png"
                 }
               ],
@@ -57,6 +57,13 @@
                   "name": "Sea Surface Temperature",
                   "layer": "analysed_sst",
                   "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
+                  "icon": "fish.png"
+                },
+                {
+                  "id": "testDatasetScan/20210925_forcoast_2_exp",
+                  "name": "Temperature",
+                  "layer": "testDatasetScan/20210925_forcoast_2_exp",
+                  "url": "https://my.cmems-du.eu/thredds/wms/dataset-oc-atl-chl-multi_cci-l4-chl_1km_monthly-rep-v02",
                   "icon": "fish.png"
                 }
               ],
@@ -277,6 +284,13 @@
                   "name": "Significant Wave Height",
                   "layer": "VHM0",
                   "url": "https://nrt.cmems-du.eu/thredds/wms/med-hcmr-wav-an-fc-h",
+                  "icon": "fish.png"
+                },
+                {
+                  "id": "zeta",
+                  "name": "TEST WITH IRISH DATA",
+                  "layer": "zeta",
+                  "url": "https://milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "fish.png"
                 }
               ],
