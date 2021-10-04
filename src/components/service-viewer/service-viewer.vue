@@ -77,7 +77,7 @@
       </div>
     </div>
     <div v-if="service.components.run_task">
-      <v-btn disabled block color="primary">Run</v-btn>
+      <v-btn block color="primary" @click="runTask">Run</v-btn>
     </div>
   </div>
 </template>
@@ -91,7 +91,7 @@ import DraggableMarker from "@/components/draggable-marker";
 import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
 
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 import getWMSCapabilities from "@/lib/getWmsCapabilities";
 
@@ -130,6 +130,7 @@ export default {
     }),
   },
   methods: {
+    ...mapActions(['runProcessorF2']),
     async onActiveLayerChange(layers) {
       // Every time the layer changes. 
       this.$store.commit("CLEAR_TIME_EXTENT");
@@ -215,6 +216,9 @@ export default {
       const newFormat = time.replace("\r\n", "").trim().slice(0, 10);
       return newFormat;
     },
+    runTask() {
+      this.runProcessorF2()
+    }
   },
 };
 </script>

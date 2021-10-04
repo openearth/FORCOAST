@@ -12,7 +12,6 @@ export default function({
 	if (!service || !request) {
 		return undefined
 	}
-
 	const params = stringify({
 		service,
 		request,

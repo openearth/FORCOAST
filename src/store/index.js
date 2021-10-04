@@ -1,5 +1,6 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import runF2 from "@/lib/wps/runProcessorF2"
 
 Vue.use(Vuex)
 
@@ -14,7 +15,8 @@ export default new Vuex.Store({
     iconCategory: null,
     timeSpan: [], //TODO service-viewer data() timeSpan has replaced the state. Check if needed as state
     timeExtent: [],
-    activeLayers: null
+    activeLayers: null,
+    jobId: null
 	},
   getters: {
     activeLayers(state) {
@@ -73,7 +75,18 @@ export default new Vuex.Store({
     },
     CLEAR_ACTIVE_LAYERS(state, layers) { 
       state.activeLayers = null
+    },
+    SET_JOB_ID(state, jobId) {
+      state.jobId = jobId
     }
 
 	},
+  actions: { 
+    async runProcessorF2({commit, state}) {
+      const time = "2021-07-14"
+      const response = await runF2(time)
+      //const response = await runF2(state.selectedTime)
+      console.log('response', response)
+    }
+  }
 }) 

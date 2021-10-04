@@ -12,12 +12,6 @@
             "id": "suitable_fishing_areas",
             "name": "Suitable fishing areas",
             "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
-            "dates": [
-              "2021-05-01",
-              "2021-05-02",
-              "2021-05-03",
-              "2021-05-04"
-            ],
             "components": {
               "layers": [
                 {
@@ -60,8 +54,8 @@
                   "icon": "fish.png"
                 }
               ],
-              "date_span": true,
-              "draggable_marker": true
+              "date": true,
+              "run_task": true
             }
           }
         ],
@@ -84,19 +78,6 @@
             "id": "suitable_fishing_areas",
             "name": "Suitable fishing areas",
             "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
-            "dates": [
-              "2021-01-20",
-              "2021-01-21",
-              "2021-01-22",
-              "2021-01-23",
-              "2021-01-24",
-              "2021-01-25",
-              "2021-01-26",
-              "2021-01-27",
-              "2021-01-28",
-              "2021-01-29",
-              "2021-01-30"
-            ],
             "components": {
               "layers": [
                 {
@@ -143,19 +124,6 @@
             "id": "fronts_detection",
             "name": "Fronts detection",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
-            "dates": [
-              "2021-01-20",
-              "2021-01-21",
-              "2021-01-22",
-              "2021-01-23",
-              "2021-01-24",
-              "2021-01-25",
-              "2021-01-26",
-              "2021-01-27",
-              "2021-01-28",
-              "2021-01-29",
-              "2021-01-30"
-            ],
             "components": {
               "layers": [
                 {
