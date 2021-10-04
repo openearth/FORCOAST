@@ -458,7 +458,20 @@
           {
             "id": "marine_conditions",
             "name": "Marine conditions",
-            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click "
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:dk_elev",
+                  "name": "TEST WITH DANISH DATA",
+                  "layer": "forcoast:dk_elev",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": true
+            }
           },
           {
             "id": "land_pollution",
