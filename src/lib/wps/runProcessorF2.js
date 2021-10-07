@@ -4,7 +4,6 @@ import { template } from './template'
 
 export default function(time) {
 	const data = template(time)
-	console.log("data", data)
 	return axios({
 		method: "post",
 		url: `${process.env.VUE_APP_WPS_URL}/forcoast-sm-f2/jobs`,

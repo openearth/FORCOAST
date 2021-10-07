@@ -54,7 +54,6 @@
                   "icon": "fish.png"
                 }
               ],
-              "date": true,
               "run_task": true
             }
           }

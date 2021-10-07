@@ -56,11 +56,10 @@
     <collapsible-card
       v-if="service.components.date"
       :expand="0"
-      title="Select a date"
+      title="Select a date for the calculations"
     >
-      <single-date></single-date>
+      <single-date :timeExtent="timeExtent"></single-date>
     </collapsible-card>
-    <!--It cant be general -->
     <div v-if="service.components.date_span">
       <div v-if="timeSpan.length && activeLayer">
         <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
@@ -79,6 +78,13 @@
     <div v-if="service.components.run_task">
       <v-btn block color="primary" @click="runTask">Run</v-btn>
     </div>
+    <status-card 
+      v-if="jobStatus==='accepted'"
+      :date="selectedTime"
+      :firstStatus="jobStatus"
+      :statusLink="statusLink"
+    ></status-card>
+    
   </div>
 </template>
 <script>
@@ -90,6 +96,8 @@ import SelectableList from "@/components/selectable-list";
 import DraggableMarker from "@/components/draggable-marker";
 import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
+import StatusCard from "@/components/status-card"
+
 
 import { mapState, mapActions } from "vuex";
 
@@ -105,6 +113,7 @@ export default {
     DrawPolygon,
     SelectableList,
     TimeseriesGraph,
+    StatusCard
   },
   props: {
     service: {
@@ -127,6 +136,9 @@ export default {
       markerLngLat: (state) => state.markerLngLat,
       timeExtent: (state) => state.timeExtent,
       timeSpan: (state) => state.timeSpan,
+      jobStatus: (state) => state.jobStatus,
+      selectedTime: (state) => state.selectedTime,
+      statusLink: (state) => state.statusLink
     }),
   },
   methods: {

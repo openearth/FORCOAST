@@ -1,6 +1,8 @@
 import Vue from "vue"
 import Vuex from "vuex"
 import runF2 from "@/lib/wps/runProcessorF2"
+import getStatus  from "@/lib/wps/getStatus"
+
 
 Vue.use(Vuex)
 
@@ -16,7 +18,8 @@ export default new Vuex.Store({
     timeSpan: [], //TODO service-viewer data() timeSpan has replaced the state. Check if needed as state
     timeExtent: [],
     activeLayers: null,
-    jobId: null
+    jobStatus: null,
+    statusLink: null,
 	},
   getters: {
     activeLayers(state) {
@@ -73,20 +76,28 @@ export default new Vuex.Store({
     SET_ACTIVE_LAYERS(state, layers) {
       state.activeLayers = layers
     },
-    CLEAR_ACTIVE_LAYERS(state, layers) { 
+    CLEAR_ACTIVE_LAYERS(state) { 
       state.activeLayers = null
     },
-    SET_JOB_ID(state, jobId) {
-      state.jobId = jobId
+    //TODO See if I will use it
+    SET_JOB_STATUS(state, status) {
+      state.jobStatus = status
+    },
+    SET_STATUS_LINK(state, url) {
+      state.statusLink = url
     }
 
 	},
   actions: { 
     async runProcessorF2({commit, state}) {
-      const time = "2021-07-14"
-      const response = await runF2(time)
-      //const response = await runF2(state.selectedTime)
-      console.log('response', response)
+      const response = await runF2(state.selectedTime)
+      const statusLink = response[0].value.href
+      commit("SET_STATUS_LINK", statusLink)
+      if (statusLink) {
+        const status = await getStatus(statusLink)
+        commit("SET_JOB_STATUS", status)
+      }
+
     }
   }
 }) 
