@@ -463,10 +463,10 @@
               "layers": [
                 {
                   "id": "forcoast:dk_elev",
-                  "name": "TEST WITH DANISH DATA",
+                  "name": "Sea Surface Elevation",
                   "layer": "forcoast:dk_elev",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png"
+                  "icon": "sea.png"
                 }
               ],
               "date_span": true,
@@ -481,7 +481,62 @@
           {
             "id": "site_prospection",
             "name": "Site prospection",
-            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
+            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click ",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:dk_elev",
+                  "name": "Sea Surface Elevation",
+                  "layer": "forcoast:dk_elev",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea.png"
+                },
+                {
+                  "id": "forcoast:dk_salt",
+                  "name": "Salinity",
+                  "layer": "forcoast:dk_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea.png"
+                },
+                {
+                  "id": "forcoast:dk_temp",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:dk_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea.png"
+                },
+                {
+                  "id": "forcoast:dk_uvel",
+                  "name": "Eastward Current",
+                  "layer": "forcoast:dk_uvel",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea.png"
+                },
+                {
+                  "id": "forcoast:dk_vvel",
+                  "name": "Northward Current",
+                  "layer": "forcoast:dk_vvel",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea.png"
+                },
+                {
+                  "id": "forcoast:dk_uwind",
+                  "name": "Eastward Wind Velocity",
+                  "layer": "forcoast:dk_uwind",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea.png"
+                },
+                {
+                  "id": "forcoast:dk_vwind",
+                  "name": "Northward Wind Velocity",
+                  "layer": "forcoast:dk_vwind",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea.png"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": true
+            }
           },
           {
             "id": "spat_captures_assistance",
