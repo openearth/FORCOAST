@@ -288,9 +288,16 @@
                 },
                 {
                   "id": "zeta",
-                  "name": "TEST WITH IRISH DATA",
+                  "name": "Water Free Surface (aggregate dataset)",
                   "layer": "zeta",
                   "url": "https://milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "icon": "fish.png"
+               },
+                {
+                  "id": "temp",
+                  "name": "Potential Temperature (forecast dataset)",
+                  "layer": "temp",
+                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/FORECAST/galway_bay_2021101700.nc",
                   "icon": "fish.png"
                 }
               ],
