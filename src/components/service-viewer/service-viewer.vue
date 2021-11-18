@@ -12,6 +12,17 @@
       @show-draggable-marker="onShowDraggableMarker"
     ></draggable-marker>
     <collapsible-card
+      v-if="service.components.layers"
+      :expand="0"
+      title="Select a layer"
+    >
+      <layers-list
+        :layers="service.components.layers"
+        @active-layers-change="onActiveLayerChange"
+        @active-legend-change="onActiveLegendChange"
+      ></layers-list>
+    </collapsible-card>
+    <collapsible-card
       v-if="service.components.draw_polygon"
       :title="service.components.draw_polygon.title"
       :polygon="polygon"
@@ -35,17 +46,7 @@
         <selectable-list :values="list.values"></selectable-list>
       </collapsible-card>
     </div>
-    <collapsible-card
-      v-if="service.components.layers"
-      :expand="0"
-      title="Select a layer"
-    >
-      <layers-list
-        :layers="service.components.layers"
-        @active-layers-change="onActiveLayerChange"
-        @active-legend-change="onActiveLegendChange"
-      ></layers-list>
-    </collapsible-card>
+
     <collapsible-card
       v-if="service.components.date_span"
       title="Select start and end date"
