@@ -30,11 +30,13 @@
                 }
               ],
               "date_span": true,
-              "draggable_marker": true
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
             }
           },
           {
-            "id": "fronts_detection",
+            "id": "f2",
             "name": "Fronts detection",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "components": {
@@ -54,7 +56,13 @@
                   "icon": "fish.png"
                 }
               ],
-              "run_task": true
+              "date_span": true,
+              "date": true,
+              "run_task": true,
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              },
+              "joblist": true
             }
           }
         ],
@@ -116,7 +124,9 @@
                 }
               ],
               "date_span": true,
-              "draggable_marker": true
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
             }
           },
           {
@@ -141,7 +151,9 @@
                 }
               ],
               "date_span": true,
-              "draggable_marker": true
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
             }
           }
         ],
@@ -182,7 +194,9 @@
                 }
               ],
               "date_span": true,
-              "draggable_marker": true
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
             }
           },
           {
@@ -207,7 +221,9 @@
                 }
               ],
               "date_span": true,
-              "draggable_marker": true
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
             }
           }
         ],
@@ -230,7 +246,7 @@
     "icon": "FORCOAST_Oyster_Logo.png",
     "areas": [
       {
-        "id": "galway_bay",
+        "id": "galway",
         "name": "Galway Bay (Ireland)",
         "services": [
           {
@@ -248,19 +264,24 @@
                 }
               ],
               "date_span": true,
-              "draggable_marker": true
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
             }
           },
           {
-            "id": "land_pollution",
+            "id": "a2",
             "name": "Land Pollution",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
             "components": {
               "draw_polygon": {
-                "text": "Specify discharge location on the map",
-                "title": "Discharge location"
+                "text": "Specify bounding box for target location",
+                "title": "Specify bounding box for target location"
               },
               "date": true,
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
               "run_task": true
             }
           },
@@ -338,7 +359,9 @@
                 }
               ],
               "date_span": true,
-              "draggable_marker": true
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
             }
           },
           {
@@ -441,7 +464,7 @@
         ]
       },
       {
-        "id": "western_black_sea_romania",
+        "id": "eforie",
         "name": "Western Black Sea (Romania)",
         "services": [
           {

@@ -1,6 +1,6 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import runF2 from "@/lib/wps/runProcessorF2"
+import run from "@/lib/wps/runProcessor"
 import getStatus  from "@/lib/wps/getStatus"
 
 
@@ -9,6 +9,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	state: {
 		selectedCategory: null,
+    selectedArea: null,
 		selectedService:null,
 		selectedAreaBBox: null,
     polygon: null,
@@ -17,6 +18,7 @@ export default new Vuex.Store({
     iconCategory: null,
     timeSpan: [], //TODO service-viewer data() timeSpan has replaced the state. Check if needed as state
     timeExtent: [],
+    runTimeExtent: [],
     activeLayers: null,
     jobStatus: null,
     statusLink: null,
@@ -40,6 +42,9 @@ export default new Vuex.Store({
 		SET_CATEGORY(state, category) { 
 			state.selectedCategory = category
 		},
+    SET_AREA(state, area) { 
+      state.selectedArea = area
+    },
 		SET_SERVICE(state, service) {
 			state.selectedService = service // object of service name and area.
 		},
@@ -67,8 +72,14 @@ export default new Vuex.Store({
     SET_TIME_EXTENT(state, extent) {
       state.timeExtent = extent
     },
+    SET_RUN_TIME_EXTENT(state, extent) {
+      state.runTimeExtent = extent
+    },
     CLEAR_TIME_EXTENT(state) {
       state.timeExtent = []
+    },
+    CLEAR_RUN_TIME_EXTENT(state) {
+      state.runTimeExtent = []
     },
     SET_ICON_CATEGORY(state, icon) {
       state.iconCategory = icon
@@ -83,20 +94,50 @@ export default new Vuex.Store({
     SET_JOB_STATUS(state, status) {
       state.jobStatus = status
     },
+    CLEAR_JOB_STATUS(state, status) {
+      state.jobStatus = []
+    },
     SET_STATUS_LINK(state, url) {
       state.statusLink = url
+    },
+    SET_OUTPUT_LINK(state, url) {
+      state.outputLink = url
     }
 
 	},
   actions: { 
-    async runProcessorF2({commit, state}) {
-      const response = await runF2(state.selectedTime)
+    async runProcessor({commit, state}) {
+      console.log("test runProcessor:")
+      console.log(state.selectedCategory)
+      console.log(state.selectedService.id);
+      console.log(state.selectedArea);
+      console.log(state.markerLngLat.lat);
+      console.log(state.markerLngLat.lng);
+      console.log(state.polygon);
+      //console.log(state.polygon.features[0].geometry.coordinates[0][0]);
+      const testtime = "2021-11-22"
+      const id = state.selectedService.id;
+      const response = await run(state.selectedTime, id)
+      //const response = await run(testtime, id)
       const statusLink = response[0].value.href
+      console.log("statusLink:")
+      console.log(statusLink)
       commit("SET_STATUS_LINK", statusLink)
       if (statusLink) {
         const status = await getStatus(statusLink)
         commit("SET_JOB_STATUS", status)
       }
+      console.log("SET_JOB_STATUS");
+      console.log(state.jobStatus);
+      if (state.jobStatus == "successful") {
+        console.log("successful!")
+      }
+
+      // ??
+      //const outputLink = response[0].value.href
+      //commit("SET_OUTPUT_LINK", outputLink)
+      //console.log("outputLink:")
+      //console.log(outputLink)
 
     }
   }

@@ -12,7 +12,7 @@
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
           v-model="date"
-          label="Date of the data"
+          label="Selected date"
           prepend-icon="mdi-calendar"
           readonly
           v-bind="attrs"
@@ -23,8 +23,8 @@
         v-model="date"
         no-title
         scrollable
-        min="2021-01-20"
-        max="2021-01-30"
+        min="2021-09-01"
+        max="2022-01-01"
       >
         <v-spacer></v-spacer>
         <v-btn text color="primary" @click="menu = false"> Cancel </v-btn>

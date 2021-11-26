@@ -103,6 +103,7 @@ export default {
         this.$store.commit("CLEAR_SELECTED_SERVICE");
         this.$store.commit("SET_CATEGORY", category);
         this.$store.commit("SET_ICON_CATEGORY", icon);
+        this.$store.commit("CLEAR_JOB_STATUS");
       }
       this.closeMenu = false;
     },
@@ -111,6 +112,10 @@ export default {
 
       if (selectedService !== this.selectedService) {
         this.$store.commit("CLEAR_SELECTED_SERVICE");
+        this.$store.commit("CLEAR_JOB_STATUS");
+        this.$store.commit("SET_AREA", area);
+        console.log("area:")
+        console.log(area)
       }
 
       this.$store.commit("SET_SERVICE", selectedService);

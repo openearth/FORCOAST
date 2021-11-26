@@ -20,6 +20,16 @@
             color="primary"
           ></v-progress-linear>
         </v-col>
+        <v-col cols="12" v-if="status ==='successful'">
+           <v-btn block color="primary" @click="getOutput">Get results</v-btn>
+        </v-col>
+        <v-col cols="12" v-if="status ==='successful'">
+           <v-btn block color="primary" @click="dialog = true">Get results (window)</v-btn>
+          <bulletin-window
+            v-if="dialog"
+            @close-dialog="dialog = false"
+          ></bulletin-window>
+        </v-col>
       </v-row>
     </v-container>
   </v-card>
@@ -27,14 +37,20 @@
 <script>
 import { mapActions } from "vuex";
 import getStatus  from "@/lib/wps/getStatus"
+import getOutput  from "@/lib/wps/getOutput"
+import bulletinWindow from "@/components/bulletin-window";
 const _ = require('lodash')
 
 export default {
+  components: {
+    bulletinWindow
+  },
   data() { 
     return {
       status: "accepted",
       valueDeterminate: 0,
       getStatusAttempt: 0,
+      dialog: false,
     }
   },
   props: {
@@ -49,14 +65,23 @@ export default {
     statusLink: {
       type: String,
       required: true
-    }
+    },
+    outputLink: {
+      type: String,
+      required: true
+    },    
   },
   methods: {
     ...mapActions(['']),
     async getProcessStatus() {
       this.status = await getStatus(this.statusLink)
       this.getStatusAttempt = this.getStatusAttempt + 1
-    }
+    },
+    async getOutput() { 
+      console.log("Results!")
+      window.open("https://www.google.com");
+      // this.output = await getOutput(this.outputLink)
+    },
   },
   mounted() { 
     this.status = this.firstStatus
@@ -67,9 +92,9 @@ export default {
   watch: {
     getStatusAttempt() {
      
-      if (this.getStatusAttempt > 0 && this.getStatusAttempt < 15 ) {
+      if (this.getStatusAttempt > 0 && this.getStatusAttempt < 100 ) {
         if (this.status === "accepted" || this.status === "running") {
-          _.delay(()=> this.getProcessStatus(), 2000 )  
+          _.delay(()=> this.getProcessStatus(), 5000 )  
       }
       }
 

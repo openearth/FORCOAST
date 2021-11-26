@@ -7,14 +7,51 @@
       <v-divider class="mt-4 mb-4" />
     </div>
     <!-- .sync -->
-    <draggable-marker
-      v-if="service.components.draggable_marker"
-      @show-draggable-marker="onShowDraggableMarker"
-    ></draggable-marker>
+    <collapsible-card
+      v-if="service.components.layers"
+      :expand="0"
+      title="Select a layer"
+    >
+      <layers-list
+        :layers="service.components.layers"
+        @active-layers-change="onActiveLayerChange"
+        @active-legend-change="onActiveLegendChange"
+      ></layers-list>
+    </collapsible-card>
+    <collapsible-card
+      v-if="service.components.date_span"
+      title="Select start and end date"
+      :expand="0"
+    >
+      <date-span :timeExtent="timeExtent"></date-span>
+    </collapsible-card>
+    <div v-if="service.components.date_span" class="mb-4">
+      <div v-if="timeSpan.length && activeLayer">
+        <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
+        <timeseries-graph
+          v-if="dialog"
+          :lngLat="markerLngLat"
+          :layer="activeLayer"
+          :timeSpan="timeSpan"
+          @close-dialog="dialog = false"
+        ></timeseries-graph>
+      </div>
+      <div v-else>
+        <v-btn disabled block color="primary">Create graph</v-btn>
+      </div>
+    </div>
+    <collapsible-card
+      :title="service.components.draggable_marker.title"
+      :nextButton="true"
+      :expand="1"
+    >
+      <draggable-marker
+        @show-draggable-marker="onShowDraggableMarker" 
+      ></draggable-marker>
+    </collapsible-card>
     <collapsible-card
       v-if="service.components.draw_polygon"
       :title="service.components.draw_polygon.title"
-      :polygon="polygon"
       :nextButton="true"
       :expand="1"
     >
@@ -36,45 +73,12 @@
       </collapsible-card>
     </div>
     <collapsible-card
-      v-if="service.components.layers"
-      :expand="0"
-      title="Select a layer"
-    >
-      <layers-list
-        :layers="service.components.layers"
-        @active-layers-change="onActiveLayerChange"
-        @active-legend-change="onActiveLegendChange"
-      ></layers-list>
-    </collapsible-card>
-    <collapsible-card
-      v-if="service.components.date_span"
-      title="Select start and end date"
-      :expand="0"
-    >
-      <date-span :timeExtent="timeExtent"></date-span>
-    </collapsible-card>
-    <collapsible-card
       v-if="service.components.date"
       :expand="0"
       title="Select a date for the calculations"
     >
       <single-date :timeExtent="timeExtent"></single-date>
     </collapsible-card>
-    <div v-if="service.components.date_span">
-      <div v-if="timeSpan.length && activeLayer">
-        <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
-        <timeseries-graph
-          v-if="dialog"
-          :lngLat="markerLngLat"
-          :layer="activeLayer"
-          :timeSpan="timeSpan"
-          @close-dialog="dialog = false"
-        ></timeseries-graph>
-      </div>
-      <div v-else>
-        <v-btn disabled block color="primary">Create graph</v-btn>
-      </div>
-    </div>
     <div v-if="service.components.run_task">
       <v-btn block color="primary" @click="runTask">Run</v-btn>
     </div>
@@ -84,6 +88,15 @@
       :firstStatus="jobStatus"
       :statusLink="statusLink"
     ></status-card>
+    <div v-if="service.components.joblist">
+    <collapsible-card
+      v-if="service.components.joblist"
+      :expand="0"
+      title="Overview of jobs"
+    >
+      <ListJobs :timeExtent="timeExtent"></ListJobs>
+    </collapsible-card>
+    </div>
     
   </div>
 </template>
@@ -97,7 +110,7 @@ import DraggableMarker from "@/components/draggable-marker";
 import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
 import StatusCard from "@/components/status-card"
-
+import ListJobs from '@/components/ListJobs'
 
 import { mapState, mapActions } from "vuex";
 
@@ -113,7 +126,8 @@ export default {
     DrawPolygon,
     SelectableList,
     TimeseriesGraph,
-    StatusCard
+    StatusCard,
+    ListJobs
   },
   props: {
     service: {
@@ -138,11 +152,13 @@ export default {
       timeSpan: (state) => state.timeSpan,
       jobStatus: (state) => state.jobStatus,
       selectedTime: (state) => state.selectedTime,
-      statusLink: (state) => state.statusLink
+      statusLink: (state) => state.statusLink,
+      selectedCategory: (state) => state.selectedCategory,
+      selectedService: (state) => state.selectedService
     }),
   },
   methods: {
-    ...mapActions(['runProcessorF2']),
+    ...mapActions(['runProcessor']),
     async onActiveLayerChange(layers) {
       // Every time the layer changes. 
       this.$store.commit("CLEAR_TIME_EXTENT");
@@ -229,7 +245,8 @@ export default {
       return newFormat;
     },
     runTask() {
-      this.runProcessorF2()
+      this.$store.commit("CLEAR_JOB_STATUS");
+      this.runProcessor()
     }
   },
 };

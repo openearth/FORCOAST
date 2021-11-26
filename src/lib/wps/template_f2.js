@@ -1,4 +1,4 @@
-export const template = (time) =>({
+export const template_f2 = (time, id) =>({
    "inputs":[
       {
          "id":"time",
