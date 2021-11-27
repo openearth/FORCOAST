@@ -9,41 +9,6 @@
         "name": "Bay of Biscay (Spain)",
         "services": [
           {
-            "id": "suitable_fishing_areas",
-            "name": "Suitable fishing areas",
-            "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
-            "dates": [
-              "2021-05-01",
-              "2021-05-02",
-              "2021-05-03",
-              "2021-05-04"
-            ],
-            "components": {
-              "layers": [
-                {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "analysed_sst",
-                  "name": "Sea Surface Temperature (CMEMS)",
-                  "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": {
-                "title": "Place marker at output location"
-              }
-            }
-          },
-          {
             "id": "f2",
             "name": "Fronts detection",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
@@ -92,72 +57,6 @@
         "name": "Northern adriatic sea (pilot)",
         "services": [
           {
-            "id": "suitable_fishing_areas",
-            "name": "Suitable fishing areas",
-            "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
-            "dates": [
-              "2021-01-20",
-              "2021-01-21",
-              "2021-01-22",
-              "2021-01-23",
-              "2021-01-24",
-              "2021-01-25",
-              "2021-01-26",
-              "2021-01-27",
-              "2021-01-28",
-              "2021-01-29",
-              "2021-01-30"
-            ],
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "name": " Chlorophyll (CNR)",
-                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-med-chl-olci-l4-chl_300m_monthly-rt",
-                  "icon": "fish.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "forcoast:northern_adriatic_sea_t_forecast",
-                  "name": "Sea Surface Temperature",
-                  "layer": "forcoast:northern_adriatic_sea_t_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30"
-                },
-                {
-                  "id": "forcoast:northern_adriatic_sea_s_forecast",
-                  "name": "Salinity",
-                  "layer": "forcoast:northern_adriatic_sea_s_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "0,30"
-                },
-                {
-                  "id": "forcoast:northern_adriatic_sea_ph_forecast",
-                  "name": "pH - seawater acidity",
-                  "layer": "forcoast:northern_adriatic_sea_ph_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "6,8"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": {
-                "title": "Place marker at output location"
-              }
-            }
-          },
-          {
             "id": "fronts_detection",
             "name": "Fronts detection",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
@@ -178,7 +77,7 @@
               "layers": [
                 {
                   "id": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "name": " Chlorophyll (chl)",
+                  "name": " Chlorophyll-A (CNR)",
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "chlorophyll_a.png",
@@ -186,7 +85,7 @@
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_t_forecast",
-                  "name": "Sea Surface Temperature",
+                  "name": "Water Temperature (CNR)",
                   "layer": "forcoast:northern_adriatic_sea_t_forecast",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
@@ -210,80 +109,6 @@
             46.5
           ]
         ]
-      },
-      {
-        "id": "western_black_sea_bulgaria",
-        "name": "Western Black Sea (Bulgaria)",
-        "services": [
-          {
-            "id": "suitable_fishing_areas",
-            "name": "Suitable fishing areas",
-            "description": "Providing maps of suitable habitat for small pelagic fish, and associated background information.  This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "analysed_sst",
-                  "name": "Sea Surface Temperature (CMEMS)",
-                  "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": {
-                "title": "Place marker at output location"
-              }
-            }
-          },
-          {
-            "id": "fronts_detection",
-            "name": "Fronts detection",
-            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "analysed_sst",
-                  "name": "Sea Surface Temperature (CMEMS)",
-                  "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": {
-                "title": "Place marker at output location"
-              }
-            }
-          }
-        ],
-        "bbox": [
-          [
-            28.27,
-            43.22
-          ],
-          [
-            30.46,
-            45.18
-          ]
-        ]
       }
     ]
   },
@@ -297,30 +122,22 @@
         "name": "Galway Bay (Ireland)",
         "services": [
           {
-            "id": "marine_conditions",
-            "name": "Marine conditions",
-            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
+            "id": "a2",
+            "name": "Land Pollution",
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
             "components": {
-             "layers": [
+              "layers": [
                 {
                   "id": "zeta",
-                  "name": "Free Surface (local)",
+                  "name": "Water level (Marine Instruments)",
                   "layer": "zeta",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "-2,2"
                 },
                 {
-                  "id": "w",
-                  "name": "Upward Sea Water Velocity (local)",
-                  "layer": "w",
-                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                  "icon": "",
-                  "colorscalerange": "-2,2"
-                },
-                {
                   "id": "temp",
-                  "name": "Sea Water Temperature (local)",
+                  "name": "Water Temperature (Marine Instruments)",
                   "layer": "temp",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "sea_temp.png",
@@ -328,48 +145,13 @@
                },
                {
                 "id": "salt",
-                "name": "Salinity (local)",
+                "name": "Salinity (Marine Instruments)",
                 "layer": "salt",
                 "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                 "icon": "",
                 "colorscalerange": "0,30"
-               },
-               {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "SPM",
-                  "name": "Suspended Matter (CMEMS)",
-                  "layer": "SPM",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
-                  "icon": "",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "TUR",
-                  "name": "Turbidity (CMEMS)",
-                  "layer": "TUR",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
-                  "icon": "",
-                  "colorscalerange": "0,50"
-                }
+               }
               ],
-              "date_span": true,
-              "draggable_marker": {
-                "title": "Place marker at output location"
-              }
-            }
-          },
-          {
-            "id": "a2",
-            "name": "Land Pollution",
-            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
-            "components": {
               "draw_polygon": {
                 "text": "Specify bounding box for target location",
                 "title": "Specify bounding box for target location"
@@ -382,138 +164,25 @@
             }
           },
           {
-            "id": "site_prospection",
-            "name": "Site Prospection",
-            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "zeta",
-                  "name": "Free Surface (local)",
-                  "layer": "zeta",
-                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                  "icon": "",
-                  "colorscalerange": "-2,2"
-                },
-                {
-                  "id": "temp",
-                  "name": "Sea Water Temperature (local)",
-                  "layer": "temp",
-                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "-10,30"
-               },
-               {
-                "id": "salt",
-                "name": "Salinity (local)",
-                "layer": "salt",
-                "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                "icon": "",
-                "colorscalerange": "0,30"
-               },
-               {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "SPM",
-                  "name": "Suspended Matter (CMEMS)",
-                  "layer": "SPM",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
-                  "icon": "",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "TUR",
-                  "name": "Turbidity (CMEMS)",
-                  "layer": "TUR",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
-                  "icon": "",
-                  "colorscalerange": "0,50"
-                }
-              ],
-              "date": true,
-              "run_task": true
-            }
-          },
-          {
-            "id": "spat_captures_assistance",
-            "name": "Spat captures assistance",
-            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "temp",
-                  "name": "Sea Water Temperature (local)",
-                  "layer": "temp",
-                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30"
-               },
-               {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50"
-               }
-              ],
-              "draw_polygon": {
-                "text": "Select your farming area of interest by drawing it on the map",
-                "title": "Farming area"
-              },
-              "selectable_lists": [
-                {
-                  "title": "Species",
-                  "values": [
-                    "Oyster",
-                    "Mussel"
-                  ]
-                },
-                {
-                  "title": "Sources of arrival",
-                  "values": [
-                    "Source A",
-                    "Source B",
-                    "Source C",
-                    "Source D",
-                    "All sources"
-                  ]
-                }
-              ],
-              "run_task": true
-            }
-          },
-          {
-            "id": "contaminants_source_retrieval",
+            "id": "r2",
             "name": "Contaminants Source Retrieval",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source. For further information, click ",
             "components": {
               "layers": [
                 {
                   "id": "zeta",
-                  "name": "Free Surface (local)",
+                  "name": "Water level (Marine Instruments)",
                   "layer": "zeta",
-                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                  "icon": "",
-                  "colorscalerange": "-2,2"
-                },
-                {
-                  "id": "w",
-                  "name": "Upward Sea Water Velocity (local)",
-                  "layer": "w",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "-2,2"
                 }
               ],
               "date": true,
-              "run_task": true
+              "run_task": true,
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              }
             }
           }
         ],
@@ -547,7 +216,7 @@
               "layers": [
                 {
                   "id": "ssh",
-                  "name": "Sea Surface Height (local)",
+                  "name": "Water level (Maretec)",
                   "layer": "ssh",
                   "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/TAGUS_0.007DEG_50L_1H/FORECAST/Latest.nc",
                   "icon": "",
@@ -556,7 +225,7 @@
                 },
                 {
                   "id": "sea_water_velocity",
-                  "name": "Sea Water Velocity (local)",
+                  "name": "Sea Water Velocity (Maretec)",
                   "layer": "sea_water_velocity",
                   "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/TAGUS_0.007DEG_50L_1H/FORECAST/Latest.nc",
                   "icon": "",
@@ -564,7 +233,7 @@
                 },
                 {
                   "id": "wind_modulus",
-                  "name": "Wind Speed (local)",
+                  "name": "Wind Speed (Maretec)",
                   "layer": "wind_modulus",
                   "url": "http://thredds.maretec.org/thredds/wms/WRF/LISOCEAN_3KM_1L_1H/FORECAST/2021110600.nc",
                   "icon": "",
@@ -576,105 +245,28 @@
                 "title": "Place marker at output location"
               }
             }
-          },
-          {
-            "id": "land_pollution",
-            "name": "Land Pollution",
-            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "u",
-                  "name": "Eastward Sea Water Velocity (local)",
-                  "layer": "u",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "v",
-                  "name": "Northward Sea Water Velocity (local)",
-                  "layer": "v",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "velocity_W",
-                  "name": "Upward Sea Water Velocity (local)",
-                  "layer": "velocity_W",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                }
-              ],
-              "draw_polygon":
-              {
-                "text": "Specify discharge location on the map",
-                "title": "Discharge location"
-              },
-              "date": true,
-              "run_task": true
-            }
-          },
-          {
-            "id": "site_prospection",
-            "name": "Site Prospection",
-            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "temperature",
-                  "name": "Sea Water Temperature (local)",
-                  "layer": "temperature",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "10,30"
-                },
-                {
-                  "id": "salinity",
-                  "name": "Salinity (local)",
-                  "layer": "salinity",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "0,30"
-                }
-              ],
-              "date": true,
-              "run_task": true
-            }
-          },
+          }
+        ],
+        "bbox": [
+          [
+            -9.11,
+            38.25
+          ],
+          [
+            -8.68,
+            39.1
+          ]
+        ]
+      },
+      {
+        "id": "southern_north_sea",
+        "name": "Southern North Sea (Belgium)",
+        "services": [
           {
             "id": "spat_captures_assistance",
-            "name": "Spat Captures Assistance",
+            "name": "Spat captures assistance",
             "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click ",
             "components": {
-              "layers": [
-                {
-                  "id": "temperature",
-                  "name": "Sea Water Temperature (local)",
-                  "layer": "temperature",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30"
-               },
-               {
-                "id": "u",
-                "name": "Eastward Sea Water Velocity (local)",
-                "layer": "u",
-                "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                "icon": "",
-                "colorscalerange": "-1,1"
-              },
-              {
-                "id": "v",
-                "name": "Northward Sea Water Velocity (local)",
-                "layer": "v",
-                "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                "icon": "",
-                "colorscalerange": "-1,1"
-              }
-              ],
               "draw_polygon": {
                 "text": "Select your farming area of interest by drawing it on the map",
                 "title": "Farming area"
@@ -699,76 +291,6 @@
                 }
               ],
               "run_task": true
-            }
-          },
-          {
-            "id": "contaminants_source_retrieval",
-            "name": "Contaminants Source Retrieval",
-            "description": "Providing with an estimation of the source of contaminants location that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "u",
-                  "name": "Eastward Sea Water Velocity (local)",
-                  "layer": "u",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "v",
-                  "name": "Northward Sea Water Velocity (local)",
-                  "layer": "v",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "velocity_W",
-                  "name": "Upward Sea Water Velocity (local)",
-                  "layer": "velocity_W",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                }
-              ],
-              "date": true,
-              "run_task": true
-            }
-          }
-        ],
-        "bbox": [
-          [
-            -9.11,
-            38.25
-          ],
-          [
-            -8.68,
-            39.1
-          ]
-        ]
-      },
-      {
-        "id": "southern_north_sea",
-        "name": "Southern North Sea (Belgium)",
-        "services": [
-          {
-            "id": "marine_conditions",
-            "name": "Marine conditions",
-            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "NOS_HydroState_V1:sea_surface_height_above_sea_level",
-                  "name": "Sea Surface Height (local)",
-                  "layer": "NOS_HydroState_V1:sea_surface_height_above_sea_level",
-                  "url": "https://erddap.naturalsciences.be/erddap/wms/NOS_HydroState_V1/request",
-                  "icon": "",
-                  "colorscalerange": "-2,2"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": true
             }
           }
         ],
@@ -795,7 +317,7 @@
               "layers": [
                 {
                   "id": "forcoast:dk_elev",
-                  "name": "Sea Surface Elevation (local)",
+                  "name": "Sea Surface Elevation (DMI)",
                   "layer": "forcoast:dk_elev",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -803,7 +325,7 @@
                 },
                 {
                   "id": "forcoast:dk_salt",
-                  "name": "Salinity (local)",
+                  "name": "Salinity (DMI)",
                   "layer": "forcoast:dk_salt",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -811,7 +333,7 @@
                 },
                 {
                   "id": "forcoast:dk_temp",
-                  "name": "Water Termperature (local)",
+                  "name": "Water Termperature (DMI)",
                   "layer": "forcoast:dk_temp",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -819,7 +341,7 @@
                 },
                 {
                   "id": "forcoast:dk_vvel",
-                  "name": "Northward Current (local)",
+                  "name": "Northward Current (DMI)",
                   "layer": "forcoast:dk_vvel",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -827,7 +349,7 @@
                 },
                 {
                   "id": "forcoast:dk_uvel",
-                  "name": "Eastward Current (local)",
+                  "name": "Eastward Current (DMI)",
                   "layer": "forcoast:dk_uvel",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -835,190 +357,9 @@
                 }
               ],
               "date_span": true,
-              "draggable_marker": true
-            }
-          },
-          {
-            "id": "land_pollution",
-            "name": "Land Pollution",
-            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:dk_vvel",
-                  "name": "Northward Current (local)",
-                  "layer": "forcoast:dk_vvel",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "forcoast:dk_uvel",
-                  "name": "Eastward Current (local)",
-                  "layer": "forcoast:dk_uvel",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                }
-              ],
-              "draw_polygon":
-              {
-                "text": "Specify discharge location on the map",
-                "title": "Discharge location"
-              },
-              "date": true,
-              "run_task": true
-            }
-          },
-          {
-            "id": "site_prospection",
-            "name": "Site prospection",
-            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:dk_elev",
-                  "name": "Sea Surface Elevation (local)",
-                  "layer": "forcoast:dk_elev",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "forcoast:dk_salt",
-                  "name": "Salinity (local)",
-                  "layer": "forcoast:dk_salt",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "0,30"
-                },
-                {
-                  "id": "forcoast:dk_temp",
-                  "name": "Sea Water Temperature (local)",
-                  "layer": "forcoast:dk_temp",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "10,30"
-                },
-                {
-                  "id": "forcoast:dk_vvel",
-                  "name": "Northward Current (local)",
-                  "layer": "forcoast:dk_vvel",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "forcoast:dk_uvel",
-                  "name": "Eastward Current (local)",
-                  "layer": "forcoast:dk_uvel",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "forcoast:dk_vwind",
-                  "name": "Northward Wind Velocity (local)",
-                  "layer": "forcoast:dk_vwind",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "forcoast:dk_uwind",
-                  "name": "Eastward Wind Velocity (local)",
-                  "layer": "forcoast:dk_uwind",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": true
-            }
-          },
-          {
-            "id": "spat_captures_assistance",
-            "name": "Spat captures assistance",
-            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click ",
-            "components": {
-              "layers": [
-               {
-                "id": "forcoast:dk_temp",
-                "name": "Sea Water Temperature (local)",
-                "layer": "forcoast:dk_temp",
-                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                "icon": "",
-                "colorscalerange": "10,30"
-               },
-               {
-                "id": "forcoast:dk_vvel",
-                "name": "Northward Current (local)",
-                "layer": "forcoast:dk_vvel",
-                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                "icon": "",
-                "colorscalerange": "-1,1"
-              },
-              {
-                "id": "forcoast:dk_uvel",
-                "name": "Eastward Current (local)",
-                "layer": "forcoast:dk_uvel",
-                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                "icon": "",
-                "colorscalerange": "-1,1"
+              "draggable_marker": {
+                "title": "Place marker at source location"
               }
-              ],
-              "draw_polygon": {
-                "text": "Select your farming area of interest by drawing it on the map",
-                "title": "Farming area"
-              },
-              "selectable_lists": [
-                {
-                  "title": "Species",
-                  "values": [
-                    "Oyster",
-                    "Mussel"
-                  ]
-                },
-                {
-                  "title": "Sources of arrival",
-                  "values": [
-                    "Source A",
-                    "Source B",
-                    "Source C",
-                    "Source D",
-                    "All sources"
-                  ]
-                }
-              ],
-              "run_task": true
-            }
-          },
-          {
-            "id": "contaminants_source_retrieval",
-            "name": "Contaminants Source Retrieval",
-            "description": "Providing with an estimation of the source of contaminants location that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:dk_vvel",
-                  "name": "Northward Current (local)",
-                  "layer": "forcoast:dk_vvel",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                },
-                {
-                  "id": "forcoast:dk_uvel",
-                  "name": "Eastward Current (local)",
-                  "layer": "forcoast:dk_uvel",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                }
-              ],
-              "date": true,
-              "run_task": true
             }
           }
         ],
@@ -1038,22 +379,19 @@
         "name": "Western Black Sea (Romania)",
         "services": [
           {
-            "id": "marine_conditions",
-            "name": "Marine conditions",
-            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
+            "id": "a2",
+            "name": "Land Pollution",
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
             "components": {
-              "layers": [
-                {
-                  "id": "forcoast:dk_elev",
-                  "name": "Sea Surface Elevation (local)",
-                  "layer": "forcoast:dk_elev",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "-1,1"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": true
+              "draw_polygon": {
+                "text": "Specify bounding box for target location",
+                "title": "Specify bounding box for target location"
+              },
+              "date": true,
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "run_task": true
             }
           }
         ],
@@ -1065,114 +403,6 @@
           [
             30.46,
             45.18
-          ]
-        ]
-      },
-      {
-        "id": "northern_adriatic_sea",
-        "name": "Northern Adriatic Sea (Italy)",
-        "services": [
-          {
-            "id": "site_prospection",
-            "name": "Site prospection",
-            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:northern_adriatic_sea_pl_forecast",
-                  "name": "Chlorophyll A (local)",
-                  "layer": "forcoast:northern_adriatic_sea_pl_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "forcoast:northern_adriatic_sea_s_forecast",
-                  "name": "Salinity (local)",
-                  "layer": "forcoast:northern_adriatic_sea_s_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea.png",
-                  "colorscalerange": "0,30"
-                },
-                {
-                  "id": "forcoast:northern_adriatic_sea_t_forecast",
-                  "name": "Water Temperature (local)",
-                  "layer": "forcoast:northern_adriatic_sea_t_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea.png",
-                  "colorscalerange": "10,30"
-                },
-                {
-                  "id": "forcoast:northern_adriatic_sea_o2o_forecast",
-                  "name": "Dissolved Oxygen (local)",
-                  "layer": "forcoast:northern_adriatic_sea_o2o_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea.png",
-                  "colorscalerange": "0,10"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": true
-            }
-          },
-          {
-            "id": "spat_captures_assistance",
-            "name": "Spat captures assistance",
-            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click ",
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:northern_adriatic_sea_pl_forecast",
-                  "name": "Chlorophyll A (local)",
-                  "layer": "forcoast:northern_adriatic_sea_pl_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea.png",
-                  "colorscalerange": "0,50"
-                },
-                {
-                  "id": "forcoast:northern_adriatic_sea_t_forecast",
-                  "name": "Water Temperature (local)",
-                  "layer": "forcoast:northern_adriatic_sea_t_forecast",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea.png",
-                  "colorscalerange": "10,30"
-                }
-              ],
-              "draw_polygon": {
-                "text": "Select your farming area of interest by drawing it on the map",
-                "title": "Farming area"
-              },
-              "selectable_lists": [
-                {
-                  "title": "Species",
-                  "values": [
-                    "Oyster",
-                    "Mussel"
-                  ]
-                },
-                {
-                  "title": "Sources of arrival",
-                  "values": [
-                    "Source A",
-                    "Source B",
-                    "Source C",
-                    "Source D",
-                    "All sources"
-                  ]
-                }
-              ],
-              "run_task": true
-            }
-          }
-        ],
-        "bbox": [
-          [
-            12.13,
-            44.27
-          ],
-          [
-            13.85,
-            45.90
           ]
         ]
       }
