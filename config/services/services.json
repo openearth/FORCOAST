@@ -57,7 +57,7 @@
         "name": "Northern adriatic sea (pilot)",
         "services": [
           {
-            "id": "fronts_detection",
+            "id": "f2",
             "name": "Fronts detection",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
             "dates": [
@@ -160,7 +160,8 @@
               "draggable_marker": {
                 "title": "Place marker at source location"
               },
-              "run_task": true
+              "run_task": true,
+              "joblist": true
             }
           },
           {
@@ -209,7 +210,7 @@
         "name": "Sado Estuary (Portugal)",
         "services": [
           {
-            "id": "a2",
+            "id": "a1",
             "name": "Marine conditions",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
             "components": {
@@ -243,7 +244,12 @@
               "date_span": true,
               "draggable_marker": {
                 "title": "Place marker at output location"
-              }
+              },
+              "entry_field": true,
+              "date": true,
+              "run_task": true,
+              "joblist": true
+
             }
           }
         ],
@@ -263,7 +269,7 @@
         "name": "Southern North Sea (Belgium)",
         "services": [
           {
-            "id": "spat_captures_assistance",
+            "id": "a3",
             "name": "Spat captures assistance",
             "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click ",
             "components": {
@@ -310,7 +316,7 @@
         "name": "Limfjord (Denmark)",
         "services": [
           {
-            "id": "marine_conditions",
+            "id": "a1",
             "name": "Marine conditions",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
             "components": {
@@ -391,7 +397,8 @@
               "draggable_marker": {
                 "title": "Place marker at source location"
               },
-              "run_task": true
+              "run_task": true,
+              "joblist": true
             }
           }
         ],

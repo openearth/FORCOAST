@@ -107,28 +107,35 @@ export default new Vuex.Store({
 	},
   actions: { 
     async runProcessor({commit, state}) {
-      console.log("test runProcessor:")
-      console.log(state.selectedCategory)
+      //console.log("test runProcessor:")
+      //console.log(state.selectedCategory)
       console.log(state.selectedService.id);
-      console.log(state.selectedArea);
-      console.log(state.markerLngLat.lat);
-      console.log(state.markerLngLat.lng);
-      console.log(state.polygon);
+      //console.log(state.selectedArea);
+      //console.log(state.markerLngLat.lat);
+      //console.log(state.markerLngLat.lng);
+      const lat = state.markerLngLat.lat;
+      const lon = state.markerLngLat.lng;
+      const lim = 1.9
+      const area = "eforie"
+      const source = [1,2]
+      const target = [1,2,3,4]
+
+      //console.log(state.polygon);
       //console.log(state.polygon.features[0].geometry.coordinates[0][0]);
-      const testtime = "2021-11-22"
+      //const testtime = "2021-11-22"
       const id = state.selectedService.id;
-      const response = await run(state.selectedTime, id)
+      const response = await run(state.selectedTime, id, area, source, target, lat, lon, lim)
       //const response = await run(testtime, id)
       const statusLink = response[0].value.href
-      console.log("statusLink:")
-      console.log(statusLink)
+      //console.log("statusLink:")
+      //console.log(statusLink)
       commit("SET_STATUS_LINK", statusLink)
       if (statusLink) {
         const status = await getStatus(statusLink)
         commit("SET_JOB_STATUS", status)
       }
-      console.log("SET_JOB_STATUS");
-      console.log(state.jobStatus);
+      //console.log("SET_JOB_STATUS");
+      //console.log(state.jobStatus);
       if (state.jobStatus == "successful") {
         console.log("successful!")
       }

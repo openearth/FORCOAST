@@ -27,6 +27,7 @@
            <v-btn block color="primary" @click="dialog = true">Get results (window)</v-btn>
           <bulletin-window
             v-if="dialog"
+            :jobId="jobId"
             @close-dialog="dialog = false"
           ></bulletin-window>
         </v-col>
@@ -51,6 +52,7 @@ export default {
       valueDeterminate: 0,
       getStatusAttempt: 0,
       dialog: false,
+      jobId: "",
     }
   },
   props: {
@@ -69,12 +71,13 @@ export default {
     outputLink: {
       type: String,
       required: true
-    },    
+    },   
   },
   methods: {
     ...mapActions(['']),
     async getProcessStatus() {
       this.status = await getStatus(this.statusLink)
+      this.jobId = this.statusLink.substring(this.statusLink.lastIndexOf('/') + 1);
       this.getStatusAttempt = this.getStatusAttempt + 1
     },
     async getOutput() { 

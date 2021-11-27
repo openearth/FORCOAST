@@ -10,7 +10,7 @@
     <collapsible-card
       v-if="service.components.layers"
       :expand="0"
-      title="Select a layer"
+      title="Select a layer for visualization"
     >
       <layers-list
         :layers="service.components.layers"
@@ -20,7 +20,7 @@
     </collapsible-card>
     <collapsible-card
       v-if="service.components.date_span"
-      title="Select start and end date"
+      title="Select start and end date for timeseries"
       :expand="0"
     >
       <date-span :timeExtent="timeExtent"></date-span>
@@ -48,6 +48,16 @@
       <draggable-marker
         @show-draggable-marker="onShowDraggableMarker" 
       ></draggable-marker>
+    </collapsible-card>
+    <collapsible-card
+      v-if="service.components.entry_field"
+      title="Enter values"
+      :nextButton="false"
+      :expand="1"
+    >
+      <entry-field
+        @show-draggable-marker="onShowDraggableMarker" 
+      ></entry-field>
     </collapsible-card>
     <collapsible-card
       v-if="service.components.draw_polygon"
@@ -79,8 +89,8 @@
     >
       <single-date :timeExtent="timeExtent"></single-date>
     </collapsible-card>
-    <div v-if="service.components.run_task">
-      <v-btn block color="primary" @click="runTask">Run</v-btn>
+    <div v-if="service.components.run_task"  class="mb-4">
+      <v-btn block color="primary"  @click="runTask">Run</v-btn>
     </div>
     <status-card 
       v-if="jobStatus==='accepted'"
@@ -111,6 +121,7 @@ import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
 import StatusCard from "@/components/status-card"
 import ListJobs from '@/components/ListJobs'
+import EntryField from '@/components/entry-field'
 
 import { mapState, mapActions } from "vuex";
 
@@ -127,7 +138,8 @@ export default {
     SelectableList,
     TimeseriesGraph,
     StatusCard,
-    ListJobs
+    ListJobs,
+    EntryField
   },
   props: {
     service: {
@@ -254,5 +266,10 @@ export default {
 <style>
 .execute {
   position: fixed;
+}
+.v-btn:not(.v-btn--round).v-size--default {
+    height: 25px;
+    min-width: 64px;
+    padding: 0 16px;
 }
 </style>

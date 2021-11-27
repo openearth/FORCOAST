@@ -26,10 +26,17 @@ import VueHtmlToPaper from 'vue-html-to-paper';
 import html2canvas from 'html2canvas';
 
 export default {
+  // see https://www.smashingmagazine.com/2020/01/data-components-vue-js/
+  props: {
+    jobId: {
+      type: String, 
+      required: true,
+    },   
+  },
   data() {
     return {
       dialog: true,
-      image: "https://wps.forcoast.apps.k.terrasigna.com/results/ef1022de-3edc-4190-af57-3cc3c3488355-0/cwl-output/bulletin.png"
+      image: "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/bulletin.png"
     };
   },
   watch: {
