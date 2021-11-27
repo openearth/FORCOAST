@@ -16,17 +16,19 @@
               "layers": [
                 {
                   "id": "CHL",
-                  "name": "Chlorophyll",
+                  "name": "Chlorophyll (CMEMS)",
                   "layer": "CHL",
                   "url": "https://my.cmems-du.eu/thredds/wms/dataset-oc-atl-chl-multi_cci-l4-chl_1km_monthly-rep-v02",
-                  "icon": "fish.png"
+                  "icon": "chlorophyll_a.png",
+                  "colorscalerange": "0,50"
                 },
                 {
                   "id": "analysed_sst",
-                  "name": "Sea Surface Temperature",
+                  "name": "Sea Surface Temperature (CMEMS)",
                   "layer": "analysed_sst",
                   "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
-                  "icon": "fish.png"
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30"
                 }
               ],
               "date_span": true,
@@ -45,15 +47,17 @@
                   "id": "CHL",
                   "name": "Chlorophyll",
                   "layer": "CHL",
-                  "url": "https://my.cmems-du.eu/thredds/wms/dataset-oc-atl-chl-multi_cci-l4-chl_1km_monthly-rep-v02",
-                  "icon": "fish.png"
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
+                  "icon": "fish.png",
+                  "colorscalerange": "0,50"
                 },
                 {
                   "id": "analysed_sst",
                   "name": "Sea Surface Temperature",
                   "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
-                  "icon": "fish.png"
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2",
+                  "icon": "fish.png",
+                  "colorscalerange": "10,30"
                 }
               ],
               "date_span": true,
@@ -92,35 +96,40 @@
                   "name": " Chlorophyll (CNR)",
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "chlorophyll_a.png"
+                  "icon": "chlorophyll_a.png",
+                  "colorscalerange": "0,50"
                 },
                 {
                   "id": "CHL",
                   "name": "Chlorophyll (CMEMS)",
                   "layer": "CHL",
                   "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-med-chl-olci-l4-chl_300m_monthly-rt",
-                  "icon": "fish.png"
+                  "icon": "fish.png",
+                  "colorscalerange": "0,50"
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_t_forecast",
                   "name": "Sea Surface Temperature",
                   "layer": "forcoast:northern_adriatic_sea_t_forecast",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png"
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30"
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_s_forecast",
                   "name": "Salinity",
                   "layer": "forcoast:northern_adriatic_sea_s_forecast",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png"
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "0,30"
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_ph_forecast",
                   "name": "pH - seawater acidity",
                   "layer": "forcoast:northern_adriatic_sea_ph_forecast",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png"
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "6,8"
                 }
               ],
               "date_span": true,
@@ -345,17 +354,35 @@
         "name": "Sado Estuary (Portugal)",
         "services": [
           {
-            "id": "marine_conditions",
+            "id": "a2",
             "name": "Marine conditions",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
             "components": {
               "layers": [
                 {
-                  "id": "VHM0",
-                  "name": "Significant Wave Height",
-                  "layer": "VHM0",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/med-hcmr-wav-an-fc-h",
-                  "icon": "fish.png"
+                  "id": "ssh",
+                  "name": "Sea Surface Height (local)",
+                  "layer": "ssh",
+                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/TAGUS_0.007DEG_50L_1H/FORECAST/Latest.nc",
+                  "icon": "",
+                  "styles": "boxfill/sst_36",
+                  "colorscalerange": "-1,3"
+                },
+                {
+                  "id": "sea_water_velocity",
+                  "name": "Sea Water Velocity (local)",
+                  "layer": "sea_water_velocity",
+                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/TAGUS_0.007DEG_50L_1H/FORECAST/Latest.nc",
+                  "icon": "",
+                  "colorscalerange": "-1,1"
+                },
+                {
+                  "id": "wind_modulus",
+                  "name": "Wind Speed (local)",
+                  "layer": "wind_modulus",
+                  "url": "http://thredds.maretec.org/thredds/wms/WRF/LISOCEAN_3KM_1L_1H/FORECAST/2021110600.nc",
+                  "icon": "",
+                  "colorscalerange": "0,15"
                 }
               ],
               "date_span": true,
@@ -363,31 +390,16 @@
                 "title": "Place marker at output location"
               }
             }
-          },
-          {
-            "id": "land_pollution",
-            "name": "Land Pollution",
-            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click "
-          },
-          {
-            "id": "site_prospection",
-            "name": "Site prospection",
-            "description": "Supporting shellfish farmers with to identify suitable new sites for oyster production, or to optimize existing ones, in order to increase yield and revenue. For further information, click "
-          },
-          {
-            "id": "spat_captures_assistance",
-            "name": "Spat captures assistance",
-            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click "
           }
         ],
         "bbox": [
           [
-            -8.91,
-            38.35
+            -9.11,
+            38.25
           ],
           [
             -8.68,
-            38.62
+            39.1
           ]
         ]
       },

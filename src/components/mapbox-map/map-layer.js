@@ -53,10 +53,21 @@ export default {
     },
     addLayer() {
       const map = this.getMap();
+      console.log(this.options.id)
       if (this.before && map.getLayer(this.before)) {
         map.addLayer(this.options, this.before);
+        map.setPaintProperty(
+			this.options.id,
+			'raster-opacity',
+			parseInt(50) / 100
+		);
       } else {
         map.addLayer(this.options);
+        map.setPaintProperty(
+			this.options.id,
+			'raster-opacity',
+			parseInt(50) / 100
+		);
       }
     },
     rerender() {

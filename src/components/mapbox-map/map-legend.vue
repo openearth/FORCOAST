@@ -7,6 +7,7 @@
 <script>
 import buildLegendUrl from "@/lib/build-legend-url";
 import debounce from "lodash/debounce";
+
 export default {
   props: {
     legendLayer: {
@@ -17,12 +18,21 @@ export default {
       type: String,
       default: "",
     },
+    colorscalerange: {
+      type: String,
+      default: "-1,3",
+    },
+    styles: {
+      type: String,
+      default: "sst_36",
+    },
   },
   data() {
     return {
       zoomLevel: 10,
     };
   },
+
   computed: {
     legendUrl() {
       const scale = this.zoomLevel;
@@ -32,6 +42,8 @@ export default {
         width: 40,
         height: 20,
         scale,
+        styles: "",
+        colorscalerange: this.colorscalerange
       });
     },
   },
