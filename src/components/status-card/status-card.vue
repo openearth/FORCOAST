@@ -21,10 +21,7 @@
           ></v-progress-linear>
         </v-col>
         <v-col cols="12" v-if="status ==='successful'">
-           <v-btn block color="primary" @click="getOutput">Get results</v-btn>
-        </v-col>
-        <v-col cols="12" v-if="status ==='successful'">
-           <v-btn block color="primary" @click="dialog = true">Get results (window)</v-btn>
+           <v-btn block color="primary" @click="dialog = true">Get results</v-btn>
           <bulletin-window
             v-if="dialog"
             :jobId="jobId"
@@ -79,11 +76,6 @@ export default {
       this.status = await getStatus(this.statusLink)
       this.jobId = this.statusLink.substring(this.statusLink.lastIndexOf('/') + 1);
       this.getStatusAttempt = this.getStatusAttempt + 1
-    },
-    async getOutput() { 
-      console.log("Results!")
-      window.open("https://www.google.com");
-      // this.output = await getOutput(this.outputLink)
     },
   },
   mounted() { 

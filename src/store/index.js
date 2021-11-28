@@ -22,6 +22,7 @@ export default new Vuex.Store({
     activeLayers: null,
     jobStatus: null,
     statusLink: null,
+    selectedEntryValue: null,
 	},
   getters: {
     activeLayers(state) {
@@ -57,6 +58,9 @@ export default new Vuex.Store({
     SET_POLYGON(state, polygon) {
       state.polygon = polygon
     },
+    CLEAR_POLYGON(state, polygon) {
+      state.polygon = null
+    },
     SET_SELECTED_TIME(state, time) {
       state.selectedTime = time
     },
@@ -66,17 +70,20 @@ export default new Vuex.Store({
     SET_MARKER_COORDINATES(state, lnglat) {
       state.markerLngLat = lnglat
     },
+    CLEAR_MARKER_COORDINATES(state, lnglat) {
+      state.markerLngLat = null
+    },
     SET_TIME_SPAN(state, timespan) {
       state.timeSpan = timespan
     },
     SET_TIME_EXTENT(state, extent) {
       state.timeExtent = extent
     },
-    SET_RUN_TIME_EXTENT(state, extent) {
-      state.runTimeExtent = extent
-    },
     CLEAR_TIME_EXTENT(state) {
       state.timeExtent = []
+    },
+    SET_RUN_TIME_EXTENT(state, extent) {
+      state.runTimeExtent = extent
     },
     CLEAR_RUN_TIME_EXTENT(state) {
       state.runTimeExtent = []
@@ -102,20 +109,28 @@ export default new Vuex.Store({
     },
     SET_OUTPUT_LINK(state, url) {
       state.outputLink = url
-    }
-
+    },
+    SET_SELECTED_ENTRY_VALUE(state, entryValue) {
+      state.selectedEntryValue = entryValue
+    },
+    CLEAR_SELECTED_ENTRY_VALUE(state, entryValue) {
+      state.selectedEntryValue = null
+    },
 	},
   actions: { 
     async runProcessor({commit, state}) {
       //console.log("test runProcessor:")
       //console.log(state.selectedCategory)
       console.log(state.selectedService.id);
+      console.log("SET_SELECTED_ENTRY_VALUE");
+      console.log(state.selectedEntryValue);
       //console.log(state.selectedArea);
       //console.log(state.markerLngLat.lat);
       //console.log(state.markerLngLat.lng);
       const lat = state.markerLngLat.lat;
       const lon = state.markerLngLat.lng;
-      const lim = 1.9
+      const lim = state.selectedEntryValue
+      //const lim = 2.1
       const area = "eforie"
       const source = [1,2]
       const target = [1,2,3,4]

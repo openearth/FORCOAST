@@ -50,14 +50,15 @@
       ></draggable-marker>
     </collapsible-card>
     <collapsible-card
-      v-if="service.components.entry_field"
-      title="Enter values"
+      v-if="service.components.entry_form"
+      :title="service.components.entry_form.title"
       :nextButton="false"
       :expand="1"
     >
-      <entry-field
-        @show-draggable-marker="onShowDraggableMarker" 
-      ></entry-field>
+      <entry-form
+        :value="service.components.entry_form.value"
+      >
+      </entry-form>
     </collapsible-card>
     <collapsible-card
       v-if="service.components.draw_polygon"
@@ -121,7 +122,7 @@ import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
 import StatusCard from "@/components/status-card"
 import ListJobs from '@/components/ListJobs'
-import EntryField from '@/components/entry-field'
+import EntryForm from '@/components/entry-form'
 
 import { mapState, mapActions } from "vuex";
 
@@ -139,7 +140,7 @@ export default {
     TimeseriesGraph,
     StatusCard,
     ListJobs,
-    EntryField
+    EntryForm
   },
   props: {
     service: {

@@ -104,6 +104,12 @@ export default {
         this.$store.commit("SET_CATEGORY", category);
         this.$store.commit("SET_ICON_CATEGORY", icon);
         this.$store.commit("CLEAR_JOB_STATUS");
+        this.$store.commit("CLEAR_SELECTED_ENTRY_VALUE");
+        this.$store.commit("CLEAR_RUN_TIME_EXTENT");
+        this.$store.commit("CLEAR_TIME_EXTENT");
+        this.$store.commit("CLEAR_SELECTED_TIME");
+        this.$store.commit("CLEAR_MARKER_COORDINATES");
+        this.$store.commit("CLEAR_POLYGON");
       }
       this.closeMenu = false;
     },
@@ -114,8 +120,12 @@ export default {
         this.$store.commit("CLEAR_SELECTED_SERVICE");
         this.$store.commit("CLEAR_JOB_STATUS");
         this.$store.commit("SET_AREA", area);
-        console.log("area:")
-        console.log(area)
+        this.$store.commit("CLEAR_SELECTED_ENTRY_VALUE");
+        this.$store.commit("CLEAR_RUN_TIME_EXTENT");
+        this.$store.commit("CLEAR_TIME_EXTENT");
+        this.$store.commit("CLEAR_SELECTED_TIME");
+        this.$store.commit("CLEAR_MARKER_COORDINATES");
+        this.$store.commit("CLEAR_POLYGON");
       }
 
       this.$store.commit("SET_SERVICE", selectedService);
