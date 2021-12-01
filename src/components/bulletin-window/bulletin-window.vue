@@ -49,11 +49,15 @@ export default {
     // https://techformist.com/save-div-image-vue/
     async saveDialog() {
       const el = this.$refs.savecontent;
+      console.log("el")
+      console.log(this.$refs)
       const options = {
         type: "dataURL",
       };
       const printCanvas = await html2canvas(el, options);
       const link = document.createElement("a");
+      console.log("printCanvas")
+      console.log(printCanvas)
       link.setAttribute("download", "download.png");
       link.setAttribute(
         "href",

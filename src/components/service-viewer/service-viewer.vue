@@ -9,7 +9,7 @@
     <!-- .sync -->
     <collapsible-card
       v-if="service.components.layers"
-      :expand="0"
+      :expand="1"
       title="Select a layer for visualization"
     >
       <layers-list
@@ -21,7 +21,7 @@
     <collapsible-card
       v-if="service.components.date_span"
       title="Select start and end date for timeseries"
-      :expand="0"
+      :expand="1"
     >
       <date-span :timeExtent="timeExtent"></date-span>
     </collapsible-card>
@@ -41,6 +41,13 @@
       </div>
     </div>
     <collapsible-card
+      v-if="service.components.date"
+      :expand="1"
+      title="Select a date for the calculations"
+    >
+      <single-date :timeExtent="timeExtent"></single-date>
+    </collapsible-card>
+    <collapsible-card
       :title="service.components.draggable_marker.title"
       :nextButton="true"
       :expand="1"
@@ -57,6 +64,7 @@
     >
       <entry-form
         :value="service.components.entry_form.value"
+        :entryType="service.components.entry_form.type"
       >
       </entry-form>
     </collapsible-card>
@@ -83,15 +91,13 @@
         <selectable-list :values="list.values"></selectable-list>
       </collapsible-card>
     </div>
-    <collapsible-card
-      v-if="service.components.date"
-      :expand="0"
-      title="Select a date for the calculations"
-    >
-      <single-date :timeExtent="timeExtent"></single-date>
-    </collapsible-card>
     <div v-if="service.components.run_task"  class="mb-4">
-      <v-btn block color="primary"  @click="runTask">Run</v-btn>
+      <div v-if="selectedTime">
+        <v-btn block color="primary"  @click="runTask">Run</v-btn>
+      </div>
+      <div v-else>
+        <v-btn disabled block color="primary">Run</v-btn>
+      </div>
     </div>
     <status-card 
       v-if="jobStatus==='accepted'"
@@ -102,7 +108,7 @@
     <div v-if="service.components.joblist">
     <collapsible-card
       v-if="service.components.joblist"
-      :expand="0"
+      :expand="1"
       title="Overview of jobs"
     >
       <ListJobs :timeExtent="timeExtent"></ListJobs>
@@ -121,7 +127,7 @@ import DraggableMarker from "@/components/draggable-marker";
 import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
 import StatusCard from "@/components/status-card"
-import ListJobs from '@/components/ListJobs'
+import ListJobs from '@/components/list-jobs'
 import EntryForm from '@/components/entry-form'
 
 import { mapState, mapActions } from "vuex";

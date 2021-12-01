@@ -1,6 +1,6 @@
-export const template_a2 = (time, id, area, source, target) =>({
+export const template_r1 = (area, time, period, lon, lat) =>({
    "inputs":[
-      {
+     {
          "id":"pilot",
          "input":{
             "format":{
@@ -29,29 +29,29 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "5"
+               "inlineValue": period.toString()
             }
          }
       },
      {
-         "id":"source",
+         "id":"lon",
          "input":{
             "format":{
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": source
+               "inlineValue": lon.toString()
             }
          }
       },
      {
-         "id":"target",
+         "id":"lat",
          "input":{
             "format":{
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": target
+               "inlineValue": lat.toString()
             }
          }
       }
@@ -60,7 +60,7 @@ export const template_a2 = (time, id, area, source, target) =>({
       {
          "id":"result",
          "format":{
-            "mimeType":"application/x-ewps-stac"
+            "mimeType":"application/binary"
          },
          "transmissionMode":"reference"
       }
