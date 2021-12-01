@@ -16,6 +16,13 @@
             "components": {
               "layers": [
                 {
+                  "id": "",
+                  "name": "Sea Water Temperature (local)",
+                  "layer": "",
+                  "url": "",
+                  "icon": "sea_temp.png"
+                },
+                {
                   "id": "CHL",
                   "name": "Chlorophyll (CMEMS)",
                   "layer": "CHL",
@@ -25,7 +32,7 @@
                 },
                 {
                   "id": "analysed_sst",
-                  "name": "Sea Surface Temperature",
+                  "name": "Sea Surface Temperature (CMEMS)",
                   "layer": "analysed_sst",
                   "url": "https://nrt.cmems-du.eu/thredds/wms/METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2",
                   "icon": "fish.png",
@@ -300,6 +307,22 @@
             "name": "Spat captures assistance",
             "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click ",
             "components": {
+              "layers": [
+                {
+                  "id": "temp",
+                  "name": "Sea Water Temperature (local)",
+                  "layer": "temp",
+                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "icon": "sea_temp.png"
+               },
+               {
+                  "id": "CHL",
+                  "name": "Chlorophyll (CMEMS)",
+                  "layer": "CHL",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
+                  "icon": "chlorophyll_a.png"
+               }
+              ],
               "draw_polygon": {
                 "text": "Select your farming area of interest by drawing it on the map",
                 "title": "Farming area"
