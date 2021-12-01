@@ -1,0 +1,70 @@
+export const template_a2 = (time, id, area, source, target) =>({
+   "inputs":[
+      {
+         "id":"pilot",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": area
+            }
+         }
+      },
+     {
+         "id":"time",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": time
+            }
+         }
+      },
+     {
+         "id":"period",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "5"
+            }
+         }
+      },
+     {
+         "id":"source",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": source
+            }
+         }
+      },
+     {
+         "id":"target",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": target
+            }
+         }
+      }
+   ],
+   "outputs":[
+      {
+         "id":"result",
+         "format":{
+            "mimeType":"application/x-ewps-stac"
+         },
+         "transmissionMode":"reference"
+      }
+   ],
+   "response":"document",
+   "mode":"async"
+})

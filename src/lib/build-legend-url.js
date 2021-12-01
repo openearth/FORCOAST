@@ -1,6 +1,6 @@
 import buildGeoserverUrl from "./build-geoserver-url"
 
-export default ({ layer, url, scale, width = 40, height = 60 }) => buildGeoserverUrl({
+export default ({ layer, url, scale, colorscalerange, styles, width = 40, height = 60 }) => buildGeoserverUrl({
 	request: "GetLegendGraphic",
 	service: "WMS",
 	format: "image/png",
@@ -8,5 +8,7 @@ export default ({ layer, url, scale, width = 40, height = 60 }) => buildGeoserve
 	height,
 	url,
 	layer,
-	scale
+	scale,
+	colorscalerange,
+	palette: "sst_36"
 })

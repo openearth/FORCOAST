@@ -7,14 +7,10 @@
       <v-divider class="mt-4 mb-4" />
     </div>
     <!-- .sync -->
-    <draggable-marker
-      v-if="service.components.draggable_marker"
-      @show-draggable-marker="onShowDraggableMarker"
-    ></draggable-marker>
     <collapsible-card
       v-if="service.components.layers"
-      :expand="0"
-      title="Select a layer"
+      :expand="1"
+      title="Select a layer for visualization"
     >
       <layers-list
         :layers="service.components.layers"
@@ -23,9 +19,58 @@
       ></layers-list>
     </collapsible-card>
     <collapsible-card
+      v-if="service.components.date_span"
+      title="Select start and end date for timeseries"
+      :expand="1"
+    >
+      <date-span :timeExtent="timeExtent"></date-span>
+    </collapsible-card>
+    <div v-if="service.components.date_span" class="mb-4">
+      <div v-if="timeSpan.length && activeLayer">
+        <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
+        <timeseries-graph
+          v-if="dialog"
+          :lngLat="markerLngLat"
+          :layer="activeLayer"
+          :timeSpan="timeSpan"
+          @close-dialog="dialog = false"
+        ></timeseries-graph>
+      </div>
+      <div v-else>
+        <v-btn disabled block color="primary">Create graph</v-btn>
+      </div>
+    </div>
+    <collapsible-card
+      v-if="service.components.date"
+      :expand="1"
+      title="Select a date for the calculations"
+    >
+      <single-date :timeExtent="timeExtent"></single-date>
+    </collapsible-card>
+    <collapsible-card
+      :title="service.components.draggable_marker.title"
+      :nextButton="true"
+      :expand="1"
+    >
+      <draggable-marker
+        @show-draggable-marker="onShowDraggableMarker" 
+      ></draggable-marker>
+    </collapsible-card>
+    <collapsible-card
+      v-if="service.components.entry_form"
+      :title="service.components.entry_form.title"
+      :nextButton="false"
+      :expand="1"
+    >
+      <entry-form
+        :value="service.components.entry_form.value"
+        :entryType="service.components.entry_form.type"
+      >
+      </entry-form>
+    </collapsible-card>
+    <collapsible-card
       v-if="service.components.draw_polygon"
       :title="service.components.draw_polygon.title"
-      :polygon="polygon"
       :nextButton="true"
       :expand="1"
     >
@@ -46,40 +91,30 @@
         <selectable-list :values="list.values"></selectable-list>
       </collapsible-card>
     </div>
-
-    <collapsible-card
-      v-if="service.components.date_span"
-      title="Select start and end date"
-      :expand="0"
-    >
-      <date-span :timeExtent="timeExtent"></date-span>
-    </collapsible-card>
-    <collapsible-card
-      v-if="service.components.date"
-      :expand="0"
-      title="Select a date"
-    >
-      <single-date></single-date>
-    </collapsible-card>
-    <!--It cant be general -->
-    <div v-if="service.components.date_span">
-      <div v-if="timeSpan.length && activeLayer">
-        <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
-        <timeseries-graph
-          v-if="dialog"
-          :lngLat="markerLngLat"
-          :layer="activeLayer"
-          :timeSpan="timeSpan"
-          @close-dialog="dialog = false"
-        ></timeseries-graph>
+    <div v-if="service.components.run_task"  class="mb-4">
+      <div v-if="selectedTime">
+        <v-btn block color="primary"  @click="runTask">Run</v-btn>
       </div>
       <div v-else>
-        <v-btn disabled block color="primary">Create graph</v-btn>
+        <v-btn disabled block color="primary">Run</v-btn>
       </div>
     </div>
-    <div v-if="service.components.run_task">
-      <v-btn disabled block color="primary">Run</v-btn>
+    <status-card 
+      v-if="jobStatus==='accepted'"
+      :date="selectedTime"
+      :firstStatus="jobStatus"
+      :statusLink="statusLink"
+    ></status-card>
+    <div v-if="service.components.joblist">
+    <collapsible-card
+      v-if="service.components.joblist"
+      :expand="1"
+      title="Overview of jobs"
+    >
+      <ListJobs :timeExtent="timeExtent"></ListJobs>
+    </collapsible-card>
     </div>
+    
   </div>
 </template>
 <script>
@@ -91,8 +126,11 @@ import SelectableList from "@/components/selectable-list";
 import DraggableMarker from "@/components/draggable-marker";
 import DrawPolygon from "@/components/draw-polygon";
 import TimeseriesGraph from "@/components/timeseries-graph";
+import StatusCard from "@/components/status-card"
+import ListJobs from '@/components/list-jobs'
+import EntryForm from '@/components/entry-form'
 
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 import getWMSCapabilities from "@/lib/getWmsCapabilities";
 
@@ -106,6 +144,9 @@ export default {
     DrawPolygon,
     SelectableList,
     TimeseriesGraph,
+    StatusCard,
+    ListJobs,
+    EntryForm
   },
   props: {
     service: {
@@ -128,9 +169,15 @@ export default {
       markerLngLat: (state) => state.markerLngLat,
       timeExtent: (state) => state.timeExtent,
       timeSpan: (state) => state.timeSpan,
+      jobStatus: (state) => state.jobStatus,
+      selectedTime: (state) => state.selectedTime,
+      statusLink: (state) => state.statusLink,
+      selectedCategory: (state) => state.selectedCategory,
+      selectedService: (state) => state.selectedService
     }),
   },
   methods: {
+    ...mapActions(['runProcessor']),
     async onActiveLayerChange(layers) {
       // Every time the layer changes. 
       this.$store.commit("CLEAR_TIME_EXTENT");
@@ -216,11 +263,20 @@ export default {
       const newFormat = time.replace("\r\n", "").trim().slice(0, 10);
       return newFormat;
     },
+    runTask() {
+      this.$store.commit("CLEAR_JOB_STATUS");
+      this.runProcessor()
+    }
   },
 };
 </script>
 <style>
 .execute {
   position: fixed;
+}
+.v-btn:not(.v-btn--round).v-size--default {
+    height: 25px;
+    min-width: 64px;
+    padding: 0 16px;
 }
 </style>

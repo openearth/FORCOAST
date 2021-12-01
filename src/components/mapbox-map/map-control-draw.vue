@@ -3,7 +3,7 @@
 </template>
 <script>
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
-
+import DrawRectangle from "mapbox-gl-draw-rectangle-mode"
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 
 export default {
@@ -41,6 +41,8 @@ export default {
     },
 
     addToMap(map) {
+      this.modes = MapboxDraw.modes
+      this.modes.draw_polygon = DrawRectangle
       this.draw = new MapboxDraw({
         displayControlsDefault: false,
         controls: {

@@ -5,6 +5,7 @@ import App from "./App.vue"
 import router from "./router"
 import vuetify from "./plugins/vuetify"
 import "./plugins/vue2MapboxGL"
+import "./plugins/VueHtmlToPaper"
 
 
 Vue.config.productionTip = false

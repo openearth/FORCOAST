@@ -99,7 +99,6 @@ export default {
         center: config.map.center,
         zoom: config.map.zoom,
         style: 'mapbox://styles/forcoast/ckv2hfj623qkb14l9akxfvyzu'
-        //style: MAP_BASELAYER_DEFAULT.style,
       };
     },
     mapBaseLayers() {

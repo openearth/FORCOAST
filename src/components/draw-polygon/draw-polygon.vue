@@ -1,7 +1,5 @@
 <template>
-  <div class="pa-4">
-    {{ text }}
-  </div>
+  <div></div>
 </template>
 
 <script>
