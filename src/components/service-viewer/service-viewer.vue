@@ -1,7 +1,6 @@
 <template>
   <div class="d-flex flex-column">
     <div>
-      <!-- <h2 class="h2">TEST</h2> -->
       <p>Service module: {{ service.name }}</p>
       <p>{{ service.description }} <a href="https://forcoast.eu/">here</a></p>
       <v-divider class="mt-4 mb-4" />
@@ -26,12 +25,12 @@
       <date-span :timeExtent="timeExtent"></date-span>
     </collapsible-card>
     <div v-if="service.components.date_span" class="mb-4">
-      <div v-if="timeSpan.length && activeLayer">
+      <div v-if="timeSpan.length && selectedLayer">
         <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
         <timeseries-graph
           v-if="dialog"
           :lngLat="markerLngLat"
-          :layer="activeLayer"
+          :layer="selectedLayer"
           :timeSpan="timeSpan"
           @close-dialog="dialog = false"
         ></timeseries-graph>
@@ -105,7 +104,7 @@
       :expand="0"
       title="Overview of jobs"
     >
-      <ListJobs :timeExtent="timeExtent"></ListJobs>
+      <list-jobs :timeExtent="timeExtent"></list-jobs>
     </collapsible-card>
     </div>
     
@@ -124,9 +123,9 @@ import StatusCard from "@/components/status-card"
 import ListJobs from '@/components/ListJobs'
 import EntryForm from '@/components/entry-form'
 
-import { mapState, mapActions } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 
-import getWMSCapabilities from "@/lib/getWmsCapabilities";
+
 
 export default {
   components: {
@@ -151,55 +150,24 @@ export default {
   data() {
     return {
       title: "Select a layer",
-      activeLayer: null,
-      //activeLayers: [],
       dialog: false,
-      //layers: [],
     };
   },
 
   computed: {
-    ...mapState({
-      markerLngLat: (state) => state.markerLngLat,
-      timeExtent: (state) => state.timeExtent,
-      timeSpan: (state) => state.timeSpan,
-      jobStatus: (state) => state.jobStatus,
-      selectedTime: (state) => state.selectedTime,
-      statusLink: (state) => state.statusLink,
-      selectedCategory: (state) => state.selectedCategory,
-      selectedService: (state) => state.selectedService
-    }),
+    ...mapState(["markerLngLat", "jobStatus", "selectedTime", "statusLink", "timeSpan" ]),
+    ...mapGetters(["selectedLayer", "timeExtent"])
   },
   methods: {
-    ...mapActions(['runProcessor']),
-    async onActiveLayerChange(layers) {
-      // Every time the layer changes. 
-      this.$store.commit("CLEAR_TIME_EXTENT");
-      this.$store.commit("CLEAR_SELECTED_TIME");
+    ...mapActions(["runProcessor", "setActiveLayers", "clearSelectedTime", "getCapabilities", "clearCapabilities"]), // here that I clear the timeExtent I have to clear the capabilities instead
+    onActiveLayerChange(layers) {
       
-      this.$store.commit("SET_ACTIVE_LAYERS", layers );
-      this.activeLayer = layers[0];
-
-      if (this.activeLayer) {
-        const layerTimeExtent = await this.getActiveLayerTimeExtent();
-        
-        this.$store.commit("SET_TIME_EXTENT", layerTimeExtent);
-        let lastTime = layerTimeExtent[layerTimeExtent.length - 1];
-        
-        this.$store.commit("SET_SELECTED_TIME", lastTime);
-        
-/*         const modifiedActiveLayers = this.activeLayers.map((layer) => ({
-          ...layer,
-          time: lastTime,
-        }));
-        this.activeLayers = modifiedActiveLayers; */
-      }
-     
-      //this.$emit("active-layers-change", this.activelayers); move layers to state. I need a getter. 
-
-      //TODO temporal solution. activeLayer is used only for the GetFeatureInfo request.
-      // In later stage I might need to implement a getFeatureInfo for every open layer.
-      // it is not clarified yet.
+       
+      this.clearCapabilities();
+      this.clearSelectedTime(); 
+      this.setActiveLayers(layers);
+      this.getCapabilities();
+  
     },
     onActiveLegendChange(legend) {
       this.$emit("active-legend-change", legend);
@@ -210,53 +178,7 @@ export default {
     onShowDrawPolygon(event) {
       this.$emit("show-draw-polygon", event);
     },
-    async getCapabilities() {
-      // its a getcapabilities
-      try {
-        const response = await getWMSCapabilities({
-          url: this.activeLayer.url,
-        });
-        const capabilities = response.WMT_MS_Capabilities.Capability;
-        return capabilities;
-      } catch (error) {
-        console.log("error:", error);
-      }
-    },
-    //TODO: rename to getActiveLayersInformation, in the future we will need also to read the depths from
-    // the getCapabilities response
-    async getActiveLayerTimeExtent() {
-      const capabilities = await this.getCapabilities();
-      let allLayers;
-      let layer;
-      let extent;
-      //TODO same getCapabilities request has different format in the response (Thredd or Geoserver)
-      if (capabilities.Layer.Layer.Layer) {
-        allLayers = capabilities.Layer.Layer.Layer;
-        console.log("case Thredd", allLayers);
-        layer = allLayers.find(
-          (layer) => layer.Name._text === this.activeLayer.id
-        );
-        extent = layer.Extent._text.split(",");
-      } else {
-        allLayers = capabilities.Layer.Layer;
-        console.log("case Geoserver", allLayers);
-        layer = allLayers.find(
-          (layer) => layer.Name._text === this.activeLayer.id
-        );
-        extent = layer.Extent[0]._text.split(",");
-      }
-      //TODO for now they dont want to use the time. So I keep only the days.
-      let daysExtent = extent.map(this.formatTime);
-      let uniqueDaysExtent = daysExtent.reduce(
-        (unique, day) => (unique.includes(day) ? unique : [...unique, day]),
-        []
-      );
-      return uniqueDaysExtent;
-    },
-    formatTime(time) {
-      const newFormat = time.replace("\r\n", "").trim().slice(0, 10);
-      return newFormat;
-    },
+
     runTask() {
       this.$store.commit("CLEAR_JOB_STATUS");
       this.runProcessor()

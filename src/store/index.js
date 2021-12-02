@@ -2,7 +2,9 @@ import Vue from "vue"
 import Vuex from "vuex"
 import run from "@/lib/wps/runProcessor"
 import getStatus  from "@/lib/wps/getStatus"
-
+import getWMSCapabilities from "@/lib/getWmsCapabilities";
+import extractTimeExtentFromCapabilities from  "@/lib/extract-time-extent-from-capabilities"
+import buildWmsLayer from "@/lib/build-wms-layer";
 
 Vue.use(Vuex)
 
@@ -17,26 +19,47 @@ export default new Vuex.Store({
     markerLngLat: {},
     iconCategory: null,
     timeSpan: [], //TODO service-viewer data() timeSpan has replaced the state. Check if needed as state
-    timeExtent: [],
-    runTimeExtent: [],
-    activeLayers: null,
+    runTimeExtent: [], 
+    activeLayers: [],
     jobStatus: null,
     statusLink: null,
     selectedEntryValue: null,
+    capabilities: null,
 	},
   getters: {
-    activeLayers(state) {
-      
-      const selectedTime = state.selectedTime
-      const activeLayers = state.activeLayers
-      if (selectedTime && activeLayers) {
+    // always make the getCapabilities with the last selected Layer.
+    selectedLayer(state) {
+      const { activeLayers } = state
+      if (!activeLayers.length) {
+        return null
+      }
+      return activeLayers[0] // TODO change it to array length -1
+    },
+    /* WMS layer of selected layer */
+    wmsLayer(state, getters) {
+     /*  const { selectedTime , 
+            if (selectedTime && activeLayers) {
               const modifiedActiveLayers = activeLayers.map((layer) => ({
                 ...layer,
                 time: selectedTime,
               }));
-              return modifiedActiveLayers;
+              return modifiedActiveLayers[0];
+      } */
+      
+      const { selectedLayer } = getters
+      if (!selectedLayer) {
+        return null
       }
-
+      return buildWmsLayer(selectedLayer) 
+    },
+    timeExtent(state, getters) {
+      const { capabilities, activeLayers } = state
+      console.log('activeLayers in timeExtent', activeLayers)
+      const { selectedLayer } = getters
+      if (!capabilities & !selectedLayer) {
+        return []
+      }
+      return extractTimeExtentFromCapabilities(capabilities, selectedLayer)
     }
   },
 	mutations: { 
@@ -47,7 +70,7 @@ export default new Vuex.Store({
       state.selectedArea = area
     },
 		SET_SERVICE(state, service) {
-			state.selectedService = service // object of service name and area.
+			state.selectedService = service 
 		},
 		CLEAR_SELECTED_SERVICE(state) {
 			state.selectedService = null
@@ -76,9 +99,6 @@ export default new Vuex.Store({
     SET_TIME_SPAN(state, timespan) {
       state.timeSpan = timespan
     },
-    SET_TIME_EXTENT(state, extent) {
-      state.timeExtent = extent
-    },
     CLEAR_TIME_EXTENT(state) {
       state.timeExtent = []
     },
@@ -95,9 +115,8 @@ export default new Vuex.Store({
       state.activeLayers = layers
     },
     CLEAR_ACTIVE_LAYERS(state) { 
-      state.activeLayers = null
+      state.activeLayers = []
     },
-    //TODO See if I will use it
     SET_JOB_STATUS(state, status) {
       state.jobStatus = status
     },
@@ -113,54 +132,71 @@ export default new Vuex.Store({
     SET_SELECTED_ENTRY_VALUE(state, entryValue) {
       state.selectedEntryValue = entryValue
     },
-    CLEAR_SELECTED_ENTRY_VALUE(state, entryValue) {
+    CLEAR_SELECTED_ENTRY_VALUE(state) {
       state.selectedEntryValue = null
     },
+    SET_CAPABILITIES(state, capabilities) {
+      state.capabilities = capabilities
+    },
+    CLEAR_CAPABILITIES(state) {
+      state.capabilities = null
+    }
 	},
   actions: { 
+    setActiveLayers(context, payload) {
+      context.commit("SET_ACTIVE_LAYERS", payload)
+    },
+    async getCapabilities(context) {
+      const { selectedLayer } = context.getters
+      try {
+        const response = await getWMSCapabilities({
+          url: selectedLayer.url,
+        });
+        const capabilities = response.WMT_MS_Capabilities.Capability;
+        context.commit('SET_CAPABILITIES', capabilities)
+      } catch (error) {
+        console.log("error:", error);
+      }
+    },
     async runProcessor({commit, state}) {
-      //console.log("test runProcessor:")
-      //console.log(state.selectedCategory)
+
       console.log(state.selectedService.id);
       console.log("SET_SELECTED_ENTRY_VALUE");
       console.log(state.selectedEntryValue);
-      //console.log(state.selectedArea);
-      //console.log(state.markerLngLat.lat);
-      //console.log(state.markerLngLat.lng);
+
       const lat = state.markerLngLat.lat;
       const lon = state.markerLngLat.lng;
       const lim = state.selectedEntryValue
-      //const lim = 2.1
+
       const area = "eforie"
       const source = [1,2]
       const target = [1,2,3,4]
 
-      //console.log(state.polygon);
-      //console.log(state.polygon.features[0].geometry.coordinates[0][0]);
-      //const testtime = "2021-11-22"
+
       const id = state.selectedService.id;
       const response = await run(state.selectedTime, id, area, source, target, lat, lon, lim)
       //const response = await run(testtime, id)
       const statusLink = response[0].value.href
-      //console.log("statusLink:")
-      //console.log(statusLink)
+
       commit("SET_STATUS_LINK", statusLink)
       if (statusLink) {
         const status = await getStatus(statusLink)
         commit("SET_JOB_STATUS", status)
       }
-      //console.log("SET_JOB_STATUS");
-      //console.log(state.jobStatus);
+
       if (state.jobStatus == "successful") {
         console.log("successful!")
       }
-
-      // ??
-      //const outputLink = response[0].value.href
-      //commit("SET_OUTPUT_LINK", outputLink)
-      //console.log("outputLink:")
-      //console.log(outputLink)
-
+    },
+    clearTimeExtent(context) {
+      context.commit('CLEAR_TIME_EXTENT')
+    },
+    clearSelectedTime(context) {
+      context.commit('CLEAR_SELECTED_TIME')
+    },
+    clearCapabilities(context) {
+      context.commit('CLEAR_CAPABILITIES')
     }
   }
 }) 
+//TODO store became too big. Split it perhaps in 2 or 3 stores

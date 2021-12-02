@@ -52,7 +52,7 @@ export default {
       });
       map.addControl(this.draw, "top-left");
 
-      map.on("draw.create", () => (this.polygon = this.draw.getAll())); //TODO for now polygon is data() later perhaps state
+      map.on("draw.create", () => (this.polygon = this.draw.getAll())); 
       map.on("draw.delete", () => (this.polygon = this.draw.getAll()));
       map.on("draw.update", () => (this.polygon = this.draw.getAll()));
     },

@@ -17,8 +17,9 @@
       :center="centerPoint"
     ></map-control-marker>
     <map-control-draw v-if="drawPolygon"></map-control-draw>
+    <!-- TODO change to layers in the future -->
     <map-layer
-      v-for="layer in wmsLayers"
+      v-if="layer"
       :key="layer.request"
       :options="layer"
     />
@@ -27,14 +28,13 @@
       :base-url="legendLayerUrl"
       :legend-layer="legendLayer"
     />
-    <!-- I have to
-    ensure that wmsLayers have only one layer when this service is selected. -->
+   
   </v-mapbox>
 </template>
 
 <script>
 import { MAP_BASELAYERS, MAP_BASELAYER_DEFAULT } from "@/lib/constants";
-import buildWmsLayer from "@/lib/build-wms-layer";
+
 import { getProjectConfig } from "@/lib/config-utils";
 import MapControlBaselayer from "./map-control-baselayer";
 import MapControlDraw from "./map-control-draw";
@@ -57,9 +57,10 @@ export default {
     MapControlMarker,
   },
   props: {
-    layers: {
-      type: Array,
-      default: () => [],
+    /* TODO change to layers in the future */
+    layer: {
+      type: Object,
+      default: () => {},
     },
     legendLayer: {
       type: String,
@@ -80,9 +81,6 @@ export default {
     };
   },
   watch: {
-    layers() {
-      this.sortLayers();
-    },
     selectedAreaBBox() {
       if (this.selectedAreaBBox.length) {
         this.zoomToExtend();
@@ -104,9 +102,7 @@ export default {
     mapBaseLayers() {
       return MAP_BASELAYERS;
     },
-    wmsLayers() {
-      return this.layers.map(buildWmsLayer);
-    },
+
     legendLayerUrl() {
       const layer = this.layers.find((layer) => layer.id === this.legendLayer);
 
@@ -128,48 +124,7 @@ export default {
         this.$root.mapLoaded = true;
       });
     },
-    // makes sure the layers are rendered in the order or the wmsLayers array
-    // position 1 gets rendered on top, 2 below that etc.
-    sortLayers() {
-      const { map } = this.$root;
 
-      // processing needs te be done in order, otherwise the internal layer order
-      // of mapbox will be messed up
-      this.layers.map(async (layer, index) => {
-        const before = this.layers[index - 1] && this.layers[index - 1].id;
-
-        // wait until layers are both loaded before proceeding
-        await Promise.all(
-          [layer.id, before].map(async (id) => {
-            await this.layerLoaded(id);
-          })
-        );
-
-        map.moveLayer(layer.id, before);
-      });
-    },
-    // listens for when a layer is loaded by mapbox
-    async layerLoaded(id) {
-      const { map } = this.$root;
-
-      if (!map.getLayer(id)) {
-        // we need to wait for when a layer is loaded, hence the Promise
-        await new Promise((resolve) => {
-          this.cb = (e) => {
-            // check if the loaded layer has the current id
-            if (e.sourceDataType === "metadata" && e.sourceId === id) {
-              resolve();
-            }
-
-            // remove callback since it will likely be re-added later
-            map.off("sourcedata", this.cb);
-          };
-
-          // add callback when sourcedata is updated
-          map.on("sourcedata", this.cb);
-        });
-      }
-    },
     zoomToExtend() {
       const { map } = this.$root;
       map.fitBounds(this.selectedAreaBBox);
