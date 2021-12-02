@@ -69,6 +69,9 @@ export default new Vuex.Store({
     SET_AREA(state, area) { 
       state.selectedArea = area
     },
+    SET_AREA_ID(state, areaId) { 
+      state.selectedAreaId = areaId
+    },
 		SET_SERVICE(state, service) {
 			state.selectedService = service 
 		},
@@ -140,7 +143,13 @@ export default new Vuex.Store({
     },
     CLEAR_CAPABILITIES(state) {
       state.capabilities = null
-    }
+    },
+    SET_SELECTED_ENTRY_TYPE(state, entryType) {
+      state.selectedEntryType = entryType
+    },
+    CLEAR_SELECTED_ENTRY_TYPE(state, entryType) {
+      state.selectedEntryType = null
+    },
 	},
   actions: { 
     setActiveLayers(context, payload) {
@@ -160,21 +169,46 @@ export default new Vuex.Store({
     },
     async runProcessor({commit, state}) {
 
-      console.log(state.selectedService.id);
-      console.log("SET_SELECTED_ENTRY_VALUE");
-      console.log(state.selectedEntryValue);
+      // Set pilot area for selected service
+      const area = state.selectedAreaId
 
+      // Set id of selected service
+      const id = state.selectedService.id;
+
+      // Set lat and lon input values
       const lat = state.markerLngLat.lat;
       const lon = state.markerLngLat.lng;
-      const lim = state.selectedEntryValue
+ 
+      // Set values from entry form
+      var lim = ""
+      if (state.selectedEntryType == "lim") {
+        lim = state.selectedEntryValue  
+      }
+      var period = ""
+      if (state.selectedEntryType == "period") {
+        period = state.selectedEntryValue  
+      }
+      
+      // Set source based on lat and lon
+      const source = "[" + state.markerLngLat.lng + "," + state.markerLngLat.lat + "]"
+      
+      // Set bounding box in proper format:
+      // [[lon_min,lat_min],[lon_max,lat_min],[lon_max,lat_max],[lon_min,lat_max]]
+      var target = ""
+      if (state.polygon) {
+        let lon_max = Math.max(state.polygon.features[0].geometry.coordinates[0][0][0], state.polygon.features[0].geometry.coordinates[0][1][0], state.polygon.features[0].geometry.coordinates[0][2][0], state.polygon.features[0].geometry.coordinates[0][3][0]);
+        let lon_min = Math.min(state.polygon.features[0].geometry.coordinates[0][0][0], state.polygon.features[0].geometry.coordinates[0][1][0], state.polygon.features[0].geometry.coordinates[0][2][0], state.polygon.features[0].geometry.coordinates[0][3][0]);
+        let lat_max = Math.max(state.polygon.features[0].geometry.coordinates[0][0][1], state.polygon.features[0].geometry.coordinates[0][1][1], state.polygon.features[0].geometry.coordinates[0][2][1], state.polygon.features[0].geometry.coordinates[0][3][1]);
+        let lat_min = Math.min(state.polygon.features[0].geometry.coordinates[0][0][1], state.polygon.features[0].geometry.coordinates[0][1][1], state.polygon.features[0].geometry.coordinates[0][2][1], state.polygon.features[0].geometry.coordinates[0][3][1]);
+        // console.log(lon_max)
+        // console.log(lon_min)
+        // console.log(lat_max)
+        // console.log(lat_min)
+        target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
+      }
+      console.log(target)
 
-      const area = "eforie"
-      const source = [1,2]
-      const target = [1,2,3,4]
-
-
-      const id = state.selectedService.id;
-      const response = await run(state.selectedTime, id, area, source, target, lat, lon, lim)
+      const response = await run(state.selectedTime, period, id, area, source, target, lat, lon, lim)
       //const response = await run(testtime, id)
       const statusLink = response[0].value.href
 

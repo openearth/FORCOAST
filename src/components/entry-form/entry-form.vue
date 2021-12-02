@@ -15,6 +15,7 @@
   </v-form>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   data: () => ({
     entryValue: "",
@@ -23,11 +24,16 @@ export default {
     value: {
       type: String, 
       required: true,
-    },   
+    },
+    entryType: {
+      type: String, 
+      required: true,
+    },    
   },
   watch: {
     entryValue() {
-      this.$store.commit("SET_SELECTED_ENTRY_VALUE", this.entryValue); // commits the selected time. 
+      this.$store.commit("SET_SELECTED_ENTRY_TYPE", this.entryType);
+      this.$store.commit("SET_SELECTED_ENTRY_VALUE", this.entryValue); // commits the selected value. 
     }
   },
 };

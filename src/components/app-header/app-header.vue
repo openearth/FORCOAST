@@ -60,7 +60,7 @@
               :key="index"
               link
               @click="
-                setService(area.name, service);
+                setService(area.name, area.id, service);
                 setSelectedAreaBBox(area.bbox);
               "
             >
@@ -113,13 +113,14 @@ export default {
       }
       this.closeMenu = false;
     },
-    setService(area, service) {
+    setService(area, area_id, service) {
       const selectedService = service;
 
       if (selectedService !== this.selectedService) {
         this.$store.commit("CLEAR_SELECTED_SERVICE");
         this.$store.commit("CLEAR_JOB_STATUS");
         this.$store.commit("SET_AREA", area);
+        this.$store.commit("SET_AREA_ID", area_id);
         this.$store.commit("CLEAR_SELECTED_ENTRY_VALUE");
         this.$store.commit("CLEAR_RUN_TIME_EXTENT");
         this.$store.commit("CLEAR_TIME_EXTENT");

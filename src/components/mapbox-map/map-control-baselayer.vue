@@ -75,7 +75,7 @@ export default {
       // switch style
       map.setStyle(style);
       this.currentLayerIndex = nextIndex;
-
+      
       // re-add all custom layers when style is loaded
       map.once("style.load", () => {
         customSources.forEach((source) => {
