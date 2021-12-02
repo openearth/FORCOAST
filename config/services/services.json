@@ -23,14 +23,6 @@
                   "icon": "sea_temp.png"
                 },
                 {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
-                  "icon": "fish.png",
-                  "colorscalerange": "0,50"
-                },
-                {
                   "id": "analysed_sst",
                   "name": "Sea Surface Temperature (CMEMS)",
                   "layer": "analysed_sst",
@@ -40,7 +32,7 @@
                 },
                 {
                   "id": "forcoast:fronts_sst",
-                  "name": "Frontal map",
+                  "name": "Frontal Zones Sea Water Temperature",
                   "layer": "forcoast:fronts_sst",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
