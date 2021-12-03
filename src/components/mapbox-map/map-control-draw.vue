@@ -5,6 +5,7 @@
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
 import DrawRectangle from "mapbox-gl-draw-rectangle-mode"
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
+import { mapActions } from "vuex";
 
 export default {
   inject: ["getMap"],
@@ -28,14 +29,15 @@ export default {
   watch: {
     polygon() {
       if (this.polygon.features.length) {
-        this.$store.commit("SET_POLYGON", this.polygon);
+        this.setPolygon(this.polygon);
       } else {
-        this.$store.commit("SET_POLYGON", null);
+        this.clearPolygon();
       }
     },
   },
 
   methods: {
+    ...mapActions("wps",["setPolygon", "clearPolygon"]),
     deferredMountedTo(map) {
       this.addToMap(map);
     },

@@ -30,7 +30,7 @@ import AppHeader from "@/components/app-header";
 import AppSidebar from "@/components/app-sidebar";
 import LegalDialog from "@/components/legal-dialog";
 import LayerTimestampCard from "@/components/layer-timestamp-card";
-import { mapGetters, mapState } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 
 export default {
   name: "App",
@@ -56,14 +56,13 @@ export default {
     },
   },
   computed: {
-    ...mapState({
-      selectedTime: (state) => state.selectedTime,
-    }),
-    ...mapGetters(["wmsLayer", "timeExtent"])
+    ...mapState("layers", ["selectedTime"]),
+    ...mapGetters("layers", ["wmsLayer", "timeExtent"])
   },
   methods: {
+    ...mapActions("layers",["setSelectedTime","clearActiveLayers"]),
     reset() {
-      this.$store.commit("CLEAR_ACTIVE_LAYERS")
+      this.clearActiveLayers();
       this.legendLayer = "";
     },
     onLegalAccepted() {
@@ -79,7 +78,7 @@ export default {
       this.drawPolygon = event;
     },
     onSelectedTimeChange(event) {
-      this.$store.commit("SET_SELECTED_TIME", event);
+      this.setSelectedTime(event);
     },
   },
 };

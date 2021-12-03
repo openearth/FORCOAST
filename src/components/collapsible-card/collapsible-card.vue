@@ -56,9 +56,7 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      polygon: (state) => state.polygon,
-    }),
+    ...mapState("wps", ["polygon"])
   },
   watch: {
     polygon() {

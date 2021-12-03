@@ -4,6 +4,7 @@
 
 <script>
 import mapboxgl from "mapbox-gl";
+import { mapActions } from "vuex";
 
 export default {
   inject: ["getMap"],
@@ -39,6 +40,7 @@ export default {
     this.marker.remove();
   },
   methods: {
+    ...mapActions("wps", ["setMarkerCoordinates", "clearMarkerCoordinates"]),
     deferredMountedTo(map) {
       if (this.center) {
         this.addToMap(map);
@@ -54,7 +56,7 @@ export default {
 
       this.marker.on("dragend", () => {
         const lngLat = this.marker.getLngLat();
-        this.$store.commit("SET_MARKER_COORDINATES", lngLat);
+        this.setMarkerCoordinates(lngLat);
       });
     },
   },

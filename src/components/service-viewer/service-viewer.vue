@@ -161,14 +161,15 @@ export default {
   },
 
   computed: {
-    ...mapState(["markerLngLat", "jobStatus", "selectedTime", "statusLink", "timeSpan" ]),
-    ...mapGetters(["selectedLayer", "timeExtent"])
+    ...mapState("wps", ["markerLngLat", "jobStatus", "statusLink"]),
+    ...mapState("layers", ["selectedTime", "timeSpan"]),
+    ...mapGetters("layers", ["selectedLayer", "timeExtent"])
   },
   methods: {
-    ...mapActions(["runProcessor", "setActiveLayers", "clearSelectedTime", "getCapabilities", "clearCapabilities"]), // here that I clear the timeExtent I have to clear the capabilities instead
+    ...mapActions("wps",["runProcessor", "clearJobStatus"]),
+    ...mapActions("layers",["setActiveLayers", "clearSelectedTime", "getCapabilities", "clearCapabilities"]), 
     onActiveLayerChange(layers) {
       
-       
       this.clearCapabilities();
       this.clearSelectedTime(); 
       this.setActiveLayers(layers);
@@ -186,8 +187,8 @@ export default {
     },
 
     runTask() {
-      this.$store.commit("CLEAR_JOB_STATUS");
-      this.runProcessor()
+      this.clearJobStatus();
+      this.runProcessor();
     }
   },
 };

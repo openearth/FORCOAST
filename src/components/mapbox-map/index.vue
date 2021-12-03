@@ -57,7 +57,7 @@ export default {
     MapControlMarker,
   },
   props: {
-    /* TODO change to layers in the future */
+    /* TODO change to layers if we want to show more than one layers on the same time */
     layer: {
       type: Object,
       default: () => {},
@@ -112,9 +112,7 @@ export default {
 
       return "";
     },
-    ...mapState({
-      selectedAreaBBox: (state) => state.selectedAreaBBox,
-    }),
+    ...mapState("layers", ["selectedAreaBBox"]),
   },
   methods: {
     onMapCreated(map) {

@@ -34,6 +34,7 @@
   </div>
 </template>
 <script>
+import { mapActions } from "vuex";
 export default {
   data: () => ({
     date: "", // TODO take from the services.json
@@ -49,7 +50,7 @@ export default {
   },
   watch: {
     date() {
-      this.$store.commit("SET_SELECTED_TIME", this.date); // commits the selected time. 
+      this.setSelectedTime(this.date);
     },
     timeExtent() { 
       this.date = this.timeExtent[0];
@@ -57,5 +58,8 @@ export default {
       this.max = this.timeExtent[this.timeExtent.length - 1]
     }
   },
+  methods:{
+    ...mapActions("layers", ["setSelectedTime"])
+  }
 };
 </script>
