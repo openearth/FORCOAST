@@ -24,9 +24,10 @@
       :options="layer"
     />
     <map-legend
-      v-if="legendLayer"
-      :base-url="legendLayerUrl"
-      :legend-layer="legendLayer"
+      v-if="layer"
+      :key="layer.id"
+      :baseUrl="layer.url"
+      :layerId="layer.id"
     />
    
   </v-mapbox>
@@ -61,10 +62,6 @@ export default {
     layer: {
       type: Object,
       default: () => {},
-    },
-    legendLayer: {
-      type: String,
-      default: null,
     },
     draggableMarker: {
       type: Boolean,
@@ -103,15 +100,6 @@ export default {
       return MAP_BASELAYERS;
     },
 
-    legendLayerUrl() {
-      const layer = this.layers.find((layer) => layer.id === this.legendLayer);
-
-      if (layer) {
-        return layer.url;
-      }
-
-      return "";
-    },
     ...mapState("layers", ["selectedAreaBBox"]),
   },
   methods: {

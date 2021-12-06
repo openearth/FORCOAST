@@ -10,13 +10,12 @@
       <layer-timestamp-card
         v-if="wmsLayer && timeExtent.length"
         :timeExtent="timeExtent"
-        :originalTime="selectedTime"
+        :originalTime="layerTimestamp"
         @selected-time-change="onSelectedTimeChange"
       ></layer-timestamp-card>
       <mapbox-map
         v-if="acceptedLegal"
         :layer="wmsLayer"
-        :legendLayer="legendLayer"
         :draggableMarker="draggableMarker"
         :drawPolygon="drawPolygon"
       />
@@ -57,7 +56,7 @@ export default {
   },
   computed: {
     ...mapState("layers", ["selectedTime"]),
-    ...mapGetters("layers", ["wmsLayer", "timeExtent"])
+    ...mapGetters("layers", ["wmsLayer", "timeExtent", "layerTimestamp"])
   },
   methods: {
     ...mapActions("layers",["setSelectedTime","clearActiveLayers"]),

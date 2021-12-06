@@ -22,24 +22,7 @@ export default {
       if (!activeLayers.length) {
         return null
       }
-      return activeLayers[0] // TODO change it to array length -1
-    },
-    /* WMS layer of selected layer */
-    wmsLayer(state, getters) {
-     /*  const { selectedTime , 
-            if (selectedTime && activeLayers) {
-              const modifiedActiveLayers = activeLayers.map((layer) => ({
-                ...layer,
-                time: selectedTime,
-              }));
-              return modifiedActiveLayers[0];
-      } */
-      
-      const { selectedLayer } = getters
-      if (!selectedLayer) {
-        return null
-      }
-      return buildWmsLayer(selectedLayer) 
+      return activeLayers[activeLayers.length - 1] 
     },
     timeExtent(state, getters) {
       const { capabilities } = state
@@ -47,8 +30,36 @@ export default {
       if (!capabilities & !selectedLayer) {
         return []
       }
+      
       return extractTimeExtentFromCapabilities(capabilities, selectedLayer)
-    }
+    },
+    layerTimestamp(state, getters) {
+      const { selectedTime, capabilities } = state
+      const { timeExtent } = getters
+      //There are layers that have no timeExtent in the capabilities. For that case the time will be empty string
+      if (capabilities && !timeExtent.length) {
+        return ' '
+      }
+      if (!selectedTime) {
+        return timeExtent[timeExtent.length - 1]
+      }
+      return selectedTime
+    },
+        /* WMS layer of selected layer */
+    wmsLayer(state, getters) {
+      const { selectedLayer, timeExtent, layerTimestamp } = getters
+      console.log('layerTimestamp before the if', layerTimestamp)
+      if (!selectedLayer || !layerTimestamp) {
+        return null
+      }
+      console.log('layerTimeStamp passed the if for null', layerTimestamp)
+      const layer = {
+        ...selectedLayer,
+        time: layerTimestamp
+      }
+    
+      return buildWmsLayer(layer) 
+    },
   },
 	mutations: { 
 		SET_CATEGORY(state, category) { 
@@ -127,6 +138,9 @@ export default {
     },
     async getCapabilities(context) {
       const { selectedLayer } = context.getters
+      if (!selectedLayer) {
+        return null
+      }
       try {
         const response = await getWMSCapabilities({
           url: selectedLayer.url,
@@ -153,7 +167,5 @@ export default {
     clearActiveLayers(context) {
       context.commit("CLEAR_ACTIVE_LAYERS")
     }
-
-
   }
 }
