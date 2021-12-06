@@ -133,7 +133,7 @@ export default new Vuex.Store({
       const area = state.selectedAreaId
 
       // Set id of selected service
-      const id = state.selectedService.id;
+      const id = state.selectedService.wps_id;
 
       // Set lat and lon input values
       const lat = state.markerLngLat.lat;

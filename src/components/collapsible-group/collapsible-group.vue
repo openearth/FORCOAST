@@ -12,17 +12,9 @@
         </template>
       </v-expansion-panel-header>
       <v-divider></v-divider>
-      <v-expansion-panel-content class="mx-n6">
+      <v-expansion-panel-content class="mx-n4 my-1">
+        <div  v-if="manual" class="px-5 pb-3 flex-grow-1 overflow-y-auto" v-html="content" />
         <slot />
-      </v-expansion-panel-content>
-      <v-expansion-panel-content v-if="nextButton">
-        <v-btn
-          block
-          color="primary"
-          elevation="2"
-          raised
-          >NEXT</v-btn
-        >
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -30,6 +22,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { importConfig } from "@/lib/config-utils"
 
 export default {
   props: {
@@ -40,7 +33,7 @@ export default {
     disabled: {
       type: Boolean,
     },
-    nextButton: {
+    manual: {
       type: Boolean,
       required: false,
     },
@@ -58,7 +51,12 @@ export default {
   computed: {
     ...mapState({
       polygon: (state) => state.polygon,
+      selectedService: (state) => state.selectedService,
     }),
+    content(state) {
+      const instructions = 'content/' + state.selectedService.id + '.md';
+      return importConfig(instructions)
+    },
   },
   watch: {
     polygon() {
@@ -85,5 +83,6 @@ export default {
 .v-expansion-panels.condensed .v-expansion-panel--active + .v-expansion-panel {
   margin-top: 4px;
 }
+
 </style>
 

@@ -19,7 +19,8 @@
     <v-spacer />
 
     <v-tabs background-color="primary" dark right style="width: auto">
-      <v-tab :to="{ name: 'Introduction' }" exact> Home page </v-tab>
+      <!-- <v-tab :to="{ name: 'Introduction' }" exact> Home page </v-tab> -->
+      <v-tab href="https://forcoast.eu/" exact> Home page </v-tab>
       <!-- v-menu close on content click : set a data value that is boolean and becomes true when a 
       service is clicked -->
       <v-menu
@@ -34,8 +35,8 @@
             v-on="on"
             @click="setCategory(category.name, category.icon)"
             :to="{
-              name: 'Services',
-              params: { id: category.id },
+              name: 'Category',
+              params: { category_id: category.id },
             }"
           >
             {{ category.name }}
@@ -47,6 +48,11 @@
             sub-group
             v-for="(area, index) in category.areas"
             @click="setSelectedAreaBBox(area.bbox)"
+            :to="{
+              name: 'Area',
+              params: {category_id: category.id,
+                       area_id: area.id },
+            }"
             :key="index"
             link
           >
@@ -63,6 +69,13 @@
                 setService(area.name, area.id, service);
                 setSelectedAreaBBox(area.bbox);
               "
+              :to="{
+                name: 'Service',
+                params: {category_id: category.id,
+                         area_id: area.id,
+                         service_id: service.id
+                   },
+              }"
             >
               <v-list-item-title v-text="service.name"></v-list-item-title>
             </v-list-item>
@@ -88,6 +101,34 @@ export default {
       closeMenu: false,
     };
   },
+  watch:{
+    $route (to, from){
+        const area_id = this.$route.params.area_id
+        const category_id = this.$route.params.category_id
+        const service_id = this.$route.params.service_id
+
+        // Loop over all categories
+        for (const category in this.categories) {
+          if (this.categories[category].id === category_id) {
+            this.setCategory(category_id, this.categories[category].icon)
+            // Loop over all areas
+            for (const area in this.categories[category].areas) {
+              if (this.categories[category].areas[area].id === area_id) {
+                console.log("router:")
+                console.log(this.categories[category].areas[area].bbox)
+                this.setSelectedAreaBBox(this.categories[category].areas[area].bbox);
+                  // Loop over all services
+                  for (const service in this.categories[category].areas[area].services) {
+                    if (this.categories[category].areas[area].services[service].id === service_id) {
+                      this.setService(this.categories[category].areas[area].name, area_id, this.categories[category].areas[area].services[service]);
+                    }
+                  }
+              }
+            }
+          }
+        }
+    }
+  }, 
   computed: {
     categories() {
       // it is confusing to name it categories while it contains the services
@@ -95,10 +136,13 @@ export default {
     },
     ...mapState({
       selectedCategory: (state) => state.selectedCategory,
+      selectedAreaId: (state) => state.selectedAreaId,
+      selectedArea: (state) => state.selectedArea,
     }),
   },
   methods: {
     setCategory(category, icon) {
+      console.log("test setCategory")
       if (this.selectedCategory !== category) {
         this.$store.commit("CLEAR_SELECTED_SERVICE");
         this.$store.commit("SET_CATEGORY", category);
@@ -115,7 +159,6 @@ export default {
     },
     setService(area, area_id, service) {
       const selectedService = service;
-
       if (selectedService !== this.selectedService) {
         this.$store.commit("CLEAR_SELECTED_SERVICE");
         this.$store.commit("CLEAR_JOB_STATUS");
@@ -134,6 +177,8 @@ export default {
       this.closeMenu = true;
     },
     setSelectedAreaBBox(bbox) {
+      console.log("bbox")
+      console.log(bbox)
       this.$store.commit("SET_SELECTED_AREA_BBOX", bbox);
     },
   },

@@ -1,12 +1,20 @@
 <template>
   <div class="d-flex flex-column">
+    <!-- <img v-img src="@/assets/Atunetan13-scaled.png"> -->
     <div>
       <!-- <h2 class="h2">TEST</h2> -->
-      <p>Service module: {{ service.name }}</p>
-      <p>{{ service.description }} <a href="https://forcoast.eu/">here</a></p>
+      <div><b>Pilot area:</b> {{ this.selectedArea }}
+      <p><b>Service module:</b> {{ service.name }}</p>
+      </div>
+      <p>{{ service.description }}</p>
       <v-divider class="mt-4 mb-4" />
     </div>
     <!-- .sync -->
+    <collapsible-group
+      :expand="1"
+      :manual="false"
+      title="Data viewer"
+    >
     <collapsible-card
       v-if="service.components.layers"
       :expand="1"
@@ -40,6 +48,12 @@
         <v-btn disabled block color="primary">Create graph</v-btn>
       </div>
     </div>
+    </collapsible-group>
+    <collapsible-group
+      :expand="1"
+      :manual="true"
+      title="Service runner"
+    >
     <collapsible-card
       v-if="service.components.date"
       :expand="1"
@@ -67,6 +81,18 @@
         :entryType="service.components.entry_form.type"
       >
       </entry-form>
+    </collapsible-card>
+    <collapsible-card
+      v-if="service.components.telegram_form"
+      :title="service.components.telegram_form.title"
+      :nextButton="false"
+      :expand="1"
+    >
+      <telegram-form
+        :value="service.components.telegram_form.value"
+        :entryType="service.components.telegram_form.type"
+      >
+      </telegram-form>
     </collapsible-card>
     <collapsible-card
       v-if="service.components.draw_polygon"
@@ -114,11 +140,12 @@
       <ListJobs :timeExtent="timeExtent"></ListJobs>
     </collapsible-card>
     </div>
-    
+    </collapsible-group>  
   </div>
 </template>
 <script>
 import CollapsibleCard from "@/components/collapsible-card";
+import CollapsibleGroup from "@/components/collapsible-group";
 import LayersList from "@/components/layers-list";
 import SingleDate from "@/components/single-date";
 import DateSpan from "@/components/date-span";
@@ -129,6 +156,7 @@ import TimeseriesGraph from "@/components/timeseries-graph";
 import StatusCard from "@/components/status-card"
 import ListJobs from '@/components/list-jobs'
 import EntryForm from '@/components/entry-form'
+import TelegramForm from '@/components/telegram-form'
 
 import { mapState, mapActions } from "vuex";
 
@@ -137,6 +165,7 @@ import getWMSCapabilities from "@/lib/getWmsCapabilities";
 export default {
   components: {
     CollapsibleCard,
+    CollapsibleGroup,
     LayersList,
     SingleDate,
     DateSpan,
@@ -146,7 +175,8 @@ export default {
     TimeseriesGraph,
     StatusCard,
     ListJobs,
-    EntryForm
+    EntryForm,
+    TelegramForm
   },
   props: {
     service: {
@@ -173,7 +203,8 @@ export default {
       selectedTime: (state) => state.selectedTime,
       statusLink: (state) => state.statusLink,
       selectedCategory: (state) => state.selectedCategory,
-      selectedService: (state) => state.selectedService
+      selectedService: (state) => state.selectedService,
+      selectedArea: (state) => state.selectedArea
     }),
   },
   methods: {
