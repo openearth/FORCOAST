@@ -36,37 +36,45 @@
 </template>
 <script>
 import TimeSlider from "./time-slider";
+import isoToYyyyMmDdHhMm from "../../lib/formatTime/iso-to-yyyy-mm-dd-hh-mm";
+
 export default {
   components: {
     TimeSlider,
   },
   props: {
-    timeExtent: {
+    timeExtentISO: {
       type: Array,
+      default: ()=> [],
       required: true,
     },
-    originalTime: {
+    originalTimeISO: {
       type: String,
+      default: null,
       required: true,
     },
   },
-
   data() {
     return {
-      selectedTime: this.originalTime,
+      selectedTime: null,
       getLoadingState: false,
       loadingRasterLayers: false,
       dateIndex: 0
     };
   },
+  computed: { 
+    timeExtent() {
+      return this.timeExtentISO.map(time => isoToYyyyMmDdHhMm(time))
+    }
+  },
+  mounted() {
+    this.selectedTime = isoToYyyyMmDdHhMm(this.originalTimeISO);
+  },
   watch: {
     selectedTime() {
-      this.$emit("selected-time-change", this.selectedTime);
+      const time = new Date(this.selectedTime)
+      this.$emit("selected-time-change", time.toISOString());
       this.dateIndex =  this.timeExtent.indexOf(this.selectedTime)
-
-    },
-    originalTime() {
-      this.selectedTime = this.originalTime;
     },
   },
   methods: {
