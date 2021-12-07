@@ -33,7 +33,7 @@
                 },
                 {
                   "id": "forcoast:fronts_sst",
-                  "name": "Frontal map",
+                  "name": "Frontal Zones Sea Water Temperature",
                   "layer": "forcoast:fronts_sst",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
