@@ -4,7 +4,7 @@
 
 export default((capabilities, activeLayer) => {
 
-  if (!capabilities) {
+  if (!capabilities || !activeLayer) {
     return []
   }
   let allLayers;
