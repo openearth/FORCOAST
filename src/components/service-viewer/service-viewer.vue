@@ -22,7 +22,7 @@
       title="Select start and end date for timeseries"
       :expand="1"
     >
-      <date-span :timeExtent="timeExtent"></date-span>
+      <date-span :timeExtentISO="timeExtent"></date-span>
     </collapsible-card>
     <div v-if="service.components.date_span" class="mb-4">
       <div v-if="timeSpan.length && selectedLayer">
@@ -44,7 +44,7 @@
       :expand="1"
       title="Select a date for the calculations"
     >
-      <single-date :timeExtent="timeExtent"></single-date>
+      <single-date></single-date>
     </collapsible-card>
     <collapsible-card
       :title="service.components.draggable_marker.title"
@@ -90,8 +90,9 @@
         <selectable-list :values="list.values"></selectable-list>
       </collapsible-card>
     </div>
+    <!-- TODO move it in a component -->
     <div v-if="service.components.run_task"  class="mb-4">
-      <div v-if="selectedTime">
+      <div v-if="calculationsTime">
         <v-btn block color="primary"  @click="runTask">Run</v-btn>
       </div>
       <div v-else>
@@ -100,7 +101,7 @@
     </div>
     <status-card 
       v-if="jobStatus==='accepted'"
-      :date="selectedTime"
+      :date="calculationsTime"
       :firstStatus="jobStatus"
       :statusLink="statusLink"
     ></status-card>
@@ -131,8 +132,6 @@ import EntryForm from '@/components/entry-form'
 
 import { mapState, mapGetters, mapActions } from "vuex";
 
-
-
 export default {
   components: {
     CollapsibleCard,
@@ -161,7 +160,7 @@ export default {
   },
 
   computed: {
-    ...mapState("wps", ["markerLngLat", "jobStatus", "statusLink"]),
+    ...mapState("wps", ["markerLngLat", "calculationsTime","jobStatus", "statusLink"]),
     ...mapState("layers", ["selectedTime", "timeSpan"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"])
   },

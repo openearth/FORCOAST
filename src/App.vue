@@ -9,8 +9,8 @@
     <v-main>
       <layer-timestamp-card
         v-if="wmsLayer && timeExtent.length"
-        :timeExtent="timeExtent"
-        :originalTime="layerTimestamp"
+        :timeExtentISO="timeExtent"
+        :originalTimeISO="layerTimestamp"
         @selected-time-change="onSelectedTimeChange"
       ></layer-timestamp-card>
       <mapbox-map

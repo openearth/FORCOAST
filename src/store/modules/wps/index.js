@@ -7,11 +7,11 @@ export default {
   state: {
     polygon: null,
     markerLngLat: {},
-/*     runTimeExtent: [ ]*/ //TODO: Is it used?
     jobStatus: null,
     statusLink: null,
     selectedEntryValue: null,
     selectedEntryType: null,
+    calculationsTime: null,
     
   },
   mutations: { 
@@ -24,8 +24,11 @@ export default {
     SET_MARKER_COORDINATES(state, lnglat) {
       state.markerLngLat = lnglat
     },
-    CLEAR_MARKER_COORDINATES(state, lnglat) {
+    CLEAR_MARKER_COORDINATES(state) {
       state.markerLngLat = null
+    },
+    SET_CALCULATIONS_TIME(state, time) {
+      state.calculationsTime = time
     },
     SET_SELECTED_ENTRY_VALUE(state, entryValue) {
       state.selectedEntryValue = entryValue
@@ -74,12 +77,14 @@ export default {
     clearJobStatus(context) {
       context.commit("CLEAR_JOB_STATUS")
     },
-    
+    setCalculationsTime(context, payload) {
+      context.commit("SET_CALCULATIONS_TIME", payload)
+    },
     //TODO finish with this action. Check if all the status are set.
     async runProcessor({commit, state, rootState}) {
 
-      const {selectedAreaId, selectedService, selectedTime } = rootState.layers
-      const { markerLngLat, selectedEntryType, selectedEntryValue, polygon, jobStatus } = state
+      const {selectedAreaId, selectedService } = rootState.layers
+      const { markerLngLat, calculationsTime, selectedEntryType, selectedEntryValue, polygon, jobStatus } = state
       
       // Set pilot area for selected service
       const area = selectedAreaId
@@ -118,7 +123,7 @@ export default {
       }
       console.log(target)
 
-      const response = await run(selectedTime, period, id, area, source, target, lat, lon, lim)
+      const response = await run(calculationsTime, period, id, area, source, target, lat, lon, lim)
       //const response = await run(testtime, id)
       const statusLink = response[0].value.href
 

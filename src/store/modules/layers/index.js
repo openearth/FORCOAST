@@ -30,7 +30,6 @@ export default {
       if (!capabilities & !selectedLayer) {
         return []
       }
-      
       return extractTimeExtentFromCapabilities(capabilities, selectedLayer)
     },
     layerTimestamp(state, getters) {
@@ -43,16 +42,15 @@ export default {
       if (!selectedTime) {
         return timeExtent[timeExtent.length - 1]
       }
+      
       return selectedTime
     },
         /* WMS layer of selected layer */
     wmsLayer(state, getters) {
       const { selectedLayer, timeExtent, layerTimestamp } = getters
-      console.log('layerTimestamp before the if', layerTimestamp)
       if (!selectedLayer || !layerTimestamp) {
         return null
       }
-      console.log('layerTimeStamp passed the if for null', layerTimestamp)
       const layer = {
         ...selectedLayer,
         time: layerTimestamp

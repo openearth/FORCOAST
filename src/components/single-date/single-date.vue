@@ -37,29 +37,19 @@
 import { mapActions } from "vuex";
 export default {
   data: () => ({
-    date: "", // TODO take from the services.json
+    date: "", 
     menu: false,
-    menu2: false,
     min: "",
     max: "",
   }),
-  props: {
-    timeExtent: { // Available timeExtend of data. It is a result of the getCapabilities
-      type: Array,
-    },
-  },
   watch: {
     date() {
-      this.setSelectedTime(this.date);
+      console.log('date',this.date)
+      this.setCalculationsTime(this.date);
     },
-    timeExtent() { 
-      this.date = this.timeExtent[0];
-      this.min = this.timeExtent[0];
-      this.max = this.timeExtent[this.timeExtent.length - 1]
-    }
   },
   methods:{
-    ...mapActions("layers", ["setSelectedTime"])
+    ...mapActions("wps", ["setCalculationsTime"])
   }
 };
 </script>

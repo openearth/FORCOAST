@@ -1,7 +1,6 @@
 /* 
  NOTE: Same getCapabilities request has different format in the response (Thredd or Geoserver)
 */
-import formatTime from "./format-time";
 
 export default((capabilities, activeLayer) => {
 
@@ -38,13 +37,6 @@ export default((capabilities, activeLayer) => {
   if (!extent){
     return []
   }
-  
-  let daysExtent = extent.map(formatTime);
-  
-  let uniqueDaysExtent = daysExtent.reduce(
-    (unique, day) => (unique.includes(day) ? unique : [...unique, day]),
-    []
-  );
-  return uniqueDaysExtent;
-      
+
+  return extent; 
 })
