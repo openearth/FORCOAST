@@ -33,7 +33,7 @@
           <v-tab
             v-bind="attrs"
             v-on="on"
-            @click="setCategory(category.name, category.icon)"
+            @click="onSetCategory(category.name, category.icon)"
             :to="{
               name: 'Category',
               params: { category_id: category.id },
@@ -47,12 +47,7 @@
             no-action
             sub-group
             v-for="(area, index) in category.areas"
-            @click="setSelectedAreaBBox(area.bbox)"
-            :to="{
-              name: 'Area',
-              params: {category_id: category.id,
-                       area_id: area.id },
-            }"
+            @click="onSetSelectedAreaBBox(area.bbox)"
             :key="index"
             link
           >
@@ -66,8 +61,8 @@
               :key="index"
               link
               @click="
-                setService(area.name, area.id, service);
-                setSelectedAreaBBox(area.bbox);
+                onSetService(area.name, area.id, service);
+                onSetSelectedAreaBBox(area.bbox);
               "
               :to="{
                 name: 'Service',
@@ -90,7 +85,7 @@
 import { getProjectConfig } from "@/lib/config-utils";
 import { importConfig } from "@/lib/config-utils";
 
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 const config = getProjectConfig();
 
@@ -134,52 +129,59 @@ export default {
       // it is confusing to name it categories while it contains the services
       return importConfig("services/services.json");
     },
-    ...mapState({
-      selectedCategory: (state) => state.selectedCategory,
-      selectedAreaId: (state) => state.selectedAreaId,
-      selectedArea: (state) => state.selectedArea,
-    }),
+    ...mapState("layers", ["selectedCategory"]),
   },
   methods: {
-    setCategory(category, icon) {
-      console.log("test setCategory")
+    ...mapActions("wps", ["clearMarkerCoordinates", "clearPolygon", "clearJobStatus", "clearSelectedEntryValue",]),
+    ...mapActions("layers", ["setCategory", "setArea", "setService","setAreaId", "setIconCategory", "setSelectedAreaBbox", "clearSelectedService","clearSelectedTime", "clearCapabilities"]),
+    onSetCategory(category, icon) {
       if (this.selectedCategory !== category) {
-        this.$store.commit("CLEAR_SELECTED_SERVICE");
-        this.$store.commit("SET_CATEGORY", category);
-        this.$store.commit("SET_ICON_CATEGORY", icon);
-        this.$store.commit("CLEAR_JOB_STATUS");
-        this.$store.commit("CLEAR_SELECTED_ENTRY_VALUE");
-        this.$store.commit("CLEAR_RUN_TIME_EXTENT");
-        this.$store.commit("CLEAR_TIME_EXTENT");
-        this.$store.commit("CLEAR_SELECTED_TIME");
-        this.$store.commit("CLEAR_MARKER_COORDINATES");
-        this.$store.commit("CLEAR_POLYGON");
+        //clear previous service
+        this.clearSelectedService();
+
+
+        this.setCategory(category);
+        this.setIconCategory(icon);
+
+        //clear layers/selections
+        this.clearSelectedTime(); 
+        this.clearCapabilities();
+
+        //clear wps parameters
+        this.clearJobStatus();
+        this.clearSelectedEntryValue(); 
+        this.clearMarkerCoordinates();
+        this.clearPolygon();
+        
       }
       this.closeMenu = false;
     },
-    setService(area, area_id, service) {
+    onSetService(area, area_id, service) {
       const selectedService = service;
       if (selectedService !== this.selectedService) {
-        this.$store.commit("CLEAR_SELECTED_SERVICE");
-        this.$store.commit("CLEAR_JOB_STATUS");
-        this.$store.commit("SET_AREA", area);
-        this.$store.commit("SET_AREA_ID", area_id);
-        this.$store.commit("CLEAR_SELECTED_ENTRY_VALUE");
-        this.$store.commit("CLEAR_RUN_TIME_EXTENT");
-        this.$store.commit("CLEAR_TIME_EXTENT");
-        this.$store.commit("CLEAR_SELECTED_TIME");
-        this.$store.commit("CLEAR_MARKER_COORDINATES");
-        this.$store.commit("CLEAR_POLYGON");
+        // clear previous service
+        this.clearSelectedService(); 
+
+
+        this.setArea(area);
+        this.setAreaId(area_id);
+
+
+        //clear layers/selections
+        this.clearSelectedTime();
+        //clear wps parameters
+        this.clearJobStatus(); 
+        this.clearSelectedEntryValue();
+        this.clearMarkerCoordinates();
+        this.clearPolygon();
       }
 
-      this.$store.commit("SET_SERVICE", selectedService);
+      this.setService(selectedService);
       // close menu after clicked
       this.closeMenu = true;
     },
-    setSelectedAreaBBox(bbox) {
-      console.log("bbox")
-      console.log(bbox)
-      this.$store.commit("SET_SELECTED_AREA_BBOX", bbox);
+    onSetSelectedAreaBBox(bbox) {
+      this.setSelectedAreaBbox(bbox);
     },
   },
 };

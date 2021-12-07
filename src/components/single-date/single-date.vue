@@ -34,28 +34,22 @@
   </div>
 </template>
 <script>
+import { mapActions } from "vuex";
 export default {
   data: () => ({
-    date: "", // TODO take from the services.json
+    date: "", 
     menu: false,
-    menu2: false,
     min: "",
     max: "",
   }),
-  props: {
-    timeExtent: { // Available timeExtend of data. It is a result of the getCapabilities
-      type: Array,
-    },
-  },
   watch: {
     date() {
-      this.$store.commit("SET_SELECTED_TIME", this.date); // commits the selected time. 
+      console.log('date',this.date)
+      this.setCalculationsTime(this.date);
     },
-    timeExtent() { 
-      this.date = this.timeExtent[0];
-      this.min = this.timeExtent[0];
-      this.max = this.timeExtent[this.timeExtent.length - 1]
-    }
   },
+  methods:{
+    ...mapActions("wps", ["setCalculationsTime"])
+  }
 };
 </script>

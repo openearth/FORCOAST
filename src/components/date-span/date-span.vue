@@ -79,7 +79,10 @@
   </div>
 </template>
 <script>
-import createTimeSpan from "@/lib/create-time-span"; // NOTE. If the DescribeCoverage retrieves the timespan perhaps this can be removed.
+import createTimeSpan from "@/lib/create-time-span";
+import filterExtentYyyyMmDdUnique from "@/lib/formatTime/filter-extent-yyyy-mm-dd-unique";
+import { mapActions } from "vuex";
+// NOTE. If the DescribeCoverage retrieves the timespan perhaps this can be removed.
 //TODO when I will get the ok to proceed with time, I will use the full extent that the capabilities return so I will not need the createTimeSpan function
 
 export default {
@@ -93,9 +96,17 @@ export default {
     max: "",
   }),
   props: {
-    timeExtent: {
+    timeExtentISO: {
       type: Array,
     },
+  },
+  computed: { 
+    timeExtent() {
+      return filterExtentYyyyMmDdUnique(this.timeExtentISO)
+    }
+  },
+  mounted() { 
+    this.initValues()
   },
 
   watch: {
@@ -120,13 +131,13 @@ export default {
 
         days = days.map((day) => day.toISOString().substr(0, 10));
         const filteredDays = days.filter(day => this.timeExtent.includes(day))
-        
-        this.$store.commit("SET_TIME_SPAN", filteredDays);
+        this.setTimeSpan(filteredDays);
         
       }
     },
   },
-  methods: { 
+  methods: {
+    ...mapActions("layers", ["setTimeSpan"]),
        allowedDates (val) {
         if (this.timeExtent.length && this.timeExtent.indexOf(val) !== -1) {
           return true
@@ -134,6 +145,12 @@ export default {
           return false
         }
       },
+      initValues() {
+        this.startDate = this.timeExtent[0];
+        this.min = this.startDate;
+        this.endDate = this.timeExtent[this.timeExtent.length - 1];
+        this.max = this.endDate;
+      }
   }
 };
 </script>

@@ -8,15 +8,14 @@
     />
     <v-main>
       <layer-timestamp-card
-        v-if="activeLayers && timeExtent.length"
-        :timeExtent="timeExtent"
-        :originalTime="selectedTime"
+        v-if="wmsLayer && timeExtent.length"
+        :timeExtentISO="timeExtent"
+        :originalTimeISO="layerTimestamp"
         @selected-time-change="onSelectedTimeChange"
       ></layer-timestamp-card>
       <mapbox-map
         v-if="acceptedLegal"
-        :layers="activeLayers"
-        :legendLayer="legendLayer"
+        :layer="wmsLayer"
         :draggableMarker="draggableMarker"
         :drawPolygon="drawPolygon"
       />
@@ -30,7 +29,7 @@ import AppHeader from "@/components/app-header";
 import AppSidebar from "@/components/app-sidebar";
 import LegalDialog from "@/components/legal-dialog";
 import LayerTimestampCard from "@/components/layer-timestamp-card";
-import { mapGetters, mapState } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 
 export default {
   name: "App",
@@ -43,13 +42,11 @@ export default {
   },
   data() {
     return {
- 
       legendLayer: null,
       acceptedLegal: false,
       draggableMarker: false,
       drawPolygon: false,
       boxPlot: false,
-
     };
   },
   watch: {
@@ -58,15 +55,13 @@ export default {
     },
   },
   computed: {
-    ...mapState({
-      selectedTime: (state) => state.selectedTime,
-      timeExtent: (state) => state.timeExtent,
-    }),
-    ...mapGetters(['activeLayers'])
+    ...mapState("layers", ["selectedTime"]),
+    ...mapGetters("layers", ["wmsLayer", "timeExtent", "layerTimestamp"])
   },
   methods: {
+    ...mapActions("layers",["setSelectedTime","clearActiveLayers"]),
     reset() {
-      this.$store.commit("CLEAR_ACTIVE_LAYERS")
+      this.clearActiveLayers();
       this.legendLayer = "";
     },
     onLegalAccepted() {
@@ -82,7 +77,7 @@ export default {
       this.drawPolygon = event;
     },
     onSelectedTimeChange(event) {
-      this.$store.commit("SET_SELECTED_TIME", event);
+      this.setSelectedTime(event);
     },
   },
 };

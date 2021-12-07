@@ -16,11 +16,12 @@
             "components": {
               "layers": [
                 {
-                  "id": "",
-                  "name": "Sea Water Temperature (local)",
-                  "layer": "",
-                  "url": "",
-                  "icon": "sea_temp.png"
+                  "id": "CHL",
+                  "name": "Chlorophyll (CMEMS)",
+                  "layer": "CHL",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
+                  "icon": "fish.png",
+                  "colorscalerange": "0,50"
                 },
                 {
                   "id": "analysed_sst",
@@ -32,7 +33,7 @@
                 },
                 {
                   "id": "forcoast:fronts_sst",
-                  "name": "Frontal Zones Sea Water Temperature",
+                  "name": "Frontal map",
                   "layer": "forcoast:fronts_sst",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -152,15 +153,15 @@
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30"
-               },
-               {
-                "id": "salt",
-                "name": "Salinity (Marine Instruments)",
-                "layer": "salt",
-                "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                "icon": "",
-                "colorscalerange": "0,30"
-               }
+                },
+                {
+                  "id": "salt",
+                  "name": "Salinity (Marine Instruments)",
+                  "layer": "salt",
+                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "icon": "",
+                  "colorscalerange": "0,30"
+                }
               ],
               "draw_polygon": {
                 "text": "Specify bounding box for target location",
@@ -203,7 +204,6 @@
               },
               "run_task": true,
               "joblist": true
-
             }
           }
         ],
@@ -279,7 +279,6 @@
               "date": true,
               "run_task": true,
               "joblist": true
-
             }
           }
         ],
@@ -311,14 +310,14 @@
                   "layer": "temp",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "sea_temp.png"
-               },
-               {
+                },
+                {
                   "id": "CHL",
                   "name": "Chlorophyll (CMEMS)",
                   "layer": "CHL",
                   "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
                   "icon": "chlorophyll_a.png"
-               }
+                }
               ],
               "draw_polygon": {
                 "text": "Select your farming area of interest by drawing it on the map",
@@ -352,7 +351,7 @@
             "name": "Contaminants Source Retrieval",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
-               "date": true,
+              "date": true,
               "draggable_marker": {
                 "title": "Place marker at source location"
               },
@@ -363,7 +362,6 @@
               },
               "run_task": true,
               "joblist": true
-
             }
           }
         ],

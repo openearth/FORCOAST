@@ -15,7 +15,7 @@
   </v-form>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapActions } from "vuex";
 export default {
   data: () => ({
     entryValue: "",
@@ -32,9 +32,12 @@ export default {
   },
   watch: {
     entryValue() {
-      this.$store.commit("SET_SELECTED_ENTRY_TYPE", this.entryType);
-      this.$store.commit("SET_SELECTED_ENTRY_VALUE", this.entryValue); // commits the selected value. 
+      this.setSelectedEntryType(this.entryType);
+      this.setSelectedEntryValue(this.entryValue); 
     }
   },
+  methods: { 
+    ...mapActions("wps", ["setSelectedEntryType", "setSelectedEntryValue"])
+  }
 };
 </script>
