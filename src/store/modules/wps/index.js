@@ -95,6 +95,7 @@ export default {
       const { lat, lng }  = markerLngLat
       
       // Set values from entry form
+      //TODO move this into a function
       var lim = ""
       if (selectedEntryType == "lim") {
         lim = selectedEntryValue  
@@ -109,6 +110,7 @@ export default {
       
       // Set bounding box in proper format:
       // [[lon_min,lat_min],[lon_max,lat_min],[lon_max,lat_max],[lon_min,lat_max]]
+      //TODO move this into a function
       var target = ""
       if (polygon) {
         let lon_max = Math.max(polygon.features[0].geometry.coordinates[0][0][0], polygon.features[0].geometry.coordinates[0][1][0], polygon.features[0].geometry.coordinates[0][2][0], polygon.features[0].geometry.coordinates[0][3][0]);

@@ -1,7 +1,7 @@
 /* 
  NOTE: Same getCapabilities request has different format in the response (Thredd or Geoserver)
 */
-
+import removeSpaceFromTime from "./formatTime/remove-space-from-time";
 export default((capabilities, activeLayer) => {
 
   if (!capabilities || !activeLayer) {
@@ -12,31 +12,35 @@ export default((capabilities, activeLayer) => {
   let extent;
   
   if (capabilities.Layer.Layer.Layer) {
+    console.log("case Thredds")
     allLayers = capabilities.Layer.Layer.Layer;
     layer = allLayers.find(
       (layer) => layer.Name._text === activeLayer.id
     );
+    console.log('layer from GetCapabilities', layer)
     try {
-      extent = layer.Extent._text.split(",");
+    extent = Array.isArray(layer.Extent) ? layer.Extent[1]._text.split(",") : layer.Extent._text.split(",");
     }catch(error){
-      console.log("The layer has no time extent")
-    }
+      console.log("Something went wrong when tried to retrieve the timeExtent from the capabilities")
+    } 
     
   } else {
+    console.log("case Geoserver")
     allLayers = capabilities.Layer.Layer;
     
     layer = allLayers.find(
       (layer) => layer.Name._text === activeLayer.id
     );
+    
     try{
-      extent = layer.Extent[0]._text.split(",");
+      extent =  Array.isArray(layer.Extent) ? layer.Extent[0]._text.split(",") : layer.Extent._text.split(",") ;
     }catch(error){
-      console.log('The layer has no time extend')
+      console.log("Something went wrong when tried to retrieve the timeExtent from the capabilities")
     }
   }
   if (!extent){
     return []
   }
-
-  return extent; 
+  const formattedExtent = extent.map(removeSpaceFromTime)
+  return formattedExtent; 
 })
