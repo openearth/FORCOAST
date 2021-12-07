@@ -92,7 +92,7 @@ export default {
       const  { id }= selectedService;
      
       // Set lat and lon input values
-      const { lat, lon }  = markerLngLat
+      const { lat, lng }  = markerLngLat
       
       // Set values from entry form
       var lim = ""
@@ -123,7 +123,7 @@ export default {
       }
       console.log(target)
 
-      const response = await run(calculationsTime, period, id, area, source, target, lat, lon, lim)
+      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim)
       //const response = await run(testtime, id)
       const statusLink = response[0].value.href
 
