@@ -47,9 +47,7 @@ export default {
     this.getJobs()
   },
   computed: {
-    ...mapState({
-      selectedService: (state) => state.selectedService
-    }),
+    ...mapState("layers", ["selectedService"] ),
   },
   methods: {
     menuActionClick(input) {

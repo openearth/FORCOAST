@@ -1,2 +1,2 @@
 export const getCapabilities = ({ url }) => 
-  `${url}?service=WMS&version=1.1.1&request=GetCapabilities`;
+  `${url}?service=WMS&version=1.1.0&request=GetCapabilities`;

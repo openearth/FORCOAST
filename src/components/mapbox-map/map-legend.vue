@@ -10,7 +10,7 @@ import debounce from "lodash/debounce";
 
 export default {
   props: {
-    legendLayer: {
+    layerId: {
       type: String,
       required: true,
     },
@@ -22,7 +22,7 @@ export default {
       type: String,
       default: "-1,3",
     },
-    styles: {
+    styles: {//TODO where is this used?
       type: String,
       default: "sst_36",
     },
@@ -37,7 +37,7 @@ export default {
     legendUrl() {
       const scale = this.zoomLevel;
       return buildLegendUrl({
-        layer: this.legendLayer,
+        layer: this.layerId,
         url: this.baseUrl,
         width: 40,
         height: 20,

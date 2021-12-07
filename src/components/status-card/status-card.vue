@@ -33,9 +33,9 @@
   </v-card>
 </template>
 <script>
-import { mapActions } from "vuex";
+
 import getStatus  from "@/lib/wps/getStatus"
-import getOutput  from "@/lib/wps/getOutput"
+
 import bulletinWindow from "@/components/bulletin-window";
 const _ = require('lodash')
 
@@ -71,7 +71,6 @@ export default {
     },   
   },
   methods: {
-    ...mapActions(['']),
     async getProcessStatus() {
       this.status = await getStatus(this.statusLink)
       this.jobId = this.statusLink.substring(this.statusLink.lastIndexOf('/') + 1);

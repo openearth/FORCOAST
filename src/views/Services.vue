@@ -28,10 +28,7 @@ import serviceViewer from "../components/service-viewer/service-viewer.vue";
 export default {
   components: { serviceViewer },
   computed: {
-    ...mapState({
-      selectedCategory: (state) => state.selectedCategory,
-      selectedService: (state) => state.selectedService,
-    }),
+    ...mapState("layers", ["selectedCategory", "selectedService"]),
   },
   methods: {
     onActiveLayerChange(activelayers) {

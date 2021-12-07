@@ -10,5 +10,5 @@ export default ({ layer, url, scale, colorscalerange, styles, width = 40, height
 	layer,
 	scale,
 	colorscalerange,
-	palette: "sst_36"
+/* 	palette: "sst_36" */
 })
