@@ -49,15 +49,13 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      polygon: (state) => state.polygon,
-      selectedService: (state) => state.selectedService,
-    }),
-    content(state) {
-      const instructions = 'content/' + state.selectedService.id + '.md';
+    content() {
+      const instructions = 'content/' + this.selectedService.id + '.md';
       return importConfig(instructions)
     },
-  },
+    ...mapState("wps", ["polygon"]),
+    ...mapState("layers", ["selectedService"] ),
+    },
   watch: {
     polygon() {
       if (this.polygon) {
