@@ -27,6 +27,7 @@ export default ({ url, id, layer, time, styles="", colorscalerange, paint={} }) 
     request: tile, // added in order to realize both changes of id and time.
 		tiles: [ tile ],
 		tileSize: 256,
-		paint
+		paint,
+		colorscalerange: colorscalerange
 	})
 }
