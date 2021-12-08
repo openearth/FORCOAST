@@ -3,7 +3,7 @@
     <!-- <img v-img src="@/assets/Atunetan13-scaled.png"> -->
     <div>
       <!-- <h2 class="h2">TEST</h2> -->
-      <div><b>Pilot area:</b> {{ this.selectedArea }}
+      <div><b>Pilot area:</b> {{ selectedArea }}
       <p><b>Service module:</b> {{ service.name }}</p>
       </div>
       <p>{{ service.description }}</p>
