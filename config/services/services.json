@@ -21,7 +21,7 @@
                   "layer": "CHL",
                   "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
                   "icon": "fish.png",
-                  "colorscalerange": "0,50",
+                  "colorscalerange": "0.01,10",
                   "description": "Remotely sensed chlorophyll-a data obtained from CMEMS"
                 },
                 {
@@ -103,7 +103,7 @@
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50",
+                  "colorscalerange": "0.01,10",
                   "description": "Remotely sensed chlorophyll-a data obtained from CNR"
                 },
                 {
