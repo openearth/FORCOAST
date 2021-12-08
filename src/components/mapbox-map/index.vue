@@ -26,8 +26,7 @@
     <map-legend
       v-if="layer"
       :key="layer.id"
-      :baseUrl="layer.url"
-      :layerId="layer.id"
+      :options="layer"
     />
    
   </v-mapbox>

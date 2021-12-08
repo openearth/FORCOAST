@@ -10,22 +10,14 @@ import debounce from "lodash/debounce";
 
 export default {
   props: {
-    layerId: {
-      type: String,
-      required: true,
-    },
-    baseUrl: {
-      type: String,
-      default: "",
-    },
-    colorscalerange: {
-      type: String,
-      default: "-1,3",
-    },
-    styles: {//TODO where is this used?
+    styles: {//TODO @Daniel where is this used?
       type: String,
       default: "sst_36",
     },
+    options:{
+      type: Object,
+      default: ()=>{}
+    }
   },
   data() {
     return {
@@ -35,15 +27,12 @@ export default {
 
   computed: {
     legendUrl() {
+      
       const scale = this.zoomLevel;
       return buildLegendUrl({
-        layer: this.layerId,
-        url: this.baseUrl,
-        width: 40,
-        height: 20,
-        scale,
-        styles: "",
-        colorscalerange: this.colorscalerange
+        ...this.options,
+        ...{width:40, height:20},
+        ...scale
       });
     },
   },
