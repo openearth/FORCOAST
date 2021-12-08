@@ -19,8 +19,7 @@
     <v-spacer />
 
     <v-tabs background-color="primary" dark right style="width: auto">
-      <!-- <v-tab :to="{ name: 'Introduction' }" exact> Home page </v-tab> -->
-      <v-tab href="https://forcoast.eu/services" exact> Home page </v-tab>
+      <v-tab :to="{ name: 'Introduction' }" exact> Home page </v-tab>
       <!-- v-menu close on content click : set a data value that is boolean and becomes true when a 
       service is clicked -->
       <v-menu
@@ -35,24 +34,19 @@
             v-on="on"
             @click="onSetCategory(category.name, category.icon)"
             :to="{
-              name: 'Category',
-              params: { category_id: category.id },
+              name: 'Services',
+              params: { id: category.id },
             }"
           >
             {{ category.name }}
           </v-tab>
         </template>
         <v-list style="overflow-y: auto; max-height: 500px">
-        <v-list-group
+          <v-list-group
             no-action
             sub-group
             v-for="(area, index) in category.areas"
             @click="onSetSelectedAreaBBox(area.bbox)"
-            :to="{
-              name: 'Area',
-              params: {category_id: category.id,
-                       area_id: area.id },
-            }"
             :key="index"
             link
           >
@@ -69,13 +63,6 @@
                 onSetService(area.name, area.id, service);
                 onSetSelectedAreaBBox(area.bbox);
               "
-              :to="{
-                name: 'Service',
-                params: {category_id: category.id,
-                         area_id: area.id,
-                         service_id: service.id
-                   },
-              }"
             >
               <v-list-item-title v-text="service.name"></v-list-item-title>
             </v-list-item>
@@ -101,34 +88,6 @@ export default {
       closeMenu: false,
     };
   },
-  watch:{
-    $route (to, from){
-        const area_id = this.$route.params.area_id
-        const category_id = this.$route.params.category_id
-        const service_id = this.$route.params.service_id
-
-        // Loop over all categories
-        for (const category in this.categories) {
-          if (this.categories[category].id === category_id) {
-            this.setCategory(category_id, this.categories[category].icon)
-            // Loop over all areas
-            for (const area in this.categories[category].areas) {
-              if (this.categories[category].areas[area].id === area_id) {
-                console.log("router:")
-                console.log(this.categories[category].areas[area].bbox)
-                this.onSetSelectedAreaBBox(this.categories[category].areas[area].bbox);
-                  // Loop over all services
-                  for (const service in this.categories[category].areas[area].services) {
-                    if (this.categories[category].areas[area].services[service].id === service_id) {
-                      this.setService(this.categories[category].areas[area].name, area_id, this.categories[category].areas[area].services[service]);
-                    }
-                  }
-              }
-            }
-          }
-        }
-    }
-  }, 
   computed: {
     categories() {
       // it is confusing to name it categories while it contains the services
@@ -163,6 +122,7 @@ export default {
     },
     onSetService(area, area_id, service) {
       const selectedService = service;
+
       if (selectedService !== this.selectedService) {
         // clear previous service
         this.clearSelectedService(); 
