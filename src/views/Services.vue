@@ -1,7 +1,7 @@
 <template>
   <div v-if="selectedService" class="pa-4 home d-flex flex-column">
     <div>
-      <h2 class="h2">{{ selectedCategory }}</h2>
+      <!-- <h2 class="h2">{{ selectedCategory }}</h2> -->
       <!-- <v-divider class="mt-4 mb-4" /> -->
     </div>
     <div>

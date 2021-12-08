@@ -9,10 +9,10 @@
         "name": "Bay of Biscay (Spain)",
         "services": [
           {
-            "id": "f2",
+            "id": "front_detection",
             "wps_id": "f2",
             "name": "Fronts detection",
-            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "components": {
               "layers": [
                 {
@@ -66,10 +66,10 @@
         "name": "Northern adriatic sea (pilot)",
         "services": [
           {
-            "id": "f2",
+            "id": "front_detection",
             "wps_id": "f2",
             "name": "Fronts detection",
-            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel. For further information, click ",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "dates": [
               "2021-01-20",
               "2021-01-21",
@@ -132,10 +132,10 @@
         "name": "Galway Bay (Ireland)",
         "services": [
           {
-            "id": "a2",
+            "id": "land_pollution",
             "wps_id": "a2",
             "name": "Land Pollution",
-            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
               "layers": [
                 {
@@ -177,10 +177,10 @@
             }
           },
           {
-            "id": "r1",
+            "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
-            "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source. For further information, click ",
+            "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
               "layers": [
                 {
@@ -230,10 +230,10 @@
         "name": "Sado Estuary (Portugal)",
         "services": [
           {
-            "id": "a1",
+            "id": "marine_conditions",
             "wps_id": "a1",
             "name": "Marine conditions",
-            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "components": {
               "layers": [
                 {
@@ -271,6 +271,11 @@
                 "value": "Limit value (m)",
                 "type": "lim"
               },
+              "telegram_form": {
+                "title": "Enter Telegram ID",
+                "value": "Telegram ID",
+                "type": "telegram_id"
+              },
               "date": true,
               "run_task": true,
               "joblist": true
@@ -293,10 +298,10 @@
         "name": "Southern North Sea (Belgium)",
         "services": [
           {
-            "id": "a3",
+            "id": "spat_capture_assistance",
             "wps_id": "a3",
             "name": "Spat captures assistance",
-            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors. For further information, click ",
+            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors.",
             "components": {
               "layers": [
                 {
@@ -341,10 +346,10 @@
             }
           },
           {
-            "id": "r1",
+            "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
-            "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source. For further information, click ",
+            "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
               "date": true,
               "draggable_marker": {
@@ -376,10 +381,10 @@
         "name": "Limfjord (Denmark)",
         "services": [
           {
-            "id": "a1",
+            "id": "marine_conditions",
             "wps_id": "a1",
             "name": "Marine conditions",
-            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs. For further information, click ",
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "components": {
               "layers": [
                 {
@@ -446,10 +451,10 @@
         "name": "Western Black Sea (Romania)",
         "services": [
           {
-            "id": "a2",
+            "id": "land_pollution",
             "wps_id": "a2",
             "name": "Land Pollution",
-            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events. For further information, click ",
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
               "draw_polygon": {
                 "text": "Specify bounding box for target location",

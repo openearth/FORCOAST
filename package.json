@@ -36,7 +36,8 @@
     "vue2mapbox-gl": "^0.12.5",
     "vuetify": "^2.2.11",
     "vuex": "^3.6.2",
-    "xml-js": "^1.6.11"
+    "xml-js": "^1.6.11",
+    "tiny-cookie": "^2.3.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
