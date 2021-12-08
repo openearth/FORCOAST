@@ -12,9 +12,9 @@ export default {
     selectedEntryValue: null,
     selectedEntryType: null,
     calculationsTime: null,
-    
+
   },
-  mutations: { 
+  mutations: {
     SET_POLYGON(state, polygon) {
       state.polygon = polygon
     },
@@ -52,7 +52,7 @@ export default {
       state.outputLink = url
     },
   },
-  actions: { 
+  actions: {
     setPolygon(context, payload) {
       context.commit("SET_POLYGON", payload)
     },
@@ -85,29 +85,29 @@ export default {
 
       const {selectedAreaId, selectedService } = rootState.layers
       const { markerLngLat, calculationsTime, selectedEntryType, selectedEntryValue, polygon, jobStatus } = state
-      
+
       // Set pilot area for selected service
       const area = selectedAreaId
       // Set id of selected service
-      const  { id }= selectedService;
-     
+      const id = selectedService.wps_id;
+
       // Set lat and lon input values
       const { lat, lng }  = markerLngLat
-      
+
       // Set values from entry form
       //TODO move this into a function
       var lim = ""
       if (selectedEntryType == "lim") {
-        lim = selectedEntryValue  
+        lim = selectedEntryValue
       }
       var period = ""
       if (selectedEntryType == "period") {
-        period = selectedEntryValue  
+        period = selectedEntryValue
       }
-      
+
       // Set source based on lat and lon
       const source = "[" + markerLngLat.lng + "," + markerLngLat.lat + "]"
-      
+
       // Set bounding box in proper format:
       // [[lon_min,lat_min],[lon_max,lat_min],[lon_max,lat_max],[lon_min,lat_max]]
       //TODO move this into a function
