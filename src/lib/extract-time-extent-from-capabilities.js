@@ -1,7 +1,12 @@
 /* 
  NOTE: Same getCapabilities request has different format in the response (Thredd or Geoserver)
+       and even in the same type of server.
+
 */
 import removeSpaceFromTime from "./formatTime/remove-space-from-time";
+import getTimeExtentCaseP1d from "./get-time-extent-case-p1d";
+
+
 export default((capabilities, activeLayer) => {
 
   if (!capabilities || !activeLayer) {
@@ -19,7 +24,10 @@ export default((capabilities, activeLayer) => {
     );
     console.log('layer from GetCapabilities', layer)
     try {
-    extent = Array.isArray(layer.Extent) ? layer.Extent[1]._text.split(",") : layer.Extent._text.split(",");
+        extent = Array.isArray(layer.Extent) ? layer.Extent[1]._text.split(",") 
+                                             : layer.Extent._text.endsWith("P1D") 
+                                             ? getTimeExtentCaseP1d(layer.Extent._text.split("/"))
+                                             : layer.Extent._text.split(",");
     }catch(error){
       console.log("Something went wrong when tried to retrieve the timeExtent from the capabilities")
     } 
