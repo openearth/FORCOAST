@@ -19,7 +19,7 @@
     <v-spacer />
 
     <v-tabs background-color="primary" dark right style="width: auto">
-      <v-tab :to="{ name: 'Introduction' }" exact> Home page </v-tab>
+      <v-tab href="https://forcoast.eu/services/" exact> Home page </v-tab>
       <!-- v-menu close on content click : set a data value that is boolean and becomes true when a 
       service is clicked -->
       <v-menu

@@ -67,7 +67,7 @@ export default {
     },
     outputLink: {
       type: String,
-      required: true
+      required: false
     },   
   },
   methods: {

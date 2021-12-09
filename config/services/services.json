@@ -116,18 +116,18 @@
                   "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
                 },
                 {
-                  "id": "forcoast:northern_adriatic_sea_t_forecast",
+                  "id": "forcoast:northernadriatic_thetao",
                   "name": "Water Temperature",
-                  "layer": "forcoast:northern_adriatic_sea_t_forecast",
+                  "layer": "forcoast:northernadriatic_thetao",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by OGS"
                 },
                 {
-                  "id": "forcoast:northernadriatic_fronts_temperature",
+                  "id": "forcoast:northernadriatic_fronts_sst",
                   "name": "Frontal Zones Temperature",
-                  "layer": "forcoast:northernadriatic_fronts_temperature",
+                  "layer": "forcoast:northernadriatic_fronts_sst",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
@@ -428,7 +428,7 @@
                 },
                 {
                   "id": "forcoast:dk_currentspeed",
-                  "name": "Current Speed (DMI)",
+                  "name": "Current Speed",
                   "layer": "forcoast:dk_currentspeed",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -437,7 +437,7 @@
                 },
                 {
                   "id": "forcoast:dk_windspeed",
-                  "name": "Wind Speed (DMI)",
+                  "name": "Wind Speed",
                   "layer": "forcoast:dk_windspeed",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -486,6 +486,18 @@
             "name": "Land Pollution",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
+              "layers": [
+                {
+                  "id": "analysed_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "analysed_sst",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_BS_SST_L4_NRT_OBSERVATIONS_010_006_a_V2",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
+                }
+              ],
+              "date_span": true,
               "draw_polygon": {
                 "text": "Specify bounding box for target location",
                 "title": "Specify bounding box for target location"
