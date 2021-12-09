@@ -1,6 +1,7 @@
-To run the Marine Conditions service module, go through the following steps:
+To run the Land Pollution service, go through the following steps:
 
-* Select a start date for the bulletin
-* Specify your location of interest, by placing the marker on the central map
-* Enter a workability limit, to be taken into account in the bulletin
-* Enter your Telegram ID to receive a copy of the bulletin on Telegram (optional)
+* Select a start date for the simulation.
+* Specify the pollution discharge location, by placing the marker on the central map.
+* Draw a rectangle in the map where the area you want to evauluate is (e.g. farm location) ny using the drwaing tool in the top left part of the map.
+* Click 'RUN' to start the service.
+* Once the computation is finished, click 'SHOW RESULTS' to access the information bulletin with the results of your simulation.
