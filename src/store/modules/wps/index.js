@@ -107,7 +107,7 @@ export default {
       }
 
       // Set source based on lat and lon
-      const source = "[" + markerLngLat.lng + "," + markerLngLat.lat + "]"
+      const source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ", 0.5]"
 
       // Set bounding box in proper format:
       // [[lon_min,lat_min],[lon_max,lat_min],[lon_max,lat_max],[lon_min,lat_max]]
