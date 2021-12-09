@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-dialog v-model="dialog" width="700">
-      <v-card height="600" width="700">
+    <v-dialog v-model="dialog" width="800">
+      <v-card height="600" width="900">
         <div id="graph-container"></div>
         <v-card-actions>
           <v-btn block color="primary" bottom text @click="closeDialog">
@@ -33,11 +33,9 @@ export default {
     return {
       bbox: null,
       featuresInfo: [],
-      disabled: true, // becomes true when featuresINfo
+      disabled: true, 
       dialog: true,
       graph: null,
-      // if featuresInfo emit features loaded
-      // emit close ? or v-model dialog someway
     };
   },
   mounted() {
@@ -64,11 +62,11 @@ export default {
           bbox: this.bbox,
           time: time,
         });
-        const feature = info.features[0];
-        return feature.properties.GRAY_INDEX;
-      } catch (error) {
-        console.log("error:", error);
-      }
+        const feature = info.features[0];        
+        return Object.entries(feature.properties).map(([key,value]) => value)[0]; 
+     }catch (error) {
+       console.log("error:", error);
+    }
     },
     // calls the getFeatureinfo for every element in the timeSpan array
     async getAllFeatureInfo() {
@@ -78,6 +76,7 @@ export default {
           return response;
         })
       );
+      
     },
     closeDialog() {
       this.dialog = false;
