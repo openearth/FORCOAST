@@ -1,5 +1,16 @@
-export const template_a1 = (time, lat, lon, lim) =>({
+export const template_a1 = (area, time, lat, lon, lim) =>({
    "inputs":[
+     {
+         "id":"pilot",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": area
+            }
+         }
+      },
      {
          "id":"time",
          "input":{

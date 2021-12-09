@@ -427,8 +427,8 @@
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by DMI"
                 },
                 {
-                  "id": "forcoast:dk_vvel",
-                  "name": "Northward Current",
+                  "id": "forcoast:dk_currentspeed",
+                  "name": "Current Speed (DMI)",
                   "layer": "forcoast:dk_currentspeed",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -436,8 +436,8 @@
                   "description": "Modelled current velocity produced in FORCOAST by DMI"
                 },
                 {
-                  "id": "forcoast:dk_uvel",
-                  "name": "Eastward Current",
+                  "id": "forcoast:dk_windspeed",
+                  "name": "Wind Speed (DMI)",
                   "layer": "forcoast:dk_windspeed",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
