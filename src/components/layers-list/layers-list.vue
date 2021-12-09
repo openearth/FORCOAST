@@ -2,23 +2,21 @@
   <div v-if="layers.length" ref="root">
     <v-list class="pa-2" flat>
       <v-list-item-group>
-        <template v-for="(layer, index) in layers">
+        <template  v-for="(layer, index) in layers">
           <v-list-item :key="layer.id" :ripple="false">
             <v-list-item-action>
               <v-switch v-model="selectedIds" :value="layer.id"></v-switch>
             </v-list-item-action>
-            <v-list-item-content>
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on }">
+            <v-list-item-content v-on="on">
               <v-list-item-title>
                 {{ layer.name }}
               </v-list-item-title>
             </v-list-item-content>
-            <v-btn icon class="ml-auto" @click="setActiveLegend(layer.id)">
-              <v-icon>
-                mdi-card-bulleted{{
-                  layer.id === activeLegend ? "" : "-off"
-                }}-outline
-              </v-icon>
-            </v-btn>
+        </template>
+        <span>{{ layer.description }}</span>
+      </v-tooltip>
           </v-list-item>
           <v-divider :key="index" v-if="index !== layers.length - 1" />
         </template>
