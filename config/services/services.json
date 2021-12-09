@@ -17,27 +17,39 @@
               "layers": [
                 {
                   "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
+                  "name": "Chlorophyll",
                   "layer": "CHL",
                   "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
                   "icon": "fish.png",
-                  "colorscalerange": "0,50"
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll-a data obtained from CMEMS"
                 },
                 {
                   "id": "analysed_sst",
-                  "name": "Sea Surface Temperature (CMEMS)",
+                  "name": "Sea Surface Temperature",
                   "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
                   "icon": "fish.png",
-                  "colorscalerange": "10,30"
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
                 },
                 {
-                  "id": "forcoast:fronts_sst",
-                  "name": "Frontal map",
-                  "layer": "forcoast:fronts_sst",
+                  "id": "forcoast:biscay_sea_t_forecast",
+                  "name": "Water Temperature",
+                  "layer": "forcoast:biscay_sea_t_forecast",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "",
-                  "colorscalerange": "0,1"
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by AZTI"
+                },
+                {
+                  "id": "forcoast:biscay_fronts_temperature",
+                  "name": "Frontal Zones Temperature",
+                  "layer": "forcoast:biscay_fronts_temperature",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST"
                 }
               ],
               "date_span": true,
@@ -87,19 +99,39 @@
               "layers": [
                 {
                   "id": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "name": " Chlorophyll-A (CNR)",
+                  "name": " Chlorophyll",
                   "layer": "forcoast:northern_adriatic_sea_chl_satellite",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0,50"
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll-a data obtained from CNR"
+                },
+                {
+                  "id": "analysed_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "analysed_sst",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_MED_SST_L4_NRT_OBSERVATIONS_010_004_a_V2",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
                 },
                 {
                   "id": "forcoast:northern_adriatic_sea_t_forecast",
-                  "name": "Water Temperature (CNR)",
+                  "name": "Water Temperature",
                   "layer": "forcoast:northern_adriatic_sea_t_forecast",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
-                  "colorscalerange": "10,30"
+                  "colorscalerange": "10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by OGS"
+                },
+                {
+                  "id": "forcoast:northernadriatic_fronts_temperature",
+                  "name": "Frontal Zones Temperature",
+                  "layer": "forcoast:northernadriatic_fronts_temperature",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST"
                 }
               ],
               "date_span": true,
@@ -140,27 +172,30 @@
               "layers": [
                 {
                   "id": "zeta",
-                  "name": "Water level (Marine Instruments)",
+                  "name": "Water level",
                   "layer": "zeta",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
-                  "colorscalerange": "-2,2"
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Instruments"
                 },
                 {
                   "id": "temp",
-                  "name": "Water Temperature (Marine Instruments)",
+                  "name": "Water Temperature",
                   "layer": "temp",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "sea_temp.png",
-                  "colorscalerange": "-10,30"
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Instruments"
                 },
                 {
                   "id": "salt",
-                  "name": "Salinity (Marine Instruments)",
+                  "name": "Salinity",
                   "layer": "salt",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
-                  "colorscalerange": "0,30"
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Instruments"
                 }
               ],
               "draw_polygon": {
@@ -189,7 +224,8 @@
                   "layer": "zeta",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
-                  "colorscalerange": "-2,2"
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Instruments"
                 }
               ],
               "date_span": true,
@@ -238,28 +274,31 @@
               "layers": [
                 {
                   "id": "ssh",
-                  "name": "Water level (Maretec)",
+                  "name": "Water level",
                   "layer": "ssh",
                   "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/TAGUS_0.007DEG_50L_1H/FORECAST/Latest.nc",
                   "icon": "",
                   "styles": "boxfill/sst_36",
-                  "colorscalerange": "-1,3"
+                  "colorscalerange": "-1,3",
+                  "description": "Modelled water level produced in FORCOAST by Maretec"
                 },
                 {
                   "id": "sea_water_velocity",
-                  "name": "Sea Water Velocity (Maretec)",
+                  "name": "Sea Water Velocity",
                   "layer": "sea_water_velocity",
                   "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/TAGUS_0.007DEG_50L_1H/FORECAST/Latest.nc",
                   "icon": "",
-                  "colorscalerange": "-1,1"
+                  "colorscalerange": "-1,1",
+                  "description": "Modelled current velocity produced in FORCOAST by Maretec"
                 },
                 {
                   "id": "wind_modulus",
-                  "name": "Wind Speed (Maretec)",
+                  "name": "Wind Speed",
                   "layer": "wind_modulus",
                   "url": "http://thredds.maretec.org/thredds/wms/WRF/LISOCEAN_3KM_1L_1H/FORECAST/2021110600.nc",
                   "icon": "",
-                  "colorscalerange": "0,15"
+                  "colorscalerange": "0,15",
+                  "description": "Modelled wind speed produced in FORCOAST by Maretec"
                 }
               ],
               "date_span": true,
@@ -298,59 +337,32 @@
         "name": "Southern North Sea (Belgium)",
         "services": [
           {
-            "id": "spat_capture_assistance",
-            "wps_id": "a3",
-            "name": "Spat captures assistance",
-            "description": "Enabling shellfish farmers to forecast spat arrival times, providing lead time to optimize the installation of the spat collectors.",
-            "components": {
-              "layers": [
-                {
-                  "id": "temp",
-                  "name": "Sea Water Temperature (local)",
-                  "layer": "temp",
-                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                  "icon": "sea_temp.png"
-                },
-                {
-                  "id": "CHL",
-                  "name": "Chlorophyll (CMEMS)",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/cmems_obs_oc_nws_bgc_tur-spm-chl_nrt_l4-hr-mosaic_P1D-m",
-                  "icon": "chlorophyll_a.png"
-                }
-              ],
-              "draw_polygon": {
-                "text": "Select your farming area of interest by drawing it on the map",
-                "title": "Farming area"
-              },
-              "selectable_lists": [
-                {
-                  "title": "Species",
-                  "values": [
-                    "Oyster",
-                    "Mussel"
-                  ]
-                },
-                {
-                  "title": "Sources of arrival",
-                  "values": [
-                    "Source A",
-                    "Source B",
-                    "Source C",
-                    "Source D",
-                    "All sources"
-                  ]
-                }
-              ],
-              "run_task": true
-            }
-          },
-          {
             "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
+             "layers": [
+                {
+                  "id": "CHL",
+                  "name": "Chlorophyll",
+                  "layer": "CHL",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll-a data obtained from CMEMS"
+                },
+                {
+                  "id": "analysed_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "analysed_sst",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
+                }
+              ],
+              "date_span": true,
               "date": true,
               "draggable_marker": {
                 "title": "Place marker at source location"
@@ -389,49 +401,67 @@
               "layers": [
                 {
                   "id": "forcoast:dk_elev",
-                  "name": "Sea Surface Elevation (DMI)",
+                  "name": "Sea Surface Elevation",
                   "layer": "forcoast:dk_elev",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
-                  "colorscalerange": "-1,1"
+                  "colorscalerange": "-1,1",
+                  "description": "Modelled water level produced in FORCOAST by DMI"
                 },
                 {
                   "id": "forcoast:dk_salt",
-                  "name": "Salinity (DMI)",
+                  "name": "Salinity",
                   "layer": "forcoast:dk_salt",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
-                  "colorscalerange": "0,30"
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by DMI"
                 },
                 {
                   "id": "forcoast:dk_temp",
-                  "name": "Water Termperature (DMI)",
+                  "name": "Water Termperature",
                   "layer": "forcoast:dk_temp",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
-                  "colorscalerange": "10,30"
+                  "colorscalerange": "10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by DMI"
                 },
                 {
-                  "id": "forcoast:dk_vvel",
-                  "name": "Northward Current (DMI)",
-                  "layer": "forcoast:dk_vvel",
+                  "id": "forcoast:dk_currentspeed",
+                  "name": "Current Speed (DMI)",
+                  "layer": "forcoast:dk_currentspeed",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
-                  "colorscalerange": "-1,1"
+                  "colorscalerange": "-1,1",
+                  "description": "Modelled current velocity produced in FORCOAST by DMI"
                 },
                 {
-                  "id": "forcoast:dk_uvel",
-                  "name": "Eastward Current (DMI)",
-                  "layer": "forcoast:dk_uvel",
+                  "id": "forcoast:dk_windspeed",
+                  "name": "Wind Speed (DMI)",
+                  "layer": "forcoast:dk_windspeed",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
-                  "colorscalerange": "-1,1"
+                  "colorscalerange": "-1,1",
+                  "description": "Modelled wind speed produced in FORCOAST by DMI"
                 }
               ],
               "date_span": true,
               "draggable_marker": {
-                "title": "Place marker at source location"
-              }
+                "title": "Place marker at output location"
+              },
+              "entry_form": {
+                "title": "Enter workability limit value",
+                "value": "Limit value (m)",
+                "type": "lim"
+              },
+              "telegram_form": {
+                "title": "Enter Telegram ID",
+                "value": "Telegram ID",
+                "type": "telegram_id"
+              },
+              "date": true,
+              "run_task": true,
+              "joblist": true
             }
           }
         ],

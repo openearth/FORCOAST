@@ -12,7 +12,7 @@ export default function(time, period, id, area, source, target, lat, lon, lim) {
 		} else if (id == "a2") {
 			return template_a2(time, id, area, source, target)
 		} else if (id == "a1") {
-			return template_a1(time, lat, lon, lim)
+			return template_a1(area, time, lat, lon, lim)
 		} else if (id == "r1") {
 			return template_r1(area, time, period, lon, lat)
 		}
