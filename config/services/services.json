@@ -34,18 +34,18 @@
                   "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
                 },
                 {
-                  "id": "forcoast:biscay_sea_t_forecast",
+                  "id": "forcoast:biscay_sst",
                   "name": "Water Temperature",
-                  "layer": "forcoast:biscay_sea_t_forecast",
+                  "layer": "forcoast:biscay_sst",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by AZTI"
                 },
                 {
-                  "id": "forcoast:biscay_fronts_temperature",
+                  "id": "forcoast:biscay_fronts_sst",
                   "name": "Frontal Zones Temperature",
-                  "layer": "forcoast:biscay_fronts_temperature",
+                  "layer": "forcoast:biscay_fronts_sst",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
