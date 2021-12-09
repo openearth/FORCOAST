@@ -1,5 +1,6 @@
 import run from "@/lib/wps/runProcessor"
 import getStatus  from "@/lib/wps/getStatus"
+import createStatusLink from "@/lib/wps/create-status-link"
 
 export default {
   namespaced: true,
@@ -127,8 +128,9 @@ export default {
 
       const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim)
       //const response = await run(testtime, id)
-      const statusLink = response[0].value.href
+      const href = response[0].value.href
 
+      const statusLink = createStatusLink(href)
       commit("SET_STATUS_LINK", statusLink)
       if (statusLink) {
         const status = await getStatus(statusLink)
