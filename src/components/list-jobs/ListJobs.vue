@@ -58,7 +58,7 @@ export default {
 
     },
     getJobs () {
-      fetch(`https://wps.forcoast.apps.k.terrasigna.com/rest/processes/forcoast-sm-` + this.selectedService.id + `/jobs`, {
+      fetch(`https://wps.forcoast.apps.k.terrasigna.com/rest/processes/forcoast-sm-` + this.selectedService.wps_id + `/jobs`, {
         headers: {
           'Content-Type': 'application/json'
         }

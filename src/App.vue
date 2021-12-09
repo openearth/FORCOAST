@@ -11,6 +11,7 @@
         v-if="wmsLayer && timeExtent.length"
         :timeExtentISO="timeExtent"
         :originalTimeISO="layerTimestamp"
+        class="layer-timestamp"
         @selected-time-change="onSelectedTimeChange"
       ></layer-timestamp-card>
       <mapbox-map
@@ -82,3 +83,9 @@ export default {
   },
 };
 </script>
+<style>
+.layer-timestamp {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+</style>

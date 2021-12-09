@@ -412,17 +412,17 @@
                   "colorscalerange": "10,30"
                 },
                 {
-                  "id": "forcoast:dk_vvel",
-                  "name": "Northward Current (DMI)",
-                  "layer": "forcoast:dk_vvel",
+                  "id": "forcoast:dk_currentspeed",
+                  "name": "Current Speed (DMI)",
+                  "layer": "forcoast:dk_currentspeed",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,1"
                 },
                 {
-                  "id": "forcoast:dk_uvel",
-                  "name": "Eastward Current (DMI)",
-                  "layer": "forcoast:dk_uvel",
+                  "id": "forcoast:dk_windspeed",
+                  "name": "Wind Speed (DMI)",
+                  "layer": "forcoast:dk_windspeed",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,1"

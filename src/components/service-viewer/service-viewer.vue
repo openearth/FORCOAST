@@ -32,6 +32,9 @@
       :expand="1"
     >
       <date-span :timeExtentISO="timeExtent"></date-span>
+      <draggable-marker
+        @show-draggable-marker="onShowDraggableMarker" 
+    ></draggable-marker>
     </collapsible-card>
     <div v-if="service.components.date_span" class="mb-4">
       <div v-if="timeSpan.length && selectedLayer">
@@ -54,21 +57,15 @@
       :manual="true"
       title="Service runner"
     >
+    <draggable-marker
+        @show-draggable-marker="onShowDraggableMarker" 
+    ></draggable-marker>
     <collapsible-card
       v-if="service.components.date"
       :expand="1"
       title="Select a date for the calculations"
     >
       <single-date></single-date>
-    </collapsible-card>
-    <collapsible-card
-      :title="service.components.draggable_marker.title"
-      :nextButton="true"
-      :expand="1"
-    >
-      <draggable-marker
-        @show-draggable-marker="onShowDraggableMarker" 
-      ></draggable-marker>
     </collapsible-card>
     <collapsible-card
       v-if="service.components.entry_form"
