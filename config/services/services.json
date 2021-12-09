@@ -303,7 +303,7 @@
               ],
               "date_span": true,
               "draggable_marker": {
-                "title": "Place marker at output location"
+                "title": "Place marker at location of interest"
               },
               "entry_form": {
                 "title": "Enter workability limit value",
@@ -447,7 +447,7 @@
               ],
               "date_span": true,
               "draggable_marker": {
-                "title": "Place marker at output location"
+                "title": "Place marker at location of interest"
               },
               "entry_form": {
                 "title": "Enter workability limit value",
