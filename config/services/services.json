@@ -276,17 +276,17 @@
                   "id": "ssh",
                   "name": "Water level",
                   "layer": "ssh",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/TAGUS_0.007DEG_50L_1H/FORECAST/Latest.nc",
+                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
                   "icon": "",
                   "styles": "boxfill/sst_36",
                   "colorscalerange": "-1,3",
                   "description": "Modelled water level produced in FORCOAST by Maretec"
                 },
                 {
-                  "id": "sea_water_velocity",
+                  "id": "vm",
                   "name": "Sea Water Velocity",
-                  "layer": "sea_water_velocity",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/TAGUS_0.007DEG_50L_1H/FORECAST/Latest.nc",
+                  "layer": "vm",
+                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled current velocity produced in FORCOAST by Maretec"
