@@ -86,7 +86,7 @@ export default {
   watch: {
     getStatusAttempt() {
      
-      if (this.getStatusAttempt > 0 && this.getStatusAttempt < 100 ) {
+      if (this.getStatusAttempt > 0 && this.getStatusAttempt < 1000 ) {
         if (this.status === "accepted" || this.status === "running") {
           _.delay(()=> this.getProcessStatus(), 5000 )  
       }
