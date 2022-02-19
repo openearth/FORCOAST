@@ -24,7 +24,7 @@
         no-title
         scrollable
         min="2021-09-01"
-        max="2022-01-01"
+        max="2022-06-01"
       >
         <v-spacer></v-spacer>
         <v-btn text color="primary" @click="menu = false"> Cancel </v-btn>
