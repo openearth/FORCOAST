@@ -54,6 +54,17 @@ export const template_a1 = (area, time, lat, lon, lim) =>({
                "inlineValue": lim.toString()
             }
          }
+      },
+     {
+         "id":"token",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "999"
+            }
+         }
       }
    ],
    "outputs":[
