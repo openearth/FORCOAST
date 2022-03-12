@@ -65,6 +65,17 @@ export const template_a1 = (area, time, lat, lon, lim) =>({
                "inlineValue": "999"
             }
          }
+      },
+     {
+         "id":"chat_id",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "999"
+            }
+         }
       }
    ],
    "outputs":[
