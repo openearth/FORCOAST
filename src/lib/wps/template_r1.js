@@ -54,6 +54,28 @@ export const template_r1 = (area, time, period, lon, lat) =>({
                "inlineValue": lat.toString()
             }
          }
+      },
+     {
+         "id":"token",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "999"
+            }
+         }
+      },
+     {
+         "id":"chat_id",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "999"
+            }
+         }
       }
    ],
    "outputs":[
