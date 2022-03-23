@@ -487,20 +487,22 @@
                   "value_1":"Enter a year",
                   "type_1":"years",
                   "value_2":"Enter month",
-                  "type_2":"Month",
-                  "value_3":"Something",
-                  "type_3":"years",
-                  "value_4":"Test",
-                  "type_4":"Month",
-                  "value_5":"another test",
-                  "type_5":"years"
+                  "type_2":"mb",
+                  "type_2_2":"me",
+                  "value_3":"Salinity lower",
+                  "type_3":"sl",
+                  "value_4":"Salinity upper",
+                  "type_4":"su",
+                  "value_5":"Temperature lower",
+                  "type_5":"tl"
                 },     
               "telegram_form": {
                 "title": "Enter Telegram ID",
                 "value": "Telegram ID",
                 "type": "telegram_id"
                 },
-              "run_task": true
+              "run_task": true,
+              "joblist": true
             }
           }
         ],
