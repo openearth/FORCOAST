@@ -80,6 +80,26 @@
       </entry-form>
     </collapsible-card>
     <collapsible-card
+      v-if="service.components.entry_form_a3"
+      :title="service.components.entry_form_a3.title"
+      :nextButton="false"
+      :expand="1"
+    >
+      <entry-form-a3
+        :value1="service.components.entry_form_a3.value_1"
+        :entryType1="service.components.entry_form_a3.type_1"
+        :value2="service.components.entry_form_a3.value_2"
+        :entryType2="service.components.entry_form_a3.type_2"
+        :value3="service.components.entry_form_a3.value_3"
+        :entryType3="service.components.entry_form_a3.type_3"
+        :value4="service.components.entry_form_a3.value_4"
+        :entryType4="service.components.entry_form_a3.type_4"
+        :value5="service.components.entry_form_a3.value_5"
+        :entryType5="service.components.entry_form_a3.type_5"
+      >
+      </entry-form-a3>
+    </collapsible-card>
+    <collapsible-card
       v-if="service.components.telegram_form"
       :title="service.components.telegram_form.title"
       :nextButton="false"
@@ -155,6 +175,7 @@ import StatusCard from "@/components/status-card"
 import ListJobs from '@/components/list-jobs'
 import EntryForm from '@/components/entry-form'
 import TelegramForm from '@/components/telegram-form'
+import EntryFormA3 from '@/components/entry-form-a3'
 
 import { mapState, mapGetters, mapActions } from "vuex";
 
@@ -172,7 +193,8 @@ export default {
     StatusCard,
     ListJobs,
     EntryForm,
-    TelegramForm
+    TelegramForm,
+    EntryFormA3
   },
   props: {
     service: {
