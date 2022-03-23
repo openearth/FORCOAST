@@ -1,4 +1,4 @@
-export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, c_lat, r_lon) =>({
+export const template_a3 = (years, mb, me, sl, su, tl) =>({
     "inputs":[
        {
           "id":"pilot",
@@ -84,7 +84,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, 
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": tu
+              "inlineValue": "26"
            }
         }
      },
@@ -95,7 +95,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, 
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": kf
+              "inlineValue": "0.75"
            }
         }
      },
@@ -106,7 +106,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, 
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": o
+              "inlineValue": "4.5"
            }
         }
      },
@@ -117,7 +117,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, 
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": kr
+              "inlineValue": "0.5"
            }
         }
      },
@@ -128,7 +128,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, 
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": d
+              "inlineValue": "-4"
            }
         }
      },
@@ -183,7 +183,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, 
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": c_lon
+              "inlineValue": "8.84"
            }
         }
      },
@@ -194,7 +194,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, 
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": c_lat
+              "inlineValue": "56.75"
            }
         }
      },
@@ -205,7 +205,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, c_lon, 
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": r_lon
+              "inlineValue": "0.66"
            }
         }
      },
