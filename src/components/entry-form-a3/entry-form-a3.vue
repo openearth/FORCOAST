@@ -116,13 +116,38 @@ export default {
     },
   },
   watch: {
-    entryValue() {
-      this.setSelectedEntryType(this.entryType);
-      this.setSelectedEntryValue(this.entryValue); 
+    entryValue1() {
+      this.setSelectedEntryType1(this.entryType1);
+      this.setSelectedEntryValue1(this.entryValue1); 
+    },
+    entryValue2() {
+      this.setSelectedEntryType2(this.entryType2);
+      this.setSelectedEntryValue2(this.entryValue2); 
+    },
+    entryValue2_2() {
+      this.setSelectedEntryType2_2(this.entryType2_2);
+      this.setSelectedEntryValue2_2(this.entryValue2_2); 
+    },
+    entryValue3() {
+      this.setSelectedEntryType3(this.entryType3);
+      this.setSelectedEntryValue3(this.entryValue3); 
+    },
+    entryValue4() {
+      this.setSelectedEntryType4(this.entryType4);
+      this.setSelectedEntryValue4(this.entryValue4); 
+    },
+    entryValue5() {
+      this.setSelectedEntryType5(this.entryType5);
+      this.setSelectedEntryValue5(this.entryValue5); 
     }
   },
   methods: { 
-    ...mapActions("wps", ["setSelectedEntryType", "setSelectedEntryValue"])
+    ...mapActions("wps", ["setSelectedEntryType1", "setSelectedEntryValue1"]),
+    ...mapActions("wps", ["setSelectedEntryType2", "setSelectedEntryValue2"]),
+    ...mapActions("wps", ["setSelectedEntryType2_2", "setSelectedEntryValue2_2"]),
+    ...mapActions("wps", ["setSelectedEntryType3", "setSelectedEntryValue3"]),
+    ...mapActions("wps", ["setSelectedEntryType4", "setSelectedEntryValue4"]),
+    ...mapActions("wps", ["setSelectedEntryType5", "setSelectedEntryValue5"])
   }
 };
 </script>
