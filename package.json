@@ -37,7 +37,8 @@
     "vuetify": "^2.2.11",
     "vuex": "^3.6.2",
     "xml-js": "^1.6.11",
-    "tiny-cookie": "^2.3.2"
+    "tiny-cookie": "^2.3.2",
+    "vue-tour": "^2.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

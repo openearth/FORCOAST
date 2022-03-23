@@ -3,7 +3,7 @@
     clipped 
     app 
     permanent 
-    width="400">
+    width="500">
     <router-view v-on="$listeners" /> 
   </v-navigation-drawer>
 </template>

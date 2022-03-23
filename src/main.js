@@ -6,7 +6,9 @@ import router from "./router"
 import vuetify from "./plugins/vuetify"
 import "./plugins/vue2MapboxGL"
 import "./plugins/VueHtmlToPaper"
+import './plugins/vue-tour'
 
+import '@/css/tour.css'
 
 Vue.config.productionTip = false
 
