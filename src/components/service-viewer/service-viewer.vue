@@ -90,6 +90,7 @@
         :entryType1="service.components.entry_form_a3.type_1"
         :value2="service.components.entry_form_a3.value_2"
         :entryType2="service.components.entry_form_a3.type_2"
+        :entryType2_2="service.components.entry_form_a3.value2_2"
         :value3="service.components.entry_form_a3.value_3"
         :entryType3="service.components.entry_form_a3.type_3"
         :value4="service.components.entry_form_a3.value_4"
