@@ -3,11 +3,16 @@
     <!-- <img v-img src="@/assets/Atunetan13-scaled.png"> -->
     <div>
       <!-- <h2 class="h2">TEST</h2> -->
-      <div><b>Pilot area:</b> {{ selectedArea }}
+      <div data-v-step="1"><b>Pilot area:</b> {{ selectedArea }}
       <p><b>Service module:</b> {{ service.name }}</p>
       </div>
       <p>{{ service.description }}</p>
+      <p>An example bulletin produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
+      <p>To test the service for a location of choice, follow the instructions in the Service runner section below. We appreciate your feedback on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <v-divider class="mt-4 mb-4" />
+      <!-- <p>If you are interested in a trial <a v-bind:href="'mailto:' + service.contact">e-mail us</a></p> -->
+      <p>If you are interested to receive daily bulletins by instant messaging app as a free trial <a v-bind:href="'mailto:' + service.contact + '?cc=info@forcoast.eu&subject=Free%20trial%20' + service.name + '%20service&body=' + service.mail_body">e-mail us</a></p>
+      <!-- https://css-tricks.com/snippets/html/mailto-links/ -->
     </div>
     <!-- .sync -->
     <collapsible-group
@@ -80,18 +85,6 @@
       </entry-form>
     </collapsible-card>
     <collapsible-card
-      v-if="service.components.telegram_form"
-      :title="service.components.telegram_form.title"
-      :nextButton="false"
-      :expand="1"
-    >
-      <telegram-form
-        :value="service.components.telegram_form.value"
-        :entryType="service.components.telegram_form.type"
-      >
-      </telegram-form>
-    </collapsible-card>
-    <collapsible-card
       v-if="service.components.draw_polygon"
       :title="service.components.draw_polygon.title"
       :nextButton="true"
@@ -154,7 +147,6 @@ import TimeseriesGraph from "@/components/timeseries-graph";
 import StatusCard from "@/components/status-card"
 import ListJobs from '@/components/list-jobs'
 import EntryForm from '@/components/entry-form'
-import TelegramForm from '@/components/telegram-form'
 
 import { mapState, mapGetters, mapActions } from "vuex";
 
@@ -171,8 +163,7 @@ export default {
     TimeseriesGraph,
     StatusCard,
     ListJobs,
-    EntryForm,
-    TelegramForm
+    EntryForm
   },
   props: {
     service: {
