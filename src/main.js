@@ -7,10 +7,16 @@ import vuetify from "./plugins/vuetify"
 import "./plugins/vue2MapboxGL"
 import "./plugins/VueHtmlToPaper"
 import './plugins/vue-tour'
+import VueGtag from 'vue-gtag'
 
 import '@/css/tour.css'
 
 Vue.config.productionTip = false
+
+Vue.use(VueGtag, {
+  config: { id: 'G-H2Y26MW43B' }
+}, router)
+
 
 new Vue({
 	router,
