@@ -3,59 +3,63 @@
     <v-container>
     <v-row>
       <v-col cols="4">
-        <v-subheader>{{ value1 }}</v-subheader>
+        <v-subheader>{{ value_1 }}</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
-            v-model="entryValue1"
+            v-model="entryValue_1"
             label="Year"
           ></v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>{{ value2 }}</v-subheader>
+        <v-subheader>{{ value_2 }}</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="entryValue2"
+            v-model="entryValue_2"
             label="Begin"
           ></v-text-field>
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="entryValue2_2"
+            v-model="entryValue_3"
             label="End"
           ></v-text-field>
       </v-col>
     </v-row>
-        <v-row>
+    <v-row>
       <v-col cols="4">
-        <v-subheader>{{ value3 }}</v-subheader>
+        <v-subheader>{{ value_4 }}</v-subheader>
       </v-col>
-      <v-col cols="8">
+      <v-col cols="4">
           <v-text-field
-            v-model="entryValue3"
+            v-model="entryValue_4"
+            label="Lower"
+          ></v-text-field>
+      </v-col>
+      <v-col cols="4">
+          <v-text-field
+            v-model="entryValue_5"
+            label="Upper"
           ></v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>{{ value4 }}</v-subheader>
+        <v-subheader>{{ value_6 }}</v-subheader>
       </v-col>
-      <v-col cols="8">
+      <v-col cols="4">
           <v-text-field
-            v-model="entryValue4"
+            v-model="entryValue_6"
+            label="Lower"
           ></v-text-field>
       </v-col>
-    </v-row>
-    <v-row>
       <v-col cols="4">
-        <v-subheader>{{ value5 }}</v-subheader>
-      </v-col>
-      <v-col cols="8">
           <v-text-field
-            v-model="entryValue5"
+            v-model="entryValue_7"
+            label="Upper"
           ></v-text-field>
       </v-col>
     </v-row>
@@ -66,88 +70,92 @@
 import { mapActions } from "vuex";
 export default {
   data: () => ({
-    entryValue1: "",
-    entryValue2_2: "",
-    entryValue2: "",
-    entryValue3: "",
-    entryValue4: "",
-    entryValue5: "",
+    entryValue_1: "",
+    entryValue_2: "",
+    entryValue_3: "",
+    entryValue_4: "",
+    entryValue_5: "",
+    entryValue_6: "",
+    entryValue_7: ""
   }),
   props: {
-    value1: {
+    value_1: {
       type: String, 
       required: true,
     },
-    entryType1: {
+    entryType_1: {
+      type: String, 
+      required: true,
+    },
+    value_2: {
+      type: String, 
+      required: true,
+    },
+    entryType_2: {
+      type: String, 
+      required: true,
+    },      
+    entryType_3: {
       type: String, 
       required: true,
     },    
-    value2: {
+    value_4: {
       type: String, 
       required: true,
     },
-    entryType2: {
+    entryType_4: {
       type: String, 
       required: true,
     },
-    value3: {
+    entryType_5: {
+      type: String, 
+      required: true,
+    },      
+    value_6: {
       type: String, 
       required: true,
     },
-    entryType3: {
+    entryType_6: {
       type: String, 
       required: true,
-    },
-    value4: {
+    }, 
+    entryType_7: {
       type: String, 
       required: true,
-    },
-    entryType4: {
-      type: String, 
-      required: true,
-    },
-    value5: {
-      type: String, 
-      required: true,
-    },
-    entryType5: {
-      type: String, 
-      required: true,
-    },
+    },       
   },
   watch: {
-    entryValue1() {
-      this.setSelectedEntryType1(this.entryType1);
-      this.setSelectedEntryValue1(this.entryValue1); 
+    entryValue_1() {
+      this.setSelectedEntryType([this.entryType_1, this.entryType_2, this.entryType_3, this.entryType_4, this.entryType_5, this.entryType_6, this.entryType_7]);
+      this.setSelectedEntryValue([this.entryValue_1, this.entryValue_2, this.entryValue_3, this.entryValue_4, this.entryValue_5, this.entryValue_6, this.entryValue_7]);
     },
-    entryValue2() {
-      this.setSelectedEntryType2(this.entryType2);
-      this.setSelectedEntryValue2(this.entryValue2); 
+    entryValue_2() {
+      this.setSelectedEntryType([this.entryType_1, this.entryType_2, this.entryType_3, this.entryType_4, this.entryType_5, this.entryType_6, this.entryType_7]);
+      this.setSelectedEntryValue([this.entryValue_1, this.entryValue_2, this.entryValue_3, this.entryValue_4, this.entryValue_5, this.entryValue_6, this.entryValue_7]);
     },
-    entryValue2_2() {
-      this.setSelectedEntryType2_2(this.entryType2_2);
-      this.setSelectedEntryValue2_2(this.entryValue2_2); 
+    entryValue_3() {
+      this.setSelectedEntryType([this.entryType_1, this.entryType_2, this.entryType_3, this.entryType_4, this.entryType_5, this.entryType_6, this.entryType_7]);
+      this.setSelectedEntryValue([this.entryValue_1, this.entryValue_2, this.entryValue_3, this.entryValue_4, this.entryValue_5, this.entryValue_6, this.entryValue_7]);
     },
-    entryValue3() {
-      this.setSelectedEntryType3(this.entryType3);
-      this.setSelectedEntryValue3(this.entryValue3); 
+    entryValue_4() {
+      this.setSelectedEntryType([this.entryType_1, this.entryType_2, this.entryType_3, this.entryType_4, this.entryType_5, this.entryType_6, this.entryType_7]);
+      this.setSelectedEntryValue([this.entryValue_1, this.entryValue_2, this.entryValue_3, this.entryValue_4, this.entryValue_5, this.entryValue_6, this.entryValue_7]);
     },
-    entryValue4() {
-      this.setSelectedEntryType4(this.entryType4);
-      this.setSelectedEntryValue4(this.entryValue4); 
+    entryValue_5() {
+      this.setSelectedEntryType([this.entryType_1, this.entryType_2, this.entryType_3, this.entryType_4, this.entryType_5, this.entryType_6, this.entryType_7]);
+      this.setSelectedEntryValue([this.entryValue_1, this.entryValue_2, this.entryValue_3, this.entryValue_4, this.entryValue_5, this.entryValue_6, this.entryValue_7]);
     },
-    entryValue5() {
-      this.setSelectedEntryType5(this.entryType5);
-      this.setSelectedEntryValue5(this.entryValue5); 
+    entryValue_6() {
+      this.setSelectedEntryType([this.entryType_1, this.entryType_2, this.entryType_3, this.entryType_4, this.entryType_5, this.entryType_6, this.entryType_7]);
+      this.setSelectedEntryValue([this.entryValue_1, this.entryValue_2, this.entryValue_3, this.entryValue_4, this.entryValue_5, this.entryValue_6, this.entryValue_7]);
+    },
+    entryValue_7() {
+      this.setSelectedEntryType([this.entryType_1, this.entryType_2, this.entryType_3, this.entryType_4, this.entryType_5, this.entryType_6, this.entryType_7]);
+      this.setSelectedEntryValue([this.entryValue_1, this.entryValue_2, this.entryValue_3, this.entryValue_4, this.entryValue_5, this.entryValue_6, this.entryValue_7]);
     }
   },
   methods: { 
-    ...mapActions("wps", ["setSelectedEntryType1", "setSelectedEntryValue1"]),
-    ...mapActions("wps", ["setSelectedEntryType2", "setSelectedEntryValue2"]),
-    ...mapActions("wps", ["setSelectedEntryType2_2", "setSelectedEntryValue2_2"]),
-    ...mapActions("wps", ["setSelectedEntryType3", "setSelectedEntryValue3"]),
-    ...mapActions("wps", ["setSelectedEntryType4", "setSelectedEntryValue4"]),
-    ...mapActions("wps", ["setSelectedEntryType5", "setSelectedEntryValue5"])
+    ...mapActions("wps", ["setSelectedEntryType", "setSelectedEntryValue"])
   }
 };
 </script>
