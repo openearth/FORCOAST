@@ -105,6 +105,34 @@ export default {
       if (selectedEntryType == "period") {
         period = selectedEntryValue
       }
+      var years = ""
+      if (selectedEntryType[0] == "years"){
+        years = selectedEntryValue[0]
+      }
+      var mb = ""
+      if (selectedEntryType[1] == "mb"){
+        mb = selectedEntryValue[1]
+      }
+      var me = ""
+      if (selectedEntryType[2] == "me"){
+        me = selectedEntryValue[2]
+      }
+      var sl = ""
+      if (selectedEntryType[3] == "sl"){
+        sl = selectedEntryValue[3]
+      }
+      var su = ""
+      if (selectedEntryType[4] == "su"){
+        su = selectedEntryValue[4]
+      }
+      var tl = ""
+      if (selectedEntryType[5] == "tl"){
+        tl = selectedEntryValue[5]
+      }
+      var tu = ""
+      if (selectedEntryType[6] == "tu"){
+        tu = selectedEntryValue[6]
+      }
 
       // Set source based on lat and lon
       const source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ", 0.5]"
@@ -126,7 +154,11 @@ export default {
       }
       console.log(target)
 
-      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim)
+
+
+      console.log("years", years, "mb", mb, "me", me, "sl", sl, "su", su, "tl", tl, "tu", tu)
+
+      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, years, mb, me, sl, su, tl, tu)
       //const response = await run(testtime, id)
       const href = response[0].value.href
 
@@ -140,6 +172,7 @@ export default {
       if (jobStatus == "successful") {
         console.log("successful!")
       }
+      console.log(period, id, area, source, target, lat, lim)
     },
   }
 }
