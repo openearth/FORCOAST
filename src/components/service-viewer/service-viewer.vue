@@ -86,17 +86,17 @@
       :expand="1"
     >
       <entry-form-a3
-        :value1="service.components.entry_form_a3.value_1"
-        :entryType1="service.components.entry_form_a3.type_1"
-        :value2="service.components.entry_form_a3.value_2"
-        :entryType2="service.components.entry_form_a3.type_2"
-        :entryType2_2="service.components.entry_form_a3.value2_2"
-        :value3="service.components.entry_form_a3.value_3"
-        :entryType3="service.components.entry_form_a3.type_3"
-        :value4="service.components.entry_form_a3.value_4"
-        :entryType4="service.components.entry_form_a3.type_4"
-        :value5="service.components.entry_form_a3.value_5"
-        :entryType5="service.components.entry_form_a3.type_5"
+        :value_1="service.components.entry_form_a3.value_1"
+        :entryType_1="service.components.entry_form_a3.type_1"
+        :value_2="service.components.entry_form_a3.value_2"
+        :entryType_2="service.components.entry_form_a3.type_2"
+        :entryType_3="service.components.entry_form_a3.type_3"
+        :value_4="service.components.entry_form_a3.value_4"
+        :entryType_4="service.components.entry_form_a3.type_4"
+        :entryType_5="service.components.entry_form_a3.type_5"
+        :value_6="service.components.entry_form_a3.value_6"
+        :entryType_6="service.components.entry_form_a3.type_6"
+        :entryType_7="service.components.entry_form_a3.type_7"
       >
       </entry-form-a3>
     </collapsible-card>
@@ -137,7 +137,7 @@
     </div>
     <!-- TODO move it in a component -->
     <div v-if="service.components.run_task"  class="mb-4">
-      <div v-if="calculationsTime">
+      <div v-if= 'selectedEntryValue' >
         <v-btn block color="primary"  @click="runTask">Run</v-btn>
       </div>
       <div v-else>
@@ -211,7 +211,7 @@ export default {
   },
 
   computed: {
-    ...mapState("wps", ["markerLngLat", "calculationsTime","jobStatus", "statusLink"]),
+    ...mapState("wps", ["markerLngLat", "calculationsTime", "selectedEntryValue", "jobStatus", "statusLink"]),
     ...mapState("layers", ["selectedTime", "timeSpan", "selectedArea"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"])
   },
