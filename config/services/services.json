@@ -488,19 +488,17 @@
                   "type_1":"years",
                   "value_2":"Enter month",
                   "type_2":"mb",
-                  "type_2_2":"me",
-                  "value_3":"Salinity lower",
-                  "type_3":"sl",
-                  "value_4":"Salinity upper",
-                  "type_4":"su",
-                  "value_5":"Temperature lower",
-                  "type_5":"tl"
-                },     
-              "telegram_form": {
-                "title": "Enter Telegram ID",
-                "value": "Telegram ID",
-                "type": "telegram_id"
+                  "type_3":"me",
+                  "value_4":"Salinity treshold",
+                  "type_4":"sl",
+                  "type_5":"su",
+                  "value_6":"Temperature treshold",
+                  "type_6":"tl",
+                  "type_7":"tu"
                 },
+              "draggable_marker": {
+                  "title": "Place marker at location of interest"
+                },     
               "run_task": true,
               "joblist": true
             }
