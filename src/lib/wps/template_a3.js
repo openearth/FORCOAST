@@ -1,18 +1,7 @@
 export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
     "inputs":[
-       {
-          "id":"pilot",
-          "input":{
-             "format":{
-                "mimeType":"text/plain"
-             },
-             "value":{
-                "inlineValue": "Limfjord"
-             }
-          }
-       },
       {
-          "id":"Year",
+          "id":"years",
           "input":{
              "format":{
                 "mimeType":"text/plain"
@@ -23,7 +12,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
           }
        },
       {
-          "id":"Month begin",
+          "id":"mb",
           "input":{
              "format":{
                 "mimeType":"text/plain"
@@ -34,7 +23,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
           }
        },
       {
-          "id":"Month end",
+          "id":"me",
           "input":{
              "format":{
                 "mimeType":"text/plain"
@@ -45,7 +34,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
           }
        },
       {
-          "id":"Salinity lower treshold",
+          "id":"sl",
           "input":{
              "format":{
                 "mimeType":"text/plain"
@@ -56,7 +45,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
           }
        },
        {
-        "id":"Salinity upper treshold",
+        "id":"su",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -67,7 +56,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Temperature lower treshold",
+        "id":"tl",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -78,7 +67,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Temperature upper treshold",
+        "id":"tu",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -89,7 +78,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Half saturation constant for food",
+        "id":"kf",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -100,7 +89,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Oxygen lower treshold",
+        "id":"o",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -111,7 +100,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Treshold resuspension",
+        "id":"kr",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -122,7 +111,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Expected decay",
+        "id":"d",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -133,7 +122,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Telegram bot token",
+        "id":"token",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -144,7 +133,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Telegram chat_id",
+        "id":"chat_id",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -155,7 +144,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Bulletin",
+        "id":"bulletin",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -177,7 +166,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },  
      {
-        "id":"Center point longitude",
+        "id":"c_lon",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -188,7 +177,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Center point latitude",
+        "id":"c_lat",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -199,7 +188,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },
      {
-        "id":"Longitudinal range of map",
+        "id":"r_lon",
         "input":{
            "format":{
               "mimeType":"text/plain"
@@ -214,7 +203,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
        {
           "id":"result",
           "format":{
-             "mimeType":"application/x-ewps-stac"
+             "mimeType":"application/binary"
           },
           "transmissionMode":"reference"
        }
