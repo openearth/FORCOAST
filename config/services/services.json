@@ -186,7 +186,7 @@
                   "id": "zeta",
                   "name": "Water level",
                   "layer": "zeta",
-                  "url": "https:/milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
+                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
                   "icon": "",
                   "colorscalerange": "-2,2",
                   "description": "Modelled water level produced in FORCOAST by Marine Instruments"
@@ -195,7 +195,7 @@
                   "id": "temp",
                   "name": "Water Temperature",
                   "layer": "temp",
-                  "url": "https:/milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
+                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Instruments"
@@ -204,7 +204,7 @@
                   "id": "salt",
                   "name": "Salinity",
                   "layer": "salt",
-                  "url": "https:/milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
+                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
                   "icon": "",
                   "colorscalerange": "0,30",
                   "description": "Modelled salinity produced in FORCOAST by Marine Instruments"
@@ -238,7 +238,7 @@
                   "id": "zeta",
                   "name": "Water level (Marine Instruments)",
                   "layer": "zeta",
-                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "-2,2",
                   "description": "Modelled water level produced in FORCOAST by Marine Instruments"
