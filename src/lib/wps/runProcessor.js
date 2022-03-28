@@ -6,7 +6,7 @@ import { template_a1 } from './template_a1'
 import { template_r1 } from './template_r1'
 
 
-export default function(time, period, id, area, source, target, lat, lon, lim, years, mb, me, sl, su, tl) {
+export default function(time, period, id, area, source, target, lat, lon, lim, years, mb, me, sl, su, tl, tu) {
 	const data  = (() => {
 		if (id == "f2") {
 			return template_f2(time, id)
@@ -17,7 +17,7 @@ export default function(time, period, id, area, source, target, lat, lon, lim, y
 		} else if (id == "r1") {
 			return template_r1(area, time, period, lon, lat)
 		} else if (id == "a3") {
-			return template_a3(years, mb, me, sl, su, tl)
+			return template_a3(years, mb, me, sl, su, tl, tu)
 		}
 	})();
 	return axios({

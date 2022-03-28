@@ -1,4 +1,4 @@
-export const template_a3 = (years, mb, me, sl, su, tl) =>({
+export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
     "inputs":[
        {
           "id":"pilot",
@@ -84,7 +84,7 @@ export const template_a3 = (years, mb, me, sl, su, tl) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": "26"
+              "inlineValue": tu
            }
         }
      },
