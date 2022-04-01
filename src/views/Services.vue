@@ -11,7 +11,6 @@
         @show-draggable-marker="onShowDraggableMarker"
         @show-draw-polygon="onShowDrawPolygon"
       ></service-viewer>
-      <v-tour :steps="tourSteps" :options="tourConfig" name="introduction"></v-tour>
     </div>
   </div>
   <div v-else class="pa-4 home d-flex flex-column">
@@ -26,18 +25,10 @@
 
 import { mapState } from "vuex";
 import serviceViewer from "../components/service-viewer/service-viewer.vue";
-import { tourConfig, tourSteps } from '@/plugins/vue-tour'
 import * as Cookies from 'tiny-cookie'
 
 export default {
   components: { serviceViewer },
-  data: () => ({
-    tourConfig,
-    tourSteps
-  }),
-  mounted () {
-    this.showTour()
-  },
   computed: {
     ...mapState("layers", ["selectedCategory", "selectedService"]),
   },
@@ -53,9 +44,6 @@ export default {
     },
     onShowDrawPolygon(event) {
       this.$emit("show-draw-polygon", event);
-    },
-    showTour () {
-        this.$tours.introduction.start()
     }
   },
 };

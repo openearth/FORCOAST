@@ -3,7 +3,7 @@
     <!-- <img v-img src="@/assets/Atunetan13-scaled.png"> -->
     <div>
       <!-- <h2 class="h2">TEST</h2> -->
-      <div data-v-step="1"><b>Pilot area:</b> {{ selectedArea }}
+      <div data-v-step="3"><b>Pilot area:</b> {{ selectedArea }}
       <p><b>Service module:</b> {{ service.name }}</p>
       </div>
       <p>{{ service.description }}</p>
@@ -19,6 +19,7 @@
       :expand="1"
       :manual="false"
       title="Data viewer"
+      data-v-step="4"
     >
     <collapsible-card
       v-if="service.components.layers"
@@ -61,6 +62,7 @@
       :expand="1"
       :manual="true"
       title="Service runner"
+      data-v-step="5"
     >
     <draggable-marker
         @show-draggable-marker="onShowDraggableMarker" 
@@ -110,7 +112,10 @@
     <!-- TODO move it in a component -->
     <div v-if="service.components.run_task"  class="mb-4">
       <div v-if="calculationsTime">
-        <v-btn block color="primary"  @click="runTask">Run</v-btn>
+        <v-btn block color="primary"  @click="
+          runTask();
+          track(selectedService, selectedArea);
+        ">Run</v-btn>
       </div>
       <div v-else>
         <v-btn disabled block color="primary">Run</v-btn>
@@ -180,7 +185,7 @@ export default {
 
   computed: {
     ...mapState("wps", ["markerLngLat", "calculationsTime","jobStatus", "statusLink"]),
-    ...mapState("layers", ["selectedTime", "timeSpan", "selectedArea"]),
+    ...mapState("layers", ["selectedTime", "timeSpan", "selectedArea", "selectedService"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"])
   },
   methods: {
@@ -203,10 +208,16 @@ export default {
     onShowDrawPolygon(event) {
       this.$emit("show-draw-polygon", event);
     },
-
     runTask() {
       this.clearJobStatus();
       this.runProcessor();
+    },
+    track (selectedService, selectedArea) {
+      this.$gtag.event('service_runner', {
+        'event_category': selectedService + '_' + selectedArea,
+        'event_area_id': selectedArea,
+        'event_service_id': selectedService
+      })
     }
   },
 };

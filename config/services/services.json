@@ -57,12 +57,12 @@
                 }
               ],
               "date_span": true,
-              "date": true,
-              "run_task": true,
+              "date": false,
+              "run_task": false,
               "draggable_marker": {
                 "title": "Place marker at output location"
               },
-              "joblist": true
+              "joblist": false
             }
           }
         ],

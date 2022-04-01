@@ -108,6 +108,11 @@ export default {
       map.on("load", () => {
         this.$root.mapLoaded = true;
       });
+      
+      // immediately zoom to extent if entering route with area activated
+      if (this.selectedAreaBBox !== null) {
+        this.zoomToExtend();
+      }
     },
 
     zoomToExtend() {
