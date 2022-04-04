@@ -57,7 +57,7 @@
       :manual="true"
       title="Service runner"
     >
-    <draggable-marker
+    <draggable-marker v-if= service.components.draggable_marker
         @show-draggable-marker="onShowDraggableMarker" 
     ></draggable-marker>
     <collapsible-card
@@ -101,6 +101,24 @@
       </entry-form-a3>
     </collapsible-card>
     <collapsible-card
+      v-if="service.components.entry_form_a3_optional"
+      :title="service.components.entry_form_a3_optional.title"
+      :nextButton="false"
+      :expand="1"
+    >
+      <entry-form-a3-optional
+        :value_8="service.components.entry_form_a3_optional.value_8"
+        :entryType_8="service.components.entry_form_a3_optional.type_8"
+        :value_9="service.components.entry_form_a3_optional.value_9"
+        :entryType_9="service.components.entry_form_a3_optional.type_9"
+        :value_10="service.components.entry_form_a3_optional.value_10"
+        :entryType_10="service.components.entry_form_a3_optional.type_10"
+        :value_11="service.components.entry_form_a3_optional.value_11"
+        :entryType_11="service.components.entry_form_a3_optional.type_11"
+      >
+      </entry-form-a3-optional>
+    </collapsible-card>
+    <collapsible-card
       v-if="service.components.telegram_form"
       :title="service.components.telegram_form.title"
       :nextButton="false"
@@ -137,7 +155,7 @@
     </div>
     <!-- TODO move it in a component -->
     <div v-if="service.components.run_task"  class="mb-4">
-      <div v-if= 'selectedEntryValue' >
+      <div v-if= 'selectedEntryValue || calculationsTime' >
         <v-btn block color="primary"  @click="runTask">Run</v-btn>
       </div>
       <div v-else>
@@ -177,6 +195,7 @@ import ListJobs from '@/components/list-jobs'
 import EntryForm from '@/components/entry-form'
 import TelegramForm from '@/components/telegram-form'
 import EntryFormA3 from '@/components/entry-form-a3'
+import EntryFormA3Optional from '@/components/entry-form-a3-optional'
 
 import { mapState, mapGetters, mapActions } from "vuex";
 
@@ -195,7 +214,8 @@ export default {
     ListJobs,
     EntryForm,
     TelegramForm,
-    EntryFormA3
+    EntryFormA3,
+    EntryFormA3Optional
   },
   props: {
     service: {
