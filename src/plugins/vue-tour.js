@@ -8,9 +8,37 @@ export const tourConfig = {
 export const tourSteps = [
   {
     target: '[data-v-step="1"]',
-    content: 'Welcome to <strong>BlueEarth Data</strong>!',
+    content: 'Welcome to <strong>FORCOAST</strong> platform!',
     params: {
-      placement: 'right'
+      placement: 'bottom'
+    }
+  },
+  {
+    target: '[data-v-step="2"]',
+    content: 'Select a pilot area and service here',
+    params: {
+      placement: 'bottom'
+    }
+  },
+  {
+    target: '[data-v-step="3"]',
+    content: 'Background information about the service',
+    params: {
+      placement: 'bottom'
+    }
+  },
+  {
+    target: '[data-v-step="4"]',
+    content: 'View spatial data layers here',
+    params: {
+      placement: 'bottom'
+    }
+  },
+  {
+    target: '[data-v-step="5"]',
+    content: 'Run demo services here',
+    params: {
+      placement: 'bottom'
     }
   }
 ]

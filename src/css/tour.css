@@ -1,11 +1,11 @@
 .v-tour .v-step {
-  background-color: var(--v-blue100-base);
+  background-color: #66bbdc;
   -webkit-filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
 }
 
 .v-tour .v-step .v-step__arrow {
-  border-color: var(--v-blue100-base);
+  border-color: #66bbdc;
 }
 
 .v-tour .v-step .v-step__content {
@@ -28,5 +28,5 @@
 }
 
 .v-tour .v-step .v-step__button:hover {
-  color: var(--v-blue100-base);
+  color: #66bbdc;
 }
