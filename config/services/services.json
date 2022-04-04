@@ -5,6 +5,41 @@
     "icon": "FORCOAST_Fish_Logo.png",
     "areas": [
       {
+        "id": "eforie",
+        "name": "Western Black Sea (Romania)",
+        "services": [
+          {
+            "id": "fishing_index",
+            "wps_id": "f1",
+            "name": "Fishing index",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
+            "components": {
+              "layers": [
+                {
+                  "id": "test:HSI_whiting",
+                  "name": "HSI-whiting",
+                  "layer": "test:HSI_whiting",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Index for fishing"
+                }
+              ]
+            }
+          }
+        ],
+        "bbox": [
+          [
+            28.27,
+            43.22
+          ],
+          [
+            30.46,
+            45.18
+          ]
+        ]
+      },
+      {
         "id": "bay_of_biscay",
         "name": "Bay of Biscay (Spain)",
         "services": [
@@ -496,9 +531,21 @@
                   "type_6":"tl",
                   "type_7":"tu"
                 },
-              "draggable_marker": {
-                  "title": "Place marker at location of interest"
-                },     
+              "entry_form_a3_optional": {
+                  "title":"Optional parameters",
+                  "value_8":"Half saturation constant of food",
+                  "type_8":"kf",
+                  "value_9":"Oxygen lower treshold",
+                  "type_9":"o",
+                  "value_10":"Resuspension treshold",
+                  "type_10":"kr",
+                  "value_11":"Expected decay",
+                  "type_11":"d"
+                },
+              "draw_polygon": {
+                  "text": "Specify bounding box for target location",
+                  "title": "Specify bounding box for target location"
+                },  
               "run_task": true,
               "joblist": true
             }
