@@ -1,4 +1,4 @@
-export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
+export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, target) =>({
     "inputs":[
       {
           "id":"years",
@@ -84,7 +84,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": "0.75"
+              "inlineValue": kf
            }
         }
      },
@@ -95,7 +95,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": "4.5"
+              "inlineValue": o
            }
         }
      },
@@ -106,7 +106,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": "0.5"
+              "inlineValue": kr
            }
         }
      },
@@ -117,7 +117,7 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": "-4"
+              "inlineValue": d
            }
         }
      },
@@ -166,35 +166,46 @@ export const template_a3 = (years, mb, me, sl, su, tl, tu) =>({
         }
      },  
      {
-        "id":"c_lon",
+        "id":"Wbb",
         "input":{
            "format":{
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": "8.84"
+              "inlineValue": target.substr(2, 12)
            }
         }
      },
      {
-        "id":"c_lat",
+        "id":"Ebb",
         "input":{
            "format":{
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": "56.75"
+              "inlineValue": target.substr(31, 12)
            }
         }
      },
      {
-        "id":"r_lon",
+        "id":"Sbb",
         "input":{
            "format":{
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": "0.66"
+              "inlineValue": target.substr(15, 12)
+           }
+        }
+     },
+     {
+        "id":"Nbb",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": target.substr(73, 12)
            }
         }
      },
