@@ -117,6 +117,12 @@ export default {
       // Set values from entry form
       //TODO move this into a function
 
+      console.log('selectedEntryValue')
+      console.log(selectedEntryValue)
+      console.log('selectedEntryType')
+      console.log(selectedEntryType)
+      console.log('selectedEntryValueOptional')
+      console.log(selectedEntryValueOptional)
       var lim = ""
       if (selectedEntryType == "lim") {
         lim = selectedEntryValue
@@ -125,58 +131,59 @@ export default {
       if (selectedEntryType == "period") {
         period = selectedEntryValue
       }
+      // TODO: A3 specific code can be removed here once done with changes
       // Variables of A3
-      var years = ""
-      if (selectedEntryType[0] == "years"){
-        years = selectedEntryValue[0]
-      }
-      var mb = ""
-      if (selectedEntryType[1] == "mb"){
-        mb = selectedEntryValue[1]
-      }
-      var me = ""
-      if (selectedEntryType[2] == "me"){
-        me = selectedEntryValue[2]
-      }
-      var sl = ""
-      if (selectedEntryType[3] == "sl"){
-        sl = selectedEntryValue[3]
-      }
-      var su = ""
-      if (selectedEntryType[4] == "su"){
-        su = selectedEntryValue[4]
-      }
-      var tl = ""
-      if (selectedEntryType[5] == "tl"){
-        tl = selectedEntryValue[5]
-      }
-      var tu = ""
-      if (selectedEntryType[6] == "tu"){
-        tu = selectedEntryValue[6]
-      }
+      //var years = ""
+      //if (selectedEntryType[0] == "years"){
+      //  years = selectedEntryValue[0]
+      //}
+      //var mb = ""
+      //if (selectedEntryType[1] == "mb"){
+      //  mb = selectedEntryValue[1]
+      //}
+      //var me = ""
+      //if (selectedEntryType[2] == "me"){
+      //  me = selectedEntryValue[2]
+      //}
+      //var sl = ""
+      //if (selectedEntryType[3] == "sl"){
+      //  sl = selectedEntryValue[3]
+      //}
+      //var su = ""
+      //if (selectedEntryType[4] == "su"){
+      //  su = selectedEntryValue[4]
+      //}
+      //var tl = ""
+      //if (selectedEntryType[5] == "tl"){
+      //  tl = selectedEntryValue[5]
+      //}
+      //var tu = ""
+      //if (selectedEntryType[6] == "tu"){
+      //  tu = selectedEntryValue[6]
+      //}
 
-     //Optional variables of A3
-      var kf = "0.75"
-      var o = "4.5"
-      var kr = "0.5"
-      var d = "-4"
+      //Optional variables of A3
+      //var kf = "0.75"
+      //var o = "4.5"
+      //var kr = "0.5"
+      //var d = "-4"
       
-      try {
-        if (selectedEntryTypeOptional[0] == "kf" && selectedEntryValueOptional[0] != ""){
-          kf = selectedEntryValueOptional[0]
-        } 
-        if (selectedEntryTypeOptional[1] == "o" && selectedEntryValueOptional[1] != ""){
-          o = selectedEntryValueOptional[1]
-        }
-        if (selectedEntryTypeOptional[2] == "kr" && selectedEntryValueOptional[2] != ""){
-          kr = selectedEntryValueOptional[2]
-        } 
-        if (selectedEntryTypeOptional[3] == "d" && selectedEntryValueOptional[3] != ""){
-          d = selectedEntryValueOptional[3]
-        } 
-      } catch {
+      //try {
+      //  if (selectedEntryTypeOptional[0] == "kf" && selectedEntryValueOptional[0] != ""){
+      //    kf = selectedEntryValueOptional[0]
+      //  } 
+      //  if (selectedEntryTypeOptional[1] == "o" && selectedEntryValueOptional[1] != ""){
+      //    o = selectedEntryValueOptional[1]
+      //  }
+      //  if (selectedEntryTypeOptional[2] == "kr" && selectedEntryValueOptional[2] != ""){
+      //    kr = selectedEntryValueOptional[2]
+      //  } 
+      //  if (selectedEntryTypeOptional[3] == "d" && selectedEntryValueOptional[3] != ""){
+      //    d = selectedEntryValueOptional[3]
+      //  } 
+      //} catch {
         //do nothing
-      }
+      //}
 
       // Set source based on lat and lon
       var source = ""
@@ -199,10 +206,12 @@ export default {
         // console.log(lat_min)
         target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
       } else if (id == "a3") {
+        // Staat vast voor A3?
         target = "[[8.1800000000,56.4500000000],[9.5000000000,56.4500000000],[9.5000000000,57.0500000000],[8.1800000000,57.0500000000]]"
       }
 
-      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, years, mb, me, sl, su, tl, tu, kf, o, kr, d)
+      // const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, years, mb, me, sl, su, tl, tu, kf, o, kr, d)
+      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
       //const response = await run(testtime, id)
       const href = response[0].value.href
 
