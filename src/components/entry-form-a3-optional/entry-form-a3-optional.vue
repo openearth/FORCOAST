@@ -56,16 +56,11 @@
 import { mapActions } from "vuex";
 export default {
   data: () => ({
-    // TODO: test whether this works
     valueArray: [0.75,4.5,0.5,-4],
   }),
   methods: { 
     ...mapActions("wps", ["setSelectedEntryValueOptional"]),
-    // See https://jsfiddle.net/james2doyle/qjqrtsgq/ for reference
     entryValue() {
-      // TODO: remote console.log messages once done with debugging
-      console.log('a3-optional')
-      console.log(this.valueArray)
       this.setSelectedEntryValueOptional(this.valueArray);
     }
     },

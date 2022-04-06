@@ -79,14 +79,12 @@ import { mapState } from "vuex";
 export default {
   data: () => ({
     valueArray: [],
-    //As string? or as numeric?, I did string for consistency
     valueArrayOptional: ["0.75", "4.5", "0.5", "-4"]
   }),
   methods: { 
     ...mapActions("wps", ["setSelectedEntryValue", "setSelectedEntryValueOptional"]),
     ...mapState("wps", ["selectedEntryValueOptional"]),
     entryValue() {
-      console.log(this.valueArray)
       this.setSelectedEntryValue(this.valueArray)
       if (this.selectedEntryValueOptional() == null) {
         this.setSelectedEntryValueOptional(this.valueArrayOptional)
