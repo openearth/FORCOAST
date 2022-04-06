@@ -28,6 +28,9 @@ export default function(time, period, id, area, source, target, lat, lon, lim, s
 		} else if (id == "r1") {
 			return template_r1(area, time, period, lon, lat)
 		} else if (id == "a3") {
+			if (target == "") {
+				target = "[[8.1800000000,56.4500000000],[9.5000000000,56.4500000000],[9.5000000000,57.0500000000],[8.1800000000,57.0500000000]]"
+			}
 			//return template_a3(years, mb, me, sl, su, tl, tu, kf, o, kr, d, target)
 			return template_a3(selectedEntryValue[0], selectedEntryValue[1], selectedEntryValue[2], selectedEntryValue[3], selectedEntryValue[4], selectedEntryValue[5], selectedEntryValue[6], selectedEntryValueOptional[0], selectedEntryValueOptional[1], selectedEntryValueOptional[2], selectedEntryValueOptional[3], target)
 		}
