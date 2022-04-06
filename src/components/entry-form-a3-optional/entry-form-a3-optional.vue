@@ -3,7 +3,7 @@
     <v-container>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Kf</v-subheader>
+        <v-subheader>Half saturation constant of food</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
@@ -15,7 +15,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>O</v-subheader>
+        <v-subheader>Oxygen lower treshold</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
@@ -27,7 +27,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Kr</v-subheader>
+        <v-subheader>Resuspension treshold</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
@@ -39,7 +39,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>D</v-subheader>
+        <v-subheader>Expected Decay</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
@@ -67,7 +67,7 @@ export default {
       console.log('a3-optional')
       console.log(this.valueArray)
       this.setSelectedEntryValueOptional(this.valueArray);
+    }
     },
-  }
 };
 </script>
