@@ -16,12 +16,12 @@
             "components": {
               "layers": [
                 {
-                  "id": "test:HSI_whiting",
+                  "id": "forcoast:HSI_whiting",
                   "name": "HSI-whiting",
-                  "layer": "test:HSI_whiting",
+                  "layer": "forcoast:HSI_whiting",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
-                  "colorscalerange": "0.01,10",
+                  "colorscalerange": "auto",
                   "description": "Index for fishing"
                 }
               ]
