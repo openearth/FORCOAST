@@ -3,7 +3,7 @@
     <!-- <img v-img src="@/assets/Atunetan13-scaled.png"> -->
     <div>
       <!-- <h2 class="h2">TEST</h2> -->
-      <div data-v-step="3"><b>Pilot area:</b> {{ selectedArea }}
+      <div data-v-step="1"><b>Pilot area:</b> {{ selectedArea }}
       <p><b>Service module:</b> {{ service.name }}</p>
       </div>
       <p>{{ service.description }}</p>
@@ -19,7 +19,6 @@
       :expand="1"
       :manual="false"
       title="Data viewer"
-      data-v-step="4"
     >
     <collapsible-card
       v-if="service.components.layers"
@@ -62,9 +61,8 @@
       :expand="1"
       :manual="true"
       title="Service runner"
-      data-v-step="5"
     >
-    <draggable-marker
+    <draggable-marker v-if= service.components.draggable_marker
         @show-draggable-marker="onShowDraggableMarker" 
     ></draggable-marker>
     <collapsible-card
@@ -85,6 +83,24 @@
         :entryType="service.components.entry_form.type"
       >
       </entry-form>
+    </collapsible-card>
+    <collapsible-card
+      v-if="service.components.entry_form_a3"
+      :title="service.components.entry_form_a3.title"
+      :nextButton="false"
+      :expand="1"
+    >
+      <entry-form-a3>
+      </entry-form-a3>
+    </collapsible-card>
+    <collapsible-card
+      v-if="service.components.entry_form_a3_optional"
+      :title="service.components.entry_form_a3_optional.title"
+      :nextButton="false"
+      :expand="1"
+    >
+      <entry-form-a3-optional>
+      </entry-form-a3-optional>
     </collapsible-card>
     <collapsible-card
       v-if="service.components.draw_polygon"
@@ -111,11 +127,8 @@
     </div>
     <!-- TODO move it in a component -->
     <div v-if="service.components.run_task"  class="mb-4">
-      <div v-if="calculationsTime">
-        <v-btn block color="primary"  @click="
-          runTask();
-          track(selectedService, selectedArea);
-        ">Run</v-btn>
+      <div v-if= 'selectedEntryValue || calculationsTime' >
+        <v-btn block color="primary"  @click="runTask">Run</v-btn>
       </div>
       <div v-else>
         <v-btn disabled block color="primary">Run</v-btn>
@@ -152,6 +165,8 @@ import TimeseriesGraph from "@/components/timeseries-graph";
 import StatusCard from "@/components/status-card"
 import ListJobs from '@/components/list-jobs'
 import EntryForm from '@/components/entry-form'
+import EntryFormA3 from '@/components/entry-form-a3'
+import EntryFormA3Optional from '@/components/entry-form-a3-optional'
 
 import { mapState, mapGetters, mapActions } from "vuex";
 
@@ -168,7 +183,9 @@ export default {
     TimeseriesGraph,
     StatusCard,
     ListJobs,
-    EntryForm
+    EntryForm,
+    EntryFormA3,
+    EntryFormA3Optional
   },
   props: {
     service: {
@@ -184,8 +201,8 @@ export default {
   },
 
   computed: {
-    ...mapState("wps", ["markerLngLat", "calculationsTime","jobStatus", "statusLink"]),
-    ...mapState("layers", ["selectedTime", "timeSpan", "selectedArea", "selectedService"]),
+    ...mapState("wps", ["markerLngLat", "calculationsTime", "selectedEntryValue", "jobStatus", "statusLink"]),
+    ...mapState("layers", ["selectedTime", "timeSpan", "selectedArea"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"])
   },
   methods: {
@@ -208,16 +225,10 @@ export default {
     onShowDrawPolygon(event) {
       this.$emit("show-draw-polygon", event);
     },
+
     runTask() {
       this.clearJobStatus();
       this.runProcessor();
-    },
-    track (selectedService, selectedArea) {
-      this.$gtag.event('service_runner', {
-        'event_category': selectedService + '_' + selectedArea,
-        'event_area_id': selectedArea,
-        'event_service_id': selectedService
-      })
     }
   },
 };

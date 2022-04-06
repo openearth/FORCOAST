@@ -12,7 +12,9 @@ export default {
     statusLink: null,
     selectedEntryValue: null,
     selectedEntryType: null,
-    calculationsTime: null,
+    selectedEntryValueOptional: null,
+    selectedEntryTypeOptional: null,
+    calculationsTime: null
 
   },
   mutations: {
@@ -33,6 +35,9 @@ export default {
     },
     SET_SELECTED_ENTRY_VALUE(state, entryValue) {
       state.selectedEntryValue = entryValue
+    },
+    SET_SELECTED_ENTRY_VALUE_OPTIONAL(state, entryValueOptional) {
+      state.selectedEntryValueOptional = entryValueOptional
     },
     CLEAR_SELECTED_ENTRY_VALUE(state) {
       state.selectedEntryValue = null
@@ -69,6 +74,9 @@ export default {
     setSelectedEntryValue(context, payload) {
       context.commit("SET_SELECTED_ENTRY_VALUE", payload)
     },
+    setSelectedEntryValueOptional(context, payload) {
+      context.commit("SET_SELECTED_ENTRY_VALUE_OPTIONAL", payload)
+    },
     clearSelectedEntryValue(context) {
       context.commit("CLEAR_SELECTED_ENTRY_VALUE")
     },
@@ -85,7 +93,7 @@ export default {
     async runProcessor({commit, state, rootState}) {
 
       const {selectedAreaId, selectedService } = rootState.layers
-      const { markerLngLat, calculationsTime, selectedEntryType, selectedEntryValue, polygon, jobStatus } = state
+      const { markerLngLat, calculationsTime, selectedEntryType, selectedEntryValue, selectedEntryValueOptional, polygon, jobStatus } = state
 
       // Set pilot area for selected service
       const area = selectedAreaId
@@ -93,10 +101,16 @@ export default {
       const id = selectedService.wps_id;
 
       // Set lat and lon input values
-      const { lat, lng }  = markerLngLat
+      var lat = ""
+      var lng = ""
+      if(markerLngLat) {
+        lat = markerLngLat.lat
+        lng = markerLngLat.lng
+      }
 
       // Set values from entry form
       //TODO move this into a function
+
       var lim = ""
       if (selectedEntryType == "lim") {
         lim = selectedEntryValue
@@ -107,26 +121,24 @@ export default {
       }
 
       // Set source based on lat and lon
-      const source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ", 0.5]"
+      var source = ""
+      if (markerLngLat) {
+      source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ", 0.5]"
+      }
 
       // Set bounding box in proper format:
       // [[lon_min,lat_min],[lon_max,lat_min],[lon_max,lat_max],[lon_min,lat_max]]
       //TODO move this into a function
       var target = ""
       if (polygon) {
-        let lon_max = Math.max(polygon.features[0].geometry.coordinates[0][0][0], polygon.features[0].geometry.coordinates[0][1][0], polygon.features[0].geometry.coordinates[0][2][0], polygon.features[0].geometry.coordinates[0][3][0]);
-        let lon_min = Math.min(polygon.features[0].geometry.coordinates[0][0][0], polygon.features[0].geometry.coordinates[0][1][0], polygon.features[0].geometry.coordinates[0][2][0], polygon.features[0].geometry.coordinates[0][3][0]);
-        let lat_max = Math.max(polygon.features[0].geometry.coordinates[0][0][1], polygon.features[0].geometry.coordinates[0][1][1], polygon.features[0].geometry.coordinates[0][2][1], polygon.features[0].geometry.coordinates[0][3][1]);
-        let lat_min = Math.min(polygon.features[0].geometry.coordinates[0][0][1], polygon.features[0].geometry.coordinates[0][1][1], polygon.features[0].geometry.coordinates[0][2][1], polygon.features[0].geometry.coordinates[0][3][1]);
-        // console.log(lon_max)
-        // console.log(lon_min)
-        // console.log(lat_max)
-        // console.log(lat_min)
+        let lon_max = Math.max(polygon.features[0].geometry.coordinates[0][0][0], polygon.features[0].geometry.coordinates[0][1][0], polygon.features[0].geometry.coordinates[0][2][0], polygon.features[0].geometry.coordinates[0][3][0]).toFixed(10);
+        let lon_min = Math.min(polygon.features[0].geometry.coordinates[0][0][0], polygon.features[0].geometry.coordinates[0][1][0], polygon.features[0].geometry.coordinates[0][2][0], polygon.features[0].geometry.coordinates[0][3][0]).toFixed(10);
+        let lat_max = Math.max(polygon.features[0].geometry.coordinates[0][0][1], polygon.features[0].geometry.coordinates[0][1][1], polygon.features[0].geometry.coordinates[0][2][1], polygon.features[0].geometry.coordinates[0][3][1]).toFixed(10);
+        let lat_min = Math.min(polygon.features[0].geometry.coordinates[0][0][1], polygon.features[0].geometry.coordinates[0][1][1], polygon.features[0].geometry.coordinates[0][2][1], polygon.features[0].geometry.coordinates[0][3][1]).toFixed(10);
         target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
-      }
-      console.log(target)
+      } 
 
-      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim)
+      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
       //const response = await run(testtime, id)
       const href = response[0].value.href
 
@@ -140,6 +152,7 @@ export default {
       if (jobStatus == "successful") {
         console.log("successful!")
       }
+      console.log(period, id, area, source, target, lat, lim)
     },
   }
 }

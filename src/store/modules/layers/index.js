@@ -7,6 +7,7 @@ export default {
   state: {
 		selectedCategory: null,
     selectedArea: null,
+    selectedAreaId: null,
 		selectedService:null,
 		selectedAreaBBox: null,
     selectedTime: null,

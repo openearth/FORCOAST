@@ -1,11 +1,12 @@
 import axios from "axios"
 import { template_f2 } from './template_f2'
+import { template_a3 } from './template_a3'
 import { template_a2 } from './template_a2'
 import { template_a1 } from './template_a1'
 import { template_r1 } from './template_r1'
 
-
-export default function(time, period, id, area, source, target, lat, lon, lim) {
+export default function(time, period, id, area, source, target, lat, lon, lim, selectedEntryValue, selectedEntryValueOptional) {
+	
 	const data  = (() => {
 		if (id == "f2") {
 			return template_f2(time, id)
@@ -15,7 +16,14 @@ export default function(time, period, id, area, source, target, lat, lon, lim) {
 			return template_a1(area, time, lat, lon, lim)
 		} else if (id == "r1") {
 			return template_r1(area, time, period, lon, lat)
+		} else if (id == "a3") {
+			if (target == "") {
+				// default target for entire area, if no specific one is prescribed
+				target = "[[8.1800000000,56.4500000000],[9.5000000000,56.4500000000],[9.5000000000,57.0500000000],[8.1800000000,57.0500000000]]"
+			}
+			return template_a3(selectedEntryValue[0], selectedEntryValue[1], selectedEntryValue[2], selectedEntryValue[3], selectedEntryValue[4], selectedEntryValue[5], selectedEntryValue[6], selectedEntryValueOptional[0], selectedEntryValueOptional[1], selectedEntryValueOptional[2], selectedEntryValueOptional[3], target)
 		}
+
 	})();
 	return axios({
 		method: "post",

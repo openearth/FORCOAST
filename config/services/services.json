@@ -5,6 +5,41 @@
     "icon": "FORCOAST_Fish_Logo.png",
     "areas": [
       {
+        "id": "eforie",
+        "name": "Western Black Sea (Romania)",
+        "services": [
+          {
+            "id": "suitable_fishing_areas",
+            "wps_id": "f1",
+            "name": "Suitable Fishing Areas",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:HSI_whiting",
+                  "name": "HSI-whiting",
+                  "layer": "forcoast:HSI_whiting",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "auto",
+                  "description": "Index for fishing"
+                }
+              ]
+            }
+          }
+        ],
+        "bbox": [
+          [
+            28.27,
+            43.22
+          ],
+          [
+            30.46,
+            45.18
+          ]
+        ]
+      },
+      {
         "id": "bay_of_biscay",
         "name": "Bay of Biscay (Spain)",
         "services": [
@@ -256,6 +291,7 @@
               },
               "run_task": true,
               "joblist": true
+              
             }
           }
         ],
@@ -491,6 +527,56 @@
               "run_task": true,
               "joblist": true
             }
+          },
+          {
+            "id": "site_prospection",
+            "wps_id": "a3",
+            "name": "Site Prospection",
+            "description": "Displaying the selected sites of intersest",
+            "components": {
+              "layers":[
+                {
+                  "id": "ssi",
+                  "name": "Selected sites of interest",
+                  "layer":"ssi",
+                  "url":"some.url",
+                  "icon":"",
+                  "colorscalerange": "-1, 1",
+                  "description": "These are the selected sites of interest"
+                }
+              ],
+              "entry_form_a3": {
+                  "title":"Enter the parameters",
+                  "value_1":"Enter a year",
+                  "type_1":"years",
+                  "value_2":"Enter month",
+                  "type_2":"mb",
+                  "type_3":"me",
+                  "value_4":"Salinity treshold",
+                  "type_4":"sl",
+                  "type_5":"su",
+                  "value_6":"Temperature treshold",
+                  "type_6":"tl",
+                  "type_7":"tu"
+                },
+              "entry_form_a3_optional": {
+                  "title":"Optional parameters",
+                  "value_8":"Half saturation constant of food",
+                  "type_8":"kf",
+                  "value_9":"Oxygen lower treshold",
+                  "type_9":"o",
+                  "value_10":"Resuspension treshold",
+                  "type_10":"kr",
+                  "value_11":"Expected decay",
+                  "type_11":"d"
+                },
+              "draw_polygon": {
+                  "text": "Specify bounding box for target location",
+                  "title": "Specify bounding box for target location"
+                },  
+              "run_task": true,
+              "joblist": true
+            }
           }
         ],
         "bbox": [
@@ -554,6 +640,6 @@
           ]
         ]
       }
-    ]
-  }
-]
+      ]
+    }
+  ]

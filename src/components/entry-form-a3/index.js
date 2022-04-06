@@ -1,0 +1,1 @@
+export { default } from "./entry-form-a3.vue"
