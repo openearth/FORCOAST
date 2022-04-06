@@ -85,19 +85,7 @@
       :nextButton="false"
       :expand="1"
     >
-      <entry-form-a3
-        :value_1="service.components.entry_form_a3.value_1"
-        :entryType_1="service.components.entry_form_a3.type_1"
-        :value_2="service.components.entry_form_a3.value_2"
-        :entryType_2="service.components.entry_form_a3.type_2"
-        :entryType_3="service.components.entry_form_a3.type_3"
-        :value_4="service.components.entry_form_a3.value_4"
-        :entryType_4="service.components.entry_form_a3.type_4"
-        :entryType_5="service.components.entry_form_a3.type_5"
-        :value_6="service.components.entry_form_a3.value_6"
-        :entryType_6="service.components.entry_form_a3.type_6"
-        :entryType_7="service.components.entry_form_a3.type_7"
-      >
+      <entry-form-a3>
       </entry-form-a3>
     </collapsible-card>
     <collapsible-card
@@ -106,16 +94,7 @@
       :nextButton="false"
       :expand="1"
     >
-      <entry-form-a3-optional
-        :value_8="service.components.entry_form_a3_optional.value_8"
-        :entryType_8="service.components.entry_form_a3_optional.type_8"
-        :value_9="service.components.entry_form_a3_optional.value_9"
-        :entryType_9="service.components.entry_form_a3_optional.type_9"
-        :value_10="service.components.entry_form_a3_optional.value_10"
-        :entryType_10="service.components.entry_form_a3_optional.type_10"
-        :value_11="service.components.entry_form_a3_optional.value_11"
-        :entryType_11="service.components.entry_form_a3_optional.type_11"
-      >
+      <entry-form-a3-optional>
       </entry-form-a3-optional>
     </collapsible-card>
     <collapsible-card
