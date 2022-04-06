@@ -9,9 +9,9 @@
         "name": "Western Black Sea (Romania)",
         "services": [
           {
-            "id": "fishing_index",
+            "id": "suitable_fishing_areas",
             "wps_id": "f1",
-            "name": "Fishing index",
+            "name": "Suitable Fishing Areas",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "components": {
               "layers": [
