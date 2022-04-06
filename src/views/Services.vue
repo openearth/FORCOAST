@@ -22,8 +22,10 @@
   </div>
 </template>
 <script>
+
 import { mapState } from "vuex";
 import serviceViewer from "../components/service-viewer/service-viewer.vue";
+import * as Cookies from 'tiny-cookie'
 
 export default {
   components: { serviceViewer },
@@ -42,7 +44,7 @@ export default {
     },
     onShowDrawPolygon(event) {
       this.$emit("show-draw-polygon", event);
-    },
+    }
   },
 };
 </script>
