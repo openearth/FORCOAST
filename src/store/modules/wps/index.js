@@ -146,10 +146,7 @@ export default {
         // console.log(lat_max)
         // console.log(lat_min)
         target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
-      } else if (id == "a3") {
-        // If no bb is selected, default bounding box A3: (Should I move it somewhere else? like runProcessor.js)
-        
-      }
+      } 
 
       // const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, years, mb, me, sl, su, tl, tu, kf, o, kr, d)
       const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
