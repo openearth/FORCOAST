@@ -21,7 +21,6 @@
         :drawPolygon="drawPolygon"
       />
       <legal-dialog @accepted="onLegalAccepted" />
-      <app-sidebar @toggle-tour="$tours.introduction.start()"/>
     </v-main>
   </v-app>
 </template>
@@ -46,8 +45,8 @@ export default {
     return {
       legendLayer: null,
       acceptedLegal: false,
-      draggableMarker: true,
-      drawPolygon: true,
+      draggableMarker: false,
+      drawPolygon: false,
       boxPlot: false,
     };
   },
