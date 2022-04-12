@@ -9,6 +9,10 @@
           <v-text-field
             v-model="valueArray[0]"
             label="Year"
+            :rules="[rules.emptyField,
+                     rules.isInt,
+                     rules.inRange(2004,2017)]"
+                      
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
@@ -21,6 +25,9 @@
           <v-text-field
             v-model="valueArray[1]"
             label="Begin"
+            :rules="[rules.emptyField,
+                     rules.isInt,
+                     rules.inRange(1,12)]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
@@ -28,6 +35,10 @@
           <v-text-field
             v-model="valueArray[2]"
             label="End"
+            :rules="[rules.emptyField,
+                     rules.isInt,
+                     rules.inRange(1,12),
+                     rules.isHigher(valueArray[1],'begin month')]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
@@ -40,6 +51,9 @@
           <v-text-field
             v-model="valueArray[3]"
             label="Lower"
+            :rules="[rules.emptyField,
+                     rules.isFloat,
+                     rules.inRange(8,36)]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
@@ -47,6 +61,10 @@
           <v-text-field
             v-model="valueArray[4]"
             label="Upper"
+            :rules="[rules.emptyField,
+                     rules.isFloat,
+                     rules.inRange(8,36),
+                     rules.isHigher(this.valueArray[3],'lower treshold')]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
@@ -59,6 +77,9 @@
           <v-text-field
             v-model="valueArray[5]"
             label="Lower"
+            :rules="[rules.emptyField,
+                     rules.isFloat,
+                     rules.inRange(0,10)]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
@@ -66,6 +87,10 @@
           <v-text-field
             v-model="valueArray[6]"
             label="Upper"
+            :rules="[rules.emptyField,
+                     rules.isFloat,
+                     rules.inRange(10,35),
+                     rules.isHigher(valueArray[5],'lower treshold')]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
@@ -79,7 +104,18 @@ import { mapState } from "vuex";
 export default {
   data: () => ({
     valueArray: [],
-    valueArrayOptional: ["0.75", "4.5", "0.5", "-4"]
+    valueArrayOptional: ["0.75", "4.5", "0.5", "-4"],
+    rules: {
+      emptyField: entryValue => entryValue != '' || 'Field is empty',
+      isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
+      isInt: entryValue => Number.isInteger(parseFloat(entryValue)) == true ||'Must be a whole number',
+      inRange(lower, upper) {
+        return entryValue => entryValue >= lower && entryValue <= upper || `Must be in range ${lower} to ${upper}`
+      },
+      isHigher(lowerValue, msg) {
+        return entryValue => entryValue >= parseFloat(lowerValue) || `Must be higher than ${msg}`
+      }
+    }
   }),
   methods: { 
     ...mapActions("wps", ["setSelectedEntryValue", "setSelectedEntryValueOptional"]),

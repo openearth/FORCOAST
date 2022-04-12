@@ -46,8 +46,8 @@ export default {
     return {
       legendLayer: null,
       acceptedLegal: false,
-      draggableMarker: false,
-      drawPolygon: false,
+      draggableMarker: true,
+      drawPolygon: true,
       boxPlot: false,
     };
   },

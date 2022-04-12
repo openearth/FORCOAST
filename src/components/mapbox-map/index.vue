@@ -64,11 +64,11 @@ export default {
     },
     draggableMarker: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     drawPolygon: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   data() {
