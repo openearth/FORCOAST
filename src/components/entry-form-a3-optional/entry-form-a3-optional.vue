@@ -78,8 +78,8 @@ export default {
   }),
   methods: { 
     ...mapActions("wps", ["setSelectedEntryValueOptional"]),
-    // See https://jsfiddle.net/james2doyle/qjqrtsgq/ for reference
     entryValue() {
+      console.log(this.valueArray)
       this.setSelectedEntryValueOptional(this.valueArray);
     }
     },
