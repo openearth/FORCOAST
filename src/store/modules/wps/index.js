@@ -15,7 +15,6 @@ export default {
     selectedEntryValueOptional: null,
     selectedEntryTypeOptional: null,
     calculationsTime: null
-
   },
   mutations: {
     SET_POLYGON(state, polygon) {
@@ -135,9 +134,14 @@ export default {
         let lon_min = Math.min(polygon.features[0].geometry.coordinates[0][0][0], polygon.features[0].geometry.coordinates[0][1][0], polygon.features[0].geometry.coordinates[0][2][0], polygon.features[0].geometry.coordinates[0][3][0]).toFixed(10);
         let lat_max = Math.max(polygon.features[0].geometry.coordinates[0][0][1], polygon.features[0].geometry.coordinates[0][1][1], polygon.features[0].geometry.coordinates[0][2][1], polygon.features[0].geometry.coordinates[0][3][1]).toFixed(10);
         let lat_min = Math.min(polygon.features[0].geometry.coordinates[0][0][1], polygon.features[0].geometry.coordinates[0][1][1], polygon.features[0].geometry.coordinates[0][2][1], polygon.features[0].geometry.coordinates[0][3][1]).toFixed(10);
+        // console.log(lon_max)
+        // console.log(lon_min)
+        // console.log(lat_max)
+        // console.log(lat_min)
         target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
       } 
 
+      // const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, years, mb, me, sl, su, tl, tu, kf, o, kr, d)
       const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
       //const response = await run(testtime, id)
       const href = response[0].value.href
