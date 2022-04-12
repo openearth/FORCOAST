@@ -81,6 +81,7 @@
       <entry-form
         :value="service.components.entry_form.value"
         :entryType="service.components.entry_form.type"
+        :entryRange="service.components.entry_form.range"
       >
       </entry-form>
     </collapsible-card>
