@@ -104,6 +104,7 @@ import { mapState } from "vuex";
 export default {
   data: () => ({
     valueArray: [],
+    //As string? or as numeric?, I did string for consistency
     valueArrayOptional: ["0.75", "4.5", "0.5", "-4"],
     rules: {
       emptyField: entryValue => entryValue != '' || 'Field is empty',
