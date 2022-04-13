@@ -24,7 +24,11 @@
                   "colorscalerange": "auto",
                   "description": "Index for fishing"
                 }
-              ]
+              ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
             }
           }
         ],
