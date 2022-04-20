@@ -1,1 +1,0 @@
-To run the service module do the following:

@@ -1,1 +1,0 @@
-This will show suitable fishing grounds.
