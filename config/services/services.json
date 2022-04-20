@@ -419,6 +419,15 @@
             "description": "tbd",
             "components": {
              "layers": [
+              {
+                "id": "test:Spawning_grounds_oyster",
+                "name": "Spawning grounds for Oysters",
+                "layer": "SGO",
+                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                "icon": "fish.png",
+                "colorscalerange": "0.01,10",
+                "description": "Spawning grounds for Oysters"
+              }
               ],
              "presets": [
               {
@@ -429,16 +438,11 @@
               {
                 "name": "Oysters", 
                 "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
-                "presetValue": [3,1,9,7,325,20,45,30]
-              }, 
-              {
-                "name": "Clams",
-                "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
-                "presetValue": [3,14,39,73,325,220,45,30]
+                "presetValue": [3,0,15,7,576,20,30,30]
               }, 
               { "name": "Mussels",
               "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
-              "presetValue": [3,31,94,7,3625,720,445,30]
+              "presetValue": [3,0,9,7,576,25,45,30]
               }
              ],
               "draggable_marker": {
