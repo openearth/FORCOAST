@@ -23,8 +23,8 @@
         v-model="date"
         no-title
         scrollable
-        :min="getStartDate"
-        :max="getEndDate"
+        min="2021-09-01"
+        max="2022-06-01"
       >
         <v-spacer></v-spacer>
         <v-btn text color="primary" @click="menu = false"> Cancel </v-btn>
@@ -37,31 +37,16 @@
 import { mapActions } from "vuex";
 export default {
   data: () => ({
+    date: "", 
     menu: false,
-    date: "",
+    min: "",
+    max: "",
   }),
   watch: {
     date() {
       console.log('date',this.date)
       this.setCalculationsTime(this.date);
     },
-  },
-  computed: {
-    getEndDate() {
-      // Set endDate to today (should be done based on available date)
-      let date = new Date()
-      var endDate = new Date(date).toISOString().split('T')[0]
-      // var endDate = "2022-06-01"
-      return endDate
-    },
-    getStartDate() {
-      // Set startDate to today - 7 days (should be done based on available date)
-      let date = new Date()
-      date.setDate(date.getDate() -7);
-      var startDate = new Date(date).toISOString().split('T')[0]
-      // var startDate = "2022-04-01"
-      return startDate
-    }
   },
   methods:{
     ...mapActions("wps", ["setCalculationsTime"])
