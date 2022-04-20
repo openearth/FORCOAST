@@ -24,22 +24,18 @@
                   "colorscalerange": "auto",
                   "description": "Index for fishing"
                 }
-              ],
-              "date_span": true,
-              "draggable_marker": {
-                "title": "Place marker at output location"
-              }
+              ]
             }
           }
         ],
         "bbox": [
           [
-            28.27,
-            43.22
+            27.5,
+            41.6
           ],
           [
-            30.46,
-            45.18
+            31.2,
+            45.5
           ]
         ]
       },
@@ -51,10 +47,6 @@
             "id": "front_detection",
             "wps_id": "f2",
             "name": "Fronts detection",
-            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/no-data.jpg",
-            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
-            "contact": "Luis.Rodriguez@deltares.nl",
-            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Front detection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "components": {
               "layers": [
@@ -96,12 +88,12 @@
                 }
               ],
               "date_span": true,
-              "date": false,
-              "run_task": false,
+              "date": true,
+              "run_task": true,
               "draggable_marker": {
                 "title": "Place marker at output location"
               },
-              "joblist": false
+              "joblist": true
             }
           }
         ],
@@ -124,10 +116,6 @@
             "id": "front_detection",
             "wps_id": "f2",
             "name": "Fronts detection",
-            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/no-data.jpg",
-            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
-            "contact": "Luis.Rodriguez@deltares.nl",
-            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Front detection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "dates": [
               "2021-01-20",
@@ -214,10 +202,6 @@
             "id": "land_pollution",
             "wps_id": "a2",
             "name": "Land Pollution",
-            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/example_galway_a2.jpg",
-            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
-            "contact": "Luis.Rodriguez@deltares.nl",
-            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Land polution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
               "layers": [
@@ -225,28 +209,28 @@
                   "id": "zeta",
                   "name": "Water level",
                   "layer": "zeta",
-                  "url": "https:/milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
+                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "-2,2",
-                  "description": "Modelled water level produced in FORCOAST by Marine Institute"
+                  "description": "Modelled water level produced in FORCOAST by Marine Instruments"
                 },
                 {
                   "id": "temp",
                   "name": "Water Temperature",
                   "layer": "temp",
-                  "url": "https:/milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
+                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute"
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Instruments"
                 },
                 {
                   "id": "salt",
                   "name": "Salinity",
                   "layer": "salt",
-                  "url": "https:/milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/COMBINED_AGGREGATION",
+                  "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "0,30",
-                  "description": "Modelled salinity produced in FORCOAST by Marine Institute"
+                  "description": "Modelled salinity produced in FORCOAST by Marine Instruments"
                 }
               ],
               "draw_polygon": {
@@ -266,21 +250,17 @@
             "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
-            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/example_galway_r1.jpg",
-            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
-            "contact": "Luis.Rodriguez@deltares.nl",
-            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Contaminants source retrieval service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
               "layers": [
                 {
                   "id": "zeta",
-                  "name": "Water level (Marine Institute)",
+                  "name": "Water level (Marine Instruments)",
                   "layer": "zeta",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "-2,2",
-                  "description": "Modelled water level produced in FORCOAST by Marine Institute"
+                  "description": "Modelled water level produced in FORCOAST by Marine Instruments"
                 }
               ],
               "date_span": true,
@@ -291,8 +271,7 @@
               "entry_form": {
                 "title": "Enter time period for simulation",
                 "value": "Period (hrs)",
-                "type": "period",
-                "range": [1, 48]
+                "type": "period"
               },
               "run_task": true,
               "joblist": true
@@ -326,18 +305,14 @@
             "id": "marine_conditions",
             "wps_id": "a1",
             "name": "Marine conditions",
-            "description": "The Marine Conditions and Scheduler service offers information about different ocean state variables such as water level, to plan daily operations accordingly. The service provides forecast bulletin at a location of choice.",
-            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/example_sado_estuary_a1.jpg",
-            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
-            "contact": "Luis.Rodriguez@deltares.nl",
-            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Marine Conditions service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "components": {
               "layers": [
                 {
                   "id": "ssh",
                   "name": "Water level",
                   "layer": "ssh",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
+                  "url": "https://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
                   "icon": "",
                   "styles": "boxfill/sst_36",
                   "colorscalerange": "-1,3",
@@ -347,7 +322,7 @@
                   "id": "vm",
                   "name": "Sea Water Velocity",
                   "layer": "vm",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
+                  "url": "https://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled current velocity produced in FORCOAST by Maretec"
@@ -356,7 +331,7 @@
                   "id": "wind_modulus",
                   "name": "Wind Speed",
                   "layer": "wind_modulus",
-                  "url": "http://thredds.maretec.org/thredds/wms/WRF/LISOCEAN_3KM_1L_1H/FORECAST/2021110600.nc",
+                  "url": "https://thredds.maretec.org/thredds/wms/WRF/LISOCEAN_3KM_1L_1H/FORECAST/2021110600.nc",
                   "icon": "",
                   "colorscalerange": "0,15",
                   "description": "Modelled wind speed produced in FORCOAST by Maretec"
@@ -369,8 +344,7 @@
               "entry_form": {
                 "title": "Enter workability limit value",
                 "value": "Limit value (m)",
-                "type": "lim",
-                "range": [0, 2]
+                "type": "lim"
               },
               "telegram_form": {
                 "title": "Enter Telegram ID",
@@ -402,10 +376,6 @@
             "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
-            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/example_southern_north_sea_r1.jpg",
-            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
-            "contact": "Luis.Rodriguez@deltares.nl",
-            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Contaminats source retrieval service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
              "layers": [
@@ -436,14 +406,56 @@
               "entry_form": {
                 "title": "Enter time period for simulation",
                 "value": "Period (hrs)",
-                "type": "period",
-                "range": [1, 48]
+                "type": "period"
+              },
+              "run_task": true,
+              "joblist": true
+            }
+          },
+          { 
+            "id": "spat_capture",
+            "wps_id": "a4",
+            "name": "Assistance for Spat Capture",
+            "description": "tbd",
+            "components": {
+             "layers": [
+              {
+                "id": "test:Spawning_grounds_oyster",
+                "name": "Spawning grounds for Oysters",
+                "layer": "SGO",
+                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                "icon": "fish.png",
+                "colorscalerange": "0.01,10",
+                "description": "Spawning grounds for Oysters"
+              }
+              ],
+             "presets": [
+              {
+                "name": "None", 
+                "presetType": ["","","","","","","",""], 
+                "presetValue": ["","","","","","","",""]
+              },
+              {
+                "name": "Oysters", 
+                "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
+                "presetValue": [3,0,15,7,576,20,30,30]
+              }, 
+              { "name": "Mussels",
+              "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
+              "presetValue": [3,0,9,7,576,25,45,30]
+              }
+             ],
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "entry_form_a4": {
+                "title":"Enter the parameters"
               },
               "run_task": true,
               "joblist": true
             }
           }
-        ],
+      ],
         "bbox": [
           [
             2.49,
@@ -463,11 +475,7 @@
             "id": "marine_conditions",
             "wps_id": "a1",
             "name": "Marine conditions",
-            "description": "The Marine Conditions and Scheduler service offers information about different ocean state variables such as water level, to plan daily operations accordingly. The service provides forecast bulletin at a location of choice.",
-            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/example_limfjord_a1.jpg",
-            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
-            "contact": "Luis.Rodriguez@deltares.nl",
-            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Marine Conditions service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "components": {
               "layers": [
                 {
@@ -523,8 +531,7 @@
               "entry_form": {
                 "title": "Enter workability limit value",
                 "value": "Limit value (m)",
-                "type": "lim",
-                "range": [0, 2]
+                "type": "lim"
               },
               "telegram_form": {
                 "title": "Enter Telegram ID",
@@ -540,7 +547,7 @@
             "id": "site_prospection",
             "wps_id": "a3",
             "name": "Site Prospection",
-            "description": "Identifying the areas with highest growth potential and lowest mortality for your species of interest (default values given for flat oysters), increasing harvest and restoration potential.",
+            "description": "Displaying the selected sites of intersest",
             "components": {
               "layers":[
                 {
@@ -554,7 +561,7 @@
                 }
               ],
               "entry_form_a3": {
-                  "title":"Basic parameters",
+                  "title":"Enter the parameters",
                   "value_1":"Enter a year",
                   "type_1":"years",
                   "value_2":"Enter month",
@@ -580,7 +587,7 @@
                 },
               "draw_polygon": {
                   "text": "Specify bounding box for target location",
-                  "title": "Area"
+                  "title": "Specify bounding box for target location"
                 },  
               "run_task": true,
               "joblist": true
@@ -607,10 +614,6 @@
             "wps_id": "a2",
             "name": "Land Pollution",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
-            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/example_eforie_a2.jpg",
-            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
-            "contact": "Luis.Rodriguez@deltares.nl",
-            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Land pollution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "components": {
               "layers": [
                 {
