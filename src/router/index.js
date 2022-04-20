@@ -10,7 +10,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "Introduction" */ "../views/Introduction.vue"),
   },
   {
-    path: "/sector=:category&service=:service&area=:area",
+    path: "/:id",
     name: "Services",
     component: () => import(/* webpackChunkName: "Services" */ "../views/Services.vue"),
   },
