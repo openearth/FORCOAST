@@ -16,6 +16,11 @@ export default {
     selectedEntryTypeOptional: null,
     calculationsTime: null
   },
+  getters: {
+    getEntryValue: (state) => {
+      return state.selectedEntryValue
+    }
+  },
   mutations: {
     SET_POLYGON(state, polygon) {
       state.polygon = polygon

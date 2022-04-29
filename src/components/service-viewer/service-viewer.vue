@@ -188,6 +188,7 @@ import TelegramForm from '@/components/telegram-form'
 import EntryFormA3 from '@/components/entry-form-a3'
 import EntryFormA3Optional from '@/components/entry-form-a3-optional'
 import EntryFormA4 from '@/components/entry-form-a4'
+import EntryFormA4Optional from '@/components/entry-form-a4-optional'
 import Presets from '@/components/presets'
 
 import { mapState, mapGetters, mapActions } from "vuex";
@@ -210,6 +211,7 @@ export default {
     EntryFormA3,
     EntryFormA3Optional,
     EntryFormA4,
+    EntryFormA4Optional,
     Presets
   },
   props: {

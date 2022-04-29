@@ -35,7 +35,14 @@ export default function(time, period, id, area, source, target, lat, lon, lim, s
 			return template_a3(selectedEntryValue[0], selectedEntryValue[1], selectedEntryValue[2], selectedEntryValue[3], selectedEntryValue[4], selectedEntryValue[5], selectedEntryValue[6], selectedEntryValueOptional[0], selectedEntryValueOptional[1], selectedEntryValueOptional[2], selectedEntryValueOptional[3], target)
 							//(years, mb, me, sl, su, tl, tu, kf, o, kr, d, target)
 		} else if (id == "a4") {
-			return template_a4(selectedEntryValue[0], selectedEntryValue[1], selectedEntryValue[2], selectedEntryValue[3], selectedEntryValue[4], selectedEntryValue[5], selectedEntryValue[6])
+			if (selectedEntryValue[2] == undefined) {
+				selectedEntryValue[2] = "x"
+			}
+			if (selectedEntryValue[3] == undefined || selectedEntryValue[4] == undefined){
+				selectedEntryValue[3] = "x"
+				selectedEntryValue[4] = "x"
+			}
+			return template_a4(selectedEntryValue[0], selectedEntryValue[1], selectedEntryValue[2], selectedEntryValue[3], selectedEntryValue[4], selectedEntryValue[5], selectedEntryValue[6], selectedEntryValue[7])
 							//(ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd)
 		}					
 	})();

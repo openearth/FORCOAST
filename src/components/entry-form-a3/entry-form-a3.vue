@@ -7,7 +7,7 @@
       </v-col>
       <v-col cols="8">
           <v-text-field
-            v-model="valueArray[0]"
+            v-model.number="valueArray[0]"
             label="Year"
             :rules="[rules.emptyField,
                      rules.isInt,
@@ -23,7 +23,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[1]"
+            v-model.number="valueArray[1]"
             label="Begin"
             :rules="[rules.emptyField,
                      rules.isInt,
@@ -33,7 +33,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[2]"
+            v-model.number="valueArray[2]"
             label="End"
             :rules="[rules.emptyField,
                      rules.isInt,
@@ -49,7 +49,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[3]"
+            v-model.number="valueArray[3]"
             label="Lower"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -59,7 +59,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[4]"
+            v-model.number="valueArray[4]"
             label="Upper"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -75,7 +75,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[5]"
+            v-model.number="valueArray[5]"
             label="Lower"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -85,7 +85,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[6]"
+            v-model.number="valueArray[6]"
             label="Upper"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -122,9 +122,21 @@ export default {
     ...mapActions("wps", ["setSelectedEntryValue", "setSelectedEntryValueOptional"]),
     ...mapState("wps", ["selectedEntryValueOptional"]),
     entryValue() {
-      this.setSelectedEntryValue(this.valueArray)
-      if (this.selectedEntryValueOptional() == null) {
-        this.setSelectedEntryValueOptional(this.valueArrayOptional)
+      if(
+        (this.valueArray[0] >= 2004 && this.valueArray[0] <= 2017) && 
+        (this.valueArray[1] >= 1 && this.valueArray[1] <= 12) && 
+        (this.valueArray[2] >= 1 && this.valueArray[2] <= 12) &&
+         this.valueArray[1] <= this.valueArray[2] && 
+        (this.valueArray[3] >= 8 && this.valueArray[3] <= 36) && 
+        (this.valueArray[4] >= 8 && this.valueArray[4] <= 36) && 
+         this.valueArray[3] <= this.valueArray[4] &&
+        (this.valueArray[5] >= 0 && this.valueArray[5] <= 10) && 
+        (this.valueArray[6] >= 10 && this.valueArray[6] <= 35) &&
+         this.valueArray[5] <= this.valueArray[6] ){
+        this.setSelectedEntryValue(this.valueArray)
+        if (this.selectedEntryValueOptional() == null) {
+          this.setSelectedEntryValueOptional(this.valueArrayOptional)
+        }
       }
     },
   }

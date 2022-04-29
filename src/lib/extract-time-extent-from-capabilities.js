@@ -35,7 +35,6 @@ export default((capabilities, activeLayer) => {
   } else {
     console.log("case Geoserver")
     allLayers = capabilities.Layer.Layer;
-    
     layer = allLayers.find(
       (layer) => layer.Name._text === activeLayer.id
     );
@@ -43,7 +42,7 @@ export default((capabilities, activeLayer) => {
     try{
       extent =  Array.isArray(layer.Extent) ? layer.Extent[0]._text.split(",") : layer.Extent._text.split(",") ;
     }catch(error){
-      console.log("Something went wrong when tried to retrieve the timeExtent from the capabilities")
+      console.log("Something went wrong when tried to retrieve the timeExtent from the capabilities", error)
     }
   }
   if (!extent){
