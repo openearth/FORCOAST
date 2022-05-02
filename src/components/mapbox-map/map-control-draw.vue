@@ -52,7 +52,7 @@ export default {
           trash: true,
         },
       });
-      map.addControl(this.draw, "top-left");
+      map.addControl(this.draw, "bottom-right");
 
       map.on("draw.create", () => (this.polygon = this.draw.getAll())); 
       map.on("draw.delete", () => (this.polygon = this.draw.getAll()));

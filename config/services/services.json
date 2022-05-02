@@ -12,7 +12,7 @@
             "id": "suitable_fishing_areas",
             "wps_id": "f1",
             "name": "Suitable Fishing Areas",
-            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
+            "description": "The Suitable Fishing Areas service offers information about the most likely areas to find the fish species of choice.",
             "components": {
               "layers": [
                 {
