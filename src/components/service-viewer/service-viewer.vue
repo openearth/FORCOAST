@@ -116,14 +116,6 @@
       </entry-form-a4>
     </collapsible-card>
     <collapsible-card
-      v-if="service.components.telegram_form"
-      :title="service.components.telegram_form.title"
-      :nextButton="false"
-      :expand="1"
-    >
-
-    </collapsible-card>
-    <collapsible-card
       v-if="service.components.draw_polygon"
       :title="service.components.draw_polygon.title"
       :nextButton="true"

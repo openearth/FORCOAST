@@ -274,7 +274,8 @@
               "entry_form": {
                 "title": "Enter time period for simulation",
                 "value": "Period (hrs)",
-                "type": "period"
+                "type": "period",
+                "range": [1, 48]
               },
               "run_task": true,
               "joblist": true
@@ -347,7 +348,8 @@
               "entry_form": {
                 "title": "Enter workability limit value",
                 "value": "Limit value (m)",
-                "type": "lim"
+                "type": "lim",
+                "range": [0, 2]
               },
               "telegram_form": {
                 "title": "Enter Telegram ID",
@@ -409,7 +411,8 @@
               "entry_form": {
                 "title": "Enter time period for simulation",
                 "value": "Period (hrs)",
-                "type": "period"
+                "type": "period",
+                "range": [1, 48]
               },
               "run_task": true,
               "joblist": true
@@ -538,7 +541,8 @@
               "entry_form": {
                 "title": "Enter workability limit value",
                 "value": "Limit value (m)",
-                "type": "lim"
+                "type": "lim",
+                "range": [0, 2]
               },
               "telegram_form": {
                 "title": "Enter Telegram ID",
