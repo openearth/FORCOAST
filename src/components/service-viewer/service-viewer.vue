@@ -104,6 +104,26 @@
       </entry-form-a3-optional>
     </collapsible-card>
     <collapsible-card
+      v-if="service.components.entry_form_a4"
+      :title="service.components.entry_form_a4.title"
+      :nextButton="false"
+      :expand="1"
+    >
+      <presets
+      :arrayOfobjects="service.components.presets">
+      </presets>
+      <entry-form-a4>
+      </entry-form-a4>
+    </collapsible-card>
+    <collapsible-card
+      v-if="service.components.telegram_form"
+      :title="service.components.telegram_form.title"
+      :nextButton="false"
+      :expand="1"
+    >
+
+    </collapsible-card>
+    <collapsible-card
       v-if="service.components.draw_polygon"
       :title="service.components.draw_polygon.title"
       :nextButton="true"
@@ -168,6 +188,8 @@ import ListJobs from '@/components/list-jobs'
 import EntryForm from '@/components/entry-form'
 import EntryFormA3 from '@/components/entry-form-a3'
 import EntryFormA3Optional from '@/components/entry-form-a3-optional'
+import EntryFormA4 from '@/components/entry-form-a4'
+import Presets from '@/components/presets'
 
 import { mapState, mapGetters, mapActions } from "vuex";
 
@@ -186,7 +208,9 @@ export default {
     ListJobs,
     EntryForm,
     EntryFormA3,
-    EntryFormA3Optional
+    EntryFormA3Optional,
+    EntryFormA4,
+    Presets
   },
   props: {
     service: {
