@@ -7,7 +7,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
                 "mimeType":"text/plain"
              },
              "value":{
-                "inlineValue": ndays
+                "inlineValue": ndays.toString()
              }
           }
        },
@@ -18,7 +18,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
                 "mimeType":"text/plain"
              },
              "value":{
-                "inlineValue": ptm
+                "inlineValue": ptm.toString()
              }
           }
        },
@@ -29,7 +29,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
                 "mimeType":"text/plain"
              },
              "value":{
-                "inlineValue": tt
+                "inlineValue": tt.toString()
              }
           }
        },
@@ -40,7 +40,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
                 "mimeType":"text/plain"
              },
              "value":{
-                "inlineValue": gdt
+                "inlineValue": gdt.toString()
              }
           }
        },
@@ -51,7 +51,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": ttcs
+              "inlineValue": ttcs.toString()
            }
         }
      },
@@ -62,7 +62,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": pldmin
+              "inlineValue": pldmin.toString()
            }
         }
      },
@@ -73,7 +73,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": pldmax
+              "inlineValue": pldmax.toString()
            }
         }
      },
@@ -84,7 +84,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
               "mimeType":"text/plain"
            },
            "value":{
-              "inlineValue": sd
+              "inlineValue": sd.toString()
            }
         }
      },
@@ -131,7 +131,7 @@ export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
               "inlineValue": "file"
            }
         }
-     },  
+     },
     ],
     "outputs":[
        {
