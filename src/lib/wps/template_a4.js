@@ -1,0 +1,147 @@
+export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
+    "inputs":[
+      {
+          "id":"ndays",
+          "input":{
+             "format":{
+                "mimeType":"text/plain"
+             },
+             "value":{
+                "inlineValue": ndays
+             }
+          }
+       },
+      {
+          "id":"ptm",
+          "input":{
+             "format":{
+                "mimeType":"text/plain"
+             },
+             "value":{
+                "inlineValue": ptm
+             }
+          }
+       },
+      {
+          "id":"tt",
+          "input":{
+             "format":{
+                "mimeType":"text/plain"
+             },
+             "value":{
+                "inlineValue": tt
+             }
+          }
+       },
+      {
+          "id":"gdt",
+          "input":{
+             "format":{
+                "mimeType":"text/plain"
+             },
+             "value":{
+                "inlineValue": gdt
+             }
+          }
+       },
+       {
+        "id":"ttcs",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": ttcs
+           }
+        }
+     },
+     {
+        "id":"pldmin",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": pldmin
+           }
+        }
+     },
+     {
+        "id":"pldmax",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": pldmax
+           }
+        }
+     },
+     {
+        "id":"sd",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": sd
+           }
+        }
+     },
+     {
+        "id":"token",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": "5267228188:AAGx60FtWgHkScBb3ISFL1dp6Oq_9z9z0rw"
+           }
+        }
+     },
+     {
+        "id":"chat_id",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": "-1001773490347"
+           }
+        }
+     },
+     {
+        "id":"bulletin",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": "./output/bulletin.png "
+           }
+        }
+     },
+     {
+        "id":"method",
+        "input":{
+           "format":{
+              "mimeType":"text/plain"
+           },
+           "value":{
+              "inlineValue": "file"
+           }
+        }
+     },  
+    ],
+    "outputs":[
+       {
+          "id":"result",
+          "format":{
+             "mimeType":"application/binary"
+          },
+          "transmissionMode":"reference"
+       }
+    ],
+    "response":"document",
+    "mode":"async"
+ })
