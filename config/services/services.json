@@ -205,6 +205,7 @@
             "id": "land_pollution",
             "wps_id": "a2",
             "name": "Land Pollution",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/A2_bulletin_example.jpg",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
               "layers": [
@@ -253,6 +254,7 @@
             "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
               "layers": [
@@ -309,6 +311,7 @@
             "id": "marine_conditions",
             "wps_id": "a1",
             "name": "Marine conditions",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "components": {
               "layers": [
@@ -381,6 +384,7 @@
             "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
              "layers": [
@@ -422,6 +426,7 @@
             "id": "spat_capture",
             "wps_id": "a4",
             "name": "Assistance for Spat Capture",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/A4_bulletin_example.jpg",
             "description": "The Spat Capture Assistance service offers a time window estimate of when do larvae spats arrive to your site from the specified sources.",
             "components": {
              "layers": [
@@ -485,6 +490,7 @@
             "id": "marine_conditions",
             "wps_id": "a1",
             "name": "Marine conditions",
+            "example":"https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "components": {
               "layers": [
@@ -558,6 +564,7 @@
             "id": "site_prospection",
             "wps_id": "a3",
             "name": "Site Prospection",
+            "example":"https://forcoast.eu/wp-content/uploads/2022/05/A3_bulletin_example.jpg",
             "description": "The Site Prospection service offers information about the suitability of new and existing sites for aquaculture activities.",
             "components": {
               "layers":[
@@ -709,6 +716,7 @@
             "id": "land_pollution",
             "wps_id": "a2",
             "name": "Land Pollution",
+            "example":"https://forcoast.eu/wp-content/uploads/2022/05/A2_bulletin_example.jpg",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
               "layers": [
