@@ -93,6 +93,20 @@ export default {
           left: "center",
           top: 20,
         },
+        tooltip: {
+          trigger: 'axis'
+        },
+       toolbox: {
+          show: true,
+          feature: {
+            dataZoom: {
+              yAxisIndex: 'none'
+            },
+            dataView: { readOnly: false },
+            magicType: { type: ['line', 'bar'] },
+            saveAsImage: {}
+          }
+        },
         xAxis: {
           type: "category",
           data: this.timeSpan,
@@ -105,7 +119,7 @@ export default {
         },
         yAxis: {
           type: "value",
-          name: "Value",
+          name: this.layer.unit,
           nameLocation: "center",
           nameTextStyle: {
             fontSize: 16,
