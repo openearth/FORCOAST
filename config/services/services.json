@@ -438,6 +438,15 @@
                 "icon": "fish.png",
                 "colorscalerange": "0.01,10",
                 "description": "Spawning grounds for Oysters"
+              },
+              {
+                "id": "test:surf_temp_daily_avg_north_sea_a4",
+                "name": "Daily average surface temperature",
+                "layer": "test:surf_temp_daily_avg_north_sea_a4",
+                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                "icon": "",
+                "colorscalerange": "auto",
+                "description": "Daily average surface temperature"
               }
               ],
              "presets": [
