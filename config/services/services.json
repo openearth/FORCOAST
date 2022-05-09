@@ -376,8 +376,7 @@
                 "type": "telegram_id"
               },
               "date": true,
-              "run_task": true,
-              "joblist": true
+              "run_task": true
             }
           }
         ],
@@ -493,7 +492,6 @@
                 "title":"Enter the parameters"
               },
               "run_task": true,
-              "joblist": true,
               "draw_polygon": {
                 "text": "Specify bounding box for target location",
                 "title": "Specify bounding box for target location"
@@ -591,8 +589,7 @@
                 "type": "telegram_id"
               },
               "date": true,
-              "run_task": true,
-              "joblist": true
+              "run_task": true
             }
           },
           {
@@ -737,8 +734,7 @@
                   "text": "Specify bounding box for target location",
                   "title": "Specify bounding box for target location"
                 },  
-              "run_task": true,
-              "joblist": true
+              "run_task": true
             }
           }
         ],
