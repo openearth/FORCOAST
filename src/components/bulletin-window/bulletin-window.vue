@@ -48,9 +48,3 @@ export default {
   },
 };
 </script>
-<style>
-#graph-container {
-  width: unset;
-  height: unset;
-}
-</style>

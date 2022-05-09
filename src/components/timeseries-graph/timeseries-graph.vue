@@ -153,7 +153,7 @@ export default {
 </script>
 <style>
 #graph-container {
-  width: 700px;
+  width: 800px;
   height: 500px;
 }
 </style>
