@@ -2,7 +2,7 @@
   <div>
     <v-dialog v-model="dialog" width="unset">
       <v-card height="unset" width="unset">
-        <div id="graph-container" ref="savecontent">
+        <div id="bulletin-container" ref="savecontent">
           <v-img :src="image"/>
         </div>
         <v-card-actions class="justify-center">       
@@ -48,3 +48,9 @@ export default {
   },
 };
 </script>
+<style>
+#bulletin-container {
+  width: unset;
+  height: unset;
+}
+</style>
