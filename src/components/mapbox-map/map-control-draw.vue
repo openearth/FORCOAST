@@ -6,6 +6,7 @@ import MapboxDraw from "@mapbox/mapbox-gl-draw";
 import DrawRectangle from "mapbox-gl-draw-rectangle-mode"
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 import { mapActions } from "vuex";
+import mapboxgl from "mapbox-gl";
 
 export default {
   inject: ["getMap"],
@@ -57,6 +58,14 @@ export default {
       map.on("draw.create", () => (this.polygon = this.draw.getAll())); 
       map.on("draw.delete", () => (this.polygon = this.draw.getAll()));
       map.on("draw.update", () => (this.polygon = this.draw.getAll()));
+
+      const scale = new mapboxgl.ScaleControl({
+        maxWidth: 150,
+        unit: 'metric'
+      });
+      map.addControl(scale, "bottom-left");
+
+      
     },
   },
 };
