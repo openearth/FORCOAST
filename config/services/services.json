@@ -448,7 +448,7 @@
             "components": {
              "layers": [
               {
-                "id": "test:spawning_grounds_oyster",
+                "id": "forcoast:spawning_grounds_oyster",
                 "name": "Spawning grounds for oysters",
                 "layer": "SGO",
                 "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
