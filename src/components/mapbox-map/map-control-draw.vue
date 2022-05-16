@@ -64,7 +64,7 @@ export default {
         padding: {top: 0, bottom:0, left: 500, right: 0},
         unit: 'metric'
       });
-      map.addControl(scale, "bottom-right");
+      map.addControl(scale, "bottom-left");
 
       
     },

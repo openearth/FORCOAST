@@ -55,7 +55,7 @@ export default {
 <style>
 .layer-legend {
   position: absolute;
-  bottom: 2rem;
+  bottom: 5rem;
   left: 0.5rem;
   background-color: white;
   outline: 0;
