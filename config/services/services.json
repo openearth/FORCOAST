@@ -115,89 +115,6 @@
             44.6
           ]
         ]
-      },
-      {
-        "id": "northern_adriatic_sea_pilot",
-        "name": "Northern adriatic sea (pilot)",
-        "services": [
-          {
-            "id": "front_detection",
-            "wps_id": "f2",
-            "name": "Fronts detection",
-            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
-            "dates": [
-              "2021-01-20",
-              "2021-01-21",
-              "2021-01-22",
-              "2021-01-23",
-              "2021-01-24",
-              "2021-01-25",
-              "2021-01-26",
-              "2021-01-27",
-              "2021-01-28",
-              "2021-01-29",
-              "2021-01-30"
-            ],
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "name": " Chlorophyll",
-                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed chlorophyll-a data obtained from CNR",
-                  "unit": "-"
-                },
-                {
-                  "id": "analysed_sst",
-                  "name": "Sea Surface Temperature",
-                  "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_MED_SST_L4_NRT_OBSERVATIONS_010_004_a_V2",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
-                  "unit": "-"
-                },
-                {
-                  "id": "forcoast:northernadriatic_thetao",
-                  "name": "Water Temperature",
-                  "layer": "forcoast:northernadriatic_thetao",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by OGS",
-                  "unit": "-"
-                },
-                {
-                  "id": "forcoast:northernadriatic_fronts_sst",
-                  "name": "Frontal Zones Temperature",
-                  "layer": "forcoast:northernadriatic_fronts_sst",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30",
-                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
-                  "unit": "-"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": {
-                "title": "Place marker at output location"
-              }
-            }
-          }
-        ],
-        "bbox": [
-          [
-            12,
-            43.5
-          ],
-          [
-            16,
-            46.5
-          ]
-        ]
       }
     ]
   },
@@ -796,7 +713,90 @@
             45.18
           ]
         ]
+      },
+      {
+        "id": "northern_adriatic_sea",
+        "name": "Northern Adriatic Sea (Italy)",
+        "services": [
+          {
+            "id": "front_detection",
+            "wps_id": "f2",
+            "name": "Fronts detection",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
+            "dates": [
+              "2021-01-20",
+              "2021-01-21",
+              "2021-01-22",
+              "2021-01-23",
+              "2021-01-24",
+              "2021-01-25",
+              "2021-01-26",
+              "2021-01-27",
+              "2021-01-28",
+              "2021-01-29",
+              "2021-01-30"
+            ],
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "name": " Chlorophyll",
+                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "chlorophyll_a.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll-a data obtained from CNR",
+                  "unit": "-"
+                },
+                {
+                  "id": "analysed_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "analysed_sst",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_MED_SST_L4_NRT_OBSERVATIONS_010_004_a_V2",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:northernadriatic_thetao",
+                  "name": "Water Temperature",
+                  "layer": "forcoast:northernadriatic_thetao",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by OGS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:northernadriatic_fronts_sst",
+                  "name": "Frontal Zones Temperature",
+                  "layer": "forcoast:northernadriatic_fronts_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
+                  "unit": "-"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
+            }
+          }
+        ],
+        "bbox": [
+          [
+            12,
+            43.5
+          ],
+          [
+            16,
+            46.5
+          ]
+        ]
       }
-      ]
-    }
-  ]
+    ]
+  }
+]
