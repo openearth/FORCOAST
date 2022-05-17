@@ -59,6 +59,7 @@ export default {
       map.on("draw.delete", () => (this.polygon = this.draw.getAll()));
       map.on("draw.update", () => (this.polygon = this.draw.getAll()));
 
+      /* TODO check if this is the proper place to add this scale control. Code in this file if for "draw functionality". Maybe better to add scale control to -baselayer.vue, or seperate file */
       const scale = new mapboxgl.ScaleControl({
         maxWidth: 150,
         padding: {top: 0, bottom:0, left: 500, right: 0},
