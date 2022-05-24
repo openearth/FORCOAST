@@ -22,8 +22,25 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "auto",
-                  "description": "Index for fishing",
-                  "unit": "-"
+                  "description": "Index for fishing"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_sss",
+                  "name": "Sea surface salinity",
+                  "layer": "forcoast:pilot_3_CMEMS_sss",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "auto",
+                  "description": "Sea surface salinity from CMEMS"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_sst",
+                  "name": "Sea surface temperature",
+                  "layer": "forcoast:pilot_3_CMEMS_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "auto",
+                  "description": "Sea surface temperature from CMEMS"
                 }
               ],
               "date_span": true,
@@ -62,8 +79,7 @@
                   "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed chlorophyll-a data obtained from CMEMS",
-                  "unit": "-"
+                  "description": "Remotely sensed chlorophyll-a data obtained from CMEMS"
                 },
                 {
                   "id": "analysed_sst",
@@ -72,8 +88,7 @@
                   "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
-                  "unit": "-"
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
                 },
                 {
                   "id": "forcoast:biscay_sst",
@@ -82,8 +97,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by AZTI",
-                  "unit": "-"
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by AZTI"
                 },
                 {
                   "id": "forcoast:biscay_fronts_sst",
@@ -92,8 +106,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
-                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
-                  "unit": "-"
+                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST"
                 }
               ],
               "date_span": true,
@@ -113,6 +126,85 @@
           [
             -1.8,
             44.6
+          ]
+        ]
+      },
+      {
+        "id": "northern_adriatic_sea_pilot",
+        "name": "Northern adriatic sea (pilot)",
+        "services": [
+          {
+            "id": "front_detection",
+            "wps_id": "f2",
+            "name": "Fronts detection",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
+            "dates": [
+              "2021-01-20",
+              "2021-01-21",
+              "2021-01-22",
+              "2021-01-23",
+              "2021-01-24",
+              "2021-01-25",
+              "2021-01-26",
+              "2021-01-27",
+              "2021-01-28",
+              "2021-01-29",
+              "2021-01-30"
+            ],
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "name": " Chlorophyll",
+                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "chlorophyll_a.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll-a data obtained from CNR"
+                },
+                {
+                  "id": "analysed_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "analysed_sst",
+                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_MED_SST_L4_NRT_OBSERVATIONS_010_004_a_V2",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
+                },
+                {
+                  "id": "forcoast:northernadriatic_thetao",
+                  "name": "Water Temperature",
+                  "layer": "forcoast:northernadriatic_thetao",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by OGS"
+                },
+                {
+                  "id": "forcoast:northernadriatic_fronts_sst",
+                  "name": "Frontal Zones Temperature",
+                  "layer": "forcoast:northernadriatic_fronts_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
+            }
+          }
+        ],
+        "bbox": [
+          [
+            12,
+            43.5
+          ],
+          [
+            16,
+            46.5
           ]
         ]
       }
@@ -142,8 +234,7 @@
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "-2,2",
-                  "description": "Modelled water level produced in FORCOAST by Marine Instruments",
-                  "unit": "-"
+                  "description": "Modelled water level produced in FORCOAST by Marine Instruments"
                 },
                 {
                   "id": "temp",
@@ -152,8 +243,7 @@
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Instruments",
-                  "unit": "-"
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Instruments"
                 },
                 {
                   "id": "salt",
@@ -162,8 +252,7 @@
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "0,30",
-                  "description": "Modelled salinity produced in FORCOAST by Marine Instruments",
-                  "unit": "-"
+                  "description": "Modelled salinity produced in FORCOAST by Marine Instruments"
                 }
               ],
               "draw_polygon": {
@@ -194,8 +283,7 @@
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
                   "colorscalerange": "-2,2",
-                  "description": "Modelled water level produced in FORCOAST by Marine Instruments",
-                  "unit": "-"
+                  "description": "Modelled water level produced in FORCOAST by Marine Instruments"
                 }
               ],
               "date_span": true,
@@ -253,8 +341,7 @@
                   "icon": "",
                   "styles": "boxfill/sst_36",
                   "colorscalerange": "-1,3",
-                  "description": "Modelled water level produced in FORCOAST by Maretec",
-                  "unit": "-"
+                  "description": "Modelled water level produced in FORCOAST by Maretec"
                 },
                 {
                   "id": "vm",
@@ -263,8 +350,7 @@
                   "url": "https://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
                   "icon": "",
                   "colorscalerange": "-1,1",
-                  "description": "Modelled current velocity produced in FORCOAST by Maretec",
-                  "unit": "-"
+                  "description": "Modelled current velocity produced in FORCOAST by Maretec"
                 },
                 {
                   "id": "wind_modulus",
@@ -273,8 +359,7 @@
                   "url": "https://thredds.maretec.org/thredds/wms/WRF/LISOCEAN_3KM_1L_1H/FORECAST/2021110600.nc",
                   "icon": "",
                   "colorscalerange": "0,15",
-                  "description": "Modelled wind speed produced in FORCOAST by Maretec",
-                  "unit": "-"
+                  "description": "Modelled wind speed produced in FORCOAST by Maretec"
                 }
               ],
               "date_span": true,
@@ -293,7 +378,8 @@
                 "type": "telegram_id"
               },
               "date": true,
-              "run_task": true
+              "run_task": true,
+              "joblist": true
             }
           }
         ],
@@ -327,8 +413,7 @@
                   "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed chlorophyll-a data obtained from CMEMS",
-                  "unit": "-"
+                  "description": "Remotely sensed chlorophyll-a data obtained from CMEMS"
                 },
                 {
                   "id": "analysed_sst",
@@ -337,8 +422,7 @@
                   "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
-                  "unit": "-"
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
                 }
               ],
               "date_span": true,
@@ -366,26 +450,23 @@
              "layers": [
               {
                 "id": "forcoast:spawning_grounds_oyster",
-                "name": "Spawning grounds for oysters",
-                "layer": "SGO",
-                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                "icon": "fish.png",
-                "colorscalerange": "0.01,10",
-                "description": "Spawning grounds for Oysters",
-                "unit": "-"
-              },
-              {
-                "id": "test:surf_temp_daily_avg_north_sea_a4",
-                "name": "Daily average surface temperature",
-                "layer": "test:surf_temp_daily_avg_north_sea_a4",
+                "name": "Spawning grounds for Oysters",
+                "layer": "forcoast:spawning_grounds_oyster",
                 "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                 "icon": "",
                 "colorscalerange": "auto",
-                "description": "Daily average surface temperature",
-                "unit": "Degrees"
+                "description": "Spawning grounds for Oysters"
+              },
+              {
+              "id": "forcoast:surf_temp_daily_avg_north_sea_a4",
+              "name": "Daily average surface temperature",
+              "layer": "forcoast:surf_temp_daily_avg_north_sea_a4",
+              "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+              "icon": "",
+              "colorscalerange": "auto",
+              "description": "Daily average surface temperature"
               }
               ],
-              "date_span": true,
              "presets": [
               {
                 "name": "None", 
@@ -409,10 +490,7 @@
                 "title":"Enter the parameters"
               },
               "run_task": true,
-              "draw_polygon": {
-                "text": "Specify bounding box for target location",
-                "title": "Specify bounding box for target location"
-              }
+              "joblist": true
             }
           }
       ],
@@ -446,8 +524,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,1",
-                  "description": "Modelled water level produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "description": "Modelled water level produced in FORCOAST by DMI"
                 },
                 {
                   "id": "forcoast:dk_salt",
@@ -456,8 +533,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "0,30",
-                  "description": "Modelled salinity produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "description": "Modelled salinity produced in FORCOAST by DMI"
                 },
                 {
                   "id": "forcoast:dk_temp",
@@ -466,8 +542,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by DMI"
                 },
                 {
                   "id": "forcoast:dk_currentspeed",
@@ -476,8 +551,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,1",
-                  "description": "Modelled current velocity produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "description": "Modelled current velocity produced in FORCOAST by DMI"
                 },
                 {
                   "id": "forcoast:dk_windspeed",
@@ -486,8 +560,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,1",
-                  "description": "Modelled wind speed produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "description": "Modelled wind speed produced in FORCOAST by DMI"
                 }
               ],
               "date_span": true,
@@ -506,7 +579,8 @@
                 "type": "telegram_id"
               },
               "date": true,
-              "run_task": true
+              "run_task": true,
+              "joblist": true
             }
           },
           {
@@ -518,107 +592,96 @@
             "components": {
               "layers":[
                 {
-                  "id": "test:flux_d",
-                  "name": "flux_d",
-                  "layer":"test:flux_d",
+                  "id": "forcoast:a3_limfjord_flux_dd",
+                  "name": "flux_dd",
+                  "layer":"forcoast:a3_limfjord_flux_dd",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "flux_dd",
-                  "unit": "-"
+                  "description": "flux_dd"
                 },
                 {
-                  "id": "test:flux_p",
+                  "id": "forcoast:a3_limfjord_flux_pp",
                   "name": "flux_pp",
-                  "layer":"test:flux_p",
+                  "layer":"forcoast:a3_limfjord_flux_pp",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "flux_pp",
-                  "unit": "-"
+                  "description": "flux_pp"
                 },
                 {
-                  "id": "test:resup_",
-                  "name": "resup_",
-                  "layer":"test:resup_",
+                  "id": "forcoast:a3_limfjord_resup",
+                  "name": "resup",
+                  "layer":"forcoast:a3_limfjord_resup",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "resup_",
-                  "unit": "-"
+                  "description": "resup_"
                 },
                 {
-                  "id": "test:TauB_2",
-                  "name": "TauB_2",
-                  "layer":"test:TauB_2",
+                  "id": "forcoast:a3_limfjord_TauB",
+                  "name": "TauB",
+                  "layer":"forcoast:a3_limfjord_TauB",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "TauB_2",
-                  "unit": "-"
+                  "description": "TauB_2"
                 },
                 {
-                  "id": "test:botchl",
-                  "name": "botchl",
-                  "layer":"test:botchl",
+                  "id": "forcoast:a3_limfjord_botchl",
+                  "name": "Chlorophyll content",
+                  "layer":"forcoast:a3_limfjord_botchl",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "botchl",
-                  "unit": "-"
+                  "description": "Chorophyll content on bottom"
                 },
                 {
-                  "id": "test:botcur",
-                  "name": "botcur",
-                  "layer":"test:botcur",
+                  "id": "forcoast:a3_limfjord_botcurrent",
+                  "name": "botcurrent",
+                  "layer":"forcoast:a3_limfjord_botcurrent",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "botcur",
-                  "unit": "-"
+                  "description": "botcur"
                 },
                 {
-                  "id": "test:botdd_",
-                  "name": "botdd_",
-                  "layer":"test:botdd_",
+                  "id": "forcoast:a3_limfjord_botdd",
+                  "name": "botdd",
+                  "layer":"forcoast:a3_limfjord_botdd",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "botdd_",
-                  "unit": "-"
+                  "description": "botdd_"
                 },
                 {
-                  "id": "test:botoxy",
+                  "id": "forcoast:a3_limfjord_botoxy",
                   "name": "botoxy",
-                  "layer":"test:botoxy",
+                  "layer":"forcoast:a3_limfjord_botoxy",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "botoxy",
-                  "unit": "-"
+                  "description": "botoxy"
                 },
                 {
-                  "id": "test:botS_2",
-                  "name": "botS_2",
-                  "layer":"test:botS_2",
+                  "id": "forcoast:a3_limfjord_botS",
+                  "name": "Salinity bottom",
+                  "layer":"forcoast:a3_limfjord_botS",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "botS_2",
-                  "unit": "-"
+                  "description": "Salinity on the bottom"
                 },
                 {
-                  "id": "test:botT_2",
-                  "name": "botT_2",
-                  "layer":"test:botT_2",
+                  "id": "forcoast:a3_limfjord_botT",
+                  "name": "Temperature bottom",
+                  "layer":"forcoast:a3_limfjord_botT",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "botT_2",
-                  "unit": "-"
+                  "description": "Temperature on the bottom"
                 }
               ],
-              "date_span": true,
               "draggable_marker": {
                 "title": "Place marker at location of interest"
               },
@@ -651,7 +714,8 @@
                   "text": "Specify bounding box for target location",
                   "title": "Specify bounding box for target location"
                 },  
-              "run_task": true
+              "run_task": true,
+              "joblist": true
             }
           }
         ],
@@ -685,8 +749,7 @@
                   "url": "https://nrt.cmems-du.eu/thredds/wms/SST_BS_SST_L4_NRT_OBSERVATIONS_010_006_a_V2",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
-                  "unit": "-"
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS"
                 }
               ],
               "date_span": true,
@@ -713,90 +776,7 @@
             45.18
           ]
         ]
-      },
-      {
-        "id": "northern_adriatic_sea",
-        "name": "Northern Adriatic Sea (Italy)",
-        "services": [
-          {
-            "id": "front_detection",
-            "wps_id": "f2",
-            "name": "Fronts detection",
-            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
-            "dates": [
-              "2021-01-20",
-              "2021-01-21",
-              "2021-01-22",
-              "2021-01-23",
-              "2021-01-24",
-              "2021-01-25",
-              "2021-01-26",
-              "2021-01-27",
-              "2021-01-28",
-              "2021-01-29",
-              "2021-01-30"
-            ],
-            "components": {
-              "layers": [
-                {
-                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "name": " Chlorophyll",
-                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed chlorophyll-a data obtained from CNR",
-                  "unit": "-"
-                },
-                {
-                  "id": "analysed_sst",
-                  "name": "Sea Surface Temperature",
-                  "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_MED_SST_L4_NRT_OBSERVATIONS_010_004_a_V2",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
-                  "unit": "-"
-                },
-                {
-                  "id": "forcoast:northernadriatic_thetao",
-                  "name": "Water Temperature",
-                  "layer": "forcoast:northernadriatic_thetao",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by OGS",
-                  "unit": "-"
-                },
-                {
-                  "id": "forcoast:northernadriatic_fronts_sst",
-                  "name": "Frontal Zones Temperature",
-                  "layer": "forcoast:northernadriatic_fronts_sst",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30",
-                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
-                  "unit": "-"
-                }
-              ],
-              "date_span": true,
-              "draggable_marker": {
-                "title": "Place marker at output location"
-              }
-            }
-          }
-        ],
-        "bbox": [
-          [
-            12,
-            43.5
-          ],
-          [
-            16,
-            46.5
-          ]
-        ]
       }
-    ]
-  }
-]
+      ]
+    }
+  ]
