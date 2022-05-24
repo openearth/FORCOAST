@@ -518,104 +518,31 @@
             "components": {
               "layers":[
                 {
-                  "id": "test:flux_d",
-                  "name": "flux_d",
-                  "layer":"test:flux_d",
+                  "id": "forcoast:a3_limfjord_botchl",
+                  "name": "Chlorophyll content",
+                  "layer":"forcoast:a3_limfjord_botchl",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "flux_dd",
-                  "unit": "-"
+                  "description": "Chorophyll content on bottom"
                 },
                 {
-                  "id": "test:flux_p",
-                  "name": "flux_pp",
-                  "layer":"test:flux_p",
+                  "id": "forcoast:a3_limfjord_botS",
+                  "name": "Salinity bottom",
+                  "layer":"forcoast:a3_limfjord_botS",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "flux_pp",
-                  "unit": "-"
+                  "description": "Salinity on the bottom"
                 },
                 {
-                  "id": "test:resup_",
-                  "name": "resup_",
-                  "layer":"test:resup_",
+                  "id": "forcoast:a3_limfjord_botT",
+                  "name": "Temperature bottom",
+                  "layer":"forcoast:a3_limfjord_botT",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "resup_",
-                  "unit": "-"
-                },
-                {
-                  "id": "test:TauB_2",
-                  "name": "TauB_2",
-                  "layer":"test:TauB_2",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "TauB_2",
-                  "unit": "-"
-                },
-                {
-                  "id": "test:botchl",
-                  "name": "botchl",
-                  "layer":"test:botchl",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botchl",
-                  "unit": "-"
-                },
-                {
-                  "id": "test:botcur",
-                  "name": "botcur",
-                  "layer":"test:botcur",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botcur",
-                  "unit": "-"
-                },
-                {
-                  "id": "test:botdd_",
-                  "name": "botdd_",
-                  "layer":"test:botdd_",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botdd_",
-                  "unit": "-"
-                },
-                {
-                  "id": "test:botoxy",
-                  "name": "botoxy",
-                  "layer":"test:botoxy",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botoxy",
-                  "unit": "-"
-                },
-                {
-                  "id": "test:botS_2",
-                  "name": "botS_2",
-                  "layer":"test:botS_2",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botS_2",
-                  "unit": "-"
-                },
-                {
-                  "id": "test:botT_2",
-                  "name": "botT_2",
-                  "layer":"test:botT_2",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botT_2",
-                  "unit": "-"
+                  "description": "Temperature on the bottom"
                 }
               ],
               "date_span": true,
