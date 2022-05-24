@@ -7,11 +7,11 @@
       </v-col>
       <v-col cols="8">
         <v-row>
-       <input @change="checkbox1(); entryValue()" type="checkbox" v-model="checkoption1">
+       <input @change="checkbox1(); entryValue()" :style="checkboxStyle" type="checkbox" v-model="checkoption1">
           <label>Temperature treshold</label> 
         </v-row>
         <v-row>
-       <input @change="checkbox2(); entryValue()" type="checkbox" v-model="checkoption2">
+       <input @change="checkbox2(); entryValue()" :style="checkboxStyle" type="checkbox" v-model="checkoption2">
           <label>Cumalative temperature</label>
         </v-row>
       </v-col>
@@ -127,7 +127,11 @@ export default {
       },
     },
     checkoption1: true,
-    checkoption2: false
+    checkoption2: false,
+    checkboxStyle:{
+      height: '1.3em',
+      margin: '0px 10px'
+    }
   }),
   computed: {
     ...mapGetters("wps", {
