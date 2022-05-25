@@ -34,7 +34,29 @@ export const template_a2 = (time, id, area, source, target) =>({
          }
       },
      {
-         "id":"source",
+         "id":"mode",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "cli"
+            }
+         }
+      },
+     {
+         "id":"config",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "local"
+            }
+         }
+      },
+     {
+         "id":"sources",
          "input":{
             "format":{
                "mimeType":"text/plain"
@@ -45,13 +67,46 @@ export const template_a2 = (time, id, area, source, target) =>({
          }
       },
      {
-         "id":"target",
+         "id":"targets",
          "input":{
             "format":{
                "mimeType":"text/plain"
             },
             "value":{
                "inlineValue": target
+            }
+         }
+      },
+     {
+         "id":"datadir",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "/usr/src/app/data/"
+            }
+         }
+      },
+    {
+         "id":"token",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "999"
+            }
+         }
+      },
+    {
+         "id":"chat_id",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": "999"
             }
          }
       }
