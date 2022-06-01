@@ -40,6 +40,7 @@ export default {
           }
           else {
           document.getElementById("bulletin-container").style.height = "60%"
+          document.getElementById("bulletin-container").style.width = this.width / (this.height/0.6)*100 + "%"
           }
     };
     img.src = this.image;   
