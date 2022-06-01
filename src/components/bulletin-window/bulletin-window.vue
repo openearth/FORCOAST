@@ -35,12 +35,12 @@ export default {
     var img = new Image();
     img.onload = function() {    
         const imgRatio = this.height / this.width
-          if (this.imgRatio < 0.5) {
+          if (this.imgRatio < 0.44) {
           document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
           }
           else {
-          document.getElementById("bulletin-container").style.height = "50%"
-          document.getElementById("bulletin-container").style.width = this.width / (this.height/0.5)*100 + "%"
+          document.getElementById("bulletin-container").style.height = "44%"
+          document.getElementById("bulletin-container").style.width = this.width / (this.height/0.44)*100 + "%"
           }
     };
     img.src = this.image;   
