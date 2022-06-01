@@ -36,9 +36,8 @@ export default {
     img.onload = function() {
         if (this.height <= this.width) {
         const imgRatio = this.height / this.width
-        console.log(imgRatio)
         document.getElementById("bulletin-container").style.width = "100%"
-          if (this.imgRatio > 0.6) {
+          if (this.imgRatio < 0.6) {
           document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
           }
           else {
