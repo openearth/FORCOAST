@@ -35,12 +35,12 @@ export default {
     var img = new Image();
     img.onload = function() {    
         const imgRatio = this.height / this.width
-          if (this.imgRatio < 0.6) {
+          if (this.imgRatio < 0.5) {
           document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
           }
           else {
-          document.getElementById("bulletin-container").style.height = "60%"
-          document.getElementById("bulletin-container").style.width = this.width / (this.height/0.6)*100 + "%"
+          document.getElementById("bulletin-container").style.height = "50%"
+          document.getElementById("bulletin-container").style.width = this.width / (this.height/0.5)*100 + "%"
           }
     };
     img.src = this.image;   
@@ -66,5 +66,7 @@ export default {
 #bulletin-container {
   width: unset;
   height: unset;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
