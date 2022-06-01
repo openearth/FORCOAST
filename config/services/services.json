@@ -97,8 +97,6 @@
                 }
               ],
               "date_span": true,
-              "date": true,
-              "run_task": true,
               "draggable_marker": {
                 "title": "Place marker at output location"
               }
