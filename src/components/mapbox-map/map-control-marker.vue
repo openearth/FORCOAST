@@ -5,6 +5,7 @@
 <script>
 import mapboxgl from "mapbox-gl";
 import { mapActions } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   inject: ["getMap"],
@@ -22,7 +23,9 @@ export default {
   watch: {
     center() {
       // if it is already loaded then remove it and move it and re-add it to the correct center
+      if (this.marker != null ) {
       this.marker.remove();
+      }
       const map = this.getMap();
       if (map) {
         this.addToMap(map);
@@ -41,6 +44,8 @@ export default {
   },
   methods: {
     ...mapActions("wps", ["setMarkerCoordinates", "clearMarkerCoordinates"]),
+    ...mapState("layers", ["selectedAreaBBox"]),
+
     deferredMountedTo(map) {
       if (this.center) {
         this.addToMap(map);
@@ -48,16 +53,24 @@ export default {
     },
 
     addToMap(map) {
-      this.marker = new mapboxgl.Marker({
-        draggable: true,
-      })
-        .setLngLat([this.center[0], this.center[1]])
-        .addTo(map);
+      //if clause so that if no service module is selected, no marker is loaded
+      if (this.selectedAreaBBox() != null ) {
+            //if clause so that when visiting the website from a different url (then base-url), the marker is still loaded
+            if (this.center[0] == 0 && this.center[1] == 0 ) {
+              this.center[0] = (this.selectedAreaBBox()[0][0]+this.selectedAreaBBox()[1][0])/2
+              this.center[1] = (this.selectedAreaBBox()[0][1]+this.selectedAreaBBox()[1][1])/2
+             }
 
-      this.marker.on("dragend", () => {
-        const lngLat = this.marker.getLngLat();
-        this.setMarkerCoordinates(lngLat);
-      });
+        this.marker = new mapboxgl.Marker({
+          draggable: true,
+        })   
+          .setLngLat([this.center[0], this.center[1]])
+          .addTo(map);
+        this.marker.on("dragend", () => {
+          const lngLat = this.marker.getLngLat();
+          this.setMarkerCoordinates(lngLat);
+        });
+      }
     },
   },
 };

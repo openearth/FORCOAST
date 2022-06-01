@@ -16,7 +16,7 @@
         <v-combobox
           id="timeslider-dropdown"
           v-model="selectedTime"
-          :items="timeExtent"
+          :items="timeExtent.reverse()"
           :disabled="loadingRasterLayers"
           label="Select a timestamp"
           flat

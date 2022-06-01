@@ -31,6 +31,20 @@ export default {
       image: "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/bulletin.png"
     };
   },
+  mounted() {
+    var img = new Image();
+    img.onload = function() {    
+        const imgRatio = this.height / this.width
+          if (this.imgRatio < 0.44) {
+          document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
+          }
+          else {
+          document.getElementById("bulletin-container").style.height = "44%"
+          document.getElementById("bulletin-container").style.width = this.width / (this.height/0.44)*100 + "%"
+          }
+    };
+    img.src = this.image;   
+  },
   watch: {
     featuresInfo() {
       // https://vuetifyjs.com/en/api/v-img/
@@ -52,5 +66,7 @@ export default {
 #bulletin-container {
   width: unset;
   height: unset;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
