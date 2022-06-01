@@ -38,12 +38,17 @@ export default {
         const imgRatio = this.height / this.width
         console.log(imgRatio)
         document.getElementById("bulletin-container").style.width = "100%"
-        document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
+          if (this.imgRatio > 0.6) {
+          document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
+          }
+          else {
+          document.getElementById("bulletin-container").style.height = "60%"
+          }
         }
         else {
         const imgRatio = this.width / this.height
-        document.getElementById("bulletin-container").style.height = "65%"
-        document.getElementById("bulletin-container").style.width = imgRatio*65 + "%"
+        document.getElementById("bulletin-container").style.height = "60%"
+        document.getElementById("bulletin-container").style.width = imgRatio*60 + "%"
         }
     };
     img.src = this.image;   
