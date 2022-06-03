@@ -70,6 +70,10 @@ export default {
           const lngLat = this.marker.getLngLat();
           this.setMarkerCoordinates(lngLat);
         });
+        map.on('mousemove', (e) => {
+        console.log(e.lngLat.lng)
+        console.log(e.lngLat.lat)
+        });
       }
     },
   },
