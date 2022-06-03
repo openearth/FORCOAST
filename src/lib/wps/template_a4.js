@@ -1,16 +1,5 @@
-export const template_a4 = (ndays, ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
-    "inputs":[
-      {
-          "id":"ndays",
-          "input":{
-             "format":{
-                "mimeType":"text/plain"
-             },
-             "value":{
-                "inlineValue": ndays.toString()
-             }
-          }
-       },
+export const template_a4 = (ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
+    "inputs":[,
       {
           "id":"ptm",
           "input":{
