@@ -24,26 +24,6 @@
                   "colorscalerange": "auto",
                   "description": "Index for fishing",
                   "unit": "-"
-                },
-                {
-                  "id": "forcoast:pilot_3_CMEMS_sss",
-                  "name": "Sea surface salinity",
-                  "layer": "forcoast:pilot_3_CMEMS_sss",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "auto",
-                  "description": "Sea surface salinity from CMEMS",
-                  "unit": "-"
-                },
-                {
-                  "id": "forcoast:pilot_3_CMEMS_sst",
-                  "name": "Sea surface temperature",
-                  "layer": "forcoast:pilot_3_CMEMS_sst",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "auto",
-                  "description": "Sea surface temperature from CMEMS",
-                  "unit": "-"
                 }
               ],
               "date_span": true,
@@ -117,6 +97,8 @@
                 }
               ],
               "date_span": true,
+              "date": true,
+              "run_task": true,
               "draggable_marker": {
                 "title": "Place marker at output location"
               }
@@ -384,40 +366,40 @@
              "layers": [
               {
                 "id": "forcoast:spawning_grounds_oyster",
-                "name": "Spawning grounds for Oysters",
-                "layer": "forcoast:spawning_grounds_oyster",
+                "name": "Spawning grounds for oysters",
+                "layer": "SGO",
                 "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                "icon": "",
-                "colorscalerange": "auto",
+                "icon": "fish.png",
+                "colorscalerange": "0.01,10",
                 "description": "Spawning grounds for Oysters",
                 "unit": "-"
               },
               {
-              "id": "forcoast:surf_temp_daily_avg_north_sea_a4",
-              "name": "Daily average surface temperature",
-              "layer": "forcoast:surf_temp_daily_avg_north_sea_a4",
-              "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-              "icon": "",
-              "colorscalerange": "auto",
-              "description": "Daily average surface temperature",
-              "unit": "Degrees"
+                "id": "test:surf_temp_daily_avg_north_sea_a4",
+                "name": "Daily average surface temperature",
+                "layer": "test:surf_temp_daily_avg_north_sea_a4",
+                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                "icon": "",
+                "colorscalerange": "auto",
+                "description": "Daily average surface temperature",
+                "unit": "Degrees"
               }
               ],
-             "date_span": true,
+              "date_span": true,
              "presets": [
               {
                 "name": "None", 
-                "presetType": ["","","","","","","",""], 
-                "presetValue": ["","","","","","","",""]
+                "presetType": ["","","","","","",""], 
+                "presetValue": ["","","","","","",""]
               },
               {
                 "name": "Oysters", 
-                "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
-                "presetValue": [3,0,15,7,576,20,30,30]
+                "presetType": ["ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
+                "presetValue": [0,15,7,576,20,30,30]
               }, 
               { "name": "Mussels",
-              "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
-              "presetValue": [3,0,9,7,576,25,45,30]
+              "presetType": ["ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
+              "presetValue": [0,9,7,576,25,45,30]
               }
              ],
               "draggable_marker": {
@@ -536,42 +518,6 @@
             "components": {
               "layers":[
                 {
-                  "id": "forcoast:a3_limfjord_flux_dd",
-                  "name": "flux_dd",
-                  "layer":"forcoast:a3_limfjord_flux_dd",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "flux_dd"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_flux_pp",
-                  "name": "flux_pp",
-                  "layer":"forcoast:a3_limfjord_flux_pp",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "flux_pp"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_resup",
-                  "name": "resup",
-                  "layer":"forcoast:a3_limfjord_resup",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "resup_"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_TauB",
-                  "name": "TauB",
-                  "layer":"forcoast:a3_limfjord_TauB",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "TauB_2"
-                },
-                {
                   "id": "forcoast:a3_limfjord_botchl",
                   "name": "Chlorophyll content",
                   "layer":"forcoast:a3_limfjord_botchl",
@@ -579,33 +525,6 @@
                   "icon":"",
                   "colorscalerange": "auto",
                   "description": "Chorophyll content on bottom"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_botcurrent",
-                  "name": "botcurrent",
-                  "layer":"forcoast:a3_limfjord_botcurrent",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botcur"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_botdd",
-                  "name": "botdd",
-                  "layer":"forcoast:a3_limfjord_botdd",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botdd_"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_botoxy",
-                  "name": "botoxy",
-                  "layer":"forcoast:a3_limfjord_botoxy",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botoxy"
                 },
                 {
                   "id": "forcoast:a3_limfjord_botS",
