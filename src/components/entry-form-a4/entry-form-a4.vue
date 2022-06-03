@@ -7,11 +7,11 @@
       </v-col>
       <v-col cols="8">
         <v-row>
-       <input @change="checkbox1(); entryValue()" :style="checkboxStyle" type="checkbox" v-model="checkoption1">
+       <input @change="checkbox1(); entryValue()" type="checkbox" v-model="checkoption1">
           <label>Temperature treshold</label> 
         </v-row>
         <v-row>
-       <input @change="checkbox2(); entryValue()" :style="checkboxStyle" type="checkbox" v-model="checkoption2">
+       <input @change="checkbox2(); entryValue()" type="checkbox" v-model="checkoption2">
           <label>Cumalative temperature</label>
         </v-row>
       </v-col>
@@ -22,7 +22,7 @@
       </v-col>
       <v-col cols="8">
           <v-text-field
-            v-model.number="valueArray[2]"
+            v-model.number="valueArray[1]"
             label="degrees celsius"
             :rules="[rules.emptyField,
                      rules.isInt,
@@ -37,7 +37,7 @@
       </v-col>
       <v-col cols="8">
           <v-text-field
-            v-model.number="valueArray[3]"
+            v-model.number="valueArray[2]"
             label="degrees celcius"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -52,7 +52,7 @@
       </v-col>
       <v-col cols="8">
           <v-text-field
-            v-model.number="valueArray[4]"
+            v-model.number="valueArray[3]"
             label="degrees celcius"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -67,7 +67,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model.number="valueArray[5]"
+            v-model.number="valueArray[4]"
             label="Minimal"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -77,7 +77,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model.number="valueArray[6]"
+            v-model.number="valueArray[5]"
             label="Maximal"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -93,7 +93,7 @@
       </v-col>
       <v-col cols="8">
           <v-text-field
-            v-model.number="valueArray[7]"
+            v-model.number="valueArray[6]"
             label="days"
             :rules="[rules.emptyField,
                      rules.isInt,
@@ -127,11 +127,7 @@ export default {
       },
     },
     checkoption1: true,
-    checkoption2: false,
-    checkboxStyle:{
-      height: '1.3em',
-      margin: '0px 10px'
-    }
+    checkoption2: false
   }),
   computed: {
     ...mapGetters("wps", {
@@ -164,30 +160,29 @@ export default {
     checkbox1() {
       if (this.checkoption1 == true) {
         this.checkoption2 = false
-        this.valueArray[1] = 0 
+        this.valueArray[0] = 0 
         } else if (this.checkoption1 == false) {
         this.checkoption2 = true
-        this.valueArray[1] = 1
+        this.valueArray[0] = 1
       }
     },
     checkbox2() {
       if (this.checkoption2 == true) {
         this.checkoption1 = false
-        this.valueArray[1] = 1
+        this.valueArray[0] = 1
         } else if (this.checkoption2 == false) {
         this.checkoption1 = true
-        this.valueArray[1] = 0
+        this.valueArray[0] = 0
       }
     },
     entryValue() {
-      if ( (this.valueArray[0] >= 0 && this.valueArray[0] <= 120) && 
-            this.valueArray[1] !== undefined &&
-          ((this.valueArray[2] >= 0 && this.valueArray[2] <= 30) ||
-          ((this.valueArray[3] >= 0 && this.valueArray[3] <= 30) &&
-           (this.valueArray[4] >= 0 && this.valueArray[4] <= 10000))) &&
+      if  ( this.valueArray[0] !== undefined &&
+          ((this.valueArray[1] >= 0 && this.valueArray[1] <= 30) ||
+          ((this.valueArray[2] >= 0 && this.valueArray[2] <= 30) &&
+           (this.valueArray[3] >= 0 && this.valueArray[3] <= 10000))) &&
+           (this.valueArray[4] >= 0 && this.valueArray[4] <= 365) &&
            (this.valueArray[5] >= 0 && this.valueArray[5] <= 365) &&
-           (this.valueArray[6] >= 0 && this.valueArray[6] <= 365) &&
-           (this.valueArray[7] >= 0 && this.valueArray[7] <= 365)) { 
+           (this.valueArray[6] >= 0 && this.valueArray[6] <= 365)) { 
        this.setSelectedEntryValue(this.valueArray)
         if (this.selectedEntryValueOptional() == null) {
           this.setSelectedEntryValueOptional(this.valueArrayOptional)
