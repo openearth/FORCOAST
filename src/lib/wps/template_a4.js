@@ -1,5 +1,5 @@
 export const template_a4 = (ptm, tt, gdt, ttcs, pldmin, pldmax, sd) =>({
-    "inputs":[,
+    "inputs":[
       {
           "id":"ptm",
           "input":{
