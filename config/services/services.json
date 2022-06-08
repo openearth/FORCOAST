@@ -6,7 +6,7 @@
     "areas": [
       {
         "id": "eforie",
-        "name": "Western Black Sea (Bulgaria)",
+        "name": "Western Black Sea (Romania)",
         "services": [
           {
             "id": "suitable_fishing_areas",
@@ -16,6 +16,26 @@
             "components": {
               "layers": [
                 {
+                  "id": "forcoast:pilot_3_CMEMS_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "forcoast:pilot_3_CMEMS_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_sss",
+                  "name": "Sea Surface Salinity",
+                  "layer": "forcoast:pilot_3_CMEMS_sss",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface salinity data obtained from CMEMS",
+                  "unit": "-"
+                },
+                {
                   "id": "forcoast:HSI_whiting",
                   "name": "HSI-whiting",
                   "layer": "forcoast:HSI_whiting",
@@ -23,26 +43,6 @@
                   "icon": "fish.png",
                   "colorscalerange": "auto",
                   "description": "Index for fishing",
-                  "unit": "-"
-                },
-                {
-                  "id": "forcoast:pilot_3_CMEMS_sss",
-                  "name": "Sea surface salinity",
-                  "layer": "forcoast:pilot_3_CMEMS_sss",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "auto",
-                  "description": "Sea surface salinity from CMEMS",
-                  "unit": "-"
-                },
-                {
-                  "id": "forcoast:pilot_3_CMEMS_sst",
-                  "name": "Sea surface temperature",
-                  "layer": "forcoast:pilot_3_CMEMS_sst",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "auto",
-                  "description": "Sea surface temperature from CMEMS",
                   "unit": "-"
                 }
               ],
@@ -76,20 +76,20 @@
             "components": {
               "layers": [
                 {
-                  "id": "CHL",
-                  "name": "Chlorophyll",
-                  "layer": "CHL",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/dataset-oc-glo-bio-multi-l4-chl_interpolated_4km_daily-rt",
+                  "id": "forcoast:pilot_2_CMEMS_chl",
+                  "name": "Chlorophyll Concentration",
+                  "layer": "forcoast:pilot_2_CMEMS_chl",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
                   "description": "Remotely sensed chlorophyll-a data obtained from CMEMS",
                   "unit": "-"
                 },
                 {
-                  "id": "analysed_sst",
+                  "id": "forcoast:pilot_2_CMEMS_sst",
                   "name": "Sea Surface Temperature",
-                  "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/METEOFRANCE-EUR-SST-L4-NRT-OBS_FULL_TIME_SERIE",
+                  "layer": "forcoast:pilot_2_CMEMS_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
@@ -382,7 +382,7 @@
             "description": "The Spat Capture Assistance service offers a time window estimate of when do larvae spats arrive to your site from the specified sources.",
             "components": {
              "layers": [
-              {
+             {
                 "id": "forcoast:spawning_grounds_oyster",
                 "name": "Spawning grounds for Oysters",
                 "layer": "forcoast:spawning_grounds_oyster",
@@ -403,21 +403,21 @@
               "unit": "Degrees"
               }
               ],
-             "date_span": true,
+              "date_span": true,
              "presets": [
               {
                 "name": "None", 
-                "presetType": ["","","","","","","",""], 
-                "presetValue": ["","","","","","","",""]
+                "presetType": ["","","","","","",""], 
+                "presetValue": ["","","","","","",""]
               },
               {
                 "name": "Oysters", 
-                "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
-                "presetValue": [3,0,15,7,576,20,30,30]
+                "presetType": ["ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
+                "presetValue": [0,15,7,576,20,30,30]
               }, 
               { "name": "Mussels",
-              "presetType": ["ndays", "ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
-              "presetValue": [3,0,9,7,576,25,45,30]
+              "presetType": ["ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
+              "presetValue": [0,9,7,576,25,45,30]
               }
              ],
               "draggable_marker": {
@@ -479,7 +479,7 @@
                 },
                 {
                   "id": "forcoast:dk_temp",
-                  "name": "Water Termperature",
+                  "name": "Water Temperature",
                   "layer": "forcoast:dk_temp",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -536,76 +536,13 @@
             "components": {
               "layers":[
                 {
-                  "id": "forcoast:a3_limfjord_flux_dd",
-                  "name": "flux_dd",
-                  "layer":"forcoast:a3_limfjord_flux_dd",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "flux_dd"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_flux_pp",
-                  "name": "flux_pp",
-                  "layer":"forcoast:a3_limfjord_flux_pp",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "flux_pp"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_resup",
-                  "name": "resup",
-                  "layer":"forcoast:a3_limfjord_resup",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "resup_"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_TauB",
-                  "name": "TauB",
-                  "layer":"forcoast:a3_limfjord_TauB",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "TauB_2"
-                },
-                {
                   "id": "forcoast:a3_limfjord_botchl",
-                  "name": "Chlorophyll content",
+                  "name": "Chlorophyll concentration",
                   "layer":"forcoast:a3_limfjord_botchl",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "Chorophyll content on bottom"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_botcurrent",
-                  "name": "botcurrent",
-                  "layer":"forcoast:a3_limfjord_botcurrent",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botcur"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_botdd",
-                  "name": "botdd",
-                  "layer":"forcoast:a3_limfjord_botdd",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botdd_"
-                },
-                {
-                  "id": "forcoast:a3_limfjord_botoxy",
-                  "name": "botoxy",
-                  "layer":"forcoast:a3_limfjord_botoxy",
-                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon":"",
-                  "colorscalerange": "auto",
-                  "description": "botoxy"
+                  "description": "Chorophyll concentration on bottom from Aarhus University"
                 },
                 {
                   "id": "forcoast:a3_limfjord_botS",
@@ -614,7 +551,7 @@
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "Salinity on the bottom"
+                  "description": "Salinity on the bottom from Aarhus University"
                 },
                 {
                   "id": "forcoast:a3_limfjord_botT",
@@ -624,6 +561,24 @@
                   "icon":"",
                   "colorscalerange": "auto",
                   "description": "Temperature on the bottom"
+                },
+                {
+                  "id": "forcoast:a3_limfjord_botoxy",
+                  "name": "Oxygen concentration",
+                  "layer":"forcoast:a3_limfjord_botoxy",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Oxygen concentration on the bottom from Aarhus University"
+                },
+                {
+                  "id": "forcoast:a3_limfjord_resup",
+                  "name": "Resuspension of sediments",
+                  "layer":"forcoast:a3_limfjord_resup",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Resuspension of sediments from Aarhus University"
                 }
               ],
               "date_span": true,
@@ -687,13 +642,63 @@
             "components": {
               "layers": [
                 {
-                  "id": "analysed_sst",
+                  "id": "forcoast:pilot_7_CMEMS_sst",
                   "name": "Sea Surface Temperature",
-                  "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_BS_SST_L4_NRT_OBSERVATIONS_010_006_a_V2",
+                  "layer": "forcoast:pilot_7_CMEMS_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_chl",
+                  "name": "Chloropyll Concentration",
+                  "layer": "forcoast:pilot_7_CMEMS_chl",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed chlorophyll concentration data obtained from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_wave_drift_x",
+                  "name": "Wave Drift in Direction X",
+                  "layer": "forcoast:pilot_7_CMEMS_wave_drift_x",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave drift data obtained from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_wave_drift_y",
+                  "name": "Wave Drift in Direction Y",
+                  "layer": "forcoast:pilot_7_CMEMS_wave_drift_y",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave drift data obtained from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_wave_mean_per",
+                  "name": "Wave Mean Period",
+                  "layer": "forcoast:pilot_7_CMEMS_wave_mean_per",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave period data obtained from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_wave_sig",
+                  "name": "Wave Significance",
+                  "layer": "forcoast:pilot_7_CMEMS_wave_sig",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave significance data obtained from CMEMS",
                   "unit": "-"
                 }
               ],

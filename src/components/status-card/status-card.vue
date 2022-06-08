@@ -1,7 +1,7 @@
 <template>
   <v-card class="mb-4 pt-4 mt-4">
+    <!-- Empty v-card! -->
     <v-card-text>
-      Calculations date: {{ date }}
     </v-card-text>
     <v-card-text>
       Process status: {{ status }}

@@ -7,7 +7,7 @@ export default {
 
   state: {
     polygon: null,
-    markerLngLat: {},
+    markerLngLat: null,
     jobStatus: null,
     statusLink: null,
     selectedEntryValue: null,
@@ -19,7 +19,7 @@ export default {
   getters: {
     getEntryValue: (state) => {
       return state.selectedEntryValue
-    }
+    },
   },
   mutations: {
     SET_POLYGON(state, polygon) {
