@@ -7,26 +7,27 @@
        style="width: 20px"
        >
       <v-text-field 
-            v-model.number="lng"
-            label="Lon"
+            v-model.number="lat"
+            label="Lat"
             :rules="[rules.emptyField,
                      rules.isFloat,
-                     rules.inRange(-180,180)]"
+                     rules.inRange(-90,90)]"
           ></v-text-field>
        </v-col>
            <v-col cols="3">
           <v-text-field
-            v-model.number="lat"
-            label="Lat"
+            v-model.number="lng"
+            label="Lon"
             :rules="[rules.emptyField,
              rules.isFloat,
-             rules.inRange(-90,90)]"
+             rules.inRange(-180,180)]"
           ></v-text-field>
            </v-col>
            <v-btn 
-           :disabled="!(lng >= -180 && lng <= 180 && lng !== '' && lng != this.valueLat.toFixed(2) &&
-                        lat >= -90 && lat <= 90 && lat !== '' && lat != this.valueLat.toFixed(2))"
-           style="width: 10px; position: absolute; right: 30px; top: 15px"
+           :disabled="!(lng >= -180 && lng <= 180 && lng !== '' &&
+                        lat >= -90 && lat <= 90 && lat !== '' &&
+                        ( lat != this.valueLat.toFixed(2) || lng != this.valueLat.toFixed(2) ) )"
+           style="width: 10px; position: absolute; right: 30px; top: 17.5px"
            color="primary" 
            @click="setValue">
              Set
@@ -87,6 +88,8 @@ export default {
 <style>
 .layer-coords {
   position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
   background-color: white;
   outline: 0;
   border: 0;
