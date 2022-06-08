@@ -461,7 +461,7 @@
                 },
                 {
                   "id": "forcoast:dk_temp",
-                  "name": "Water Termperature",
+                  "name": "Water Temperature",
                   "layer": "forcoast:dk_temp",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -519,12 +519,12 @@
               "layers":[
                 {
                   "id": "forcoast:a3_limfjord_botchl",
-                  "name": "Chlorophyll content",
+                  "name": "Chlorophyll concentration",
                   "layer":"forcoast:a3_limfjord_botchl",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "Chorophyll content on bottom"
+                  "description": "Chorophyll concentration on bottom from Aarhus University"
                 },
                 {
                   "id": "forcoast:a3_limfjord_botS",
@@ -533,7 +533,7 @@
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "Salinity on the bottom"
+                  "description": "Salinity on the bottom from Aarhus University"
                 },
                 {
                   "id": "forcoast:a3_limfjord_botT",
@@ -543,6 +543,24 @@
                   "icon":"",
                   "colorscalerange": "auto",
                   "description": "Temperature on the bottom"
+                },
+                {
+                  "id": "forcoast:a3_limfjord_botoxy",
+                  "name": "Oxygen concentration",
+                  "layer":"forcoast:a3_limfjord_botoxy",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Oxygen concentration on the bottom from Aarhus University"
+                },
+                {
+                  "id": "forcoast:a3_limfjord_resup",
+                  "name": "Resuspension of sediments",
+                  "layer":"forcoast:a3_limfjord_resup",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Resuspension of sediments from Aarhus University"
                 }
               ],
               "date_span": true,
