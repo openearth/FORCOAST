@@ -106,7 +106,7 @@ export default {
     valueArray: [],
     valueArrayOptional: ["0.75", "4.5", "0.5", "-4"],
     rules: {
-      emptyField: entryValue => entryValue != '' || 'Field is empty',
+      emptyField: entryValue => entryValue !== '' || 'Field is empty',
       isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
       isInt: entryValue => Number.isInteger(parseFloat(entryValue)) == true ||'Must be a whole number',
       inRange(lower, upper) {

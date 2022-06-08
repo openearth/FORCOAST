@@ -23,6 +23,11 @@
       :key="layer.request"
       :options="layer"
     />
+    <marker-coords
+     v-if="markerLngLat"
+     :valueLat="markerLngLat.lat"
+     :valueLng="markerLngLat.lng"
+     ></marker-coords>
     <map-legend
       v-if="layer"
       :key="layer.id"
@@ -42,6 +47,7 @@ import MapControlMarker from "./map-control-marker";
 import MapLayer from "./map-layer";
 import MapLegend from "./map-legend";
 import { mapState } from "vuex";
+import MarkerCoords from "./marker-coords";
 
 import center from "@turf/center";
 import { points } from "@turf/helpers";
@@ -55,6 +61,7 @@ export default {
     MapLegend,
     MapControlDraw,
     MapControlMarker,
+    MarkerCoords
   },
   props: {
     /* TODO change to layers if we want to show more than one layers on the same time */
@@ -100,6 +107,7 @@ export default {
     },
 
     ...mapState("layers", ["selectedAreaBBox"]),
+    ...mapState("wps", ["markerLngLat"])
   },
   methods: {
     onMapCreated(map) {

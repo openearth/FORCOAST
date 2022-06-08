@@ -69,7 +69,7 @@ export default {
   data: () => ({
     valueArray: [0.75,4.5,0.5,-4],
     rules: {
-      emptyField: entryValue => entryValue != '' || 'Field is empty',
+      emptyField: entryValue => entryValue !== '' || 'Field is empty',
       isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
       inRange(lower, upper) {
         return entryValue => entryValue >= lower && entryValue <= upper || `Must be in range ${lower} to ${upper}`

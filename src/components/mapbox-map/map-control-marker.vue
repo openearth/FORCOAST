@@ -20,7 +20,29 @@ export default {
       required: true,
     },
   },
+  computed: {
+  ...mapState("wps", ["markerLngLat"]),
+  markerChange(){
+    return this.markerLngLat
+  }
+  },
   watch: {
+    markerChange(){
+    const map = this.getMap();
+    if (this.markerLngLat != null) {
+        this.marker.remove();
+        this.marker = new mapboxgl.Marker({
+          draggable: true,
+        })   
+          .setLngLat(this.markerLngLat)
+          .addTo(map);
+    }
+          this.marker.on("dragend", () => {
+          const lngLat = this.marker.getLngLat();
+          this.setMarkerCoordinates(lngLat);
+          });
+     
+     },
     center() {
       // if it is already loaded then remove it and move it and re-add it to the correct center
       if (this.marker != null ) {
@@ -69,10 +91,6 @@ export default {
         this.marker.on("dragend", () => {
           const lngLat = this.marker.getLngLat();
           this.setMarkerCoordinates(lngLat);
-        });
-        map.on('mousemove', (e) => {
-        console.log(e.lngLat.lng)
-        console.log(e.lngLat.lat)
         });
       }
     },

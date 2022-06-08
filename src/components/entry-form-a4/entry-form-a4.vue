@@ -116,7 +116,7 @@ export default {
     //As string? or as numeric?, I did string for consistency
     valueArray: [1,0],
     rules: {
-      emptyField: entryValue => entryValue != '' || 'Field is empty',
+      emptyField: entryValue => entryValue !== '' || 'Field is empty',
       isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
       isInt: entryValue => Number.isInteger(parseFloat(entryValue)) == true ||'Must be a whole number',
       inRange(lower, upper) {
