@@ -18,7 +18,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Oxygen lower treshold</v-subheader>
+        <v-subheader>Oxygen lower threshold</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
@@ -33,7 +33,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Resuspension treshold</v-subheader>
+        <v-subheader>Resuspension threshold</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field

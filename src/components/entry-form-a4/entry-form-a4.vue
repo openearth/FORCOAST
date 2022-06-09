@@ -8,17 +8,17 @@
       <v-col cols="8">
         <v-row>
        <input @change="checkbox1(); entryValue()" type="checkbox" v-model="checkoption1">
-          <label>Temperature treshold</label> 
+          <label>Temperature threshold</label> 
         </v-row>
         <v-row>
        <input @change="checkbox2(); entryValue()" type="checkbox" v-model="checkoption2">
-          <label>Cumalative temperature</label>
+          <label>Cumulative temperature</label>
         </v-row>
       </v-col>
     </v-row>
     <v-row v-if= "checkoption1">
       <v-col cols="4">
-        <v-subheader>Treshold Temperature</v-subheader>
+        <v-subheader>Threshold Temperature</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
@@ -33,7 +33,7 @@
     </v-row>
     <v-row v-if= "checkoption2">
       <v-col cols="4">
-        <v-subheader>Treshold of temperature for gonade development</v-subheader>
+        <v-subheader>Threshold of temperature for gonade development</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
@@ -48,7 +48,7 @@
     </v-row>   
     <v-row v-if= "checkoption2">
       <v-col cols="4">
-        <v-subheader>Treshold of cumulative temperature</v-subheader>
+        <v-subheader>Threshold of cumulative temperature</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field

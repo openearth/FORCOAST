@@ -45,7 +45,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Salinity tresholds</v-subheader>
+        <v-subheader>Salinity thresholds</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
@@ -64,14 +64,14 @@
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.inRange(8,36),
-                     rules.isHigher(this.valueArray[3],'lower treshold')]"
+                     rules.isHigher(this.valueArray[3],'lower threshold')]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Temperature tresholds</v-subheader>
+        <v-subheader>Temperature thresholds</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
@@ -90,7 +90,7 @@
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.inRange(10,35),
-                     rules.isHigher(valueArray[5],'lower treshold')]"
+                     rules.isHigher(valueArray[5],'lower threshold')]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
