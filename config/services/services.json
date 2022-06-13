@@ -12,6 +12,10 @@
             "id": "suitable_fishing_areas",
             "wps_id": "f1",
             "name": "Suitable Fishing Areas",
+            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/no-data.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the suitable fishing areas service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "The Suitable Fishing Areas service offers information about the most likely areas to find the fish species of choice.",
             "components": {
               "layers": [
@@ -72,6 +76,10 @@
             "id": "front_detection",
             "wps_id": "f2",
             "name": "Fronts detection",
+            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/no-data.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Front detection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "components": {
               "layers": [
@@ -150,6 +158,9 @@
             "wps_id": "a2",
             "name": "Land Pollution",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/A2_bulletin_example.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Land polution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
               "layers": [
@@ -202,6 +213,9 @@
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Contaminants source retrieval service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
               "layers": [
@@ -261,6 +275,9 @@
             "name": "Marine conditions",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Marine Conditions service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "components": {
               "layers": [
                 {
@@ -335,6 +352,9 @@
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Contaminats source retrieval service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
              "layers": [
@@ -378,6 +398,10 @@
             "id": "spat_capture",
             "wps_id": "a4",
             "name": "Assistance for Spat Capture",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the spat capture assistance service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/A4_bulletin_example.jpg",
             "description": "The Spat Capture Assistance service offers a time window estimate of when do larvae spats arrive to your site from the specified sources.",
             "components": {
@@ -455,6 +479,9 @@
             "name": "Marine conditions",
             "example":"https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Marine Conditions service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "components": {
               "layers": [
                 {
@@ -531,6 +558,10 @@
             "id": "site_prospection",
             "wps_id": "a3",
             "name": "Site Prospection",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the site prospection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",      
             "example":"https://forcoast.eu/wp-content/uploads/2022/05/A3_bulletin_example.jpg",
             "description": "The Site Prospection service offers information about the suitability of new and existing sites for aquaculture activities.",
             "components": {
@@ -638,6 +669,9 @@
             "wps_id": "a2",
             "name": "Land Pollution",
             "example":"https://forcoast.eu/wp-content/uploads/2022/05/A2_bulletin_example.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the land pollution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
               "layers": [
@@ -735,6 +769,10 @@
             "id": "front_detection",
             "wps_id": "f2",
             "name": "Fronts detection",
+            "example": "https://minio.apps.k.terrasigna.com/forcoast/example/no-data.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Front detection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "dates": [
               "2021-01-20",
