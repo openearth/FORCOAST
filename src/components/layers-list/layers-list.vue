@@ -1,11 +1,11 @@
 <template>
   <div v-if="layers.length" ref="root">
-    <v-list class="pa-2" flat>
+    <v-list class="pa-2" flat dense>
       <v-list-item-group>
         <template  v-for="(layer, index) in layers">
           <v-list-item :key="layer.id" :ripple="false">
             <v-list-item-action>
-              <v-switch v-model="selectedIds" :value="layer.id"></v-switch>
+              <v-switch v-model="selectedIds" :value="layer.id" dense></v-switch>
             </v-list-item-action>
             <v-tooltip bottom>
               <template v-slot:activator="{ on }">
