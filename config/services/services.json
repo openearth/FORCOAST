@@ -727,12 +727,12 @@
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_sig",
-                  "name": "Wave Significance",
+                  "name": "Significant Wave Height",
                   "layer": "forcoast:pilot_7_CMEMS_wave_sig",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave significance data obtained from CMEMS",
+                  "description": "Remotely sensed significant wave height data obtained from CMEMS",
                   "unit": "-"
                 }
               ],
