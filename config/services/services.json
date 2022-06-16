@@ -20,6 +20,16 @@
             "components": {
               "layers": [
                 {
+                  "id": "forcoast:HSI_whiting",
+                  "name": "HSI-whiting",
+                  "layer": "forcoast:HSI_whiting",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "auto",
+                  "description": "Index for fishing",
+                  "unit": "-"
+                },
+                {
                   "id": "forcoast:pilot_3_CMEMS_sst",
                   "name": "Sea Surface Temperature",
                   "layer": "forcoast:pilot_3_CMEMS_sst",
@@ -30,23 +40,93 @@
                   "unit": "-"
                 },
                 {
-                  "id": "forcoast:pilot_3_CMEMS_sss",
-                  "name": "Sea Surface Salinity",
-                  "layer": "forcoast:pilot_3_CMEMS_sss",
+                  "id": "forcoast:pilot_3_CMEMS_swpt",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:pilot_3_CMEMS_swpt",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface salinity data obtained from CMEMS",
+                  "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS",
                   "unit": "-"
                 },
                 {
-                  "id": "forcoast:HSI_whiting",
-                  "name": "HSI-whiting",
-                  "layer": "forcoast:HSI_whiting",
+                  "id": "forcoast:pilot_3_CMEMS_sws",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:pilot_3_CMEMS_sws",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
-                  "colorscalerange": "auto",
-                  "description": "Index for fishing",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid",
+                  "layer": "forcoast:pilot_2_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed surface height from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_north_v",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_3_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_east_v",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_3_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_wave_drift_x",
+                  "name": "Wave Drift East",
+                  "layer": "forcoast:pilot_3_CMEMS_wave_drift_x",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_wave_drift_y",
+                  "name": "Wave Drift West",
+                  "layer": "forcoast:pilot_3_CMEMS_wave_drift_y",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_wave_mean_per",
+                  "name": "Spectral moments wave period",
+                  "layer": "forcoast:pilot_3_CMEMS_wave_mean_per",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave period data from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_wave_sig",
+                  "name": "Spectral significant wave height",
+                  "layer": "forcoast:pilot_3_CMEMS_wave_sig",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave significance data from CMEMS",
                   "unit": "-"
                 }
               ],
@@ -84,23 +164,53 @@
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:pilot_2_CMEMS_chl",
-                  "name": "Chlorophyll Concentration",
-                  "layer": "forcoast:pilot_2_CMEMS_chl",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed chlorophyll-a data obtained from CMEMS",
-                  "unit": "-"
-                },
-                {
-                  "id": "forcoast:pilot_2_CMEMS_sst",
-                  "name": "Sea Surface Temperature",
-                  "layer": "forcoast:pilot_2_CMEMS_sst",
+                  "id": "forcoast:pilot_2_CMEMS_swpt",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:pilot_2_CMEMS_swpt",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
+                  "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_sws",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:pilot_2_CMEMS_sws",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_chl_v2",
+                  "name": "Chlorophyll Concentration",
+                  "layer": "forcoast:pilot_2_CMEMS_chl_v2",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll concentration data at 0.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_north_v",
+                  "name": "Northward Sea Water Velocity",
+                  "layer": "forcoast:pilot_2_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_east_v",
+                  "name": "Eastward Sea Water Velocity",
+                  "layer": "forcoast:pilot_2_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
                   "unit": "-"
                 },
                 {
@@ -121,6 +231,16 @@
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
                   "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid",
+                  "layer": "forcoast:pilot_2_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed surface height from CMEMS",
                   "unit": "-"
                 }
               ],
@@ -221,7 +341,7 @@
               "layers": [
                 {
                   "id": "zeta",
-                  "name": "Water level",
+                  "name": "Water level (Marine Institute)",
                   "layer": "zeta",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
@@ -292,6 +412,66 @@
                   "unit": "-"
                 },
                 {
+                  "id": "forcoast:pilot_1_CMEMS_swpt_v2",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:pilot_1_CMEMS_swpt_v2",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_sws",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:pilot_1_CMEMS_sws",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_chl",
+                  "name": "Chloropyll Concentration",
+                  "layer": "forcoast:pilot_1_CMEMS_chl",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_nh4",
+                  "name": "Ammonium Concentration",
+                  "layer": "forcoast:pilot_1_CMEMS_nh4",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed ammonium concentration data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_po4",
+                  "name": "Phosphate Concentration",
+                  "layer": "forcoast:pilot_1_CMEMS_po4",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed phosphate concentration data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_oxy",
+                  "name": "Oxygen Concentration",
+                  "layer": "forcoast:pilot_1_CMEMS_oxy",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
                   "id": "vm",
                   "name": "Sea Water Velocity",
                   "layer": "vm",
@@ -302,6 +482,26 @@
                   "unit": "-"
                 },
                 {
+                  "id": "forcoast:pilot_1_CMEMS_north_v",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_1_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_east_v",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_1_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "-"
+                },
+                {
                   "id": "wind_modulus",
                   "name": "Wind Speed",
                   "layer": "wind_modulus",
@@ -309,6 +509,16 @@
                   "icon": "",
                   "colorscalerange": "0,15",
                   "description": "Modelled wind speed produced in FORCOAST by Maretec",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid",
+                  "layer": "forcoast:pilot_1_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed surface height from CMEMS",
                   "unit": "-"
                 }
               ],
@@ -676,63 +886,133 @@
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:pilot_7_CMEMS_sst",
-                  "name": "Sea Surface Temperature",
-                  "layer": "forcoast:pilot_7_CMEMS_sst",
+                  "id": "forcoast:pilot_7_CMEMS_swpt",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:pilot_7_CMEMS_swpt",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
+                  "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS",
                   "unit": "-"
                 },
                 {
-                  "id": "forcoast:pilot_7_CMEMS_chl",
-                  "name": "Chloropyll Concentration",
-                  "layer": "forcoast:pilot_7_CMEMS_chl",
+                  "id": "forcoast:pilot_7_CMEMS_sws",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:pilot_7_CMEMS_sws",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed chlorophyll concentration data obtained from CMEMS",
+                  "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_oxy",
+                  "name": "Oxygen Concentration",
+                  "layer": "forcoast:pilot_7_CMEMS_oxy",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_no3",
+                  "name": "Nitrate Concentration",
+                  "layer": "forcoast:pilot_7_CMEMS_no3",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed nitrate concentration data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_ph",
+                  "name": "pH of Sea Water",
+                  "layer": "forcoast:pilot_7_CMEMS_ph",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_chl_v2",
+                  "name": "Chloropyll Concentration",
+                  "layer": "forcoast:pilot_7_CMEMS_chl_v2",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid",
+                  "layer": "forcoast:pilot_7_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed surface height from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_north_v",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_7_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_east_v",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_7_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
                   "unit": "-"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_drift_x",
-                  "name": "Wave Drift in Direction X",
+                  "name": "Wave Drift East",
                   "layer": "forcoast:pilot_7_CMEMS_wave_drift_x",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave drift data obtained from CMEMS",
+                  "description": "Remotely sensed wave drift data from CMEMS",
                   "unit": "-"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_drift_y",
-                  "name": "Wave Drift in Direction Y",
+                  "name": "Wave Drift West",
                   "layer": "forcoast:pilot_7_CMEMS_wave_drift_y",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave drift data obtained from CMEMS",
+                  "description": "Remotely sensed wave drift data from CMEMS",
                   "unit": "-"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_mean_per",
-                  "name": "Wave Mean Period",
+                  "name": "Spectral moments wave period",
                   "layer": "forcoast:pilot_7_CMEMS_wave_mean_per",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave period data obtained from CMEMS",
+                  "description": "Remotely sensed wave period data from CMEMS",
                   "unit": "-"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_sig",
-                  "name": "Significant Wave Height",
+                  "name": "Spectral significant wave height",
                   "layer": "forcoast:pilot_7_CMEMS_wave_sig",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed significant wave height data obtained from CMEMS",
+                  "description": "Remotely sensed wave significance data from CMEMS",
                   "unit": "-"
                 }
               ],
@@ -800,13 +1080,13 @@
                   "unit": "-"
                 },
                 {
-                  "id": "analysed_sst",
+                  "id": "forcoast:pilot_8_CMEMS_sst",
                   "name": "Sea Surface Temperature",
-                  "layer": "analysed_sst",
-                  "url": "https://nrt.cmems-du.eu/thredds/wms/SST_MED_SST_L4_NRT_OBSERVATIONS_010_004_a_V2",
+                  "layer": "forcoast:pilot_8_CMEMS_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed sea surface temperature data from CMEMS",
                   "unit": "-"
                 },
                 {
@@ -827,6 +1107,36 @@
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
                   "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_8_CMEMS_chl",
+                  "name": "Chlorophyll Concentration",
+                  "layer": "forcoast:pilot_8_CMEMS_chl",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll concentration data from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_8_CMEMS_north_v",
+                  "name": "Northward Sea Water Velocity",
+                  "layer": "forcoast:pilot_8_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_8_CMEMS_east_v",
+                  "name": "Eastward Sea Water Velocity",
+                  "layer": "forcoast:pilot_8_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
                   "unit": "-"
                 }
               ],
