@@ -111,7 +111,7 @@
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_wave_mean_per",
-                  "name": "Spectral moments wave period",
+                  "name": "Spectral Moments Wave Period",
                   "layer": "forcoast:pilot_3_CMEMS_wave_mean_per",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -121,7 +121,7 @@
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_wave_sig",
-                  "name": "Spectral significant wave height",
+                  "name": "Spectral Significant Wave Height",
                   "layer": "forcoast:pilot_3_CMEMS_wave_sig",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -286,7 +286,7 @@
               "layers": [
                 {
                   "id": "zeta",
-                  "name": "Water level",
+                  "name": "Water Level",
                   "layer": "zeta",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
@@ -341,7 +341,7 @@
               "layers": [
                 {
                   "id": "zeta",
-                  "name": "Water level (Marine Institute)",
+                  "name": "Water Level",
                   "layer": "zeta",
                   "url": "https:/milas.marine.ie//thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
                   "icon": "",
@@ -618,7 +618,7 @@
              "layers": [
              {
                 "id": "forcoast:spawning_grounds_oyster",
-                "name": "Spawning grounds for Oysters",
+                "name": "Spawning Grounds for Oysters",
                 "layer": "forcoast:spawning_grounds_oyster",
                 "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                 "icon": "",
@@ -628,7 +628,7 @@
               },
               {
               "id": "forcoast:surf_temp_daily_avg_north_sea_a4",
-              "name": "Daily average surface temperature",
+              "name": "Daily Average Surface Temperature",
               "layer": "forcoast:surf_temp_daily_avg_north_sea_a4",
               "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
               "icon": "",
@@ -778,7 +778,7 @@
               "layers":[
                 {
                   "id": "forcoast:a3_limfjord_botchl",
-                  "name": "Chlorophyll concentration",
+                  "name": "Chlorophyll Concentration",
                   "layer":"forcoast:a3_limfjord_botchl",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
@@ -787,7 +787,7 @@
                 },
                 {
                   "id": "forcoast:a3_limfjord_botS",
-                  "name": "Salinity bottom",
+                  "name": "Salinity Bottom",
                   "layer":"forcoast:a3_limfjord_botS",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
@@ -796,7 +796,7 @@
                 },
                 {
                   "id": "forcoast:a3_limfjord_botT",
-                  "name": "Temperature bottom",
+                  "name": "Temperature Bottom",
                   "layer":"forcoast:a3_limfjord_botT",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
@@ -805,7 +805,7 @@
                 },
                 {
                   "id": "forcoast:a3_limfjord_botoxy",
-                  "name": "Oxygen concentration",
+                  "name": "Oxygen Concentration",
                   "layer":"forcoast:a3_limfjord_botoxy",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
@@ -814,7 +814,7 @@
                 },
                 {
                   "id": "forcoast:a3_limfjord_resup",
-                  "name": "Resuspension of sediments",
+                  "name": "Resuspension of Sediments",
                   "layer":"forcoast:a3_limfjord_resup",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
@@ -997,7 +997,7 @@
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_mean_per",
-                  "name": "Spectral moments wave period",
+                  "name": "Spectral Moments Wave Period",
                   "layer": "forcoast:pilot_7_CMEMS_wave_mean_per",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1007,7 +1007,7 @@
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_sig",
-                  "name": "Spectral significant wave height",
+                  "name": "Spectral Significant Wave Height",
                   "layer": "forcoast:pilot_7_CMEMS_wave_sig",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
