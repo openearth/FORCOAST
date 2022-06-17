@@ -4,43 +4,47 @@
     <v-row>
       <v-col cols="4">
         <v-subheader>Enter a year</v-subheader>
+      </v-col>      
+      <v-col cols="4">
+        <dropdown class="my-dropdown-toggle"
+                  :options="monthsArray"
+                  :selected="object" 
+                  v-on:updateOption="setMonthBegin" 
+                  :placeholder="selectMonth"
+                  :closeOnOutsideClick="true">
+      </dropdown>
       </v-col>
-      <v-col cols="8">
-          <v-text-field
-            v-model="valueArray[0]"
-            label="Year"
-            :rules="[rules.emptyField,
-                     rules.isInt,
-                     rules.inRange(2004,2017)]"
-                      
-            v-on:input="entryValue"
-          ></v-text-field>
+      <v-col cols="4">
+        <dropdown class="my-dropdown-toggle"
+                  :options="yearsArray"
+                  :selected="object" 
+                  v-on:updateOption="setYearBegin" 
+                  :placeholder="selectYear"
+                  :closeOnOutsideClick="true">
+        </dropdown>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Enter months</v-subheader>
+        <v-subheader>Enter a year</v-subheader>
+      </v-col>      
+      <v-col cols="4">
+        <dropdown class="my-dropdown-toggle"
+                  :options="monthsArray"
+                  :selected="object" 
+                  v-on:updateOption="setMonthEnd" 
+                  :placeholder="selectMonth"
+                  :closeOnOutsideClick="true">
+        </dropdown>
       </v-col>
       <v-col cols="4">
-          <v-text-field
-            v-model="valueArray[1]"
-            label="Begin"
-            :rules="[rules.emptyField,
-                     rules.isInt,
-                     rules.inRange(1,12)]"
-            v-on:input="entryValue"
-          ></v-text-field>
-      </v-col>
-      <v-col cols="4">
-          <v-text-field
-            v-model="valueArray[2]"
-            label="End"
-            :rules="[rules.emptyField,
-                     rules.isInt,
-                     rules.inRange(1,12),
-                     rules.isHigher(valueArray[1],'begin month')]"
-            v-on:input="entryValue"
-          ></v-text-field>
+        <dropdown class="my-dropdown-toggle"
+                  :options="yearsArray"
+                  :selected="object" 
+                  v-on:updateOption="setYearEnd" 
+                  :placeholder="selectYear"
+                  :closeOnOutsideClick="true">
+        </dropdown>
       </v-col>
     </v-row>
     <v-row>
@@ -49,7 +53,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[3]"
+            v-model="valueArray[4]"
             label="Lower"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -59,7 +63,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[4]"
+            v-model="valueArray[5]"
             label="Upper"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -75,7 +79,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[5]"
+            v-model="valueArray[6]"
             label="Lower"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -85,7 +89,7 @@
       </v-col>
       <v-col cols="4">
           <v-text-field
-            v-model="valueArray[6]"
+            v-model="valueArray[7]"
             label="Upper"
             :rules="[rules.emptyField,
                      rules.isFloat,
@@ -101,10 +105,41 @@
 <script>
 import { mapActions } from "vuex";
 import { mapState } from "vuex";
+import dropdown from 'vue-dropdowns';
 export default {
   data: () => ({
     valueArray: [],
     valueArrayOptional: ["0.75", "4.5", "0.5", "-4"],
+    selectMonth: "Month",
+    selectYear: "Year",
+    monthsArray: [
+                { "name": "January", "value": "1" },
+                { "name": "February", "value": "2" },
+                { "name": "March", "value": "3" },
+                { "name": "April", "value": "4" },
+                { "name": "May", "value": "5" },
+                { "name": "June", "value": "6" },
+                { "name": "July", "value": "7" },
+                { "name": "August", "value": "8" },
+                { "name": "September", "value": "9" },
+                { "name": "October", "value": "10" },
+                { "name": "November", "value": "11" },
+                { "name": "December", "value": "12" },
+    ],
+    yearsArray: [
+                { "name": "2009", "value": "2009" },
+                { "name": "2010", "value": "2010" },
+                { "name": "2011", "value": "2011" },
+                { "name": "2012", "value": "2012" },
+                { "name": "2013", "value": "2013" },
+                { "name": "2014", "value": "2014" },
+                { "name": "2015", "value": "2015" },
+                { "name": "2016", "value": "2016" },
+                { "name": "2017", "value": "2017" },
+    ],
+    object: {
+      value: []
+    },
     rules: {
       emptyField: entryValue => entryValue !== '' || 'Field is empty',
       isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
@@ -117,6 +152,9 @@ export default {
       }
     }
   }),
+  components: {
+    'dropdown': dropdown,
+  },
   methods: { 
     ...mapActions("wps", ["setSelectedEntryValue", "setSelectedEntryValueOptional"]),
     ...mapState("wps", ["selectedEntryValueOptional"]),
@@ -126,6 +164,81 @@ export default {
         this.setSelectedEntryValueOptional(this.valueArrayOptional)
       }
     },
+    setYearBegin(payload) {
+      this.object = payload
+      this.valueArray[0] = this.object.value
+      console.log(this.object.value)
+      this.setSelectedEntryValue(this.valueArray)
+    },
+    setYearEnd(payload) {
+      this.object = payload
+      this.valueArray[1] = this.object.value
+      console.log(this.object.value)
+      this.setSelectedEntryValue(this.valueArray)
+    },
+    setMonthBegin(payload) {
+      this.object = payload
+      this.valueArray[2] = this.object.value
+      console.log(this.object.value)
+      this.setSelectedEntryValue(this.valueArray)
+    },
+    setMonthEnd(payload) {
+      this.object = payload
+      this.valueArray[3] = this.object.value
+      console.log(this.object.value)
+      this.setSelectedEntryValue(this.valueArray)
+    }
   }
 };
 </script>
+
+<style scoped>
+.my-dropdown-toggle {
+  font-size: 16px;
+  text-align: left;
+}
+/deep/ .dropdown-menu { 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 100px;
+  max-height: 200px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  overflow-y: scroll;
+}
+/deep/ .dropdown-toggle {
+  color: #636b6f;
+  min-width: 100px;
+  padding: 10px 20px 10px 10px;
+  text-transform: none;
+  font-weight: 300;
+  margin-bottom: 7px;
+  border: 0;
+  background-image: linear-gradient(#009688, #009688), linear-gradient(#D2D2D2, #D2D2D2);
+  background-size: 0 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: transparent;
+  transition: background 0s ease-out;
+  float: none;
+  box-shadow: none;
+  border-radius: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/deep/ .btn-group {
+  min-width: 120px;
+}
+</style>
