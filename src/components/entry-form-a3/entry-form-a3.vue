@@ -68,7 +68,7 @@
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.inRange(8,36),
-                     rules.isHigher(this.valueArray[3],'lower threshold')]"
+                     rules.isHigher(this.valueArray[4],'lower threshold')]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
@@ -94,7 +94,7 @@
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.inRange(10,35),
-                     rules.isHigher(valueArray[5],'lower threshold')]"
+                     rules.isHigher(valueArray[6],'lower threshold')]"
             v-on:input="entryValue"
           ></v-text-field>
       </v-col>
