@@ -1,16 +1,27 @@
-export const template_a3 = (years, mb, me, sl, su, tl, tu, kf, o, kr, d, target) =>({
+export const template_a3 = (yb, ye, mb, me, sl, su, tl, tu, kf, o, kr, d, target) =>({
     "inputs":[
       {
-          "id":"years",
+          "id":"yb",
           "input":{
              "format":{
                 "mimeType":"text/plain"
              },
              "value":{
-                "inlineValue": years
+                "inlineValue": yb
              }
           }
        },
+       {
+         "id":"ye",
+         "input":{
+            "format":{
+               "mimeType":"text/plain"
+            },
+            "value":{
+               "inlineValue": ye
+            }
+         }
+      },
       {
           "id":"mb",
           "input":{
