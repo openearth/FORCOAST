@@ -2,14 +2,14 @@
 <v-container>
 <v-row>
 <v-col cols='4'>
- <v-subheader> Select preset </v-subheader>
+ <v-subheader> {{ name }} </v-subheader>
 </v-col>
 <v-col cols='8'>    
 <dropdown class="my-dropdown-toggle"
           :options="arrayOfobjects"
           :selected="object" 
           v-on:updateOption="setPreset" 
-          :placeholder="'Select an Item'"
+          :placeholder="select"
           :closeOnOutsideClick="false">
 </dropdown>
 </v-col>
@@ -27,11 +27,18 @@ export default {
             type: Array,
             required: false,
           },
+          name: {
+            type: String,
+            required: true,
+          },
+          select: {
+            type: String,
+            required: true,
+          }
         },
         data() {
           return {
             object: {
-              name: 'Set preset',
               presetType: [],
               presetValue: []
             }
