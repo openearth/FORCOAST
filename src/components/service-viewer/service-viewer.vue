@@ -110,7 +110,8 @@
       :expand="1"
     >
       <presets
-      :arrayOfobjects="service.components.presets">
+      :arrayOfobjects="service.components.presets"
+      name="Select a preset">
       </presets>
       <entry-form-a4>
       </entry-form-a4>
