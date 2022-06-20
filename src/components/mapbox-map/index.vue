@@ -48,6 +48,7 @@ import MapLayer from "./map-layer";
 import MapLegend from "./map-legend";
 import { mapState } from "vuex";
 import MarkerCoords from "./marker-coords";
+import { mapActions } from "vuex";
 
 import center from "@turf/center";
 import { points } from "@turf/helpers";
@@ -84,7 +85,7 @@ export default {
     };
   },
   watch: {
-    selectedAreaBBox() {
+    selectedService() {
       if (this.selectedAreaBBox.length) {
         this.zoomToExtend();
         this.calcCenterPoint();
@@ -106,8 +107,8 @@ export default {
       return MAP_BASELAYERS;
     },
 
-    ...mapState("layers", ["selectedAreaBBox"]),
-    ...mapState("wps", ["markerLngLat"])
+    ...mapState("layers", ["selectedAreaBBox", "selectedService"]),
+    ...mapState("wps", ["markerLngLat"]),
   },
   methods: {
     onMapCreated(map) {
@@ -127,10 +128,12 @@ export default {
       const { map } = this.$root;
       map.fitBounds(this.selectedAreaBBox);
     },
+    ...mapActions("wps", ["setMarkerCoordinates"]),
     calcCenterPoint() {
       const features = points(this.selectedAreaBBox);
       const cntr = center(features);
       this.centerPoint = cntr.geometry.coordinates;
+      this.setMarkerCoordinates({lng:this.centerPoint[0], lat:this.centerPoint[1]})
     },
   },
 };
