@@ -29,18 +29,18 @@ export default {
   watch: {
     markerChange(){
     const map = this.getMap();
-    if (this.markerLngLat != null) {
+    if (this.marker) {
         this.marker.remove();
         this.marker = new mapboxgl.Marker({
           draggable: true,
         })   
           .setLngLat(this.markerLngLat)
           .addTo(map);
-    }
           this.marker.on("dragend", () => {
           const lngLat = this.marker.getLngLat();
           this.setMarkerCoordinates(lngLat);
           });
+    }
      
      },
     center() {
@@ -81,6 +81,7 @@ export default {
             if (this.center[0] == 0 && this.center[1] == 0 ) {
               this.center[0] = (this.selectedAreaBBox()[0][0]+this.selectedAreaBBox()[1][0])/2
               this.center[1] = (this.selectedAreaBBox()[0][1]+this.selectedAreaBBox()[1][1])/2
+              this.setMarkerCoordinates({lng:this.center[0], lat:this.center[1]})
              }
 
         this.marker = new mapboxgl.Marker({
