@@ -65,6 +65,17 @@
     <draggable-marker v-if= service.components.draggable_marker
         @show-draggable-marker="onShowDraggableMarker" 
     ></draggable-marker>
+        <collapsible-card
+      v-if="service.components.layers_service_runner"
+      :expand="1"
+      title="Select a layer for visualization"
+    >
+      <layers-list
+        :layers="service.components.layers_service_runner"
+        @active-layers-change="onActiveLayerChange"
+        @active-legend-change="onActiveLegendChange"
+      ></layers-list>
+    </collapsible-card>  
     <collapsible-card
       v-if="service.components.date"
       :expand="1"
