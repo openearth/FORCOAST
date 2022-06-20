@@ -3,7 +3,7 @@
     <v-container>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Enter a year</v-subheader>
+        <v-subheader>Enter a start date</v-subheader>
       </v-col>      
       <v-col cols="4">
         <dropdown class="my-dropdown-toggle"
@@ -26,7 +26,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Enter a year</v-subheader>
+        <v-subheader>Enter an end date</v-subheader>
       </v-col>      
       <v-col cols="4">
         <dropdown class="my-dropdown-toggle"
@@ -46,6 +46,13 @@
                   :closeOnOutsideClick="true">
         </dropdown>
       </v-col>
+    </v-row>
+    <v-row 
+        style="height:0px"
+        v-if="valueArray[0]>valueArray[1] || 
+              (valueArray[0]==valueArray[1] && valueArray[2]>valueArray[3])"
+        >
+        <v-subheader class="date-rules">End date must be the same or later than the start date</v-subheader>
     </v-row>
     <v-row>
       <v-col cols="4">
@@ -240,5 +247,12 @@ export default {
 }
 /deep/ .btn-group {
   min-width: 120px;
+}
+.date-rules {
+  padding-left: 159px; 
+  padding-bottom: 100px; 
+  color: red;
+  font-size: 13px;
+  height: 1px;
 }
 </style>
