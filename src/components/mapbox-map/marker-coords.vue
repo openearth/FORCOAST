@@ -24,9 +24,9 @@
           ></v-text-field>
            </v-col>
            <v-btn 
-           :disabled="!(lng >= -180 && lng <= 180 && lng !== '' &&
-                        lat >= -90 && lat <= 90 && lat !== '' &&
-                        ( lat != this.valueLat.toFixed(2) || lng != this.valueLat.toFixed(2) ) )"
+           :disabled="lng < -180 || lng >= 180 || lng == '' ||
+                        lat <= -90 || lat >= 90 || lat == '' ||
+                        ( lat == this.valueLat.toFixed(2) && lng == this.valueLng.toFixed(2) )"
            style="width: 10px; position: absolute; right: 30px; top: 17.5px"
            color="primary" 
            @click="setValue">
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       lat: this.valueLat.toFixed(2),
-      lng: this.valueLat.toFixed(2),
+      lng: this.valueLng.toFixed(2),
       rules: {
       emptyField: entryValue => entryValue !== '' || 'Field is empty',
       isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
