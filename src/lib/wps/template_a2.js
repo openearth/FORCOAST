@@ -56,7 +56,7 @@ export const template_a2 = (time, id, area, source, target) =>({
          }
       },
      {
-         "id":"source",
+         "id":"sources",
          "input":{
             "format":{
                "mimeType":"text/plain"
@@ -67,7 +67,7 @@ export const template_a2 = (time, id, area, source, target) =>({
          }
       },
      {
-         "id":"target",
+         "id":"targets",
          "input":{
             "format":{
                "mimeType":"text/plain"
