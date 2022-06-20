@@ -127,7 +127,7 @@ export default {
       // Set source based on lat and lon
       var source = ""
       if (markerLngLat) {
-      source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ", 0.5]"
+      source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ",0.5]"
       }
 
       // Set bounding box in proper format:
