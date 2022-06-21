@@ -29,7 +29,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "5"
+               "inlineValue": "3"
             }
          }
       },
@@ -40,7 +40,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "cli"
+               "inlineValue": "github"
             }
          }
       },
@@ -51,7 +51,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "local"
+               "inlineValue": "https://raw.githubusercontent.com/FORCOAST/ForCoast-A2-Settings/Eforie_case_1/config.yaml"
             }
          }
       },
@@ -62,7 +62,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": source
+               "inlineValue": "https://raw.githubusercontent.com/FORCOAST/ForCoast-A2-Settings/Eforie_case_1/sources.txt"
             }
          }
       },
@@ -73,7 +73,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": target
+               "inlineValue": "https://raw.githubusercontent.com/FORCOAST/ForCoast-A2-Settings/Eforie_case_1/targets.txt"
             }
          }
       },
@@ -95,7 +95,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "999"
+               "inlineValue": "5267228188:AAGx60FtWgHkScBb3ISFL1dp6Oq_9z9z0rw"
             }
          }
       },
@@ -106,7 +106,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "999"
+               "inlineValue": "-1001780197306"
             }
          }
       }
