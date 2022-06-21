@@ -1147,6 +1147,51 @@
                 "title": "Place marker at output location"
               }
             }
+          },
+          {
+            "id": "land_pollution",
+            "wps_id": "a2",
+            "name": "Land Pollution",
+            "example":"https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
+            "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
+            "contact": "Luis.Rodriguez@deltares.nl",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the land pollution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:pilot_8_CMEMS_east_v",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_8_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "unit": "-"
+                },
+                {
+                  "id": "forcoast:pilot_8_CMEMS_north_v",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_8_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "unit": "-"
+                }
+              ],
+              "date_span": true,
+              "draw_polygon": {
+                "text": "Specify bounding box for target location",
+                "title": "Specify bounding box for target location"
+              },
+              "date": true,
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "run_task": true,
+              "joblist": true
+            }
           }
         ],
         "bbox": [
