@@ -28,6 +28,7 @@
 <script>
 import { ref, watch, toRefs, computed } from "@vue/composition-api";
 import useLegend from "./useLegend";
+import { mapActions } from "vuex";
 
 export default {
   props: { layers: Array },
@@ -50,5 +51,20 @@ export default {
 
     return { root, activeLegend, setActiveLegend, selectedIds, selectedLayers };
   },
+  watch: {
+    selectedLayers(newSelectedLayers) {
+      this.clearLayers()
+    }
+  },
+  methods: {
+    ...mapActions("layers",["clearActiveLayers"]),
+    clearLayers() {
+      if (this.selectedIds.length > 1 ) {
+        delete this.selectedIds[0]
+        this.selectedIds = this.selectedIds.filter(Boolean)
+        this.clearActiveLayers()
+      }
+    },
+  }
 };
 </script>
