@@ -91,7 +91,7 @@
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_wave_drift_y",
-                  "name": "Wave Drift West",
+                  "name": "Wave Drift North",
                   "layer": "forcoast:pilot_3_CMEMS_wave_drift_y",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -987,7 +987,7 @@
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_drift_y",
-                  "name": "Wave Drift West",
+                  "name": "Wave Drift North",
                   "layer": "forcoast:pilot_7_CMEMS_wave_drift_y",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
