@@ -75,6 +75,31 @@
         @active-layers-change="onActiveLayerChange"
         @active-legend-change="onActiveLegendChange"
       ></layers-list>
+      <collapsible-card
+        v-if="service.components.layers_service_runner"
+        title="Select start and end date for timeseries"
+        :expand="1"
+      >
+        <date-span :timeExtentISO="timeExtent"></date-span>
+        <draggable-marker
+          @show-draggable-marker="onShowDraggableMarker" 
+      ></draggable-marker>
+      </collapsible-card>
+      <div v-if="service.components.layers_service_runner" class="mb-4">
+        <div v-if="timeSpan.length && selectedLayer">
+          <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
+          <timeseries-graph
+            v-if="dialog"
+            :lngLat="markerLngLat"
+            :layer="selectedLayer"
+            :timeSpan="timeSpan"
+            @close-dialog="dialog = false"
+          ></timeseries-graph>
+        </div>
+        <div v-else>
+          <v-btn disabled block color="primary">Create graph</v-btn>
+        </div>
+      </div>
     </collapsible-card>  
     <collapsible-card
       v-if="service.components.date"
