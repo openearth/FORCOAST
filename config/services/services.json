@@ -122,9 +122,9 @@
               ],
             "layers_service_runner": [
               {
-                "id": "forcoast:HSI_whiting",
+                "id": "forcoast:HSI_Whiting",
                 "name": "HSI-whiting",
-                "layer": "forcoast:HSI_whiting",
+                "layer": "forcoast:HSI_Whiting",
                 "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                 "icon": "fish.png",
                 "colorscalerange": "auto",
