@@ -3,10 +3,10 @@
     <!-- <img v-img src="@/assets/Atunetan13-scaled.png"> -->
     <div>
       <!-- <h2 class="h2">TEST</h2> -->
-      <div data-v-step="1"><b>Pilot area:</b> {{ selectedArea }}
+      <div><b>Pilot area:</b> {{ selectedArea }}
       <p><b>Service module:</b> {{ service.name }}</p>
       </div>
-      <p>{{ service.description }}</p>
+      <p  data-v-step="3">{{ service.description }}</p>
       <p>An example bulletin produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
       <p>To test the service for a location of choice, follow the instructions in the Service runner section below. We appreciate your feedback on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <v-divider class="mt-4 mb-4" />
@@ -19,6 +19,7 @@
       :expand="1"
       :manual="false"
       title="Data viewer"
+      data-v-step="4"
     >
     <collapsible-card
       v-if="service.components.layers"
@@ -61,6 +62,7 @@
       :expand="1"
       :manual="true"
       title="Service runner"
+       data-v-step="5"
     >
     <draggable-marker v-if= service.components.draggable_marker
         @show-draggable-marker="onShowDraggableMarker" 
@@ -75,31 +77,6 @@
         @active-layers-change="onActiveLayerChange"
         @active-legend-change="onActiveLegendChange"
       ></layers-list>
-      <collapsible-card
-        v-if="service.components.layers_service_runner"
-        title="Select start and end date for timeseries"
-        :expand="1"
-      >
-        <date-span :timeExtentISO="timeExtent"></date-span>
-        <draggable-marker
-          @show-draggable-marker="onShowDraggableMarker" 
-      ></draggable-marker>
-      </collapsible-card>
-      <div v-if="service.components.layers_service_runner" class="mb-4">
-        <div v-if="timeSpan.length && selectedLayer">
-          <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
-          <timeseries-graph
-            v-if="dialog"
-            :lngLat="markerLngLat"
-            :layer="selectedLayer"
-            :timeSpan="timeSpan"
-            @close-dialog="dialog = false"
-          ></timeseries-graph>
-        </div>
-        <div v-else>
-          <v-btn disabled block color="primary">Create graph</v-btn>
-        </div>
-      </div>
     </collapsible-card>  
     <collapsible-card
       v-if="service.components.date"
