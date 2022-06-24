@@ -24,21 +24,21 @@ export const tourSteps = [
     target: '[data-v-step="3"]',
     content: 'Background information about the service',
     params: {
-      placement: 'bottom'
+      placement: 'right'
     }
   },
   {
     target: '[data-v-step="4"]',
     content: 'View spatial data layers here',
     params: {
-      placement: 'bottom'
+      placement: 'right'
     }
   },
   {
     target: '[data-v-step="5"]',
     content: 'Run demo services here',
     params: {
-      placement: 'bottom'
+      placement: 'right'
     }
   }
 ]
