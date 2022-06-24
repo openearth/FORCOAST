@@ -204,7 +204,7 @@ export default {
   font-size: 16px;
   text-align: left;
 }
-/deep/ .dropdown-menu { 
+::v-deep .dropdown-menu { 
   position: absolute;
   top: 100%;
   left: 0;
@@ -224,7 +224,7 @@ export default {
   background-clip: padding-box;
   overflow-y: scroll;
 }
-/deep/ .dropdown-toggle {
+::v-deep .dropdown-toggle {
   color: #636b6f;
   min-width: 100px;
   padding: 10px 20px 10px 10px;
@@ -245,7 +245,7 @@ export default {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-/deep/ .btn-group {
+::v-deep .btn-group {
   min-width: 120px;
 }
 .date-rules {
