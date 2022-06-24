@@ -27,13 +27,18 @@
      v-if="markerLngLat"
      :valueLat="markerLngLat.lat"
      :valueLng="markerLngLat.lng"
+     :valueLatTL="polygon == null ? 999 : latTL"
+     :valueLngTL="polygon == null ? 999 : lngTL"
+     :valueLatBR="polygon == null ? 999 : latBR"
+     :valueLngBR="polygon == null ? 999 : lngBR"
+     :polygonScoped="polygon"
      ></marker-coords>
+     <scalebar/>
     <map-legend
       v-if="layer"
       :key="layer.id"
       :options="layer"
     />
-   
   </v-mapbox>
 </template>
 
@@ -49,7 +54,7 @@ import MapLegend from "./map-legend";
 import { mapState } from "vuex";
 import MarkerCoords from "./marker-coords";
 import { mapActions } from "vuex";
-
+import Scalebar from "./scalebar";
 import center from "@turf/center";
 import { points } from "@turf/helpers";
 
@@ -62,7 +67,8 @@ export default {
     MapLegend,
     MapControlDraw,
     MapControlMarker,
-    MarkerCoords
+    MarkerCoords,
+    Scalebar
   },
   props: {
     /* TODO change to layers if we want to show more than one layers on the same time */
@@ -106,9 +112,45 @@ export default {
     mapBaseLayers() {
       return MAP_BASELAYERS;
     },
+    latTL() {
+        const latMax = Math.max(
+          this.polygon.features[0].geometry.coordinates[0][0][0],
+          this.polygon.features[0].geometry.coordinates[0][1][0],
+          this.polygon.features[0].geometry.coordinates[0][2][0],
+          this.polygon.features[0].geometry.coordinates[0][3][0]
+        )
+        return latMax
+    },
+    lngTL() {
+        const lngMin = Math.min(
+          this.polygon.features[0].geometry.coordinates[0][0][1],
+          this.polygon.features[0].geometry.coordinates[0][1][1],
+          this.polygon.features[0].geometry.coordinates[0][2][1],
+          this.polygon.features[0].geometry.coordinates[0][3][1]
+        )
+        return lngMin
+    },
+    latBR() {
+        const latMin = Math.min(
+          this.polygon.features[0].geometry.coordinates[0][0][0],
+          this.polygon.features[0].geometry.coordinates[0][1][0],
+          this.polygon.features[0].geometry.coordinates[0][2][0],
+          this.polygon.features[0].geometry.coordinates[0][3][0]
+        )
+        return latMin
+    },
+    lngBR() {
+        const lngMax = Math.max(
+          this.polygon.features[0].geometry.coordinates[0][0][1],
+          this.polygon.features[0].geometry.coordinates[0][1][1],
+          this.polygon.features[0].geometry.coordinates[0][2][1],
+          this.polygon.features[0].geometry.coordinates[0][3][1]
+        )
+        return lngMax
+    },
 
     ...mapState("layers", ["selectedAreaBBox", "selectedService"]),
-    ...mapState("wps", ["markerLngLat"]),
+    ...mapState("wps", ["markerLngLat", "polygon"]),
   },
   methods: {
     onMapCreated(map) {
