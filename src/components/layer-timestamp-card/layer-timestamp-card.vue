@@ -2,7 +2,7 @@
   <v-card class="time-stamp pa-1">
     <v-card-title class="h4"> Date of the layer </v-card-title>
     <time-slider
-      :dates="timeExtent"
+      :dates="timeExtent.reverse()"
       :set-time-index="dateIndex"
       startAt="end"
       @update-timestep="updateSelectedTime"
