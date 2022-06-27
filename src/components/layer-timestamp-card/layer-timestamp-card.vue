@@ -2,9 +2,9 @@
   <v-card class="time-stamp pa-1">
     <v-card-title class="h4"> Date of the layer </v-card-title>
     <time-slider
-      :dates="timeExtent.reverse()"
+      :dates="timeExtent"
       :set-time-index="dateIndex"
-      startAt="end"
+      startAt="start"
       @update-timestep="updateSelectedTime"
     >
       <template v-slot:backButton="{ back }">
@@ -16,7 +16,7 @@
         <v-combobox
           id="timeslider-dropdown"
           v-model="selectedTime"
-          :items="timeExtent.reverse()"
+          :items="timeExtent"
           :disabled="loadingRasterLayers"
           label="Select a timestamp"
           flat
@@ -74,7 +74,7 @@ export default {
     selectedTime() {
       const time = new Date(this.selectedTime)
       this.$emit("selected-time-change", time.toISOString());
-      this.dateIndex =  this.timeExtent.indexOf(this.selectedTime)
+      this.dateIndex =  this.timeExtent.reverse().indexOf(this.selectedTime)
     },
   },
   methods: {

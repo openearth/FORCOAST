@@ -29,7 +29,7 @@ export default {
     },
     startAt: {
       // Where to start in the dates array, begin end or at random index
-      default: () => "start",
+      default: () => "end",
       validator(value) {
         if (Number.isInteger(value)) {
           return true;
