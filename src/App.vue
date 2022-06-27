@@ -7,9 +7,10 @@
       @show-draw-polygon="onShowDrawPolygon"
     />
     <v-main>
+      <!-- Reverse timeExtent to start with most recent date -->
       <layer-timestamp-card
         v-if="wmsLayer && timeExtent.length"
-        :timeExtentISO="timeExtent"
+        :timeExtentISO="timeExtent.reverse()"
         :originalTimeISO="layerTimestamp"
         class="layer-timestamp"
         @selected-time-change="onSelectedTimeChange"
