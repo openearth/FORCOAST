@@ -772,7 +772,7 @@
               "layers":[
                 {
                   "id": "forcoast:a3_limfjord_botchl",
-                  "name": "Chlorophyll Concentration",
+                  "name": "Bottom Chlorophyll Concentration",
                   "layer":"forcoast:a3_limfjord_botchl",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
@@ -781,7 +781,7 @@
                 },
                 {
                   "id": "forcoast:a3_limfjord_botS",
-                  "name": "Salinity Bottom",
+                  "name": "Bottom Salinity",
                   "layer":"forcoast:a3_limfjord_botS",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
@@ -790,7 +790,7 @@
                 },
                 {
                   "id": "forcoast:a3_limfjord_botT",
-                  "name": "Temperature Bottom",
+                  "name": "Bottom Temperature",
                   "layer":"forcoast:a3_limfjord_botT",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
@@ -799,7 +799,7 @@
                 },
                 {
                   "id": "forcoast:a3_limfjord_botoxy",
-                  "name": "Oxygen Concentration",
+                  "name": "Bottom Oxygen Concentration",
                   "layer":"forcoast:a3_limfjord_botoxy",
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
