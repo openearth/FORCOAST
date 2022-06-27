@@ -29,7 +29,7 @@ export default {
     },
     startAt: {
       // Where to start in the dates array, begin end or at random index
-      default: () => "end",
+      default: () => "begin",
       validator(value) {
         if (Number.isInteger(value)) {
           return true;
@@ -79,7 +79,8 @@ export default {
       if (!this.dates) {
         return;
       }
-      if (this.startAt === "end" && this.dates.length > 0) {
+      // If begin start at latest index because timeIndex is start with most recent date
+      if (this.startAt === "begin" && this.dates.length > 0) {
         this.timeIndex = this.dates.length - 1;
       } else if (Number.isInteger(this.startAt)) {
         this.timeIndex = this.startAt;
