@@ -28,6 +28,7 @@
     "lodash": "^4.17.21",
     "mapbox-gl": "^1.12.0",
     "mapbox-gl-draw-rectangle-mode": "^1.0.4",
+    "mapboxgl-measure-tool": "^1.0.6",
     "markdown-loader": "^6.0.0",
     "sortablejs": "^1.12.0",
     "tiny-cookie": "^2.3.2",

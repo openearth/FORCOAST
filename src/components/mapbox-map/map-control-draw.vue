@@ -7,6 +7,7 @@ import DrawRectangle from "mapbox-gl-draw-rectangle-mode"
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 import { mapActions } from "vuex";
 import mapboxgl from "mapbox-gl";
+import MapMeasureTool from "mapboxgl-measure-tool";
 
 export default {
   inject: ["getMap"],
@@ -53,20 +54,11 @@ export default {
           trash: true,
         },
       });
-      map.addControl(this.draw, "bottom-right");
+      map.addControl(this.draw, "top-right");
 
       map.on("draw.create", () => (this.polygon = this.draw.getAll())); 
       map.on("draw.delete", () => (this.polygon = this.draw.getAll()));
       map.on("draw.update", () => (this.polygon = this.draw.getAll()));
-
-      /* TODO check if this is the proper place to add this scale control. Code in this file if for "draw functionality". Maybe better to add scale control to -baselayer.vue, or seperate file */
-      const scale = new mapboxgl.ScaleControl({
-        maxWidth: 150,
-        padding: {top: 0, bottom:0, left: 500, right: 0},
-        unit: 'metric'
-      });
-      map.addControl(scale, "bottom-left");
-
       
     },
   },

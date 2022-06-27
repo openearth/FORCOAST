@@ -83,7 +83,9 @@ export default {
               this.center[1] = (this.selectedAreaBBox()[0][1]+this.selectedAreaBBox()[1][1])/2
               this.setMarkerCoordinates({lng:this.center[0], lat:this.center[1]})
              }
-
+        if (this.marker != null) {
+          this.marker.remove()
+        }
         this.marker = new mapboxgl.Marker({
           draggable: true,
         })   
