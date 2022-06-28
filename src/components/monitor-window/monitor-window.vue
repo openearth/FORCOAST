@@ -3,7 +3,8 @@
     <v-dialog v-model="dialog" width="unset">
       <v-card height="unset" width="unset">
         <div id="monitoring-container" ref="savecontent">
-          <v-img :src="image"/>
+          <v-img :src="imageTHREDDS"/>
+          <v-img :src="imageGeoserver"/>
         </div>
         <v-card-actions class="justify-center">       
           <v-btn color="primary" bottom text @click="closeDialog">
@@ -22,7 +23,8 @@ export default {
   data() {
     return {
       dialog: true,
-      image: "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_monitoring.png"
+      imageTHREDDS: "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_monitoring.png",
+      imageGeoserver: "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_geoserver_monitoring.png"
     };
   },
   mounted() {
