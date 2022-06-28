@@ -4,7 +4,7 @@
     <time-slider
       :dates="timeExtent"
       :set-time-index="dateIndex"
-      startAt="end"
+      startAt="start"
       @update-timestep="updateSelectedTime"
     >
       <template v-slot:backButton="{ back }">
@@ -75,6 +75,7 @@ export default {
       const time = new Date(this.selectedTime)
       this.$emit("selected-time-change", time.toISOString());
       this.dateIndex =  this.timeExtent.indexOf(this.selectedTime)
+      console.log(this.dateIndex)
     },
   },
   methods: {
