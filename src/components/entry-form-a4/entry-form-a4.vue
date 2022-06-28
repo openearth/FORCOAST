@@ -63,7 +63,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Pelagic larval duration</v-subheader>
+        <v-subheader>Pelagic larval duration (days)</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field

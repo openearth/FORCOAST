@@ -356,8 +356,8 @@
                 "title": "Place marker at source location"
               },
               "entry_form": {
-                "title": "Enter time period for simulation",
-                "value": "Period (hrs)",
+                "title": "Enter time duration for simulation",
+                "value": "Duration (hrs)",
                 "type": "period",
                 "range": [1, 48]
               },
@@ -595,8 +595,8 @@
                 "title": "Place marker at source location"
               },
               "entry_form": {
-                "title": "Enter time period for simulation",
-                "value": "Period (hrs)",
+                "title": "Enter time duration for simulation",
+                "value": "Duration (hrs)",
                 "type": "period",
                 "range": [1, 48]
               },
