@@ -174,25 +174,21 @@ export default {
     setYearBegin(payload) {
       this.object = payload
       this.valueArray[0] = this.object.value
-      console.log(this.object.value)
       this.setSelectedEntryValue(this.valueArray)
     },
     setYearEnd(payload) {
       this.object = payload
       this.valueArray[1] = this.object.value
-      console.log(this.object.value)
       this.setSelectedEntryValue(this.valueArray)
     },
     setMonthBegin(payload) {
       this.object = payload
       this.valueArray[2] = this.object.value
-      console.log(this.object.value)
       this.setSelectedEntryValue(this.valueArray)
     },
     setMonthEnd(payload) {
       this.object = payload
       this.valueArray[3] = this.object.value
-      console.log(this.object.value)
       this.setSelectedEntryValue(this.valueArray)
     }
   }
