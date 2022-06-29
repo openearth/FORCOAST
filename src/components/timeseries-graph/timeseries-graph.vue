@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-dialog v-model="dialog" width="800">
-      <v-card height="600" width="900">
+      <v-card height="600" width="900" v-on-clickaway="closeDialog">
         <div id="graph-container"></div>
         <v-card-actions>
           <v-btn block color="primary" bottom text @click="closeDialog">
@@ -16,6 +16,7 @@
 import featureInfo from "@/lib/featureInfo";
 import * as echarts from "echarts";
 import "echarts-gl";
+import { mixin as clickaway } from 'vue-clickaway';
 
 export default {
   props: {
@@ -38,6 +39,8 @@ export default {
       graph: null,
     };
   },
+  mixins: [ clickaway ],
+  template: '<p v-on-clickaway="away">Click away</p>',
   mounted() {
     const lng = this.lngLat.lng;
     const lat = this.lngLat.lat;
