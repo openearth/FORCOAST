@@ -3,6 +3,7 @@
     <!-- Empty v-card! -->
     <v-card-text>
     </v-card-text>
+    <v-btn color="primary" @click="cancel"> Cancel </v-btn>
     <v-card-text>
       Process status: {{ status }}
     </v-card-text>
@@ -72,10 +73,16 @@ export default {
   },
   methods: {
     async getProcessStatus() {
-      this.status = await getStatus(this.statusLink)
+      const statusTemp = await getStatus(this.statusLink)
+      this.status = statusTemp
+      if (this.status !== "cancelled") {
       this.jobId = this.statusLink.substring(this.statusLink.lastIndexOf('/') + 1);
       this.getStatusAttempt = this.getStatusAttempt + 1
+      }
     },
+    cancel() {
+      this.status = "cancelled"
+    }
   },
   mounted() { 
     this.status = this.firstStatus
