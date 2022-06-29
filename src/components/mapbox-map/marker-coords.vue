@@ -1,6 +1,6 @@
 <template>
   <div :class="bboxEnabled">
-    <v-row style="padding-left:13px; height:30px; margin-top:-7px">
+    <v-row style="padding-left:13px; height:30px; margin-top:-8px">
       <v-subheader style="font-size:18px;
                        font-weight:bold;
                        color:black;"
@@ -19,7 +19,7 @@
                         font-weight:bold;
                         color:primary"> Area selection &#8983; </v-subheader>
       </v-row>
-      <v-row style="height:23px; padding-left:13px">
+      <v-row style="height:18px; padding-left:13px">
          <v-subheader style="font-size:14px;
                              font-weight:bold;"
                              > Top-left &#8598; </v-subheader>
@@ -27,11 +27,12 @@
       <v-row
     style="padding-left: 20px; width: 300px">
       <v-subheader style="padding-left: 11px;
-                 font-size:20px;
-                 padding-top: 13px;"
+                 font-size:16px;
+                 padding-top: 13px;
+                 color: #000000"
                  >{{ latTL }} Lat, {{ lngTL }} Lng</v-subheader>
       </v-row>
-      <v-row style="padding-left: 13px; height:23px">
+      <v-row style="padding-left: 16px; height:18px">
          <v-subheader style="font-size:14px;
                              font-weight:bold;"
                              > Bottom-right &#8600; </v-subheader>
@@ -39,9 +40,9 @@
       <v-row
       style="padding-left: 20px">
       <v-subheader style="padding-left: 11px;
-                 font-size:20px;
-                 padding-top: 13px
-                 color: blue">{{ latBR }} Lat, {{ lngBR }} Lng</v-subheader>
+                 font-size:16px;
+                 padding-top: 13px;
+                 color: #000000">{{ latBR }} Lat, {{ lngBR }} Lng</v-subheader>
       </v-row>
       <h3>________________________________</h3>
     </div>
@@ -75,13 +76,11 @@
             dense
           ></v-text-field>
            </v-col>
-           <v-btn 
-           :disabled="lng < -180 || lng >= 180 || lng == '' ||
-                        lat <= -90 || lat >= 90 || lat == '' ||
-                        ( lat == this.valueLat.toFixed(2) && lng == this.valueLng.toFixed(2) )"
+           <v-btn v-if="setButtonEnabled"
            :style="[ latTL != 999 ? 
                     {'width':'10px', 'position':'absolute', 'right':'30px', 'top':'315px'} :
                     {'width':'10px', 'position':'absolute', 'right':'30px', 'top':'125px'} ]"
+           value="true"
            color="primary" 
            @click="setValue">
              Set
@@ -150,6 +149,11 @@ export default {
   computed: {
     bboxEnabled() {
       return this.latTL != 999 ? 'Marker-box' : 'MarkerBbox-box' 
+    },
+    setButtonEnabled() {
+      return !( this.lng < -180 || this.lng >= 180 || this.lng == '' ||
+               this.lat <= -90 || this.lat >= 90 || this.lat == '' ||
+             ( this.lat == this.valueLat.toFixed(2) && this.lng == this.valueLng.toFixed(2) ) )
     }
   },
   watch: {
@@ -190,12 +194,12 @@ export default {
 <style>
 .Marker-box {
   position: absolute;
-  top: 0.5rem;
+  top: 0.6rem;
   right: 0.5rem;
   background-color: white;
   outline: 0;
   border: 0;
-  border-radius: 10px;
+  border-radius: 4px;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   z-index: 1;
   height: 370px;
@@ -203,12 +207,12 @@ export default {
 }
 .MarkerBbox-box {
   position: absolute;
-  top: 0.5rem;
+  top: 0.6rem;
   right: 0.5rem;
   background-color: white;
   outline: 0;
   border: 0;
-  border-radius: 10px;
+  border-radius: 4px;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   z-index: 1;
   height: 170px;

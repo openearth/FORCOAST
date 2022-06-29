@@ -1,12 +1,13 @@
 <template>
   <div class="layer-legend">
-    <img :src="legendUrl" class="layer-legend__image" alt="legend" />
+    <img :src="legendUrl" :class="resizeLegend" alt="legend" />
   </div>
 </template>
 
 <script>
 import buildLegendUrl from "@/lib/build-legend-url";
 import debounce from "lodash/debounce";
+import { ref } from "vue";
 
 export default {
   props: {
@@ -22,6 +23,7 @@ export default {
   data() {
     return {
       zoomLevel: 10,
+      windowHeight: window.innerHeight
     };
   },
 
@@ -35,8 +37,13 @@ export default {
         ...scale
       });
     },
+    resizeLegend() {
+      console.log(window.innerHeight)
+      return this.windowHeight > 725 ? 'layer-legend_image' : 'layer-legend_image_small'
+    }
   },
   mounted() {
+    window.addEventListener('resize', this.onResize)
     const map = this.$root.map;
     map.on("zoom", () => {
       this.setZoomLevel();
@@ -48,6 +55,10 @@ export default {
       const zoom = map.getZoom();
       this.zoomLevel = zoom;
     }, 200),
+    onResize() {
+      this.windowHeight = window.innerHeight
+      //return window.innerHeight > 725 ? 'layer-legend_image_small' : 'layer-legend_image_small'
+    }
   },
 };
 </script>
@@ -64,8 +75,12 @@ export default {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
-.layer-legend__image {
+.layer-legend_image {
   height: 100%;
+  border-radius: 4px;
+}
+.layer-legend_image_small {
+  height: 300px;
   border-radius: 4px;
 }
 </style>
