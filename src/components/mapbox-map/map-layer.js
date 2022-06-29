@@ -58,14 +58,14 @@ export default {
         map.setPaintProperty(
 			this.options.id,
 			'raster-opacity',
-			parseInt(50) / 100
+			parseInt(80) / 100
 		);
       } else {
         map.addLayer(this.options);
         map.setPaintProperty(
 			this.options.id,
 			'raster-opacity',
-			parseInt(50) / 100
+			parseInt(80) / 100
 		);
       }
     },
