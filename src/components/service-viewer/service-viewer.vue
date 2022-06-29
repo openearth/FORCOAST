@@ -34,7 +34,7 @@
       <collapsible-card
       v-if="service.components.layers_service_runner"
       :expand="1"
-      title="Layers produced by FORCOAST"
+      title="Layers produced by service"
       >
       <layers-list
         :layers="service.components.layers_service_runner"
