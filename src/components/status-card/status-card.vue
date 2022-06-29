@@ -3,10 +3,12 @@
     <!-- Empty v-card! -->
     <v-card-text>
     </v-card-text>
-    <v-btn color="primary" @click="cancel"> Cancel </v-btn>
     <v-card-text>
       Process status: {{ status }}
     </v-card-text>
+    <v-col cols="12">
+    <v-btn color="primary" @click="cancel" block> Cancel </v-btn>
+    </v-col>
     <v-container>
       <v-row  class="fill-height" align-content="center" justify="center">
         <v-col cols="12" v-if="status ==='running'">
