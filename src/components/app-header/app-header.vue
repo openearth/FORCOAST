@@ -34,7 +34,6 @@
             data-v-step="2"
             v-bind="attrs"
             v-on="on"
-            @click="onSetCategory(category.name, category.icon)"
           >
             {{ category.name }}
           </v-tab>
@@ -44,7 +43,8 @@
             no-action
             sub-group
             v-for="(area, index) in category.areas"
-            @click="onSetSelectedAreaBBox(area.bbox)"
+            @click="onSetSelectedAreaBBox(area.bbox); 
+                    leaveMenuOpen()"
             :key="index"
             link
           >
@@ -174,6 +174,9 @@ export default {
     },
     onSetSelectedAreaBBox(bbox) {
       this.setSelectedAreaBbox(bbox);
+    },
+    leaveMenuOpen() {
+      this.closeMenu = false;
     },
     track (service, area) {
       this.$gtag.event('service_selection', {
