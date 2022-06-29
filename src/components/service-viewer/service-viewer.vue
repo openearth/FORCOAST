@@ -31,6 +31,17 @@
         @active-layers-change="onActiveLayerChange"
         @active-legend-change="onActiveLegendChange"
       ></layers-list>
+      <collapsible-card
+      v-if="service.components.layers_service_runner"
+      :expand="1"
+      title="Layers produced by FORCOAST"
+      >
+      <layers-list
+        :layers="service.components.layers_service_runner"
+        @active-layers-change="onActiveLayerChange"
+        @active-legend-change="onActiveLegendChange"
+      ></layers-list>
+    </collapsible-card>
     </collapsible-card>
     <collapsible-card
       v-if="service.components.date_span"
