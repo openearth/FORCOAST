@@ -38,7 +38,6 @@ export default {
       });
     },
     resizeLegend() {
-      console.log(window.innerHeight)
       return this.windowHeight > 725 ? 'layer-legend_image' : 'layer-legend_image_small'
     }
   },
