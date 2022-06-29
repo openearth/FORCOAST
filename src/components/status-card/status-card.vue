@@ -6,9 +6,6 @@
     <v-card-text>
       Process status: {{ status }}
     </v-card-text>
-    <v-col cols="12">
-    <v-btn color="primary" @click="cancel" block> Cancel </v-btn>
-    </v-col>
     <v-container>
       <v-row  class="fill-height" align-content="center" justify="center">
         <v-col cols="12" v-if="status ==='running'">
@@ -22,6 +19,9 @@
             v-model="valueDeterminate"
             color="primary"
           ></v-progress-linear>
+        <v-col cols="12">
+          <v-btn color="primary" @click="cancel" block v-if="status!=='successful'"> Cancel </v-btn>
+        </v-col>
         </v-col>
         <v-col cols="12" v-if="status ==='successful'">
            <v-btn block color="primary" @click="dialog = true">Get results</v-btn>
