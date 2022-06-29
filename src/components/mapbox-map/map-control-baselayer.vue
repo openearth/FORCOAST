@@ -92,6 +92,7 @@ export default {
 
         customLayers.forEach((layer) => map.addLayer(layer));
       });
+      this.$emit("basemapChange")
     },
 
     deferredMountedTo(map) {

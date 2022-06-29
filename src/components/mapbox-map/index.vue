@@ -9,9 +9,9 @@
     id="map"
     ref="map"
   >
-    <v-mapbox-navigation-control position="bottom-right" />
     <!-- custom map components -->
-    <map-control-baselayer :layers="mapBaseLayers" position="bottom-right" />
+    <map-control-baselayer :layers="mapBaseLayers" position="bottom-right" @basemapChange="basemapChange" />
+    <v-mapbox-navigation-control position="bottom-right" />
     <map-control-marker
       v-if="draggableMarker"
       :center="centerPoint"
@@ -39,6 +39,8 @@
       :key="layer.id"
       :options="layer"
     />
+    <basemap-toggle v-if="$root.map"
+                     :basemap="basemap" />
   </v-mapbox>
 </template>
 
@@ -57,6 +59,7 @@ import { mapActions } from "vuex";
 import Scalebar from "./scalebar";
 import center from "@turf/center";
 import { points } from "@turf/helpers";
+import BasemapToggle from "./basemap-toggle";
 
 const config = getProjectConfig();
 
@@ -68,7 +71,8 @@ export default {
     MapControlDraw,
     MapControlMarker,
     MarkerCoords,
-    Scalebar
+    Scalebar,
+    BasemapToggle
   },
   props: {
     /* TODO change to layers if we want to show more than one layers on the same time */
@@ -88,6 +92,7 @@ export default {
   data() {
     return {
       centerPoint: [0, 0],
+      basemap: "Satellite Map:"
     };
   },
   watch: {
@@ -177,6 +182,14 @@ export default {
       this.centerPoint = cntr.geometry.coordinates;
       this.setMarkerCoordinates({lng:this.centerPoint[0], lat:this.centerPoint[1]})
     },
+    basemapChange() {
+      if (this.basemap == "Political Map:") {
+        this.basemap = "Satellite Map:"
+      }
+      else {
+        this.basemap = "Political Map:"
+      }
+    }
   },
 };
 </script>
