@@ -10,7 +10,7 @@
       <!-- Reverse timeExtent to start with most recent date -->
       <layer-timestamp-card
         v-if="wmsLayer && timeExtent.length"
-        :timeExtentISO="timeExtent.reverse()"
+        :timeExtentISO="timeExtent"
         :originalTimeISO="layerTimestamp"
         class="layer-timestamp"
         @selected-time-change="onSelectedTimeChange"
