@@ -1,6 +1,9 @@
 <template>
   <v-card class="time-stamp pa-1">
     <v-card-title class="h4"> Date of the layer </v-card-title>
+    <v-row style="height:0px;">
+      <v-subheader style="margin-top:-32px; margin-left:13px">Based on timezone of user device</v-subheader>
+    </v-row>
     <time-slider
       :dates="timeExtent"
       :set-time-index="dateIndex"
