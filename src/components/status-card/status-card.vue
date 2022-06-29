@@ -3,7 +3,6 @@
     <!-- Empty v-card! -->
     <v-card-text>
     </v-card-text>
-    <v-btn color="primary" @click="cancel"> Cancel </v-btn>
     <v-card-text>
       Process status: {{ status }}
     </v-card-text>
@@ -22,6 +21,7 @@
           ></v-progress-linear>
         </v-col>
         <v-col cols="12" v-if="status ==='successful'">
+          <v-btn color="primary" @click="cancel"> Cancel </v-btn>
            <v-btn block color="primary" @click="dialog = true">Get results</v-btn>
           <bulletin-window
             v-if="dialog"
@@ -74,8 +74,8 @@ export default {
   methods: {
     async getProcessStatus() {
       const statusTemp = await getStatus(this.statusLink)
+      if (this.status !== "cancelled") {    
       this.status = statusTemp
-      if (this.status !== "cancelled") {
       this.jobId = this.statusLink.substring(this.statusLink.lastIndexOf('/') + 1);
       this.getStatusAttempt = this.getStatusAttempt + 1
       }
