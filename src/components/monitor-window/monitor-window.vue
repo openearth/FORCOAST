@@ -2,9 +2,9 @@
   <div>
     <v-dialog v-model="dialog" width="unset">
       <v-card height="unset" width="unset">
-        <div id="monitoring-container" v-on-clickaway="closeDialog">
-          <v-img :src="imageTHREDDS"/>
-          <v-img :src="imageGeoserver"/>
+        <div id="monitoring-container" ref="savecontent" v-on-clickaway="closeDialog">
+          <v-img :src="imageTHREDDSrandom"/>
+          <v-img :src="imageGeoserverrandom"/>
         </div>
         <v-card-actions class="justify-center">       
           <v-btn color="primary" 
@@ -28,8 +28,6 @@ export default {
   data() {
     return {
       dialog: true,
-      imageTHREDDS: "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_monitoring.png",
-      imageGeoserver: "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_geoserver_monitoring.png"
     };
   },
   mixins: [ clickaway ],
@@ -37,6 +35,22 @@ export default {
   mounted() {
     var img = new Image();
     img.src = this.image;   
+  },
+  computed: {
+    imageTHREDDSrandom() {
+    const randNumber = Math.floor(Math.random()*1000000000)
+    const imageTHREDDS = "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_monitoring.png?"
+    const fullLink = imageTHREDDS + randNumber
+    console.log(fullLink)
+    return fullLink
+    },
+    imageGeoserverrandom() {
+    const randNumber = Math.floor(Math.random()*1000000000)
+    const imageGeoserver = "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_geoserver_monitoring.png?"
+    const fullLink = imageGeoserver + randNumber
+    console.log(fullLink)
+    return fullLink
+    },
   },
   watch: {
     featuresInfo() {
