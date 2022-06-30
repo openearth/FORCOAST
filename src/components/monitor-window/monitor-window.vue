@@ -2,7 +2,7 @@
   <div>
     <v-dialog v-model="dialog" width="unset">
       <v-card height="unset" width="unset">
-        <div id="monitoring-container" ref="savecontent" v-on-clickaway="closeDialog">
+        <div id="monitoring-container" v-on-clickaway="closeDialog">
           <v-img :src="imageTHREDDS"/>
           <v-img :src="imageGeoserver"/>
         </div>
