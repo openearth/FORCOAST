@@ -41,14 +41,12 @@ export default {
     const randNumber = Math.floor(Math.random()*1000000000)
     const imageTHREDDS = "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_monitoring.png?"
     const fullLink = imageTHREDDS + randNumber
-    console.log(fullLink)
     return fullLink
     },
     imageGeoserverrandom() {
     const randNumber = Math.floor(Math.random()*1000000000)
     const imageGeoserver = "https://minio.apps.k.terrasigna.com/forcoast/monitoring_bulletins/FORCOAST_geoserver_monitoring.png?"
     const fullLink = imageGeoserver + randNumber
-    console.log(fullLink)
     return fullLink
     },
   },
