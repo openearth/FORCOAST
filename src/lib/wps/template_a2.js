@@ -40,7 +40,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "github"
+               "inlineValue": "cli"
             }
          }
       },
@@ -51,7 +51,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "https://raw.githubusercontent.com/FORCOAST/ForCoast-A2-Settings/Eforie_case_1/config.yaml"
+               "inlineValue": "local"
             }
          }
       },
@@ -62,7 +62,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "https://raw.githubusercontent.com/FORCOAST/ForCoast-A2-Settings/Eforie_case_1/sources.txt"
+               "inlineValue": source
             }
          }
       },
@@ -73,7 +73,7 @@ export const template_a2 = (time, id, area, source, target) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": "https://raw.githubusercontent.com/FORCOAST/ForCoast-A2-Settings/Eforie_case_1/targets.txt"
+               "inlineValue": target
             }
          }
       },
