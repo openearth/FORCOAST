@@ -62,12 +62,13 @@ export default {
       selectedTime: null,
       getLoadingState: false,
       loadingRasterLayers: false,
-      dateIndex: 0
+      dateIndex: 0,
+      timeExtentReverse: this.timeExtentISO.slice().reverse()
     };
   },
   computed: { 
     timeExtent() {
-      return this.timeExtentISO.map(time => isoToYyyyMmDdHhMm(time))
+      return this.timeExtentReverse.map(time => isoToYyyyMmDdHhMm(time))
     }
   },
   mounted() {
