@@ -127,7 +127,11 @@ export default {
       // Set source based on lat and lon
       var source = ""
       if (markerLngLat) {
-      source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ",0.5]"
+        if (area === "eforie") {
+          source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ",0.5]"
+        } else if (area === "galway") {
+          source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ",-1.0]"
+        }
       }
 
       // Set bounding box in proper format:
@@ -140,7 +144,7 @@ export default {
         let lat_max = Math.max(polygon.features[0].geometry.coordinates[0][0][1], polygon.features[0].geometry.coordinates[0][1][1], polygon.features[0].geometry.coordinates[0][2][1], polygon.features[0].geometry.coordinates[0][3][1]).toFixed(10);
         let lat_min = Math.min(polygon.features[0].geometry.coordinates[0][0][1], polygon.features[0].geometry.coordinates[0][1][1], polygon.features[0].geometry.coordinates[0][2][1], polygon.features[0].geometry.coordinates[0][3][1]).toFixed(10);
         target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
-      } 
+      }
 
       const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
       //const response = await run(testtime, id)
