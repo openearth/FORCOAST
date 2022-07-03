@@ -44,12 +44,13 @@ export default {
         const imgRatio = this.height / this.width
           console.log('this.height', this.height)
           console.log('this.width', this.width)
-          console.log('this.imgRatio', this.imgRatio)
+          console.log('this.imgRatio', imgRatio)
           if (this.imgRatio < 0.44) {
           document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
           }
           else {
           document.getElementById("bulletin-container").style.height = "44%"
+          console.log('this.width / (this.height/0.44)*100', this.width / (this.height/0.44)*100)
           document.getElementById("bulletin-container").style.width = this.width / (this.height/0.44)*100 + "%"
           }
     };
