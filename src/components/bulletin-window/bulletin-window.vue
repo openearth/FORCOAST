@@ -42,6 +42,9 @@ export default {
     var img = new Image();
     img.onload = function() {    
         const imgRatio = this.height / this.width
+          console.log('this.height', this.height)
+          console.log('this.width', this.width)
+          console.log('this.imgRatio', this.imgRatio)
           if (this.imgRatio < 0.44) {
           document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
           }
