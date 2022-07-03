@@ -77,8 +77,8 @@ export default {
 #bulletin-container {
   width: unset;
   height: unset;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .closeButton {
   font-size: 20px;
