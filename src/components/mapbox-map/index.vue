@@ -119,37 +119,37 @@ export default {
     },
     latTL() {
         const latMax = Math.max(
-          this.polygon.features[0].geometry.coordinates[0][0][0],
-          this.polygon.features[0].geometry.coordinates[0][1][0],
-          this.polygon.features[0].geometry.coordinates[0][2][0],
-          this.polygon.features[0].geometry.coordinates[0][3][0]
+          this.polygon.features[0].geometry.coordinates[0][0][1],
+          this.polygon.features[0].geometry.coordinates[0][1][1],
+          this.polygon.features[0].geometry.coordinates[0][2][1],
+          this.polygon.features[0].geometry.coordinates[0][3][1]
         )
         return latMax
     },
     lngTL() {
         const lngMin = Math.min(
-          this.polygon.features[0].geometry.coordinates[0][0][1],
-          this.polygon.features[0].geometry.coordinates[0][1][1],
-          this.polygon.features[0].geometry.coordinates[0][2][1],
-          this.polygon.features[0].geometry.coordinates[0][3][1]
-        )
-        return lngMin
-    },
-    latBR() {
-        const latMin = Math.min(
           this.polygon.features[0].geometry.coordinates[0][0][0],
           this.polygon.features[0].geometry.coordinates[0][1][0],
           this.polygon.features[0].geometry.coordinates[0][2][0],
           this.polygon.features[0].geometry.coordinates[0][3][0]
         )
-        return latMin
+        return lngMin
     },
-    lngBR() {
-        const lngMax = Math.max(
+    latBR() {
+        const latMin = Math.min(
           this.polygon.features[0].geometry.coordinates[0][0][1],
           this.polygon.features[0].geometry.coordinates[0][1][1],
           this.polygon.features[0].geometry.coordinates[0][2][1],
           this.polygon.features[0].geometry.coordinates[0][3][1]
+        )
+        return latMin
+    },
+    lngBR() {
+        const lngMax = Math.max(
+          this.polygon.features[0].geometry.coordinates[0][0][0],
+          this.polygon.features[0].geometry.coordinates[0][1][0],
+          this.polygon.features[0].geometry.coordinates[0][2][0],
+          this.polygon.features[0].geometry.coordinates[0][3][0]
         )
         return lngMax
     },
