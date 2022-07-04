@@ -15,6 +15,8 @@
             v-if="dialog"
             @close-dialog="dialog = false"
           ></monitor-window>
+          &nbsp;
+          <v-icon color="#008fc5" class="outlined" @click="goToManual">mdi-help</v-icon>
         </v-container>
       </template>
   </v-navigation-drawer>
@@ -39,6 +41,9 @@ export default {
       this.$router.push('sector=wild_fishery&service=suitable_fishing_areas&area=eforie')
       }
       this.$emit('toggle-tour')
+    },
+    goToManual () {
+      window.open("https://forcoast.eu/wp-content/uploads/2022/06/FORCOAST-User-Manual-Prototype-II.pdf", "_blank")
     }
   }
 };
