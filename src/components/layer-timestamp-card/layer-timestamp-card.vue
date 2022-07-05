@@ -10,8 +10,8 @@
       startAt="start"
       @update-timestep="updateSelectedTime"
     >
-      <template v-slot:backButton="{ back }">
-        <v-btn icon :disabled="getLoadingState" @click="back">
+      <template v-slot:forwardButton="{ forward }">
+        <v-btn icon :disabled="getLoadingState" @click="forward">
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
       </template>
@@ -29,8 +29,8 @@
           color="formBase"
         />
       </template>
-      <template v-slot:forwardButton="{ forward }">
-        <v-btn icon :disabled="getLoadingState" @click="forward">
+      <template v-slot:backButton="{ back }">
+        <v-btn icon :disabled="getLoadingState" @click="back">
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
       </template>
