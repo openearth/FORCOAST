@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       dialog: true,
-      image: "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/bulletin.png"
+      image: "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
     };
   },
   mixins: [ clickaway ],
@@ -45,14 +45,12 @@ export default {
           console.log('this.height', this.height)
           console.log('this.width', this.width)
           console.log('this.imgRatio', imgRatio)
-          if (this.imgRatio < 0.44) {
-          document.getElementById("bulletin-container").style.height = imgRatio*100 + "%"
+          if ( this.height > 600 ) {
+          document.getElementById("bulletin-container").style.height = "600px"
+          document.getElementById("bulletin-container").style.width = (600 / this.height) * this.width + "px"
           }
-          else {
-          document.getElementById("bulletin-container").style.height = "44%"
-          console.log('this.width / (this.height/0.44)*100', this.width / (this.height/0.44)*100)
-          document.getElementById("bulletin-container").style.width = this.width / (this.height/0.44)*100 + "%"
-          }
+          this.height = 0
+          this.width = 0
     };
     img.src = this.image;   
   },
