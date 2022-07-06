@@ -13,6 +13,9 @@
             indeterminate
             color="primary"
           ></v-progress-linear>
+        <v-col cols="12">
+            <v-btn color="primary" @click="cancel" block> Cancel </v-btn>
+        </v-col>
         </v-col>
         <v-col cols="12" v-if="status ==='failed' || status ==='accepted'">
           <v-progress-linear
