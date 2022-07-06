@@ -37,9 +37,6 @@ export default {
   },
   methods:{
     goToTour() {
-      if (window.location.href == "forcoast.netlify.app" || window.location.href == "http://localhost:8080") {
-      this.$router.push('sector=wild_fishery&service=suitable_fishing_areas&area=eforie')
-      }
       this.$emit('toggle-tour')
     },
     goToManual () {
