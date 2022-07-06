@@ -5,12 +5,19 @@ export const tourConfig = {
   useKeyboardNavigation: true
 }
 
+Vue.use(VueTour)
+
+export let tourStepCount = null
+
 export const tourSteps = [
   {
     target: '[data-v-step="1"]',
     content: 'Welcome to <strong>FORCOAST</strong> platform!',
     params: {
       placement: 'bottom'
+    },
+    before: function() {
+      tourStepCount = 1
     }
   },
   {
@@ -18,6 +25,9 @@ export const tourSteps = [
     content: 'Select a pilot area and service here',
     params: {
       placement: 'bottom'
+    },
+    before: function() {
+      tourStepCount = 2
     }
   },
   {
@@ -25,6 +35,9 @@ export const tourSteps = [
     content: 'Background information about the service',
     params: {
       placement: 'right'
+    },
+    before: function() {
+      tourStepCount = 3
     }
   },
   {
@@ -32,6 +45,9 @@ export const tourSteps = [
     content: 'View spatial data layers here',
     params: {
       placement: 'right'
+    },
+    before: function() {
+      tourStepCount = 4
     }
   },
   {
@@ -39,8 +55,11 @@ export const tourSteps = [
     content: 'Run demo services here',
     params: {
       placement: 'right'
+    },
+    before: function() {
+      tourStepCount = 5
     }
   }
 ]
 
-Vue.use(VueTour)
+
