@@ -10,7 +10,7 @@
       height="30"
     />
     <img :src="require(`@/assets/empty.png`)" height="10" />
-    <v-tour :steps="tourSteps" :options="tourConfig" name="introduction"></v-tour>
+    <v-tour :steps="tourSteps" :options="tourConfig" name="introduction" @click.native="nextStep"></v-tour>
     <v-toolbar-title>
       <router-link to="/" class="white--text text-decoration-none">{{
         title
@@ -79,7 +79,7 @@
 <script>
 import { getProjectConfig } from "@/lib/config-utils";
 import { importConfig } from "@/lib/config-utils";
-import { tourConfig, tourSteps } from '@/plugins/vue-tour'
+import { tourConfig, tourSteps, tourStepCount } from '@/plugins/vue-tour'
 
 import { mapState, mapActions } from "vuex";
 import * as Cookies from 'tiny-cookie'
@@ -92,7 +92,8 @@ export default {
       title: config.shortName,
       closeMenu: false,
       tourConfig,
-      tourSteps
+      tourSteps,
+      tourStepCount
     };
   },
   mounted () {
@@ -176,6 +177,7 @@ export default {
       this.setSelectedAreaBbox(bbox);
     },
     leaveMenuOpen() {
+      console.log(tourStepCount)
       this.closeMenu = false;
     },
     track (service, area) {
@@ -192,6 +194,17 @@ export default {
       if (!hideTour) {
         this.$tours.introduction.start()
         Cookies.set('hideTour', false)
+      }
+    },
+    nextStep () {
+      if (tourStepCount == 2 && window.location.href == "https://forcoast.netlify.app/") {
+        this.$router.push('sector=wild_fishery&service=suitable_fishing_areas&area=eforie?step3').catch(()=>{})
+      }
+      if (tourStepCount == 3) {
+        this.$router.push('?step4').catch(()=>{})
+      }
+      if (tourStepCount == 4) {
+        this.$router.push('?step5').catch(()=>{})
       }
     }
   },
