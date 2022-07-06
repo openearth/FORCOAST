@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       dialog: true,
-      image: "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
+      image: "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/bulletin.png"
     };
   },
   mixins: [ clickaway ],
@@ -41,13 +41,15 @@ export default {
   mounted() {
     var img = new Image();
     img.onload = function() {    
-        const imgRatio = this.height / this.width
-          console.log('this.height', this.height)
-          console.log('this.width', this.width)
-          console.log('this.imgRatio', imgRatio)
-          if ( this.height > 600 ) {
-          document.getElementById("bulletin-container").style.height = "600px"
-          document.getElementById("bulletin-container").style.width = (600 / this.height) * this.width + "px"
+          const monitorHeight = window.innerHeight
+          if ( this.height > monitorHeight ) {
+          document.getElementById("bulletin-container").style.height = monitorHeight - 150 + "px"
+          document.getElementById("bulletin-container").style.width = ( (monitorHeight -150) / this.height) * this.width + "px"
+          }
+          const monitorWidth = window.innerWidth
+          if ( this.width > monitorWidth &&  this.width > 2*this.height ) {
+          document.getElementById("bulletin-container").style.width = monitorWidth - 150 + "px"
+          document.getElementById("bulletin-container").style.height = ( (monitorWidth -150) / this.width) * this.height + "px"
           }
           this.height = 0
           this.width = 0
