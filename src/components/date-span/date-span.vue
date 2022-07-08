@@ -132,12 +132,13 @@ export default {
         days = days.map((day) => day.toISOString().substr(0, 10));
         const filteredDays = days.filter(day => this.timeExtent.includes(day))
         this.setTimeSpan(filteredDays);
+        this.setTimeSpanUnfiltered(days)
         
       }
     },
   },
   methods: {
-    ...mapActions("layers", ["setTimeSpan"]),
+    ...mapActions("layers", ["setTimeSpan", "setTimeSpanUnfiltered"]),
        allowedDates (val) {
         if (this.timeExtent.length && this.timeExtent.indexOf(val) !== -1) {
           return true
