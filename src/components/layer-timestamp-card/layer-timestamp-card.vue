@@ -79,7 +79,6 @@ export default {
       const time = new Date(this.selectedTime)
       this.$emit("selected-time-change", time.toISOString());
       this.dateIndex =  this.timeExtent.indexOf(this.selectedTime)
-      console.log(this.dateIndex)
     },
   },
   methods: {
