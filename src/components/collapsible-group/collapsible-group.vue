@@ -62,6 +62,9 @@ export default {
         this.disabledButton = false;
       }
     },
+    selectedService() {
+      this.open = undefined
+    }
   },
 };
 </script>
