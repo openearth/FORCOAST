@@ -29,6 +29,9 @@ export default {
     timeSpan: {
       type: Array,
     },
+    timeSpanUnfiltered: {
+      type: Array,
+    },
   },
   data() {
     return {
@@ -68,18 +71,18 @@ export default {
         const feature = info.features[0];        
         return Object.entries(feature.properties).map(([key,value]) => value)[0]; 
      }catch (error) {
-       console.log("error:", error);
+       console.log("Missing data for timestamp");
     }
     },
     // calls the getFeatureinfo for every element in the timeSpan array
     async getAllFeatureInfo() {
       this.featuresInfo = await Promise.all(
-        this.timeSpan.map(async (time) => {
-          const response = await this.getFeatureInfo(time);
+        this.timeSpanUnfiltered.map(async (time) => {
+          const response = await this.getFeatureInfo(time)
           return response;
         })
       );
-      
+      this.featuresInfo = this.featuresInfo.map( (value) => value == undefined ? null : value )
     },
     closeDialog() {
       this.dialog = false;
@@ -112,12 +115,12 @@ export default {
         },
         xAxis: {
           type: "category",
-          data: this.timeSpan,
+          data: this.timeSpanUnfiltered,
           name: "Date",
           nameLocation: "center",
           nameTextStyle: {
             fontSize: 16,
-            padding: 10,
+            padding: 20,
           },
         },
         yAxis: {
@@ -126,7 +129,7 @@ export default {
           nameLocation: "center",
           nameTextStyle: {
             fontSize: 16,
-            padding: 10,
+            padding: 20,
           },
         },
         grid: {
@@ -138,6 +141,7 @@ export default {
           {
             data: this.featuresInfo,
             type: "line",
+            connectNulls: true,
             tooltip: {
               show: "true",
               trigger: "axis",
