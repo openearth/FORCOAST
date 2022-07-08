@@ -61,6 +61,7 @@
           :lngLat="markerLngLat"
           :layer="selectedLayer"
           :timeSpan="timeSpan"
+          :timeSpanUnfiltered="timeSpanUnfiltered"
           @close-dialog="dialog = false"
         ></timeseries-graph>
       </div>
@@ -244,7 +245,7 @@ export default {
 
   computed: {
     ...mapState("wps", ["markerLngLat", "calculationsTime", "selectedEntryValue", "jobStatus", "statusLink"]),
-    ...mapState("layers", ["selectedTime", "timeSpan", "selectedArea"]),
+    ...mapState("layers", ["selectedTime", "timeSpan", "timeSpanUnfiltered", "selectedArea"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"])
   },
   methods: {
