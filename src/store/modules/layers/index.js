@@ -13,6 +13,7 @@ export default {
     selectedTime: null,
     iconCategory: null,
     timeSpan: [], //TODO service-viewer data() timeSpan has replaced the state. Check if needed as state
+    timeSpanUnfiltered: [],
     activeLayers: [],
     capabilities: null,
 	},
@@ -88,6 +89,9 @@ export default {
     SET_TIME_SPAN(state, timespan) {
       state.timeSpan = timespan
     },
+    SET_TIME_SPAN_UNFILTERED(state, timeSpanUnfiltered) {
+      state.timeSpanUnfiltered = timeSpanUnfiltered
+    },
     CLEAR_TIME_EXTENT(state) {
       state.timeExtent = []
     },
@@ -131,6 +135,9 @@ export default {
     },
     setTimeSpan(context, payload) {
       context.commit("SET_TIME_SPAN", payload)
+    },
+    setTimeSpanUnfiltered(context, payload) {
+      context.commit("SET_TIME_SPAN_UNFILTERED", payload)
     },
     setActiveLayers(context, payload) {
       context.commit("SET_ACTIVE_LAYERS", payload)
