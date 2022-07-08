@@ -124,7 +124,7 @@ export default {
       // it is confusing to name it categories while it contains the services
       return importConfig("services/services.json");
     },
-    ...mapState("layers", ["selectedCategory"]),
+    ...mapState("layers", ["selectedCategory", "selectedService"]),
   },
   methods: {
     ...mapActions("wps", ["clearMarkerCoordinates", "clearPolygon", "clearJobStatus", "clearSelectedEntryValue",]),
@@ -177,7 +177,6 @@ export default {
       this.setSelectedAreaBbox(bbox);
     },
     leaveMenuOpen() {
-      console.log(tourStepCount)
       this.closeMenu = false;
     },
     track (service, area) {
@@ -197,14 +196,18 @@ export default {
       }
     },
     nextStep () {
-      if (tourStepCount == 2 && window.location.href == "https://forcoast.netlify.app/") {
-        this.$router.push('sector=wild_fishery&service=suitable_fishing_areas&area=eforie?step3').catch(()=>{})
-      }
-      if (tourStepCount == 3) {
-        this.$router.push('?step4').catch(()=>{})
+      if (tourStepCount == 2 && window.location.href == "https://forcoast.netlify.app/" ) {
+        this.$router.push('sector=bivalve_aquaculture&service=marine_conditions&area=sado_estuary')
       }
       if (tourStepCount == 4) {
-        this.$router.push('?step5').catch(()=>{})
+        const selectedServiceTemp = this.selectedService
+        this.clearSelectedService()
+        this.setService(selectedServiceTemp)
+      }
+      if (tourStepCount == 5) {
+        const selectedServiceTemp = this.selectedService
+        this.clearSelectedService()
+        this.setService(selectedServiceTemp)
       }
     }
   },
