@@ -44,9 +44,9 @@ export default {
   template: '<p v-on-clickaway="away">Click away</p>',
   mounted() {
     var img = new Image();
-    console.log('OUTPUTNAME', this.outputName)
     img.onload = function() {    
           const monitorHeight = window.innerHeight
+          console.log('OUTPUTNAME', this.outputName)
           if ( this.height > monitorHeight ) {
           document.getElementById("bulletin-container").style.height = monitorHeight - 150 + "px"
           document.getElementById("bulletin-container").style.width = ( (monitorHeight -150) / this.height) * this.width + "px"
