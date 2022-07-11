@@ -46,7 +46,6 @@ export default {
     var img = new Image();
     img.onload = function() {    
           const monitorHeight = window.innerHeight
-          console.log('OUTPUTNAME', this.outputName)
           if ( this.height > monitorHeight ) {
           document.getElementById("bulletin-container").style.height = monitorHeight - 150 + "px"
           document.getElementById("bulletin-container").style.width = ( (monitorHeight -150) / this.height) * this.width + "px"
@@ -69,7 +68,6 @@ export default {
   },
   methods: {
     closeDialog() {
-      console.log('OUTPUTNAME', this.outputName)
       this.dialog = false;
       this.$emit("close-dialog", false);
     },

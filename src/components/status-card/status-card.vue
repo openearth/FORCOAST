@@ -89,7 +89,6 @@ export default {
       this.jobId = this.statusLink.substring(this.statusLink.lastIndexOf('/') + 1);
       this.getStatusAttempt = this.getStatusAttempt + 1
       }
-      console.log('OUTPUTNAM STATUS-CARD', this.outputName)
     },
     cancel() {
       this.status = "cancelled"
