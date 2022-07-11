@@ -31,6 +31,7 @@
           <bulletin-window
             v-if="dialog"
             :jobId="jobId"
+            :outputName="outputName"
             @close-dialog="dialog = false"
           ></bulletin-window>
         </v-col>
@@ -74,7 +75,11 @@ export default {
     outputLink: {
       type: String,
       required: false
-    },   
+    },
+    outputName: {
+      type: String,
+      required: false
+    },    
   },
   methods: {
     async getProcessStatus() {

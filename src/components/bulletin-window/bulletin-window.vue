@@ -28,6 +28,10 @@ export default {
     jobId: {
       type: String, 
       required: true,
+    },
+    outputName: {
+      type: String,
+      required: false
     },   
   },
   data() {
@@ -64,6 +68,7 @@ export default {
   },
   methods: {
     closeDialog() {
+      console.log('OUTPUTNAME', this.outputName)
       this.dialog = false;
       this.$emit("close-dialog", false);
     },

@@ -178,6 +178,7 @@
       :date="calculationsTime"
       :firstStatus="jobStatus"
       :statusLink="statusLink"
+      :outputName="service.outputName"
     ></status-card>
     <div v-if="service.components.joblist">
     <collapsible-card
