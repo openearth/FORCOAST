@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       dialog: true,
-      image: "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/bulletin.png"
+      image: "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/" + this.outputName
     };
   },
   mixins: [ clickaway ],
