@@ -44,6 +44,7 @@ export default {
   template: '<p v-on-clickaway="away">Click away</p>',
   mounted() {
     var img = new Image();
+    console.log('OUTPUTNAME', this.outputName)
     img.onload = function() {    
           const monitorHeight = window.innerHeight
           if ( this.height > monitorHeight ) {
