@@ -9,6 +9,7 @@ import { mapState } from "vuex";
 import { limitsA1Sado } from "./service-limits/limits_a1_sado";
 import { limitsA1A3Limfjord } from "./service-limits/limits_a1_a3_limfjord";
 import { limitsA2R1Galway } from "./service-limits/limits_a2_r1_galway";
+import { limitsA2BlackSea } from "./service-limits/limits_a2_black_sea";
 import { limitsA4NorthSea } from "./service-limits/limits_a4_north_sea";
 import { limitsF1BlackSea } from "./service-limits/limits_f1_black_sea";
 import { limitsF2Biscay } from "./service-limits/limits_f2_biscay";
@@ -21,6 +22,7 @@ export default {
       marker: null,
       limitsA1Sado,
       limitsA1A3Limfjord,
+      limitsA2BlackSea,
       limitsA2R1Galway,
       limitsA4NorthSea,
       limitsF1BlackSea,
@@ -140,7 +142,11 @@ export default {
               && this.selectedAreaId() == "galway"){
           this.serviceArea = this.limitsA2R1Galway
           }
-        if (this.selectedService().wps_id == "a4"
+        if (this.selectedService().wps_id == "a2"
+              && this.selectedAreaId() == "eforie"){
+          this.serviceArea = this.limitsA2BlackSea
+          }
+        if ( (this.selectedService().wps_id == "a4" || this.selectedService().wps_id == "r1")
               && this.selectedAreaId() == "southern_north_sea"){
           this.serviceArea = this.limitsA4NorthSea
         }
