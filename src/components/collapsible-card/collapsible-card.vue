@@ -56,7 +56,8 @@ export default {
     };
   },
   computed: {
-    ...mapState("wps", ["polygon"])
+    ...mapState("wps", ["polygon"]),
+    ...mapState("layers", ["selectedService"])
   },
   watch: {
     polygon() {
@@ -64,6 +65,9 @@ export default {
         this.disabledButton = false;
       }
     },
+    selectedService() {
+      this.open = undefined
+    }
   },
 };
 </script>
