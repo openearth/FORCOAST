@@ -123,12 +123,10 @@ export default {
       this.max = this.endDate;
     },
     timeSpan() {
-      if (this.timeSpan.length && this.timeSpan.length > 1) {
-        
+      if (this.timeSpan.length > 1 && this.startDate !== undefined && this.endDate !== undefined) {
         const start = new Date(this.startDate);
         const end = new Date(this.endDate);
         let days = createTimeSpan(start, end);
-
         days = days.map((day) => day.toISOString().substr(0, 10));
         const filteredDays = days.filter(day => this.timeExtent.includes(day))
         this.setTimeSpan(filteredDays);
