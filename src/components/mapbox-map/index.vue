@@ -16,7 +16,7 @@
       v-if="draggableMarker"
       :center="centerPoint"
     ></map-control-marker>
-    <map-control-draw v-if="drawPolygon"></map-control-draw>
+    <map-control-draw v-if="drawPolygonIcon"></map-control-draw>
     <!-- TODO change to layers in the future -->
     <map-layer
       v-if="layer"
@@ -32,6 +32,7 @@
      :valueLatBR="polygon == null ? 999 : latBR"
      :valueLngBR="polygon == null ? 999 : lngBR"
      :polygonScoped="polygon"
+     :drawPolygonIcon="drawPolygonIcon"
      ></marker-coords>
      <scalebar/>
     <map-legend
@@ -84,15 +85,15 @@ export default {
       type: Boolean,
       default: true,
     },
-    drawPolygon: {
+    drawPolygonIcon: {
       type: Boolean,
-      default: true,
-    },
+      required: true,
+    }
   },
   data() {
     return {
       centerPoint: [0, 0],
-      basemap: "Satellite Map:"
+      basemap: "Satellite Map:",
     };
   },
   watch: {
@@ -189,7 +190,7 @@ export default {
       else {
         this.basemap = "Political Map:"
       }
-    }
+    },
   },
 };
 </script>

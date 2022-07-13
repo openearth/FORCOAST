@@ -1,18 +1,20 @@
 <template>
   <div :class="bboxEnabled">
-    <v-row style="padding-left:13px; height:30px; margin-top:-8px">
-      <v-subheader style="font-size:18px;
-                       font-weight:bold;
-                       color:black;"
-                       >Set Area of Interest:</v-subheader>
-    </v-row>
-    <v-row style="padding-left:13px; height:30px">
-      <v-subheader style="font-size:18px;
-                          font-weight:bold;
-                          color:black"
-                          >Delete Area of Interest:</v-subheader>
-    </v-row>
-    <h3>________________________________</h3>
+   <div v-if="drawPolygonIcon">
+      <v-row style="padding-left:13px; height:30px; margin-top:-8px">
+        <v-subheader style="font-size:18px;
+                        font-weight:bold;
+                        color:black;"
+                        >Set Area of Interest:</v-subheader>
+      </v-row>
+      <v-row style="padding-left:13px; height:30px">
+        <v-subheader style="font-size:18px;
+                            font-weight:bold;
+                            color:black"
+                            >Delete Area of Interest:</v-subheader>
+      </v-row>
+      <h3>________________________________</h3>
+     </div>
     <div v-if="latTL != 999">
       <v-row style="height:35px; padding-left:13px">
          <v-subheader style="font-size:20px;
@@ -144,11 +146,24 @@ export default {
     polygonScoped: {
       type: Object,
       required: false,
+    },
+    drawPolygonIcon: {
+      type: Boolean,
+      required: true
     }
   },
   computed: {
+    ...mapState("wps", ["polygon"]),
     bboxEnabled() {
-      return this.latTL != 999 ? 'Marker-box' : 'MarkerBbox-box' 
+      if (this.drawPolygonIcon == false) {
+      return 'Default-box'
+      }
+      else if (this.polygon == null && this.drawPolygonIcon == true) {
+      return 'Box-select-area'
+      }
+      else {
+      return 'Box-area-selected'
+      }
     },
     setButtonEnabled() {
       return !( this.lng < -180 || this.lng >= 180 || this.lng == '' ||
@@ -192,7 +207,7 @@ export default {
 </script>
 
 <style>
-.Marker-box {
+.Default-box {
   position: absolute;
   top: 0.6rem;
   right: 0.5rem;
@@ -202,10 +217,10 @@ export default {
   border-radius: 4px;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   z-index: 1;
-  height: 370px;
+  height: 95px;
   width: 250px;
 }
-.MarkerBbox-box {
+.Box-select-area {
   position: absolute;
   top: 0.6rem;
   right: 0.5rem;
@@ -216,6 +231,19 @@ export default {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   z-index: 1;
   height: 170px;
+  width: 250px;
+}
+.Box-area-selected {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.5rem;
+  background-color: white;
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  height: 355px;
   width: 250px;
 }
 .font-style {
