@@ -687,7 +687,7 @@
             "id": "marine_conditions",
             "wps_id": "a1",
             "name": "Marine conditions",
-            "example":"https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
+            "example":"https://forcoast.eu/wp-content/uploads/2022/07/A1_bulletin_example_limfjord.jpg",
             "outputName":"bulletin.png",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
