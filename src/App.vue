@@ -4,7 +4,6 @@
     <app-sidebar
       @active-legend-change="onActiveLegendChange"
       @show-draggable-marker="onShowDraggableMarker"
-      @show-draw-polygon="onShowDrawPolygon"
     />
     <v-main>
       <!-- Reverse timeExtent to start with most recent date -->
@@ -19,7 +18,7 @@
         v-if="acceptedLegal"
         :layer="wmsLayer"
         :draggableMarker="draggableMarker"
-        :drawPolygon="drawPolygon"
+        :drawPolygonIcon="drawPolygonIcon"
       />
       <legal-dialog @accepted="onLegalAccepted" />
       <app-sidebar @toggle-tour="$tours.introduction.start()"/>
@@ -48,17 +47,24 @@ export default {
       legendLayer: null,
       acceptedLegal: false,
       draggableMarker: true,
-      drawPolygon: true,
-      boxPlot: false,
-    };
+      drawPolygonIcon: false
+    };  
   },
   watch: {
     $route() {
       this.reset();
     },
+    selectedService() {
+      if (this.selectedService.components.polygon == true) {
+        this.showPolygonIcon(true)
+      } 
+      else {
+        this.showPolygonIcon(false)
+      }
+    }
   },
   computed: {
-    ...mapState("layers", ["selectedTime"]),
+    ...mapState("layers", ["selectedTime", "selectedService"]),
     ...mapGetters("layers", ["wmsLayer", "timeExtent", "layerTimestamp"])
   },
   methods: {
@@ -76,12 +82,12 @@ export default {
     onShowDraggableMarker(event) {
       this.draggableMarker = event;
     },
-    onShowDrawPolygon(event) {
-      this.drawPolygon = event;
-    },
     onSelectedTimeChange(event) {
       this.setSelectedTime(event);
     },
+    showPolygonIcon(boolean) {
+      this.drawPolygonIcon = boolean
+    }
   },
 };
 </script>
