@@ -51,9 +51,9 @@
                   "unit": "g/kg"
                 },
                 {
-                  "id": "forcoast:pilot_2_CMEMS_zos",
+                  "id": "forcoast:pilot_3_CMEMS_zos",
                   "name": "Sea Surface Height above Geoid",
-                  "layer": "forcoast:pilot_2_CMEMS_zos",
+                  "layer": "forcoast:pilot_3_CMEMS_zos",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
@@ -119,9 +119,7 @@
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed wave significance data from CMEMS",
                   "unit": "m"
-                }
-              ],
-            "layers_service_runner": [
+                },
               {
                 "id": "forcoast:HSI_Whiting",
                 "name": "HSI-Whiting",
@@ -130,7 +128,8 @@
                 "icon": "fish.png",
                 "colorscalerange": "auto",
                 "description": "Index for fishing",
-                "unit": "Index"
+                "unit": "Index",
+                "forcoastLayer": true
               }
             ],
               "date_span": true,
@@ -236,9 +235,7 @@
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed surface height from CMEMS",
                   "unit": "m"
-                }
-              ],
-              "layers_service_runner": [
+                },
                 {
                   "id": "forcoast:biscay_fronts_sst",
                   "name": "Frontal Zones Temperature",
@@ -247,7 +244,8 @@
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
                   "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
-                  "unit": "Index"
+                  "unit": "Index",
+                  "forcoastLayer": true
                 }
               ],
               "date_span": true,
@@ -299,7 +297,7 @@
                   "icon": "",
                   "colorscalerange": "-2,2",
                   "description": "Modelled water level produced in FORCOAST by Marine Institute",
-                  "unit": "-"
+                  "unit": "m"
                 },
                 {
                   "id": "temp",
@@ -309,7 +307,7 @@
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute",
-                  "unit": "-"
+                  "unit": "\u00B0C"
                 },
                 {
                   "id": "salt",
@@ -319,7 +317,7 @@
                   "icon": "",
                   "colorscalerange": "0,30",
                   "description": "Modelled salinity produced in FORCOAST by Marine Institute",
-                  "unit": "-"
+                  "unit": "g/kg"
                 }
               ],
               "date_span": true,
@@ -351,7 +349,7 @@
                   "icon": "",
                   "colorscalerange": "-2,2",
                   "description": "Modelled water level produced in FORCOAST by Marine Institute",
-                  "unit": "-"
+                  "unit": "m"
                 }
               ],
               "date_span": true,
@@ -703,7 +701,7 @@
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled water level produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "unit": "m"
                 },
                 {
                   "id": "forcoast:dk_salt",
@@ -713,7 +711,7 @@
                   "icon": "",
                   "colorscalerange": "0,30",
                   "description": "Modelled salinity produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "unit": "g/kg"
                 },
                 {
                   "id": "forcoast:dk_temp",
@@ -723,7 +721,7 @@
                   "icon": "",
                   "colorscalerange": "10,30",
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "unit": "\u00B0C"
                 },
                 {
                   "id": "forcoast:dk_currentspeed",
@@ -733,7 +731,7 @@
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled current velocity produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "unit": "m/s"
                 },
                 {
                   "id": "forcoast:dk_windspeed",
@@ -743,7 +741,7 @@
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled wind speed produced in FORCOAST by DMI",
-                  "unit": "-"
+                  "unit": "m/s"
                 }
               ],
               "date_span": true,
@@ -1071,16 +1069,6 @@
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "name": " Chlorophyll",
-                  "layer": "forcoast:northern_adriatic_sea_chl_satellite",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "chlorophyll_a.png",
-                  "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed chlorophyll-a data obtained from CNR",
-                  "unit": "POM"
-                },
-                {
                   "id": "forcoast:pilot_8_CMEMS_sst",
                   "name": "Sea Surface Temperature",
                   "layer": "forcoast:pilot_8_CMEMS_sst",
@@ -1089,16 +1077,6 @@
                   "colorscalerange": "0.01,10",
                   "description": "Remotely sensed sea surface temperature data from CMEMS",
                   "unit": "K"
-                },
-                {
-                  "id": "forcoast:northernadriatic_thetao",
-                  "name": "Water Temperature",
-                  "layer": "forcoast:northernadriatic_thetao",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by OGS",
-                  "unit": "/u00B0C"
                 },
                 {
                   "id": "forcoast:pilot_8_CMEMS_chl",
@@ -1129,9 +1107,7 @@
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water velocity data from CMEMS",
                   "unit": "m/s"
-                }
-              ],
-              "layers_service_runner": [
+                },
                 {
                   "id": "forcoast:northernadriatic_fronts_sst",
                   "name": "Frontal Zones Temperature",
@@ -1140,7 +1116,8 @@
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
                   "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
-                  "unit": "Index"
+                  "unit": "Index",
+                  "forcoastLayer": true
                 }
               ],
               "date_span": true,
