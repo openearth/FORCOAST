@@ -141,7 +141,6 @@ export default {
           {
             data: this.featuresInfo,
             type: "line",
-            connectNulls: true,
             tooltip: {
               show: "true",
               trigger: "axis",
