@@ -8,6 +8,7 @@
 import buildLegendUrl from "@/lib/build-legend-url";
 import debounce from "lodash/debounce";
 import { ref } from "vue";
+import { mapState } from "vuex";
 
 export default {
   props: {
@@ -28,6 +29,7 @@ export default {
   },
 
   computed: {
+    ...mapState("layers", ["activeLayers"]),
     legendUrl() {
       
       const scale = this.zoomLevel;
@@ -38,7 +40,12 @@ export default {
       });
     },
     resizeLegend() {
-      return this.windowHeight > 725 ? 'layer-legend_image' : 'layer-legend_image_small'
+      if ( this.activeLayers[0].name != "Frontal Zones Temperature" || this.activeLayers[0].name != "Spawning Grounds for Oysters" ) {
+        return this.windowHeight > 725 ? 'layer-legend_image' : 'layer-legend_image_small'
+      }
+      else {
+        return 'layer-legend_image'
+      }
     }
   },
   mounted() {
