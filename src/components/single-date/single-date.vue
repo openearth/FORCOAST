@@ -48,8 +48,9 @@ export default {
   },
   computed: {
     getEndDate() {
-      // Set endDate to today (should be done based on available date)
+      // Set endDate to today - 1 day (should be done based on available date)
       let date = new Date()
+      date.setDate(date.getDate() -1);
       var endDate = new Date(date).toISOString().split('T')[0]
       // var endDate = "2022-06-01"
       return endDate
