@@ -79,9 +79,7 @@
           ></v-text-field>
            </v-col>
            <v-btn v-if="setButtonEnabled"
-           :style="[ latTL != 999 ? 
-                    {'width':'10px', 'position':'absolute', 'right':'30px', 'top':'315px'} :
-                    {'width':'10px', 'position':'absolute', 'right':'30px', 'top':'125px'} ]"
+           :class="setButtonStyle" 
            value="true"
            color="primary" 
            @click="setValue">
@@ -169,7 +167,18 @@ export default {
       return !( this.lng < -180 || this.lng >= 180 || this.lng == '' ||
                this.lat <= -90 || this.lat >= 90 || this.lat == '' ||
              ( this.lat == this.valueLat.toFixed(2) && this.lng == this.valueLng.toFixed(2) ) )
-    }
+    },
+    setButtonStyle() {
+      if (this.drawPolygonIcon == false) {
+      return 'Default-button'
+      }
+      else if (this.polygon == null && this.drawPolygonIcon == true) {
+      return 'Button-select-area'
+      }
+      else {
+      return 'Button-area-selected'
+      }
+    },
   },
   watch: {
     valueLat(value) {
@@ -245,6 +254,24 @@ export default {
   z-index: 1;
   height: 355px;
   width: 250px;
+}
+.Button-box {
+  width: 10px;
+  position: absolute;
+  right: 30px;
+  top: 50px
+}
+.Button-select-area {
+  width: 10px;
+  position: absolute;
+  right: 30px;
+  top: 120px
+}
+.Button-area-selected {
+  width: 10px;
+  position: absolute;
+  right: 30px;
+  top: 305px
 }
 .font-style {
   height: 10%;
