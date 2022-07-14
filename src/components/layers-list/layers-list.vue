@@ -3,6 +3,9 @@
     <v-list class="pa-2" flat dense>
       <v-list-item-group>
         <template  v-for="(layer, index) in layers">
+          <v-subheader v-if="layer.forcoastLayer" 
+                       :key="layer.forcoastLayer"
+                       class="ForcoastLayer"> Layers produced by FORCOAST: </v-subheader>
           <v-list-item :key="layer.id" :ripple="false">
             <v-list-item-action>
               <v-switch v-model="selectedIds" :value="layer.id" dense></v-switch>
@@ -68,3 +71,12 @@ export default {
   }
 };
 </script>
+<style scoped>
+.ForcoastLayer{
+  margin-left: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  text-decoration: underline;
+  color: black
+}
+</style>
