@@ -20,6 +20,7 @@
       :manual="false"
       title="Data viewer"
       data-v-step="4"
+      bubble="Click here for the data viewer"
     >
     <collapsible-card
       v-if="service.components.layers"
@@ -62,7 +63,8 @@
       :expand="1"
       :manual="true"
       title="Service runner"
-       data-v-step="5"
+      data-v-step="5"
+      bubble="Click here for the service runner"
     >
     <draggable-marker v-if= service.components.draggable_marker
         @show-draggable-marker="onShowDraggableMarker" 
