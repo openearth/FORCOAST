@@ -772,7 +772,7 @@
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the site prospection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",      
-            "description": "The Site Prospection service offers information about the suitability of new and existing sites for aquaculture activities.",
+            "description": "The Site Prospection service offers information about the suitability of new and existing sites for bottom aquaculture activities.",
             "components": {
               "layers":[
                 {
