@@ -56,7 +56,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Salinity thresholds</v-subheader>
+        <v-subheader>Salinity thresholds [g/kg]</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
@@ -82,7 +82,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Temperature thresholds</v-subheader>
+        <v-subheader>Temperature thresholds [&deg;C]</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
