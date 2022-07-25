@@ -170,7 +170,7 @@ export default {
     },
     setButtonStyle() {
       if (this.drawPolygonIcon == false) {
-      return 'Default-button'
+      return 'Button-box'
       }
       else if (this.polygon == null && this.drawPolygonIcon == true) {
       return 'Button-select-area'
