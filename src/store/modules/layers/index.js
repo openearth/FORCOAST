@@ -16,6 +16,7 @@ export default {
     timeSpanUnfiltered: [],
     activeLayers: [],
     capabilities: null,
+    basemap: "Political"
 	},
   getters: {
     // always make the getCapabilities with the last selected Layer.
@@ -110,6 +111,9 @@ export default {
     CLEAR_CAPABILITIES(state) {
       state.capabilities = null
     },
+    SET_BASEMAP(state, basemap) {
+      state.basemap = basemap
+    }
 	},
   actions: {
     setCategory(context, payload) {
@@ -141,6 +145,9 @@ export default {
     },
     setActiveLayers(context, payload) {
       context.commit("SET_ACTIVE_LAYERS", payload)
+    },
+    setBasemap(context, payload) {
+      context.commit("SET_BASEMAP", payload)
     },
     async getCapabilities(context) {
       const { selectedLayer } = context.getters
