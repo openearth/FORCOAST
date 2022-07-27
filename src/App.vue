@@ -11,6 +11,7 @@
         v-if="wmsLayer && timeExtent.length"
         :timeExtentISO="timeExtent"
         :originalTimeISO="layerTimestamp"
+        :interval="activeLayers[0].interval"
         class="layer-timestamp"
         @selected-time-change="onSelectedTimeChange"
       ></layer-timestamp-card>
@@ -64,7 +65,7 @@ export default {
     }
   },
   computed: {
-    ...mapState("layers", ["selectedTime", "selectedService"]),
+    ...mapState("layers", ["selectedTime", "selectedService", "activeLayers"]),
     ...mapGetters("layers", ["wmsLayer", "timeExtent", "layerTimestamp"])
   },
   methods: {
