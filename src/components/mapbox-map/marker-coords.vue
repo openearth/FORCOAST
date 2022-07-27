@@ -206,10 +206,8 @@ export default {
      this.setMarkerCoordinates({lat: parseFloat(this.lat), lng: parseFloat(this.lng)})
     },
     setValueBBox() {
-      console.log(this.polygonScoped.features[0].geometry.coordinates[0][0][0])
       this.polygonScoped.features[0].geometry.coordinates[0][0][0] = parseFloat(this.latTL)
       this.setPolygon(this.polygonScoped)
-      console.log(this.polygonScoped.features[0].geometry.coordinates[0][0][0])
     }
   }
 };
