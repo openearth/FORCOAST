@@ -183,7 +183,9 @@ export default {
       this.centerPoint = cntr.geometry.coordinates;
       this.setMarkerCoordinates({lng:this.centerPoint[0], lat:this.centerPoint[1]})
     },
+    ...mapActions("layers", ["setBasemap"]),
     basemapChange() {
+      this.setBasemap(this.basemap)
       if (this.basemap == "Political Map:") {
         this.basemap = "Satellite Map:"
       }
