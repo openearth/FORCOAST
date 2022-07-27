@@ -79,8 +79,6 @@ export default {
   methods: { 
     ...mapActions("wps", ["setSelectedEntryValueOptional"]),
     entryValue() {
-      console.log('a3-optional')
-      console.log(this.valueArray)
       this.setSelectedEntryValueOptional(this.valueArray);
     }
     },
