@@ -75,23 +75,6 @@ export default {
       // switch style
       map.setStyle(style);
       this.currentLayerIndex = nextIndex;
-      
-      // re-add all custom layers when style is loaded
-      map.once("style.load", () => {
-        customSources.forEach((source) => {
-          const id = source.id;
-
-          delete source.id;
-
-          if (map.getSource(id)) {
-            map.removeSource(id);
-          }
-
-          map.addSource(id, source);
-        });
-
-        customLayers.forEach((layer) => map.addLayer(layer));
-      });
       this.$emit("basemapChange")
     },
 
