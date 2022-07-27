@@ -31,7 +31,7 @@
 <script>
 import { ref, watch, toRefs, computed } from "@vue/composition-api";
 import useLegend from "./useLegend";
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   props: { layers: Array },
@@ -54,9 +54,15 @@ export default {
 
     return { root, activeLegend, setActiveLegend, selectedIds, selectedLayers };
   },
+  computed: {
+    ...mapState("layers",["basemap"]),
+  },
   watch: {
     selectedLayers(newSelectedLayers) {
       this.clearLayers()
+    },
+    basemap() {
+      this.$emit("active-layers-change", this.selectedLayers)
     }
   },
   methods: {
