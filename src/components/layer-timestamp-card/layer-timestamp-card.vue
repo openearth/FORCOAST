@@ -19,12 +19,12 @@
         <v-combobox
           id="timeslider-dropdown"
           v-model="selectedTime"
-          :items="timeExtent"
+          :items="timeIdValueArray"
           :disabled="loadingRasterLayers"
           label="Select a timestamp"
           flat
-          item-text="date"
-          item-value="date"
+          item-text="id"
+          item-value="value"
           return-object
           color="formBase"
         />
@@ -40,6 +40,8 @@
 <script>
 import TimeSlider from "./time-slider";
 import isoToYyyyMmDdHhMm from "../../lib/formatTime/iso-to-yyyy-mm-dd-hh-mm";
+import isoToYyyyMmDd from "../../lib/formatTime/iso-to-yyyy-mm-dd";
+import isoToYyyyMm from "../../lib/formatTime/iso-to-yyyy-mm";
 
 export default {
   components: {
@@ -56,6 +58,10 @@ export default {
       default: null,
       required: true,
     },
+    interval: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {
@@ -63,21 +69,33 @@ export default {
       getLoadingState: false,
       loadingRasterLayers: false,
       dateIndex: 0,
-      timeExtentReverse: this.timeExtentISO.slice().reverse()
+      timeExtentReverse: this.timeExtentISO.slice().reverse(),
+      timeIdValueArray: []
     };
   },
   computed: { 
     timeExtent() {
-      return this.timeExtentReverse.map(time => isoToYyyyMmDdHhMm(time))
+      return this.timeIdValueArray
     }
   },
   mounted() {
-    this.selectedTime = isoToYyyyMmDdHhMm(this.originalTimeISO);
+    if (this.interval == "hourly") {
+      this.timeIdValueArray = this.timeExtentReverse.map(timeISO => ({value : timeISO, id : isoToYyyyMmDdHhMm(timeISO)}))
+    }
+    else if (this.interval == "daily") {
+      this.timeIdValueArray = this.timeExtentReverse.map(timeISO => ({value : timeISO, id : isoToYyyyMmDd(timeISO)}))
+    }
+    else if (this.interval == "monthly") {
+      this.timeIdValueArray = this.timeExtentReverse.map(timeISO => ({value : timeISO, id : isoToYyyyMm(timeISO)}))
+    }
+    else {
+    this.timeIdValueArray = this.timeExtentReverse.map(timeISO => ({value : timeISO, id : isoToYyyyMmDdHhMm(timeISO)}))
+    }
+    this.selectedTime = this.timeIdValueArray[0]
   },
   watch: {
     selectedTime() {
-      const time = new Date(this.selectedTime)
-      this.$emit("selected-time-change", time.toISOString());
+      this.$emit("selected-time-change", this.selectedTime.value);
       this.dateIndex =  this.timeExtent.indexOf(this.selectedTime)
     },
   },
