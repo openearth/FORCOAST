@@ -42,7 +42,6 @@ export default {
   }),
   watch: {
     date() {
-      console.log('date',this.date)
       this.setCalculationsTime(this.date);
     },
   },
