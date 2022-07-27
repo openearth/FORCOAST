@@ -81,7 +81,7 @@
 <script>
 import createTimeSpan from "@/lib/create-time-span";
 import filterExtentYyyyMmDdUnique from "@/lib/formatTime/filter-extent-yyyy-mm-dd-unique";
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 // NOTE. If the DescribeCoverage retrieves the timespan perhaps this can be removed.
 //TODO when I will get the ok to proceed with time, I will use the full extent that the capabilities return so I will not need the createTimeSpan function
 
@@ -101,6 +101,7 @@ export default {
     },
   },
   computed: { 
+    ...mapState("layers", ["selectedService"]),
     timeExtent() {
       return filterExtentYyyyMmDdUnique(this.timeExtentISO)
     }
@@ -108,7 +109,6 @@ export default {
   mounted() { 
     this.initValues()
   },
-
   watch: {
     startDate() {
       this.timeSpan.push(this.startDate);
@@ -130,8 +130,12 @@ export default {
         days = days.map((day) => day.toISOString().substr(0, 10));
         const filteredDays = days.filter(day => this.timeExtent.includes(day))
         this.setTimeSpan(filteredDays);
-        this.setTimeSpanUnfiltered(days)
-        
+        if (this.selectedService.name == "Site Prospection") {
+        this.setTimeSpanUnfiltered(filteredDays)
+        }
+        else {
+        this.setTimeSpanUnfiltered(days) 
+        }
       }
     },
   },
