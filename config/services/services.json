@@ -28,7 +28,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_swpt",
@@ -38,7 +39,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_sws",
@@ -48,7 +50,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
-                  "unit": "g/kg"
+                  "unit": "g/kg",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_zos",
@@ -58,7 +61,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed surface height from CMEMS",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_north_v",
@@ -68,7 +72,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed water velocity from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_east_v",
@@ -78,7 +83,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_wave_drift_x",
@@ -88,7 +94,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed wave drift data from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_wave_drift_y",
@@ -98,7 +105,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed wave drift data from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_3_CMEMS_wave_mean_per",
@@ -118,7 +126,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed wave significance data from CMEMS",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "hourly"
                 },
               {
                 "id": "forcoast:HSI_Whiting",
@@ -129,7 +138,9 @@
                 "colorscalerange": "auto",
                 "description": "Index for fishing",
                 "unit": "Index",
+                "interval": "daily",
                 "forcoastLayer": true
+
               }
             ],
               "date_span": true,
@@ -174,7 +185,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_2_CMEMS_sws",
@@ -184,7 +196,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
-                  "unit": "g/kg"
+                  "unit": "g/kg",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_2_CMEMS_chl_v2",
@@ -194,7 +207,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
                   "description": "Remotely sensed chlorophyll concentration data at 0.5m from CMEMS",
-                  "unit": "POM"
+                  "unit": "POM",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_2_CMEMS_north_v",
@@ -204,7 +218,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water velocity data from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_2_CMEMS_east_v",
@@ -214,7 +229,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water velocity data from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:biscay_sst",
@@ -224,7 +240,8 @@
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by AZTI",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_2_CMEMS_zos",
@@ -234,7 +251,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed surface height from CMEMS",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:biscay_fronts_sst",
@@ -245,6 +263,7 @@
                   "colorscalerange": "10,30",
                   "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
                   "unit": "Index",
+                  "interval": "hourly",
                   "forcoastLayer": true
                 }
               ],
@@ -297,7 +316,8 @@
                   "icon": "",
                   "colorscalerange": "-2,2",
                   "description": "Modelled water level produced in FORCOAST by Marine Institute",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "hourly"
                 },
                 {
                   "id": "temp",
@@ -307,7 +327,8 @@
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
                 },
                 {
                   "id": "salt",
@@ -317,7 +338,8 @@
                   "icon": "",
                   "colorscalerange": "0,30",
                   "description": "Modelled salinity produced in FORCOAST by Marine Institute",
-                  "unit": "g/kg"
+                  "unit": "g/kg",
+                  "interval": "hourly"
                 }
               ],
               "date_span": true,
@@ -349,7 +371,8 @@
                   "icon": "",
                   "colorscalerange": "-2,2",
                   "description": "Modelled water level produced in FORCOAST by Marine Institute",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "hourly"
                 }
               ],
               "date_span": true,
@@ -411,7 +434,8 @@
                   "styles": "boxfill/sst_36",
                   "colorscalerange": "-1,3",
                   "description": "Modelled water level produced in FORCOAST by Maretec",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_swpt_v2",
@@ -421,7 +445,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_sws",
@@ -431,7 +456,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
-                  "unit": "g/kg"
+                  "unit": "g/kg",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_chl",
@@ -441,7 +467,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS",
-                  "unit": "POM"
+                  "unit": "POM",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_nh4",
@@ -451,7 +478,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed ammonium concentration data at 2.5m from CMEMS",
-                  "unit": "mmol/m\u00B3"
+                  "unit": "mmol/m\u00B3",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_po4",
@@ -461,7 +489,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed phosphate concentration data at 2.5m from CMEMS",
-                  "unit": "mmol/m\u00B3"
+                  "unit": "mmol/m\u00B3",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_oxy",
@@ -471,7 +500,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS",
-                  "unit": "mg/L"
+                  "unit": "mg/L",
+                  "interval": "daily"
                 },
                 {
                   "id": "vm",
@@ -481,7 +511,8 @@
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled current velocity produced in FORCOAST by Maretec",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_north_v",
@@ -491,7 +522,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed water velocity from CMEMS",
-                  "unit": "ms"
+                  "unit": "ms",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_east_v",
@@ -501,7 +533,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed water velocity from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "wind_modulus",
@@ -511,7 +544,8 @@
                   "icon": "",
                   "colorscalerange": "0,15",
                   "description": "Modelled wind speed produced in FORCOAST by Maretec",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_zos",
@@ -521,7 +555,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed surface height from CMEMS",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "hourly"
                 }
               ],
               "date_span": true,
@@ -579,7 +614,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
                   "description": "Remotely sensed sea surface velocity from ERDDAP",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_4_ERDAPP_east_v_v2",
@@ -589,7 +625,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea surface velocity from ERDDAP",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 }
               ],
               "date_span": true,
@@ -626,7 +663,8 @@
                 "icon": "",
                 "colorscalerange": "auto",
                 "description": "Spawning grounds for Oysters",
-                "unit": "-"
+                "unit": "-",
+                "interval": "No time dimension"
               },
               {
               "id": "forcoast:surf_temp_daily_avg_north_sea_a4",
@@ -636,7 +674,8 @@
               "icon": "",
               "colorscalerange": "auto",
               "description": "Daily average surface temperature",
-              "unit": "\u00B0C"
+              "unit": "\u00B0C",
+              "interval": "hourly"
               }
               ],
               "date_span": true,
@@ -701,7 +740,8 @@
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled water level produced in FORCOAST by DMI",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:dk_salt",
@@ -711,7 +751,8 @@
                   "icon": "",
                   "colorscalerange": "0,30",
                   "description": "Modelled salinity produced in FORCOAST by DMI",
-                  "unit": "g/kg"
+                  "unit": "g/kg",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:dk_temp",
@@ -721,7 +762,8 @@
                   "icon": "",
                   "colorscalerange": "10,30",
                   "description": "Modelled water temperature at the surface layer produced in FORCOAST by DMI",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:dk_currentspeed",
@@ -731,7 +773,8 @@
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled current velocity produced in FORCOAST by DMI",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:dk_windspeed",
@@ -741,7 +784,8 @@
                   "icon": "",
                   "colorscalerange": "-1,1",
                   "description": "Modelled wind speed produced in FORCOAST by DMI",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 }
               ],
               "date_span": true,
@@ -783,7 +827,8 @@
                   "icon":"",
                   "colorscalerange": "auto",
                   "description": "Chorophyll concentration on bottom from Aarhus University",
-                  "unit": "mg/m\u00B3"
+                  "unit": "mg/m\u00B3",
+                  "interval": "monthly"
                 },
                 {
                   "id": "forcoast:a3_limfjord_botS",
@@ -793,7 +838,8 @@
                   "icon":"",
                   "colorscalerange": "auto",
                   "description": "Salinity on the bottom from Aarhus University",
-                  "unit": "g/kg"
+                  "unit": "g/kg",
+                  "interval": "monthly"
                 },
                 {
                   "id": "forcoast:a3_limfjord_botT",
@@ -803,7 +849,8 @@
                   "icon":"",
                   "colorscalerange": "auto",
                   "description": "Temperature on the bottom",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "monthly"
                 },
                 {
                   "id": "forcoast:a3_limfjord_botoxy",
@@ -813,7 +860,8 @@
                   "icon":"",
                   "colorscalerange": "auto",
                   "description": "Oxygen concentration on the bottom from Aarhus University",
-                  "unit": "mmol/m\u00B3"
+                  "unit": "mmol/m\u00B3",
+                  "interval": "monthly"
                 },
                 {
                   "id": "forcoast:a3_limfjord_resup",
@@ -823,7 +871,8 @@
                   "icon":"",
                   "colorscalerange": "auto",
                   "description": "Resuspension of sediments from Aarhus University",
-                  "unit": "g-POM/m\u00B2/d"
+                  "unit": "g-POM/m\u00B2/d",
+                  "interval": "monthly"
                 }
               ],
               "date_span": true,
@@ -895,7 +944,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS",
-                  "unit": "\u00B0C"
+                  "unit": "\u00B0C",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_sws",
@@ -905,7 +955,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
-                  "unit": "g/kg"
+                  "unit": "g/kg",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_oxy",
@@ -915,7 +966,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS",
-                  "unit": "mg/L"
+                  "unit": "mg/L",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_no3",
@@ -925,7 +977,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed nitrate concentration data at 2.5m from CMEMS",
-                  "unit": "mmol/m\u00B3"
+                  "unit": "mmol/m\u00B3",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_ph",
@@ -935,7 +988,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
-                  "unit": "pH"
+                  "unit": "pH",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_chl_v2",
@@ -945,7 +999,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS",
-                  "unit": "ppm"
+                  "unit": "ppm",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_zos",
@@ -955,7 +1010,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed surface height from CMEMS",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_north_v",
@@ -965,7 +1021,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed water velocity from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_east_v",
@@ -975,7 +1032,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_drift_x",
@@ -985,7 +1043,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed wave drift data from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_drift_y",
@@ -995,7 +1054,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed wave drift data from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_mean_per",
@@ -1005,7 +1065,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed wave period data from CMEMS",
-                  "unit": "s"
+                  "unit": "s",
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_sig",
@@ -1015,7 +1076,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed wave significance data from CMEMS",
-                  "unit": "m"
+                  "unit": "m",
+                  "interval": "hourly"
                 }
               ],
               "date_span": true,
@@ -1076,7 +1138,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
                   "description": "Remotely sensed sea surface temperature data from CMEMS",
-                  "unit": "K"
+                  "unit": "K",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_8_CMEMS_chl",
@@ -1086,7 +1149,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
                   "description": "Remotely sensed chlorophyll concentration data from CMEMS",
-                  "unit": "POM"
+                  "unit": "POM",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_8_CMEMS_north_v",
@@ -1096,7 +1160,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water velocity data from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_8_CMEMS_east_v",
@@ -1106,7 +1171,8 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water velocity data from CMEMS",
-                  "unit": "m/s"
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:northernadriatic_fronts_sst",
@@ -1117,6 +1183,7 @@
                   "colorscalerange": "10,30",
                   "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
                   "unit": "Index",
+                  "interval": "hourly",
                   "forcoastLayer": true
                 }
               ],
