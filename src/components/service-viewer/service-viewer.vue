@@ -62,7 +62,7 @@
     <collapsible-group
       :expand="1"
       :manual="true"
-      title="Service runner"
+      :title="service_title"
       data-v-step="5"
       bubble="Click here for the service runner"
     >
@@ -243,6 +243,7 @@ export default {
     return {
       title: "Select a layer",
       dialog: false,
+      service_title: this.service.service_label
     };
   },
 
