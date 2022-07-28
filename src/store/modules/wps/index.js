@@ -14,7 +14,9 @@ export default {
     selectedEntryType: null,
     selectedEntryValueOptional: null,
     selectedEntryTypeOptional: null,
-    calculationsTime: null
+    calculationsTime: null,
+    calculationsHours: null,
+    dateTime:null
   },
   getters: {
     getEntryValue: (state) => {
@@ -36,6 +38,9 @@ export default {
     },
     SET_CALCULATIONS_TIME(state, time) {
       state.calculationsTime = time
+    },
+    SET_CALCULATIONS_HOURS(state,hours) {
+      state.calculationsHours = hours
     },
     SET_SELECTED_ENTRY_VALUE(state, entryValue) {
       state.selectedEntryValue = entryValue
@@ -93,11 +98,14 @@ export default {
     setCalculationsTime(context, payload) {
       context.commit("SET_CALCULATIONS_TIME", payload)
     },
+    setCalculationsHours(context, payload) {
+      context.commit("SET_CALCULATIONS_HOURS",payload)
+    },
     //TODO finish with this action. Check if all the status are set.
     async runProcessor({commit, state, rootState}) {
 
       const {selectedAreaId, selectedService } = rootState.layers
-      const { markerLngLat, calculationsTime, selectedEntryType, selectedEntryValue, selectedEntryValueOptional, polygon, jobStatus } = state
+      const { markerLngLat, calculationsTime, calculationsHours, selectedEntryType, selectedEntryValue, selectedEntryValueOptional, polygon, jobStatus } = state
 
       // Set pilot area for selected service
       const area = selectedAreaId

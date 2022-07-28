@@ -20,6 +20,7 @@
       :manual="false"
       title="Data viewer"
       data-v-step="4"
+      bubble="Click here to visualise relevant parameters on the map"
     >
     <collapsible-card
       v-if="service.components.layers"
@@ -68,8 +69,9 @@
     <collapsible-group
       :expand="1"
       :manual="true"
-      title="Service runner"
-       data-v-step="5"
+      :title="service_title"
+      data-v-step="5"
+      bubble="Click here to use the service"
     >
     <draggable-marker v-if= service.components.draggable_marker
         @show-draggable-marker="onShowDraggableMarker" 
@@ -87,6 +89,14 @@
     >
       <single-date></single-date>
     </collapsible-card>
+    <collapsible-card 
+    v-if="service.components.hours"
+    :expand="1"
+    title = "Select a date and time for the calculations"
+    > 
+    <time-entry-r1></time-entry-r1> 
+    </collapsible-card> 
+    
     <collapsible-card
       v-if="service.components.entry_form"
       :title="service.components.entry_form.title"
@@ -131,6 +141,7 @@
       <entry-form-a4>
       </entry-form-a4>
     </collapsible-card>
+    
     <collapsible-card
       v-if="service.components.draw_polygon"
       :title="service.components.draw_polygon.title"
@@ -166,6 +177,7 @@
     <status-card 
       v-if="jobStatus==='accepted'"
       :date="calculationsTime"
+      :hours ="calculationsHours"
       :firstStatus="jobStatus"
       :statusLink="statusLink"
       :outputName="service.outputName"
@@ -199,6 +211,7 @@ import EntryFormA3 from '@/components/entry-form-a3'
 import EntryFormA3Optional from '@/components/entry-form-a3-optional'
 import EntryFormA4 from '@/components/entry-form-a4'
 import Presets from '@/components/presets'
+import HourSpan from '@/components/Time-entry-r1'
 
 import { mapState, mapGetters, mapActions } from "vuex";
 
@@ -219,7 +232,9 @@ export default {
     EntryFormA3,
     EntryFormA3Optional,
     EntryFormA4,
-    Presets
+    Presets,
+    'time-entry-r1': HourSpan
+
   },
   props: {
     service: {
@@ -231,6 +246,7 @@ export default {
     return {
       title: "Select a layer",
       dialog: false,
+      service_title: this.service.service_label
     };
   },
 

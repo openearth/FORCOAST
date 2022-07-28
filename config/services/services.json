@@ -10,6 +10,7 @@
         "services": [
           {
             "id": "suitable_fishing_areas",
+            "service_label": "Suitable Fishing Areas Service",
             "wps_id": "f1",
             "name": "Suitable Fishing Areas",
             "example": "https://forcoast.eu/wp-content/uploads/2022/06/F1_bulletin_example-1.jpg",
@@ -167,6 +168,7 @@
         "services": [
           {
             "id": "front_detection",
+            "service_label": "Fronts Detection Service",
             "wps_id": "f2",
             "name": "Fronts detection",
             "example": "https://forcoast.eu/wp-content/uploads/2022/06/frontsanimation.webm",
@@ -298,6 +300,7 @@
         "services": [
           {
             "id": "land_pollution",
+            "service_label": "Land Pollution Service",
             "wps_id": "a2",
             "name": "Land Pollution",
             "outputName":"bulletin.gif",
@@ -355,6 +358,7 @@
             "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
+            "service_label": "Contaminants Source Retrieval Service",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
             "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
@@ -376,7 +380,8 @@
                 }
               ],
               "date_span": true,
-              "date": true,
+              "date": false,
+              "hours": true,
               "draggable_marker": {
                 "title": "Place marker at source location"
               },
@@ -415,6 +420,7 @@
         "services": [
           {
             "id": "marine_conditions",
+            "service_label": "Marine Conditions Service",
             "wps_id": "a1",
             "name": "Marine conditions",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
@@ -596,6 +602,7 @@
         "services": [
           {
             "id": "source_retrieval",
+            "service_label": "Contaminant Source Retrieval Service",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
             "example": "https://forcoast.eu/wp-content/uploads/2022/07/R1_bulletin_example_north_sea.jpg",
@@ -646,9 +653,9 @@
           { 
             "id": "spat_capture",
             "wps_id": "a4",
-            "name": "Assistance for Spat Capture",
+            "name": "Spat Capture Assistance",
+            "service_label": "Spat Capture Assistance Service",
             "example": "https://forcoast.eu/wp-content/uploads/2022/07/A4_bulletin_example_north_sea.jpg",
-            "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the spat capture assistance service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
@@ -722,10 +729,10 @@
         "services": [
           {
             "id": "marine_conditions",
+            "service_label": "Marine Conditions Service",
             "wps_id": "a1",
-            "name": "Marine conditions",
+            "name": "Marine Conditions",
             "example":"https://forcoast.eu/wp-content/uploads/2022/07/A1_bulletin_example_limfjord.jpg",
-            "outputName":"bulletin.png",
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
@@ -809,6 +816,7 @@
           },
           {
             "id": "site_prospection",
+            "service_label": "Site Prospection Service",
             "wps_id": "a3",
             "name": "Site Prospection",
             "example": "https://forcoast.eu/wp-content/uploads/2022/07/A3_bulletin_example_limfjord.jpg",
@@ -926,6 +934,7 @@
         "services": [
           {
             "id": "land_pollution",
+            "service_label": "Land Pollution Service",
             "wps_id": "a2",
             "name": "Land Pollution",
             "example":"https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
@@ -1107,6 +1116,7 @@
         "services": [
           {
             "id": "front_detection",
+            "service_label": "Fronts Detection Service",
             "wps_id": "f2",
             "name": "Fronts detection",
             "example": "https://forcoast.eu/wp-content/uploads/2022/07/adriatic_fronts_animation.webm",
