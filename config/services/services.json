@@ -10,6 +10,7 @@
         "services": [
           {
             "id": "suitable_fishing_areas",
+            "service_label": "Suitable Fishing Areas Service",
             "wps_id": "f1",
             "name": "Suitable Fishing Areas",
             "example": "https://minio.apps.k.terrasigna.com/forcoast/example/no-data.jpg",
@@ -156,6 +157,7 @@
         "services": [
           {
             "id": "front_detection",
+            "service_label": "Fronts Detection Service",
             "wps_id": "f2",
             "name": "Fronts detection",
             "example": "https://minio.apps.k.terrasigna.com/forcoast/example/no-data.jpg",
@@ -279,6 +281,7 @@
         "services": [
           {
             "id": "land_pollution",
+            "service_label": "Land Pollution Service",
             "wps_id": "a2",
             "name": "Land Pollution",
             "example": "https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
@@ -331,6 +334,7 @@
             "id": "source_retrieval",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
+            "service_label": "Contaminants Source Retrieval Service",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
             "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
             "contact": "Luis.Rodriguez@deltares.nl",
@@ -390,6 +394,7 @@
         "services": [
           {
             "id": "marine_conditions",
+            "service_label": "Marine Conditions Service",
             "wps_id": "a1",
             "name": "Marine conditions",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
@@ -558,6 +563,7 @@
         "services": [
           {
             "id": "source_retrieval",
+            "service_label": "Contaminant Source Retrieval Service",
             "wps_id": "r1",
             "name": "Contaminants Source Retrieval",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
@@ -606,6 +612,7 @@
             "id": "spat_capture",
             "wps_id": "a4",
             "name": "Assistance for Spat Capture",
+            "service_label": "Spat Capture Service",
             "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
             "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
             "contact": "Luis.Rodriguez@deltares.nl",
@@ -678,6 +685,7 @@
         "services": [
           {
             "id": "marine_conditions",
+            "service_label": "Marine Conditions Service",
             "wps_id": "a1",
             "name": "Marine conditions",
             "example":"https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
@@ -759,6 +767,7 @@
           },
           {
             "id": "site_prospection",
+            "service_label": "Site Prospection Service",
             "wps_id": "a3",
             "name": "Site Prospection",
             "feedback": "https://forms.gle/Bq9KebyLJM2eec6V9",
@@ -864,6 +873,7 @@
         "services": [
           {
             "id": "land_pollution",
+            "service_label": "Land Pollution Service",
             "wps_id": "a2",
             "name": "Land Pollution",
             "example":"https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
@@ -1030,6 +1040,7 @@
         "services": [
           {
             "id": "front_detection",
+            "service_label": "Fronts Detection Service",
             "wps_id": "f2",
             "name": "Fronts detection",
             "example": "https://minio.apps.k.terrasigna.com/forcoast/example/no-data.jpg",
