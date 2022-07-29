@@ -69,7 +69,7 @@
     <collapsible-group
       :expand="1"
       :manual="true"
-      :title="service_title"
+      :title="service.service_label"
       data-v-step="5"
       bubble="Click here to use the service"
     >
@@ -245,8 +245,7 @@ export default {
   data() {
     return {
       title: "Select a layer",
-      dialog: false,
-      service_title: this.service.service_label
+      dialog: false
     };
   },
 
