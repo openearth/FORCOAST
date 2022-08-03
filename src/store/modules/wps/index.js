@@ -154,7 +154,7 @@ export default {
         target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
       }
 
-      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
+      const response = await run(calculationsTime, calculationsHours, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
       //const response = await run(testtime, id)
       const href = response[0].value.href
 
