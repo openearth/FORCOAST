@@ -15,7 +15,7 @@ export default {
     selectedEntryValueOptional: null,
     selectedEntryTypeOptional: null,
     calculationsTime: null,
-    
+    dateTime:null
   },
   getters: {
     getEntryValue: (state) => {
