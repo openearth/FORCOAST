@@ -89,13 +89,13 @@
     >
       <single-date></single-date>
     </collapsible-card>
-    <!-- <collapsible-card 
-    v-if="service.components.hours"
+    <collapsible-card 
+    v-if="service.components.time"
     :expand="1"
     title = "Select a date and time for the calculations"
     > 
 
-    </collapsible-card>  -->
+    </collapsible-card> 
     
     <collapsible-card
       v-if="service.components.entry_form"
