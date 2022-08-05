@@ -89,13 +89,13 @@
     >
       <single-date></single-date>
     </collapsible-card>
-    <!-- <collapsible-card 
+    <collapsible-card 
     v-if="service.components.hours"
     :expand="1"
     title = "Select a date and time for the calculations"
     > 
-
-    </collapsible-card>  -->
+    <time-entry-r1></time-entry-r1> 
+    </collapsible-card> 
     
     <collapsible-card
       v-if="service.components.entry_form"
@@ -177,6 +177,7 @@
     <status-card 
       v-if="jobStatus==='accepted'"
       :date="calculationsTime"
+      :hours ="calculationsHours"
       :firstStatus="jobStatus"
       :statusLink="statusLink"
       :outputName="service.outputName"
@@ -210,7 +211,7 @@ import EntryFormA3 from '@/components/entry-form-a3'
 import EntryFormA3Optional from '@/components/entry-form-a3-optional'
 import EntryFormA4 from '@/components/entry-form-a4'
 import Presets from '@/components/presets'
-
+import HourSpan from '@/components/Time-entry-r1'
 
 import { mapState, mapGetters, mapActions } from "vuex";
 
@@ -232,7 +233,7 @@ export default {
     EntryFormA3Optional,
     EntryFormA4,
     Presets,
-    
+    'time-entry-r1': HourSpan
 
   },
   props: {
