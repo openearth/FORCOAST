@@ -6,19 +6,17 @@ import { template_a2 } from './template_a2'
 import { template_a1 } from './template_a1'
 import { template_r1 } from './template_r1'
 
-export default function(date, hours, period, id, area, source, target, lat, lon, lim, selectedEntryValue, selectedEntryValueOptional) {
+export default function(time, period, id, area, source, target, lat, lon, lim, selectedEntryValue, selectedEntryValueOptional) {
 	
 	const data  = (() => {
 		if (id == "f2") {
-			return template_f2(date, id)
+			return template_f2(time, id)
 		} else if (id == "a2") {
-			return template_a2(date, id, area, source, target)
+			return template_a2(time, id, area, source, target)
 		} else if (id == "a1") {
-			return template_a1(area, date, lat, lon, lim)
+			return template_a1(area, time, lat, lon, lim)
 		} else if (id == "r1") {
-			const dateTime = date + "T" + hours + ":00"
-			console.log(date,hours,dateTime)
-			return template_r1(area, dateTime, period, lon, lat)
+			return template_r1(area, time, period, lon, lat)
 		} else if (id == "a3") {
 			if (target == "") {
 				// default target for entire area, if no specific one is prescribed
