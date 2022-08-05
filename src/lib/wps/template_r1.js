@@ -1,4 +1,4 @@
-export const template_r1 = (area, dateTime, period, lon, lat) =>({
+export const template_r1 = (area, time, period, lon, lat) =>({
    "inputs":[
      {
          "id":"pilot",
@@ -18,21 +18,10 @@ export const template_r1 = (area, dateTime, period, lon, lat) =>({
                "mimeType":"text/plain"
             },
             "value":{
-               "inlineValue": dateTime
+               "inlineValue": time
             }
          }
       },
-      // {
-      //    "id":"hours",
-      //    "input":{
-      //       "format":{
-      //          "mimeType":"text/plain"
-      //       },
-      //       "value":{
-      //          "inlineValue": hours
-      //       }
-      //    }
-      // },
      {
          "id":"period",
          "input":{
