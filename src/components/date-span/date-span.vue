@@ -101,7 +101,7 @@ export default {
     },
   },
   computed: { 
-    ...mapState("layers", ["selectedService"]),
+    ...mapState("layers", ["selectedService", "activeLayers"]),
     timeExtent() {
       return filterExtentYyyyMmDdUnique(this.timeExtentISO)
     }
@@ -126,8 +126,20 @@ export default {
       if (this.timeSpan.length > 1 && this.startDate !== undefined && this.endDate !== undefined) {
         const start = new Date(this.startDate);
         const end = new Date(this.endDate);
-        let days = createTimeSpan(start, end);
-        days = days.map((day) => day.toISOString().substr(0, 10));
+        let days = createTimeSpan(start, end, this.activeLayers[0].interval);
+        if (this.activeLayers[0].interval == "hourly") {
+          days = days.map((day) => day.toISOString());
+          days.forEach((hour, index) => {
+            if (this.timeExtentISO.find(value => value.includes(hour.substr(0, 13)))){
+              const match = this.timeExtentISO.find(value => value.includes(hour.substr(0, 13)))
+              days[index] = match
+            }
+          });
+        } else {
+          days = days.map((day) => day.toISOString().substr(0, 10));
+        }
+        
+        const actualTimes = this.timeExtentISO.filter(value => days.includes((value.substr(0,13))))
         const filteredDays = days.filter(day => this.timeExtent.includes(day))
         this.setTimeSpan(filteredDays);
         if (this.selectedService.name == "Site Prospection") {
