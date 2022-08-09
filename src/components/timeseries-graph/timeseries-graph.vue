@@ -17,6 +17,7 @@ import featureInfo from "@/lib/featureInfo";
 import * as echarts from "echarts";
 import "echarts-gl";
 import { mixin as clickaway } from 'vue-clickaway';
+import { mapState } from 'vuex';
 
 export default {
   props: {
@@ -40,6 +41,7 @@ export default {
       disabled: true, 
       dialog: true,
       graph: null,
+      timeAxisName: [],
     };
   },
   mixins: [ clickaway ],
@@ -51,7 +53,9 @@ export default {
       lng - 0.1 + "," + (lat - 0.1) + "," + (lng + 0.1) + "," + (lat + 0.1);
     this.getAllFeatureInfo();
   },
-
+  computed: {
+    ...mapState("layers", ["activeLayers"])
+  },
   watch: {
     featuresInfo() {
       // call graph
@@ -83,6 +87,16 @@ export default {
         })
       );
       this.featuresInfo = this.featuresInfo.map( (value) => value == undefined ? null : value )
+      this.timeAxisNames(this.timeSpanUnfiltered)
+    },
+    timeAxisNames(array) {
+      if (this.activeLayers[0].interval == "hourly") {
+        array.forEach((date, index) => {
+          this.timeAxisName[index] = date.substr(0, 10) + ':' + date.substr(11, 2) + 'h'
+        });
+      } else {
+        this.timeAxisName = array
+      }
     },
     closeDialog() {
       this.dialog = false;
@@ -115,7 +129,7 @@ export default {
         },
         xAxis: {
           type: "category",
-          data: this.timeSpanUnfiltered,
+          data: this.timeAxisName,
           name: "Date",
           nameLocation: "center",
           nameTextStyle: {
