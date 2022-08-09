@@ -72,9 +72,11 @@ export default {
 };
 </script>
 <style scoped>
-.v-expansion-panels.condensed .v-expansion-panel-header {
+.v-expansion-panels.condensed 
+ .v-expansion-panel-header {
   padding-top: 4px;
   padding-bottom: 4px;
+  border-radius: 4px;
   min-height: auto;
 }
 .v-expansion-panels.condensed
@@ -82,6 +84,7 @@ export default {
   .v-expansion-panel-header {
   padding-top: 8px;
   padding-bottom: 8px;
+  border-radius: 4px 4px 0px 0px;
 }
 .v-expansion-panels.condensed .v-expansion-panel--active:not(:first-child),
 .v-expansion-panels.condensed .v-expansion-panel--active + .v-expansion-panel {
