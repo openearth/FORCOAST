@@ -50,7 +50,7 @@
     ></draggable-marker>
     </collapsible-card>
     <div v-if="service.components.date_span" class="mb-4">
-      <div v-if="timeSpan.length && selectedLayer">
+      <div v-if="timeSpan.length && selectedLayer || timeSpanUnfiltered.length && selectedLayer">
         <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
         <timeseries-graph
           v-if="dialog"
