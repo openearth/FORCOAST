@@ -130,7 +130,7 @@ export default {
         xAxis: {
           type: "category",
           data: this.timeAxisName,
-          name: "Date",
+          name: "Time (GMT)",
           nameLocation: "center",
           nameTextStyle: {
             fontSize: 16,
