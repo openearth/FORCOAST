@@ -20,7 +20,7 @@
       :manual="false"
       title="Data viewer"
       data-v-step="4"
-      bubble="Click here to visualise relevant parameters on the map"
+      bubble="Click here to visualize relevant parameters on the map"
     >
     <collapsible-card
       v-if="service.components.layers"
