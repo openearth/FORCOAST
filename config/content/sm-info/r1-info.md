@@ -1,0 +1,1 @@
+This service uses a backtracking simulation to find the potential source of contaminents. A location is chosen where the contaminents are present. The duration of the backtracking simulation and the start time of the simulation must also be set. A bulletin will be produced highlighting areas with a probability of it being the contaminents source (see example bulletin).
