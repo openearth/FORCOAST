@@ -2,7 +2,7 @@
   <v-expansion-panels v-model="open" :disabled="disabled" class="condensed">
   <v-col>
     <v-expansion-panel>
-      <v-tooltip bottom>
+      <v-tooltip bottom max-width="400px">
         <template v-slot:activator="{ on }">
           <v-expansion-panel-header
             color="primary"
@@ -16,7 +16,7 @@
             </template>
           </v-expansion-panel-header>
          </template>
-        <v-span>{{bubble}}</v-span>
+        {{bubble}}
       </v-tooltip>
        <v-divider></v-divider>
          <v-expansion-panel-content class="mx-n4 my-1">
