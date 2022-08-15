@@ -17,7 +17,20 @@
           readonly
           v-bind="attrs"
           v-on="on"
-        ></v-text-field>
+        >
+        <template v-slot:append>
+         <v-tooltip
+           bottom
+           >
+          <template v-slot:activator="{ on }">
+            <v-icon v-on="on" small>
+                ℹ
+            </v-icon>
+          </template>
+          Select the date that will be used for the start of the simulation
+          </v-tooltip>
+        </template>
+        </v-text-field>
       </template>
       <v-date-picker
         v-model="date"
