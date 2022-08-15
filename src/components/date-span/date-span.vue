@@ -1,5 +1,12 @@
 <template>
-  <div class="pa-4">
+  <div class="pa-4"> 
+    <div class="px-5 pb-3 flex-grow-1 overflow-y-auto">
+      This tool can create a line-chart for the values of a data-layer in a specific location over time. <br/><br/>
+      <div style="font-weight:bold;">To create a timeseries graph:</div>
+      -Select a data-layer <br/> 
+      -Select a start- and end-date<br/> 
+      -Select a location with the blue marker
+    </div>
     <v-row>
       <v-col>
         <v-menu
