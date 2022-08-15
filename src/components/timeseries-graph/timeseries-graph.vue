@@ -130,7 +130,7 @@ export default {
         xAxis: {
           type: "category",
           data: this.timeAxisName,
-          name: "Time (UTC)",
+          name: "Time (🕑 UTC)",
           nameLocation: "center",
           nameTextStyle: {
             fontSize: 16,
