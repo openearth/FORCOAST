@@ -13,12 +13,28 @@
                      rules.isFloat,
                      rules.inRange(0,10)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="mg-C/mg-Chla"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  This value represents the half-saturation coefficient of the food response based on the known physiology of the species.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Oxygen lower threshold [mg/l]</v-subheader>
+        <v-subheader>Oxygen lower threshold</v-subheader>
       </v-col>
       <v-col cols="8">
           <v-text-field
@@ -28,7 +44,23 @@
                      rules.isFloat,
                      rules.inRange(0,10)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="mg/L"
+            persistent-hint
+          >
+           <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  This value represents the oxygen content on the bottom. Different species have different sensitivity to hypoxia. The value should be based on the species of interest.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
@@ -43,7 +75,23 @@
                      rules.isFloat,
                      rules.inRange(0,2)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="g-POM/m2/d"
+            persistent-hint
+            >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  This value represents resuspension of sediments. The user can define a critical threshold for bottom resuspension from where the oysters are negatively affected.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
@@ -57,7 +105,21 @@
             :rules="[rules.emptyField,
                      rules.isFloat]"
             v-on:input="entryValue"
-          ></v-text-field>
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  This value represents the coefficinet of expected decay.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     </v-container>

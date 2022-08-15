@@ -56,7 +56,7 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Salinity thresholds [g/kg]</v-subheader>
+        <v-subheader>Salinity thresholds</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
@@ -66,6 +66,8 @@
                      rules.isFloat,
                      rules.inRange(8,36)]"
             v-on:input="entryValue"
+            hint="g/kg"
+            persistent-hint
           ></v-text-field>
       </v-col>
       <v-col cols="4">
@@ -77,12 +79,28 @@
                      rules.inRange(8,36),
                      rules.isHigher(this.valueArray[4],'lower threshold')]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="g/kg"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  These values represent the minimal and maximal threshold values for sea bottom salinity which are used to calculate scoring indexes.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Temperature thresholds [&deg;C]</v-subheader>
+        <v-subheader>Temperature thresholds </v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
@@ -92,6 +110,8 @@
                      rules.isFloat,
                      rules.inRange(0,10)]"
             v-on:input="entryValue"
+            hint="℃"
+            persistent-hint
           ></v-text-field>
       </v-col>
       <v-col cols="4">
@@ -103,7 +123,23 @@
                      rules.inRange(10,35),
                      rules.isHigher(valueArray[6],'lower threshold')]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="℃"
+            persistent-hint
+          >
+             <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  These values represent the minimal and maximal threshold values for sea bottom temperature which are used to calculate scoring indexes.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     </v-container>

@@ -8,11 +8,41 @@
       <v-col cols="8">
         <v-row>
        <input @change="checkbox1(); entryValue()" type="checkbox" v-model="checkoption1">
-          <label>Temperature threshold</label> 
+          <label>Temperature threshold
+            <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on"
+                  small
+                  right
+                  style="padding-left:70px">
+                    ℹ
+                  </v-icon>
+                </template>
+                  This method determines spawning events based on daily average water temperature. The threshold value should be a daily average in which spawning events start to occur.
+              </v-tooltip>
+          </label> 
         </v-row>
         <v-row>
        <input @change="checkbox2(); entryValue()" type="checkbox" v-model="checkoption2">
-          <label>Cumulative temperature</label>
+          <label>Cumulative temperature
+            <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on"
+                  small
+                  right
+                  style="padding-left:61px">
+                    ℹ
+                  </v-icon>
+                </template>
+                  This method determines spawning events based on comulative daily averae water temperatures. Temperature values start accumulating from the 1st of Januari each year. The threshold value should be a cumulative temperature in which spawning events start to occur.
+              </v-tooltip>
+          </label>
         </v-row>
       </v-col>
     </v-row>
@@ -23,12 +53,27 @@
       <v-col cols="8">
           <v-text-field
             v-model.number="valueArray[1]"
-            label="degrees celsius"
             :rules="[rules.emptyField,
                      rules.isInt,
                      rules.inRange(0,30)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="℃"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+              <template v-slot:activator="{ on }">
+                <v-icon v-on="on" small>
+                    ℹ
+                </v-icon>
+              </template>
+                This value is used to determine the threshold for when spawning events will occur.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row v-if= "checkoption2">
@@ -38,12 +83,27 @@
       <v-col cols="8">
           <v-text-field
             v-model.number="valueArray[2]"
-            label="degrees celcius"
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.inRange(0,30)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="℃"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                 A value of “gonad development threshold” represents the cumulative temerature above which gonad maturation begins.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>   
     <v-row v-if= "checkoption2">
@@ -53,38 +113,71 @@
       <v-col cols="8">
           <v-text-field
             v-model.number="valueArray[3]"
-            label="degrees celcius"
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.inRange(0,10000)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="℃"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                Cumulative sum of temperature above "Threshold of temperature for gonad development" represent the gonad maturation process. When the sum exceeds this thresolds, spawning events begins. 
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Pelagic larval duration (days)</v-subheader>
+        <v-subheader>Pelagic larval duration</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
             v-model.number="valueArray[4]"
-            label="Minimal"
+            label="Min"
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.inRange(0,365)]"
             v-on:input="entryValue"
+            hint="days"
+            persistent-hint
           ></v-text-field>
       </v-col>
       <v-col cols="4">
           <v-text-field
             v-model.number="valueArray[5]"
-            label="Maximal"
+            label="Max"
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.isHigher(valueArray[5],'minimal duration'),
                      rules.inRange(0,365)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="days"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                This value is the duration in which larvae will drift prior to settlement abilities. For species which are swarming, the swarming duration should be added to pelagic larval duration parameterization.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
@@ -94,12 +187,27 @@
       <v-col cols="8">
           <v-text-field
             v-model.number="valueArray[6]"
-            label="days"
             :rules="[rules.emptyField,
                      rules.isInt,
                      rules.inRange(0,365)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="days"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  This value represents the duration of a spawning event for the species of interest.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     </v-container>
