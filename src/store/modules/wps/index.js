@@ -8,6 +8,7 @@ export default {
   state: {
     polygon: null,
     markerLngLat: null,
+    serviceLimitsMarker: true,
     jobStatus: null,
     statusLink: null,
     selectedEntryValue: null,
@@ -35,10 +36,12 @@ export default {
     CLEAR_MARKER_COORDINATES(state) {
       state.markerLngLat = null
     },
+    SET_SERVICE_LIMITS_MARKER(state, bool) {
+      state.serviceLimitsMarker = bool
+    },
     SET_CALCULATIONS_TIME(state, time) {
       state.calculationsTime = time
     },
-
     SET_SELECTED_ENTRY_VALUE(state, entryValue) {
       state.selectedEntryValue = entryValue
     },
@@ -47,6 +50,9 @@ export default {
     },
     CLEAR_SELECTED_ENTRY_VALUE(state) {
       state.selectedEntryValue = null
+    },
+    CLEAR_SELECTED_ENTRY_VALUE_OPTIONAL(state) {
+      state.selectedEntryValueOptional = null
     },
     SET_SELECTED_ENTRY_TYPE(state, entryType) {
       state.selectedEntryType = entryType
@@ -77,6 +83,9 @@ export default {
     clearMarkerCoordinates(context) {
       context.commit("CLEAR_MARKER_COORDINATES")
     },
+    setServiceLimitsMarker(context, payload) {
+      context.commit("SET_SERVICE_LIMITS_MARKER", payload)
+    },
     setSelectedEntryValue(context, payload) {
       context.commit("SET_SELECTED_ENTRY_VALUE", payload)
     },
@@ -85,6 +94,9 @@ export default {
     },
     clearSelectedEntryValue(context) {
       context.commit("CLEAR_SELECTED_ENTRY_VALUE")
+    },
+    clearSelectedEntryValueOptional(context) {
+      context.commit("CLEAR_SELECTED_ENTRY_VALUE_OPTIONAL")
     },
     setSelectedEntryType(context, payload) {
       context.commit("SET_SELECTED_ENTRY_TYPE", payload)
