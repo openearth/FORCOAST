@@ -96,7 +96,7 @@ export default {
     this.marker.remove();
   },
   methods: {
-    ...mapActions("wps", ["setMarkerCoordinates", "clearMarkerCoordinates"]),
+    ...mapActions("wps", ["setMarkerCoordinates", "clearMarkerCoordinates", "setServiceLimitsMarker"]),
     ...mapState("layers", ["selectedAreaBBox", "selectedService", "selectedAreaId"]),
 
     deferredMountedTo(map) {
@@ -172,6 +172,7 @@ export default {
                   this.inside = false
                 }    
               }
+        this.setServiceLimitsMarker(this.inside)
         return this.inside
 
     },
