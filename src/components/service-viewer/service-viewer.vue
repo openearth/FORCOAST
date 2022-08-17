@@ -5,11 +5,13 @@
       <!-- <h2 class="h2">TEST</h2> -->
       <div><b>Pilot area:</b> {{ selectedArea }}
       <p><b>Service module:</b> {{ service.name }}</p>
+      <v-divider class="mt-4 mb-4" />
       </div>
       <p  data-v-step="3">{{ service.description }}</p>
-      <p>An <b>example bulletin</b> produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
-      <p>To <b>test the service</b> for a location of choice, follow the instructions in the Service runner section below. <br/><br/>We appreciate <b>your feedback</b> on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <v-divider class="mt-4 mb-4" />
+      <p>An <b>example bulletin</b> produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
+      <p>To <b>test the service</b> for a location of choice, follow the instructions in the Service runner section below.</p>
+      <p>We appreciate <b>your feedback</b> on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <!-- <p>If you are interested in a trial <a v-bind:href="'mailto:' + service.contact">e-mail us</a></p> -->
       <p>If you are interested to receive <b>daily bulletins</b> by instant messaging app as a free trial <a v-bind:href="'mailto:' + service.contact + '?cc=info@forcoast.eu&subject=Free%20trial%20' + service.name + '%20service&body=' + service.mail_body">e-mail us</a></p>
       <!-- https://css-tricks.com/snippets/html/mailto-links/ -->
@@ -132,9 +134,12 @@
       <presets
       :arrayOfobjects="service.components.presets"
       name="Select a preset"
-      select="Select a species">
+      select="Select a species"
+      @setPreset="setPreset">
       </presets>
-      <entry-form-a4>
+      <entry-form-a4
+      :presetValues="presetValues">
+        
       </entry-form-a4>
     </collapsible-card>
     
@@ -163,7 +168,7 @@
     </div>
     <!-- TODO move it in a component -->
     <div v-if="service.components.run_task"  class="mb-4">
-      <div v-if= 'selectedEntryValue || calculationsTime' >
+      <div v-if= 'RunRequirements' >
         <v-btn block color="primary"  @click="runTask">Run</v-btn>
       </div>
       <div v-else>
@@ -241,12 +246,12 @@ export default {
   data() {
     return {
       title: "Select a layer",
-      dialog: false
+      dialog: false,
+      presetValues: [],
     };
   },
-
   computed: {
-    ...mapState("wps", ["markerLngLat", "calculationsTime", "selectedEntryValue", "jobStatus", "statusLink"]),
+    ...mapState("wps", ["markerLngLat", "calculationsTime", "selectedEntryValue", "selectedEntryValueOptional", "jobStatus", "statusLink", "serviceLimitsMarker"]),
     ...mapState("layers", ["selectedTime", "timeSpan", "timeSpanUnfiltered", "selectedArea", "selectedService"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"]),
     SMinfo(){
@@ -254,6 +259,62 @@ export default {
       SMinfo = SMinfo.replace('<p>','')
       SMinfo = SMinfo.replace('</p>','')
       return SMinfo
+    },
+    RunRequirements(){
+      this.serviceLimitsMarker
+      if (this.serviceLimitsMarker){
+
+        this.calculationTime
+        this.selectedEntryValue
+        this.selectedEntryValueOptional
+        if (this.service.wps_id == "a1" && this.calculationsTime && 
+            this.valueRange(this.selectedEntryValue, 0, 2)) {
+              return true
+
+        } else if (this.service.wps_id == "a2" && this.calculationsTime) {
+              return true
+
+        } else if (this.service.wps_id == "a3" && this.selectedEntryValue) {
+              if (this.selectedEntryValue[0] && this.selectedEntryValue[1] && 
+                  this.selectedEntryValue[2] && this.selectedEntryValue[3] &&
+                  this.valueRange(this.selectedEntryValue[4], 8, 36) &&
+                  this.valueRange(this.selectedEntryValue[5], 8, 36) &&
+                  parseFloat(this.selectedEntryValue[4]) <= parseFloat(this.selectedEntryValue[5]) &&
+                  this.valueRange(this.selectedEntryValue[6], 0, 10) &&
+                  this.valueRange(this.selectedEntryValue[7], 10, 35) &&
+                  parseFloat(this.selectedEntryValue[6]) <= parseFloat(this.selectedEntryValue[7]) &&
+                  this.valueRange(this.selectedEntryValueOptional[0], 0, 10) &&
+                  this.valueRange(this.selectedEntryValueOptional[1], 0, 10) &&
+                  this.valueRange(this.selectedEntryValueOptional[2], 0, 2) &&
+                  parseFloat(this.selectedEntryValueOptional[3])
+                  ) {
+                    return true
+              } else {
+                return false
+              }
+        } else if (this.service.wps_id == "a4" && this.selectedEntryValue) {
+              if ((this.valueRange(this.selectedEntryValue[1], 0, 30) || this.selectedEntryValue[1] == 999) &&
+                  (this.valueRange(this.selectedEntryValue[2], 0, 30) || this.selectedEntryValue[2] == 999) &&
+                  (this.valueRange(this.selectedEntryValue[3], 0, 10000) || this.selectedEntryValue[3] == 999) &&
+                  this.valueRange(this.selectedEntryValue[4], 0, 365) &&
+                  this.valueRange(this.selectedEntryValue[5], 0, 365) && this.selectedEntryValue[4] <= this.selectedEntryValue[5] &&
+                  this.valueRange(this.selectedEntryValue[6], 0, 365)) {
+                 return true
+              } else {
+                return false
+              }
+
+        } else if (this.service.wps_id == "r1" && this.calculationsTime && 
+                   this.valueRange(this.selectedEntryValue, 0, 48) &&
+                   Number.isInteger(parseFloat(this.selectedEntryValue))) {
+              return true
+        } else { 
+              return false 
+          }
+
+    } else {
+      return false
+    }
     }
   },
   methods: {
@@ -280,6 +341,16 @@ export default {
     runTask() {
       this.clearJobStatus();
       this.runProcessor();
+    },
+    setPreset(value) {
+      this.presetValues = value.slice()
+    },
+    valueRange(value, lower, upper){
+      if (parseFloat(value) >= lower && parseFloat(value) <= upper){
+        return true
+      } else {
+        return false
+      }
     }
   },
 };
