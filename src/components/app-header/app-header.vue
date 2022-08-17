@@ -167,8 +167,10 @@ export default {
         //clear wps parameters
         this.clearJobStatus(); 
         this.clearSelectedEntryValue();
+        this.clearSelectedEntryValueOptional(); 
         this.clearMarkerCoordinates();
         this.clearPolygon();
+        this.setServiceLimitsMarker(true)
       }
 
       this.setService(selectedService);
