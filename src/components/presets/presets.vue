@@ -54,6 +54,7 @@ export default {
                 this.object = payload
                 this.setSelectedEntryType(this.object.presetType)
                 this.setSelectedEntryValue(this.object.presetValue)
+                this.$emit('setPreset', this.object.presetValue)
                 }
             },
       }
