@@ -62,8 +62,7 @@
           <v-text-field
             v-model="valueArray[4]"
             label="Lower"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(8,36)]"
             v-on:input="entryValue"
             hint="g/kg"
@@ -74,8 +73,7 @@
           <v-text-field
             v-model="valueArray[5]"
             label="Upper"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(8,36),
                      rules.isHigher(this.valueArray[4],'lower threshold')]"
             v-on:input="entryValue"
@@ -106,8 +104,7 @@
           <v-text-field
             v-model="valueArray[6]"
             label="Lower"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(0,10)]"
             v-on:input="entryValue"
             hint="℃"
@@ -118,8 +115,7 @@
           <v-text-field
             v-model="valueArray[7]"
             label="Upper"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(10,35),
                      rules.isHigher(valueArray[6],'lower threshold')]"
             v-on:input="entryValue"
@@ -184,14 +180,15 @@ export default {
       value: []
     },
     rules: {
-      emptyField: entryValue => entryValue !== '' || 'Field is empty',
-      isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
-      isInt: entryValue => Number.isInteger(parseFloat(entryValue)) == true ||'Must be a whole number',
+      isFloat: entryValue => (Number.isFinite(parseFloat(entryValue)) == true || 
+               entryValue == "" || entryValue == undefined) ||'Must be a number',
       inRange(lower, upper) {
-        return entryValue => entryValue >= lower && entryValue <= upper || `Must be in range ${lower} to ${upper}`
+        return entryValue => ((entryValue >= lower && entryValue <= upper) || 
+               entryValue == "" || entryValue == undefined) || `Must be in range ${lower} to ${upper}`
       },
       isHigher(lowerValue, msg) {
-        return entryValue => entryValue >= parseFloat(lowerValue) || `Must be higher than ${msg}`
+        return entryValue => (entryValue >= parseFloat(lowerValue) || entryValue == "" || 
+               entryValue == undefined) || `Must be higher than ${msg}`
       }
     }
   }),
