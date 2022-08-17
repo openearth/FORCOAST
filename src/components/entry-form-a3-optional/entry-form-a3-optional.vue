@@ -9,8 +9,7 @@
           <v-text-field
             v-model="valueArray[0]"
             label="Default: 0.75"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(0,10)]"
             v-on:input="entryValue"
             hint="mg-C/mg-Chla"
@@ -40,8 +39,7 @@
           <v-text-field
             v-model="valueArray[1]"
             label="Default: 4.5"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(0,10)]"
             v-on:input="entryValue"
             hint="mg/L"
@@ -71,8 +69,7 @@
           <v-text-field
             v-model="valueArray[2]"
             label="Default: 0.5"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(0,2)]"
             v-on:input="entryValue"
             hint="g-POM/m2/d"
@@ -102,8 +99,7 @@
           <v-text-field
             v-model="valueArray[3]"
             label="Default: -4"
-            :rules="[rules.emptyField,
-                     rules.isFloat]"
+            :rules="[rules.isFloat]"
             v-on:input="entryValue"
           >
             <template v-slot:append>
@@ -131,10 +127,11 @@ export default {
   data: () => ({
     valueArray: [0.75,4.5,0.5,-4],
     rules: {
-      emptyField: entryValue => entryValue !== '' || 'Field is empty',
-      isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
+      isFloat: entryValue => (Number.isFinite(parseFloat(entryValue)) == true || 
+               entryValue == "" || entryValue == undefined) ||'Must be a number',
       inRange(lower, upper) {
-        return entryValue => entryValue >= lower && entryValue <= upper || `Must be in range ${lower} to ${upper}`
+        return entryValue => ((entryValue >= lower && entryValue <= upper) || 
+               entryValue == "" || entryValue == undefined) || `Must be in range ${lower} to ${upper}`
       },
     }
   }),
