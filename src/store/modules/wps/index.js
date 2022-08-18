@@ -16,6 +16,7 @@ export default {
     selectedEntryValueOptional: null,
     selectedEntryTypeOptional: null,
     calculationsTime: null,
+    calculationsHours: null
     
   },
   getters: {
@@ -41,6 +42,9 @@ export default {
     },
     SET_CALCULATIONS_TIME(state, time) {
       state.calculationsTime = time
+    },
+    SET_CALCULATIONS_HOURS(state,hours) {
+      state.calculationsHours = hours
     },
     SET_SELECTED_ENTRY_VALUE(state, entryValue) {
       state.selectedEntryValue = entryValue
@@ -107,12 +111,15 @@ export default {
     setCalculationsTime(context, payload) {
       context.commit("SET_CALCULATIONS_TIME", payload)
     },
+    setCalculationsHours(context, payload) {
+      context.commit("SET_CALCULATIONS_HOURS",payload)
+    },
 
     //TODO finish with this action. Check if all the status are set.
     async runProcessor({commit, state, rootState}) {
 
       const {selectedAreaId, selectedService } = rootState.layers
-      const { markerLngLat, calculationsTime, selectedEntryType, selectedEntryValue, selectedEntryValueOptional, polygon, jobStatus } = state
+      const { markerLngLat, calculationsTime, calculationsHours, selectedEntryType, selectedEntryValue, selectedEntryValueOptional, polygon, jobStatus } = state
 
       // Set pilot area for selected service
       const area = selectedAreaId
@@ -161,7 +168,7 @@ export default {
         target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
       }
 
-      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
+      const response = await run(calculationsTime, calculationsHours, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
       //const response = await run(testtime, id)
       const href = response[0].value.href
 
@@ -175,7 +182,7 @@ export default {
       if (jobStatus == "successful") {
         console.log("successful!")
       }
-      console.log(period, id, area, source, target, lat, lim)
+      console.log(calculationsTime, calculationsHours, period, id, area, source, target, lat, lim)
     },
   }
 }
