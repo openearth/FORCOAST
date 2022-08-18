@@ -87,11 +87,11 @@
       <single-date></single-date>
     </collapsible-card>
     <collapsible-card 
-    v-if="service.components.time"
+    v-if="service.components.hours"
     :expand="1"
     title = "Select a date and time for the calculations"
     > 
-
+    <hour-selection></hour-selection>
     </collapsible-card> 
     
     <collapsible-card
@@ -178,6 +178,7 @@
     <status-card 
       v-if="jobStatus==='accepted'"
       :date="calculationsTime"
+      :hours ="calculationsHours"
       :firstStatus="jobStatus"
       :statusLink="statusLink"
       :outputName="service.outputName"
@@ -211,6 +212,7 @@ import EntryFormA3 from '@/components/entry-form-a3'
 import EntryFormA3Optional from '@/components/entry-form-a3-optional'
 import EntryFormA4 from '@/components/entry-form-a4'
 import Presets from '@/components/presets'
+import HourSelection from '@/components/hour-selection'
 import { importConfig } from "@/lib/config-utils"
 
 
@@ -234,6 +236,7 @@ export default {
     EntryFormA3Optional,
     EntryFormA4,
     Presets,
+    HourSelection
     
 
   },
@@ -251,7 +254,7 @@ export default {
     };
   },
   computed: {
-    ...mapState("wps", ["markerLngLat", "calculationsTime", "selectedEntryValue", "selectedEntryValueOptional", "jobStatus", "statusLink", "serviceLimitsMarker"]),
+    ...mapState("wps", ["markerLngLat", "calculationsTime", "calculationsHours", "selectedEntryValue", "selectedEntryValueOptional", "jobStatus", "statusLink", "serviceLimitsMarker", "polygon"]),
     ...mapState("layers", ["selectedTime", "timeSpan", "timeSpanUnfiltered", "selectedArea", "selectedService"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"]),
     SMinfo(){
@@ -271,7 +274,7 @@ export default {
             this.valueRange(this.selectedEntryValue, 0, 2)) {
               return true
 
-        } else if (this.service.wps_id == "a2" && this.calculationsTime) {
+        } else if (this.service.wps_id == "a2" && this.calculationsTime && this.polygon) {
               return true
 
         } else if (this.service.wps_id == "a3" && this.selectedEntryValue) {
@@ -304,7 +307,7 @@ export default {
                 return false
               }
 
-        } else if (this.service.wps_id == "r1" && this.calculationsTime && 
+        } else if (this.service.wps_id == "r1" && this.calculationsTime && this.calculationsHours &&
                    this.valueRange(this.selectedEntryValue, 0, 48) &&
                    Number.isInteger(parseFloat(this.selectedEntryValue))) {
               return true
