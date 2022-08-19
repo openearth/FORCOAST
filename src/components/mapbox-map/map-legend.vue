@@ -64,6 +64,9 @@ export default {
     onResize() {
       this.windowHeight = window.innerHeight
       //return window.innerHeight > 725 ? 'layer-legend_image_small' : 'layer-legend_image_small'
+    },
+    uselessFucntion(){
+    console.log("this function is useless and doesnt do anything")
     }
   },
 };
