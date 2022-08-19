@@ -40,11 +40,12 @@
       title="Layers produced by service"
       >
     </collapsible-card>
-    </collapsible-card>
+    </collapsible-card> 
     <collapsible-card
       v-if="service.components.date_span"
       title="Select start and end date for timeseries"
       :expand="1"
+      
     >
       <date-span :timeExtentISO="timeExtent"></date-span>
       <draggable-marker
@@ -52,8 +53,11 @@
     ></draggable-marker>
     </collapsible-card>
     <div v-if="service.components.date_span" class="mb-4">
-      <div v-if="timeSpan.length && selectedLayer || timeSpanUnfiltered.length && selectedLayer">
-        <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>
+      <div v-if="checkLayer" >
+         <v-btn disabled block color="primary">Graph Disabled</v-btn>
+      </div>    
+       <div v-else-if="timeSpan.length && this.selectedLayer || timeSpanUnfiltered.length && selectedLayer">  
+        <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>        
         <timeseries-graph
           v-if="dialog"
           :lngLat="markerLngLat"
@@ -63,9 +67,11 @@
           @close-dialog="dialog = false"
         ></timeseries-graph>
       </div>
-      <div v-else>
-        <v-btn disabled block color="primary">Create graph</v-btn>
-      </div>
+
+        <div v-else>
+          <v-btn disabled block color="primary">Create graph</v-btn>
+        </div>
+      
     </div>
     </collapsible-group>
     <collapsible-group
@@ -74,7 +80,6 @@
       :title="service.service_label"
       data-v-step="5"
       :bubble="SMinfo"
-      
     >
     <draggable-marker v-if= service.components.draggable_marker
         @show-draggable-marker="onShowDraggableMarker" 
@@ -237,8 +242,6 @@ export default {
     EntryFormA4,
     Presets,
     HourSelection
-    
-
   },
   props: {
     service: {
@@ -255,7 +258,7 @@ export default {
   },
   computed: {
     ...mapState("wps", ["markerLngLat", "calculationsTime", "calculationsHours", "selectedEntryValue", "selectedEntryValueOptional", "jobStatus", "statusLink", "serviceLimitsMarker", "polygon"]),
-    ...mapState("layers", ["selectedTime", "timeSpan", "timeSpanUnfiltered", "selectedArea", "selectedService"]),
+    ...mapState("layers", ["selectedTime", "timeSpan", "timeSpanUnfiltered", "selectedArea", "selectedService", "activeLayers"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"]),
     SMinfo(){
       let SMinfo = importConfig(`content/sm-info/${this.selectedService.wps_id}-info.md`)
@@ -320,11 +323,26 @@ export default {
     }
     }
   },
+    checkLayer() {
+      this.activeLayers       
+      if (this.activeLayers.length != 0) {
+        if (this.activeLayers[0].name === 'Frontal Zones Temperature' || this.activeLayers[0].name === 'Spawning Grounds for Oysters') {
+          return true;
+        }
+          else {
+            return false;
+          }
+        }
+      else {
+          return false ;
+        }
+      },
   methods: {
     ...mapActions("wps",["runProcessor", "clearJobStatus"]),
     ...mapActions("layers",["setActiveLayers", "clearSelectedTime", "getCapabilities", "clearCapabilities"]), 
     onActiveLayerChange(layers) {
       
+
       this.clearCapabilities();
       this.clearSelectedTime(); 
       this.setActiveLayers(layers);
