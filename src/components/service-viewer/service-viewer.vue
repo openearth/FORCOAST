@@ -321,7 +321,6 @@ export default {
     } else {
       return false
     }
-    }
   },
     checkLayer() {
       this.activeLayers       
