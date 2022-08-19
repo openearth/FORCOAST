@@ -7,7 +7,7 @@
       <p><b>Service module:</b> {{ service.name }}</p>
       </div>
       <p>{{ service.description }}</p>
-      <p>An example bulletin produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
+      <p>An available <a v-bind:href="service.example" target="_blank">here</a> </p>
       <p>To test the service for a location of choice, follow the instructions in the Service runner section below. We appreciate your feedback on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <v-divider class="mt-4 mb-4" />
       <!-- <p>If you are interested in a trial <a v-bind:href="'mailto:' + service.contact">e-mail us</a></p> -->
