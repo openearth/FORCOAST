@@ -41,7 +41,7 @@ export default {
     },
     resizeLegend() {
       if ( this.activeLayers[0].name != "Frontal Zones Temperature" && this.activeLayers[0].name != "Spawning Grounds for Oysters" ) {
-        console.log("this happened")
+
         return this.windowHeight > 725 ? 'layer-legend_image' : 'layer-legend_image_small'
       }
       else {
@@ -65,7 +65,7 @@ export default {
     onResize() {
       this.windowHeight = window.innerHeight
       //return window.innerHeight > 725 ? 'layer-legend_image_small' : 'layer-legend_image_small'
-    }
+    },
   },
 };
 </script>
