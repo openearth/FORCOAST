@@ -7,12 +7,42 @@
       </v-col>
       <v-col cols="8">
         <v-row>
-       <input @change="checkbox1(); entryValue()" type="checkbox" v-model="checkoption1">
-          <label>Temperature threshold</label> 
+       <input type="checkbox" v-model="checkoption1">
+          <label>Temperature threshold
+            <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on"
+                  small
+                  right
+                  style="padding-left:70px">
+                    ℹ
+                  </v-icon>
+                </template>
+                  This method determines spawning events based on daily average water temperature. The threshold value should be a daily average in which spawning events start to occur.
+              </v-tooltip>
+          </label> 
         </v-row>
         <v-row>
-       <input @change="checkbox2(); entryValue()" type="checkbox" v-model="checkoption2">
-          <label>Cumulative temperature</label>
+       <input type="checkbox" v-model="checkoption2">
+          <label>Cumulative temperature
+            <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on"
+                  small
+                  right
+                  style="padding-left:61px">
+                    ℹ
+                  </v-icon>
+                </template>
+                  This method determines spawning events based on comulative daily averae water temperatures. Temperature values start accumulating from the 1st of Januari each year. The threshold value should be a cumulative temperature in which spawning events start to occur.
+              </v-tooltip>
+          </label>
         </v-row>
       </v-col>
     </v-row>
@@ -23,12 +53,26 @@
       <v-col cols="8">
           <v-text-field
             v-model.number="valueArray[1]"
-            label="degrees celsius"
-            :rules="[rules.emptyField,
-                     rules.isInt,
+            :rules="[rules.isInt,
                      rules.inRange(0,30)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="℃"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+              <template v-slot:activator="{ on }">
+                <v-icon v-on="on" small>
+                    ℹ
+                </v-icon>
+              </template>
+                This value is used to determine the threshold for when spawning events will occur.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row v-if= "checkoption2">
@@ -38,12 +82,26 @@
       <v-col cols="8">
           <v-text-field
             v-model.number="valueArray[2]"
-            label="degrees celcius"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(0,30)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="℃"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                 A value of “gonad development threshold” represents the cumulative temerature above which gonad maturation begins.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>   
     <v-row v-if= "checkoption2">
@@ -53,38 +111,68 @@
       <v-col cols="8">
           <v-text-field
             v-model.number="valueArray[3]"
-            label="degrees celcius"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(0,10000)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="℃"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                Cumulative sum of temperature above "Threshold of temperature for gonad development" represent the gonad maturation process. When the sum exceeds this thresolds, spawning events begins. 
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Pelagic larval duration (days)</v-subheader>
+        <v-subheader>Pelagic larval duration</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
             v-model.number="valueArray[4]"
-            label="Minimal"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            label="Min"
+            :rules="[rules.isFloat,
                      rules.inRange(0,365)]"
             v-on:input="entryValue"
+            hint="days"
+            persistent-hint
           ></v-text-field>
       </v-col>
       <v-col cols="4">
           <v-text-field
             v-model.number="valueArray[5]"
-            label="Maximal"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            label="Max"
+            :rules="[rules.isFloat,
                      rules.isHigher(valueArray[5],'minimal duration'),
                      rules.inRange(0,365)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="days"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                This value is the duration in which larvae will drift prior to settlement abilities. For species which are swarming, the swarming duration should be added to pelagic larval duration parameterization.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
@@ -94,12 +182,26 @@
       <v-col cols="8">
           <v-text-field
             v-model.number="valueArray[6]"
-            label="days"
-            :rules="[rules.emptyField,
-                     rules.isInt,
+            :rules="[rules.isInt,
                      rules.inRange(0,365)]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="days"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  This value represents the duration of a spawning event for the species of interest.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     </v-container>
@@ -108,87 +210,87 @@
 <script>
 import { mapActions } from "vuex";
 import { mapState } from "vuex";
-import { mapGetters} from "vuex";
 
 export default {
+  props: {
+    presetValues: {
+      type: Array,
+      required: false,
+    },
+  },
   data: () => ({
-//    valueArray: this.SelectedEntryValue,
-    //As string? or as numeric?, I did string for consistency
-    valueArray: [1,0],
+    valueArray: [0],
     rules: {
-      emptyField: entryValue => entryValue !== '' || 'Field is empty',
-      isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
-      isInt: entryValue => Number.isInteger(parseFloat(entryValue)) == true ||'Must be a whole number',
+      isFloat: entryValue => (Number.isFinite(parseFloat(entryValue)) == true || 
+               entryValue == "" || entryValue == undefined) ||'Must be a number',
+      isInt: entryValue => (Number.isInteger(parseFloat(entryValue)) == true || 
+             entryValue == "" || entryValue == undefined) ||'Must be a whole number',
       inRange(lower, upper) {
-        return entryValue => entryValue >= lower && entryValue <= upper || `Must be in range ${lower} to ${upper}`
+        return entryValue => ((entryValue >= lower && entryValue <= upper) || 
+               entryValue == "" || entryValue == undefined) || `Must be in range ${lower} to ${upper}`
       },
       isHigher(lowerValue, msg) {
-        return entryValue => entryValue >= parseFloat(lowerValue) || `Must be higher than ${msg}`
+        return entryValue => (entryValue >= parseFloat(lowerValue) || entryValue == "" || 
+               entryValue == undefined) || `Must be higher than ${msg}`
       },
     },
     checkoption1: true,
     checkoption2: false
   }),
   computed: {
-    ...mapGetters("wps", {
-      valuesFromStore: "getEntryValue"
-    }),
-    selectedEntryValue:{
-      get(){
-        return this.valuesFromStore
-      },
-      set(values){
-        return values
-      }
-    }
+    ...mapState("wps", ["selectedEntryValue"]),
   },
   watch: {
-    selectedEntryValue(value) {
-      this.valueArray = value
-      if (value[1] == 0) {
-        this.checkoption1 = true
+    checkoption1(value) {
+      if (value) {
         this.checkoption2 = false
-        } else {
-          this.checkoption1 = false
-          this.checkoption2 = true
+        this.valueArray[0] = 0
+        this.valueArray[2] = ""
+        this.valueArray[3] = ""
+        this.setSelectedEntryValue(this.valueArray)
+      } else {
+        this.checkoption2 = true
+        this.valueArray[0] = 1
+        this.valueArray[1] = ""
+        this.setSelectedEntryValue(this.valueArray)
         }
+      },
+    checkoption2(value) {
+      if (value) {
+        this.checkoption1 = false
+        this.valueArray[0] = 1
+        this.valueArray[2] = ""
+        this.valueArray[3] = ""
+        this.setSelectedEntryValue(this.valueArray)
+      } else {
+        this.checkoption1 = true
+        this.valueArray[0] = 0
+        this.valueArray[1] = ""
+        this.setSelectedEntryValue(this.valueArray)
+        }
+      },
+      presetValues(){
+        this.valueArray = this.presetValues
       }
     },
   methods: { 
-    ...mapActions("wps", ["setSelectedEntryValue", "setSelectedEntryValueOptional", "clearSelectedEntryValue"]),
-    ...mapState("wps", ["selectedEntryValue", "selectedEntryValueOptional"]),
-    checkbox1() {
-      if (this.checkoption1 == true) {
-        this.checkoption2 = false
-        this.valueArray[0] = 0 
-        } else if (this.checkoption1 == false) {
-        this.checkoption2 = true
-        this.valueArray[0] = 1
-      }
-    },
-    checkbox2() {
-      if (this.checkoption2 == true) {
-        this.checkoption1 = false
-        this.valueArray[0] = 1
-        } else if (this.checkoption2 == false) {
-        this.checkoption1 = true
-        this.valueArray[0] = 0
-      }
-    },
+    ...mapActions("wps", ["setSelectedEntryValue"]),
     entryValue() {
-      if  ( this.valueArray[0] !== undefined &&
-          ((this.valueArray[1] >= 0 && this.valueArray[1] <= 30) ||
-          ((this.valueArray[2] >= 0 && this.valueArray[2] <= 30) &&
-           (this.valueArray[3] >= 0 && this.valueArray[3] <= 10000))) &&
-           (this.valueArray[4] >= 0 && this.valueArray[4] <= 365) &&
-           (this.valueArray[5] >= 0 && this.valueArray[5] <= 365) &&
-           (this.valueArray[6] >= 0 && this.valueArray[6] <= 365)) { 
-       this.setSelectedEntryValue(this.valueArray)
-        if (this.selectedEntryValueOptional() == null) {
-          this.setSelectedEntryValueOptional(this.valueArrayOptional)
-        }
+      if (this.valueArray[0] == 0) {
+        let TempValueArray = this.valueArray.slice()
+        TempValueArray[2] = 999 
+        TempValueArray[3] = 999
+        this.setSelectedEntryValue(TempValueArray)
+      }  
+      else if (this.valueArray[0] == 1) {
+        let TempValueArray = this.valueArray.slice()
+        TempValueArray[1] = 999
+        this.setSelectedEntryValue(TempValueArray)
       }
-    },
+      else{ 
+        this.setSelectedEntryValues(this.valueArray)
+      }
+    }
   }
 };
 </script>

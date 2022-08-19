@@ -56,54 +56,86 @@
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Salinity thresholds [g/kg]</v-subheader>
+        <v-subheader>Salinity thresholds</v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
             v-model="valueArray[4]"
             label="Lower"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(8,36)]"
             v-on:input="entryValue"
+            hint="g/kg"
+            persistent-hint
           ></v-text-field>
       </v-col>
       <v-col cols="4">
           <v-text-field
             v-model="valueArray[5]"
             label="Upper"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(8,36),
                      rules.isHigher(this.valueArray[4],'lower threshold')]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="g/kg"
+            persistent-hint
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  These values represent the minimal and maximal threshold values for sea bottom salinity which are used to calculate scoring indexes.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Temperature thresholds [&deg;C]</v-subheader>
+        <v-subheader>Temperature thresholds </v-subheader>
       </v-col>
       <v-col cols="4">
           <v-text-field
             v-model="valueArray[6]"
             label="Lower"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(0,10)]"
             v-on:input="entryValue"
+            hint="℃"
+            persistent-hint
           ></v-text-field>
       </v-col>
       <v-col cols="4">
           <v-text-field
             v-model="valueArray[7]"
             label="Upper"
-            :rules="[rules.emptyField,
-                     rules.isFloat,
+            :rules="[rules.isFloat,
                      rules.inRange(10,35),
                      rules.isHigher(valueArray[6],'lower threshold')]"
             v-on:input="entryValue"
-          ></v-text-field>
+            hint="℃"
+            persistent-hint
+          >
+             <template v-slot:append>
+              <v-tooltip
+                bottom
+                max-width="500"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-icon v-on="on" small>
+                    ℹ
+                  </v-icon>
+                </template>
+                  These values represent the minimal and maximal threshold values for sea bottom temperature which are used to calculate scoring indexes.
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     </v-container>
@@ -148,14 +180,15 @@ export default {
       value: []
     },
     rules: {
-      emptyField: entryValue => entryValue !== '' || 'Field is empty',
-      isFloat: entryValue => Number.isFinite(parseFloat(entryValue)) == true ||'Must be a number',
-      isInt: entryValue => Number.isInteger(parseFloat(entryValue)) == true ||'Must be a whole number',
+      isFloat: entryValue => (Number.isFinite(parseFloat(entryValue)) == true || 
+               entryValue == "" || entryValue == undefined) ||'Must be a number',
       inRange(lower, upper) {
-        return entryValue => entryValue >= lower && entryValue <= upper || `Must be in range ${lower} to ${upper}`
+        return entryValue => ((entryValue >= lower && entryValue <= upper) || 
+               entryValue == "" || entryValue == undefined) || `Must be in range ${lower} to ${upper}`
       },
       isHigher(lowerValue, msg) {
-        return entryValue => entryValue >= parseFloat(lowerValue) || `Must be higher than ${msg}`
+        return entryValue => (entryValue >= parseFloat(lowerValue) || entryValue == "" || 
+               entryValue == undefined) || `Must be higher than ${msg}`
       }
     }
   }),

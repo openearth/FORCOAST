@@ -1,0 +1,2 @@
+This service identifies areas with the highest growth potential and lowest mortality for flat 
+oysters, Ostrea edulis, and thereby increase harvest and restoration potential. The model can be fine-tuned by tweaking service parameters based on local knowledge or literature data. The service will produce a map containing a site suitability index (see example bulletin).

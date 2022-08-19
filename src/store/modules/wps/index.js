@@ -8,6 +8,7 @@ export default {
   state: {
     polygon: null,
     markerLngLat: null,
+    serviceLimitsMarker: true,
     jobStatus: null,
     statusLink: null,
     selectedEntryValue: null,
@@ -15,6 +16,7 @@ export default {
     selectedEntryValueOptional: null,
     selectedEntryTypeOptional: null,
     calculationsTime: null,
+    calculationsHours: null
     
   },
   getters: {
@@ -35,10 +37,15 @@ export default {
     CLEAR_MARKER_COORDINATES(state) {
       state.markerLngLat = null
     },
+    SET_SERVICE_LIMITS_MARKER(state, bool) {
+      state.serviceLimitsMarker = bool
+    },
     SET_CALCULATIONS_TIME(state, time) {
       state.calculationsTime = time
     },
-
+    SET_CALCULATIONS_HOURS(state,hours) {
+      state.calculationsHours = hours
+    },
     SET_SELECTED_ENTRY_VALUE(state, entryValue) {
       state.selectedEntryValue = entryValue
     },
@@ -47,6 +54,9 @@ export default {
     },
     CLEAR_SELECTED_ENTRY_VALUE(state) {
       state.selectedEntryValue = null
+    },
+    CLEAR_SELECTED_ENTRY_VALUE_OPTIONAL(state) {
+      state.selectedEntryValueOptional = null
     },
     SET_SELECTED_ENTRY_TYPE(state, entryType) {
       state.selectedEntryType = entryType
@@ -77,6 +87,9 @@ export default {
     clearMarkerCoordinates(context) {
       context.commit("CLEAR_MARKER_COORDINATES")
     },
+    setServiceLimitsMarker(context, payload) {
+      context.commit("SET_SERVICE_LIMITS_MARKER", payload)
+    },
     setSelectedEntryValue(context, payload) {
       context.commit("SET_SELECTED_ENTRY_VALUE", payload)
     },
@@ -85,6 +98,9 @@ export default {
     },
     clearSelectedEntryValue(context) {
       context.commit("CLEAR_SELECTED_ENTRY_VALUE")
+    },
+    clearSelectedEntryValueOptional(context) {
+      context.commit("CLEAR_SELECTED_ENTRY_VALUE_OPTIONAL")
     },
     setSelectedEntryType(context, payload) {
       context.commit("SET_SELECTED_ENTRY_TYPE", payload)
@@ -95,12 +111,15 @@ export default {
     setCalculationsTime(context, payload) {
       context.commit("SET_CALCULATIONS_TIME", payload)
     },
+    setCalculationsHours(context, payload) {
+      context.commit("SET_CALCULATIONS_HOURS",payload)
+    },
 
     //TODO finish with this action. Check if all the status are set.
     async runProcessor({commit, state, rootState}) {
 
       const {selectedAreaId, selectedService } = rootState.layers
-      const { markerLngLat, calculationsTime, selectedEntryType, selectedEntryValue, selectedEntryValueOptional, polygon, jobStatus } = state
+      const { markerLngLat, calculationsTime, calculationsHours, selectedEntryType, selectedEntryValue, selectedEntryValueOptional, polygon, jobStatus } = state
 
       // Set pilot area for selected service
       const area = selectedAreaId
@@ -149,7 +168,7 @@ export default {
         target = "[[" + lon_min + "," + lat_min + "],[" + lon_max + "," + lat_min + "],[" + lon_max + "," + lat_max + "],[" + lon_min + "," + lat_max + "]]"
       }
 
-      const response = await run(calculationsTime, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
+      const response = await run(calculationsTime, calculationsHours, period, id, area, source, target, lat, lng, lim, selectedEntryValue, selectedEntryValueOptional)
       //const response = await run(testtime, id)
       const href = response[0].value.href
 
@@ -163,7 +182,7 @@ export default {
       if (jobStatus == "successful") {
         console.log("successful!")
       }
-      console.log(period, id, area, source, target, lat, lim)
+      console.log(calculationsTime, calculationsHours, period, id, area, source, target, lat, lim)
     },
   }
 }

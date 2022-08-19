@@ -127,7 +127,7 @@ export default {
     ...mapState("layers", ["selectedCategory", "selectedService"]),
   },
   methods: {
-    ...mapActions("wps", ["clearMarkerCoordinates", "clearPolygon", "clearJobStatus", "clearSelectedEntryValue",]),
+    ...mapActions("wps", ["clearMarkerCoordinates", "clearPolygon", "clearJobStatus", "clearSelectedEntryValue","clearSelectedEntryValueOptional", "setServiceLimitsMarker"]),
     ...mapActions("layers", ["setCategory", "setArea", "setService","setAreaId", "setIconCategory", "setSelectedAreaBbox", "clearSelectedService","clearSelectedTime", "clearCapabilities"]),
     onSetCategory(category, icon) {
       if (this.selectedCategory !== category) {
@@ -143,9 +143,11 @@ export default {
 
         //clear wps parameters
         this.clearJobStatus();
-        this.clearSelectedEntryValue(); 
+        this.clearSelectedEntryValue();
+        this.clearSelectedEntryValueOptional(); 
         this.clearMarkerCoordinates();
         this.clearPolygon();
+        this.setServiceLimitsMarker(true)
         
       }
       this.closeMenu = false;
@@ -165,8 +167,10 @@ export default {
         //clear wps parameters
         this.clearJobStatus(); 
         this.clearSelectedEntryValue();
+        this.clearSelectedEntryValueOptional(); 
         this.clearMarkerCoordinates();
         this.clearPolygon();
+        this.setServiceLimitsMarker(true)
       }
 
       this.setService(selectedService);

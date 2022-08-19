@@ -5,13 +5,15 @@
       <!-- <h2 class="h2">TEST</h2> -->
       <div><b>Pilot area:</b> {{ selectedArea }}
       <p><b>Service module:</b> {{ service.name }}</p>
+      <v-divider class="mt-4 mb-4" />
       </div>
       <p  data-v-step="3">{{ service.description }}</p>
-      <p>An example bulletin produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
-      <p>To test the service for a location of choice, follow the instructions in the Service runner section below. We appreciate your feedback on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <v-divider class="mt-4 mb-4" />
+      <p>An <b>example bulletin</b> produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
+      <p>To <b>test the service</b> for a location of choice, follow the instructions in the Service runner section below.</p>
+      <p>We appreciate <b>your feedback</b> on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <!-- <p>If you are interested in a trial <a v-bind:href="'mailto:' + service.contact">e-mail us</a></p> -->
-      <p>If you are interested to receive daily bulletins by instant messaging app as a free trial <a v-bind:href="'mailto:' + service.contact + '?cc=info@forcoast.eu&subject=Free%20trial%20' + service.name + '%20service&body=' + service.mail_body">e-mail us</a></p>
+      <p>If you are interested to receive <b>daily bulletins</b> by instant messaging app as a free trial <a v-bind:href="'mailto:' + service.contact + '?cc=info@forcoast.eu&subject=Free%20trial%20' + service.name + '%20service&body=' + service.mail_body">e-mail us</a></p>
       <!-- https://css-tricks.com/snippets/html/mailto-links/ -->
     </div>
     <!-- .sync -->
@@ -20,7 +22,7 @@
       :manual="false"
       title="Data viewer"
       data-v-step="4"
-      bubble="Click here to visualize relevant parameters on the map"
+      bubble="Click here to display the data-layers that are related to the service module"
     >
     <collapsible-card
       v-if="service.components.layers"
@@ -77,18 +79,11 @@
       :manual="true"
       :title="service.service_label"
       data-v-step="5"
-      bubble="Click here to use the service"
-    
+      :bubble="SMinfo"
     >
     <draggable-marker v-if= service.components.draggable_marker
         @show-draggable-marker="onShowDraggableMarker" 
-    ></draggable-marker>
-        <collapsible-card
-      v-if="service.components.layers_service_runner"
-      :expand="1"
-      title="Select a layer for visualization"
-    >
-    </collapsible-card>  
+    ></draggable-marker> 
     <collapsible-card
       v-if="service.components.date"
       :expand="1"
@@ -97,11 +92,11 @@
       <single-date></single-date>
     </collapsible-card>
     <collapsible-card 
-    v-if="service.components.time"
+    v-if="service.components.hours"
     :expand="1"
     title = "Select a date and time for the calculations"
     > 
-
+    <hour-selection></hour-selection>
     </collapsible-card> 
     
     <collapsible-card
@@ -143,9 +138,13 @@
     >
       <presets
       :arrayOfobjects="service.components.presets"
-      name="Select a preset">
+      name="Select a preset"
+      select="Select a species"
+      @setPreset="setPreset">
       </presets>
-      <entry-form-a4>
+      <entry-form-a4
+      :presetValues="presetValues">
+        
       </entry-form-a4>
     </collapsible-card>
     
@@ -174,7 +173,7 @@
     </div>
     <!-- TODO move it in a component -->
     <div v-if="service.components.run_task"  class="mb-4">
-      <div v-if= 'selectedEntryValue || calculationsTime' >
+      <div v-if= 'RunRequirements' >
         <v-btn block color="primary"  @click="runTask">Run</v-btn>
       </div>
       <div v-else>
@@ -184,6 +183,7 @@
     <status-card 
       v-if="jobStatus==='accepted'"
       :date="calculationsTime"
+      :hours ="calculationsHours"
       :firstStatus="jobStatus"
       :statusLink="statusLink"
       :outputName="service.outputName"
@@ -217,6 +217,8 @@ import EntryFormA3 from '@/components/entry-form-a3'
 import EntryFormA3Optional from '@/components/entry-form-a3-optional'
 import EntryFormA4 from '@/components/entry-form-a4'
 import Presets from '@/components/presets'
+import HourSelection from '@/components/hour-selection'
+import { importConfig } from "@/lib/config-utils"
 
 
 import { mapState, mapGetters, mapActions } from "vuex";
@@ -239,9 +241,7 @@ export default {
     EntryFormA3Optional,
     EntryFormA4,
     Presets,
- 
-    
-
+    HourSelection
   },
   props: {
     service: {
@@ -252,31 +252,91 @@ export default {
   data() {
     return {
       title: "Select a layer",
-      dialog: false
+      dialog: false,
+      presetValues: [],
     };
   },
-
   computed: {
-    ...mapState("wps", ["markerLngLat", "calculationsTime", "selectedEntryValue", "jobStatus", "statusLink"]),
-    ...mapState("layers", ["selectedTime", "timeSpan", "timeSpanUnfiltered", "selectedArea","activeLayers"]),
+    ...mapState("wps", ["markerLngLat", "calculationsTime", "calculationsHours", "selectedEntryValue", "selectedEntryValueOptional", "jobStatus", "statusLink", "serviceLimitsMarker", "polygon"]),
+    ...mapState("layers", ["selectedTime", "timeSpan", "timeSpanUnfiltered", "selectedArea", "selectedService", "activeLayers"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"]),
+    SMinfo(){
+      let SMinfo = importConfig(`content/sm-info/${this.selectedService.wps_id}-info.md`)
+      SMinfo = SMinfo.replace('<p>','')
+      SMinfo = SMinfo.replace('</p>','')
+      return SMinfo
+    },
+    RunRequirements(){
+      this.serviceLimitsMarker
+      if (this.serviceLimitsMarker){
+
+        this.calculationTime
+        this.selectedEntryValue
+        this.selectedEntryValueOptional
+        if (this.service.wps_id == "a1" && this.calculationsTime && 
+            this.valueRange(this.selectedEntryValue, 0, 2)) {
+              return true
+
+        } else if (this.service.wps_id == "a2" && this.calculationsTime && this.polygon) {
+              return true
+
+        } else if (this.service.wps_id == "a3" && this.selectedEntryValue) {
+              if (this.selectedEntryValue[0] && this.selectedEntryValue[1] && 
+                  this.selectedEntryValue[2] && this.selectedEntryValue[3] &&
+                  this.valueRange(this.selectedEntryValue[4], 8, 36) &&
+                  this.valueRange(this.selectedEntryValue[5], 8, 36) &&
+                  parseFloat(this.selectedEntryValue[4]) <= parseFloat(this.selectedEntryValue[5]) &&
+                  this.valueRange(this.selectedEntryValue[6], 0, 10) &&
+                  this.valueRange(this.selectedEntryValue[7], 10, 35) &&
+                  parseFloat(this.selectedEntryValue[6]) <= parseFloat(this.selectedEntryValue[7]) &&
+                  this.valueRange(this.selectedEntryValueOptional[0], 0, 10) &&
+                  this.valueRange(this.selectedEntryValueOptional[1], 0, 10) &&
+                  this.valueRange(this.selectedEntryValueOptional[2], 0, 2) &&
+                  parseFloat(this.selectedEntryValueOptional[3])
+                  ) {
+                    return true
+              } else {
+                return false
+              }
+        } else if (this.service.wps_id == "a4" && this.selectedEntryValue) {
+              if ((this.valueRange(this.selectedEntryValue[1], 0, 30) || this.selectedEntryValue[1] == 999) &&
+                  (this.valueRange(this.selectedEntryValue[2], 0, 30) || this.selectedEntryValue[2] == 999) &&
+                  (this.valueRange(this.selectedEntryValue[3], 0, 10000) || this.selectedEntryValue[3] == 999) &&
+                  this.valueRange(this.selectedEntryValue[4], 0, 365) &&
+                  this.valueRange(this.selectedEntryValue[5], 0, 365) && this.selectedEntryValue[4] <= this.selectedEntryValue[5] &&
+                  this.valueRange(this.selectedEntryValue[6], 0, 365)) {
+                 return true
+              } else {
+                return false
+              }
+
+        } else if (this.service.wps_id == "r1" && this.calculationsTime && this.calculationsHours &&
+                   this.valueRange(this.selectedEntryValue, 0, 48) &&
+                   Number.isInteger(parseFloat(this.selectedEntryValue))) {
+              return true
+        } else { 
+              return false 
+          }
+
+    } else {
+      return false
+    }
+    }
+  },
     checkLayer() {
-      console.log(this.activeLayers.length)
       this.activeLayers       
       if (this.activeLayers.length != 0) {
-        if (this.activeLayers[0].name === 'Frontal Zones Temperature' || this.activeLayers[0].name === 'Spawning Grounds for Oysters')
-          {console.log("CONDITION MET! BUTTON DISABLED")
+        if (this.activeLayers[0].name === 'Frontal Zones Temperature' || this.activeLayers[0].name === 'Spawning Grounds for Oysters') {
           return true;
         }
-        else {
-          console.log("CONDITION NOT MET! BUTTON ENABLED")
-          return false;
+          else {
+            return false;
+          }
         }
+      else {
+          return false ;
         }
-      else 
-       {return false ;
-        }
-  }},
+      },
   methods: {
     ...mapActions("wps",["runProcessor", "clearJobStatus"]),
     ...mapActions("layers",["setActiveLayers", "clearSelectedTime", "getCapabilities", "clearCapabilities"]), 
@@ -302,6 +362,16 @@ export default {
     runTask() {
       this.clearJobStatus();
       this.runProcessor();
+    },
+    setPreset(value) {
+      this.presetValues = value.slice()
+    },
+    valueRange(value, lower, upper){
+      if (parseFloat(value) >= lower && parseFloat(value) <= upper){
+        return true
+      } else {
+        return false
+      }
     }
   },
 };

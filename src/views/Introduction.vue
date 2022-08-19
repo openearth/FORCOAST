@@ -7,7 +7,7 @@
                 <v-divider class="mt-4 mb-4" />
             </td>
         </tr>
-        <tr height="800" style="vertical-align:top">
+        <tr style="vertical-align:top">
             <td>
                 <div v-html="content" class="introduction" />
             </td>
@@ -33,9 +33,3 @@ export default {
   },
 };
 </script>
-<style>
-.v-application ul,
-.v-application ol {
-  margin-bottom: 16px;
-}
-</style>

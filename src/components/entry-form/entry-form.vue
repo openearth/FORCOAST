@@ -11,14 +11,27 @@
             :rules="[rules.emptyField,
                      rules.isFloat,
                      rules.inRange(entryRange[0],entryRange[1])]"
-          ></v-text-field>
+          >
+            <template v-slot:append>
+              <v-tooltip
+                bottom
+              >
+              <template v-slot:activator="{ on }">
+                <v-icon v-on="on" small>
+                    ℹ
+                </v-icon>
+              </template>
+              {{ information }}
+              </v-tooltip>
+            </template>
+          </v-text-field>
       </v-col>
     </v-row>
     </v-container>
   </v-form>
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   data: () => ({
     entryValue: "",
@@ -43,6 +56,18 @@ export default {
       type: Array, 
       required: true,
     },    
+  },
+  computed: {
+    ...mapState("layers", ["selectedService"]),
+    information(){
+      if (this.selectedService.wps_id == "r1"){
+      return "This value will determine the duration of the backtracking simulation."
+    } else if (this.selectedService.wps_id == "a1"){
+      return "This value will be used to display additional information in the output bulletin regarding the selected limit value."
+    } else {
+      return ""
+    }
+    }
   },
   watch: {
     entryValue() {
