@@ -40,8 +40,8 @@ export default {
       });
     },
     resizeLegend() {
-      if ( this.activeLayers[0].name != "Frontal Zones Temperature" || this.activeLayers[0].name != "Spawning Grounds for Oysters" ) {
-      console.log("make this file conflicting")
+      if ( this.activeLayers[0].name != "Frontal Zones Temperature" && this.activeLayers[0].name != "Spawning Grounds for Oysters" ) {
+
         return this.windowHeight > 725 ? 'layer-legend_image' : 'layer-legend_image_small'
       }
       else {
