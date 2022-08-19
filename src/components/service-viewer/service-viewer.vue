@@ -337,6 +337,7 @@ export default {
           return false ;
         }
       },
+  },
   methods: {
     ...mapActions("wps",["runProcessor", "clearJobStatus"]),
     ...mapActions("layers",["setActiveLayers", "clearSelectedTime", "getCapabilities", "clearCapabilities"]), 
