@@ -257,7 +257,7 @@ export default {
     };
   },
   computed: {
-    ...mapState("wps", ["markerLngLat", "calculationsTime", "calculationsHours", "selectedEntryValue", "selectedEntryValueOptional", "jobStatus", "statusLink", "serviceLimitsMarker", "polygon"]),
+    ...mapState("wps", ["markerLngLat", "calculationsTime", "calculationsHours", "selectedEntryValue", "selectedEntryValueOptional", "jobStatus", "statusLink", "serviceLimitsMarker", "polygon", "serviceLimitsBBox"]),
     ...mapState("layers", ["selectedTime", "timeSpan", "timeSpanUnfiltered", "selectedArea", "selectedService", "activeLayers"]),
     ...mapGetters("layers", ["selectedLayer", "timeExtent"]),
     SMinfo(){
@@ -277,7 +277,7 @@ export default {
             this.valueRange(this.selectedEntryValue, 0, 2)) {
               return true
 
-        } else if (this.service.wps_id == "a2" && this.calculationsTime && this.polygon) {
+        } else if (this.service.wps_id == "a2" && this.calculationsTime && this.serviceLimitsBBox) {
               return true
 
         } else if (this.service.wps_id == "a3" && this.selectedEntryValue) {

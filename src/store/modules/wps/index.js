@@ -8,7 +8,8 @@ export default {
   state: {
     polygon: null,
     markerLngLat: null,
-    serviceLimitsMarker: true,
+    serviceLimitsMarker: true,    
+    serviceLimitsBBox: null,
     jobStatus: null,
     statusLink: null,
     selectedEntryValue: null,
@@ -39,6 +40,9 @@ export default {
     },
     SET_SERVICE_LIMITS_MARKER(state, bool) {
       state.serviceLimitsMarker = bool
+    },
+    SET_SERVICE_LIMITS_BBOX(state, bool) {
+      state.serviceLimitsBBox = bool
     },
     SET_CALCULATIONS_TIME(state, time) {
       state.calculationsTime = time
@@ -89,6 +93,9 @@ export default {
     },
     setServiceLimitsMarker(context, payload) {
       context.commit("SET_SERVICE_LIMITS_MARKER", payload)
+    },
+    setServiceLimitsBBox(context, payload) {
+      context.commit("SET_SERVICE_LIMITS_BBOX", payload)
     },
     setSelectedEntryValue(context, payload) {
       context.commit("SET_SELECTED_ENTRY_VALUE", payload)

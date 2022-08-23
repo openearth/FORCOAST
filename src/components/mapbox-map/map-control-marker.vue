@@ -39,12 +39,36 @@ export default {
     },
   },
   computed: {
-  ...mapState("wps", ["markerLngLat"]),
+  ...mapState("wps", ["markerLngLat", "polygon"]),
   markerChange(){
     return this.markerLngLat
   }
   },
   watch: {
+    polygon(){
+      this.polygon
+      if (this.polygon != null){
+        let trueCount = 0
+        for  ( const point of this.polygon.features[0].geometry.coordinates[0]) {
+          const pointsObj = {lat: point[1], lng: point[0]}
+          this.isItInside(pointsObj)
+          if (this.inside == true) {
+            trueCount += 1
+          } 
+          if (trueCount == 5){
+            console.log("it is inside")
+            this.setServiceLimitsBBox(true)
+          }
+          else {
+            console.log("else")
+            this.setServiceLimitsBBox(false)
+          }
+        }
+      }
+      else {
+        this.setServiceLimitsBBox(null)
+       }
+    },
     markerChange(){
 
       
@@ -96,7 +120,7 @@ export default {
     this.marker.remove();
   },
   methods: {
-    ...mapActions("wps", ["setMarkerCoordinates", "clearMarkerCoordinates", "setServiceLimitsMarker"]),
+    ...mapActions("wps", ["setMarkerCoordinates", "clearMarkerCoordinates", "setServiceLimitsMarker", "setServiceLimitsBBox"]),
     ...mapState("layers", ["selectedAreaBBox", "selectedService", "selectedAreaId"]),
 
     deferredMountedTo(map) {
@@ -126,6 +150,7 @@ export default {
           const lngLat = this.marker.getLngLat();
           this.setMarkerCoordinates(lngLat);
           this.isItInside(lngLat)
+          this.setServiceLimitsMarker(this.inside)
         });
       }
     },
@@ -172,7 +197,6 @@ export default {
                   this.inside = false
                 }    
               }
-        this.setServiceLimitsMarker(this.inside)
         return this.inside
 
     },
