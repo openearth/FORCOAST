@@ -12,7 +12,7 @@ export const template_r1 = (area, dateTime, period, lon, lat) =>({
          }
       },
      {
-         "id":"time",
+         "id":"datetime",
          "input":{
             "format":{
                "mimeType":"text/plain"
