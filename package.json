@@ -12,6 +12,7 @@
     "@deltares/vue-components": "0.1.2",
     "@deltares/vuetify-theme": "0.2.0",
     "@mapbox/mapbox-gl-draw": "^1.1.2",
+    "@thuoe/mp4-video-player": "^3.1.0",
     "@turf/center": "^6.3.0",
     "@turf/helpers": "^6.3.0",
     "@turf/turf": "^6.3.0",

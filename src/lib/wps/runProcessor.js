@@ -12,6 +12,9 @@ export default function(date, hours, period, id, area, source, target, lat, lon,
 		if (id == "f2") {
 			return template_f2(date, id)
 		} else if (id == "a2") {
+			if (area == "northern_adriatic_sea"){
+				area = "venice"
+			}
 			return template_a2(date, id, area, source, target)
 		} else if (id == "a1") {
 			return template_a1(area, date, lat, lon, lim)

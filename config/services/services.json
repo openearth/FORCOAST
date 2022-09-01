@@ -1204,6 +1204,62 @@
                 "title": "Place marker at output location"
               }
             }
+          },
+          {
+            "id": "land_pollution",
+            "service_label": "Land Pollution Service",
+            "wps_id": "a2",
+            "name": "Land Pollution",
+            "outputName":"bulletin.gif",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Land polution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
+            "components": {
+              "layers": [
+                {
+                  "id": "zeta",
+                  "name": "Water Level",
+                  "layer": "zeta",
+                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "temp",
+                  "name": "Water Temperature",
+                  "layer": "temp",
+                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "salt",
+                  "name": "Salinity",
+                  "layer": "salt",
+                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "unit": "g/kg",
+                  "interval": "hourly"
+                }
+              ],
+              "date_span": true,
+              "date": true,
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "run_task": true,
+              "polygon": true
+            }
           }
         ],
         "bbox": [
