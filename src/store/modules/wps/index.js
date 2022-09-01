@@ -160,7 +160,8 @@ export default {
           source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ",0.5]"
         } else if (area === "galway") {
           source = "[" + markerLngLat.lng + "," + markerLngLat.lat + ",-1.0]"
-        }
+        } else if (area === "northern_adriatic_sea") {
+          source = "[" + markerLngLat.lng + "," + markerLngLat.lat + "0.751]"
       }
 
       // Set bounding box in proper format:
