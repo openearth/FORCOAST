@@ -1,0 +1,1465 @@
+[
+  {
+    "id": "wild_fishery",
+    "name": "Wild Fishery",
+    "icon": "FORCOAST_Fish_Logo.png",
+    "areas": [
+      {
+        "id": "eforie",
+        "name": "Western Black Sea (Bulgaria)",
+        "services": [
+          {
+            "id": "suitable_fishing_areas",
+            "service_label": "Suitable Fishing Areas Service",
+            "wps_id": "f1",
+            "name": "Suitable Fishing Areas",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/06/F1_bulletin_example-1.jpg",
+            "outputName":"bulletin.png",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the suitable fishing areas service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "The Suitable Fishing Areas service offers information about the most likely areas to find the fish species of choice.",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:pilot_3_CMEMS_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "forcoast:pilot_3_CMEMS_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_swpt",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:pilot_3_CMEMS_swpt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_T_votemper",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:Eforie_bay_T_votemper",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Sea water temperature produced by FORCOAST",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_sws",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:pilot_3_CMEMS_sws",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_T_vosaline",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:Eforie_bay_T_vosaline",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled salinity produced by FORCOAST",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid",
+                  "layer": "forcoast:pilot_3_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed surface height from CMEMS",
+                  "unit": "m",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_north_v",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_3_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_V_vomecrty",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_V_vomecrty",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Nortward velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_east_v",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_3_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed eastward velocity data  from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_U_vozocrtx",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_U_vozocrtx",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Eatstward velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_W_vovecrtz",
+                  "name": "Vertical velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_U_vozocrtx",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled vertical velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_wave_drift_x",
+                  "name": "Wave Drift East",
+                  "layer": "forcoast:pilot_3_CMEMS_wave_drift_x",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_wave_drift_y",
+                  "name": "Wave Drift North",
+                  "layer": "forcoast:pilot_3_CMEMS_wave_drift_y",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_wave_mean_per",
+                  "name": "Spectral Moments Wave Period",
+                  "layer": "forcoast:pilot_3_CMEMS_wave_mean_per",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave period data from CMEMS",
+                  "unit": "s"
+                },
+                {
+                  "id": "forcoast:pilot_3_CMEMS_wave_sig",
+                  "name": "Spectral Significant Wave Height",
+                  "layer": "forcoast:pilot_3_CMEMS_wave_sig",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave significance data from CMEMS",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+              {
+                "id": "forcoast:HSI_Whiting",
+                "name": "HSI-Whiting",
+                "layer": "forcoast:HSI_Whiting",
+                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                "icon": "fish.png",
+                "colorscalerange": "auto",
+                "description": "Index for fishing",
+                "unit": "Index",
+                "interval": "daily",
+                "forcoastLayer": true
+
+              }
+            ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
+            }
+          }
+        ],
+        "bbox": [
+          [
+            27.5,
+            41.6
+          ],
+          [
+            31.2,
+            45.5
+          ]
+        ]
+      },
+      {
+        "id": "bay_of_biscay",
+        "name": "Bay of Biscay (Spain)",
+        "services": [
+          {
+            "id": "front_detection",
+            "service_label": "Fronts Detection Service",
+            "wps_id": "f2",
+            "name": "Fronts detection",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/06/frontsanimation.webm",
+            "outputName":"bulletin.png",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Front detection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:pilot_2_CMEMS_swpt",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:pilot_2_CMEMS_swpt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_sws",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:pilot_2_CMEMS_sws",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_chl_v2",
+                  "name": "Chlorophyll Concentration",
+                  "layer": "forcoast:pilot_2_CMEMS_chl_v2",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll concentration data at 0.5m from CMEMS",
+                  "unit": "POM",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_north_v",
+                  "name": "Northward Sea Water Velocity",
+                  "layer": "forcoast:pilot_2_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_east_v",
+                  "name": "Eastward Sea Water Velocity",
+                  "layer": "forcoast:pilot_2_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:biscay_sst",
+                  "name": "Water Temperature",
+                  "layer": "forcoast:biscay_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by AZTI",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_2_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid",
+                  "layer": "forcoast:pilot_2_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed surface height from CMEMS",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:biscay_fronts_sst",
+                  "name": "Frontal Zones Temperature",
+                  "layer": "forcoast:biscay_fronts_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
+                  "unit": "Index",
+                  "interval": "hourly",
+                  "forcoastLayer": true
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
+            }
+          }
+        ],
+        "bbox": [
+          [
+            -4.0,
+            42.75
+          ],
+          [
+            -1.8,
+            44.6
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "oysterground_restoration",
+    "name": "Oysterground Restoration",
+    "icon": "FORCOAST_Oyster_Logo.png",
+    "areas": [
+      {
+        "id": "galway",
+        "name": "Galway Bay (Ireland)",
+        "services": [
+          {
+            "id": "land_pollution",
+            "service_label": "Land Pollution Service",
+            "wps_id": "a2",
+            "name": "Land Pollution",
+            "outputName":"bulletin.gif",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Land polution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:Galway_Bay_forecast_zeta",
+                  "name": "Water Level (Forecasts)",
+                  "layer": "forcoast:Galway_Bay_forecast_zeta",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_zeta",
+                  "name": "Water Level (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_zeta",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_forecast_temp",
+                  "name": "Potential Water Temperature (Forecasts)",
+                  "layer": "forcoast:Galway_Bay_forecast_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Forecast results",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_temp",
+                  "name": "Potential Water Temperature (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Analysis results",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "Galway_Bay_forecast_salt",
+                  "name": "Sea Water Salinity (Forecasts)",
+                  "layer": "Galway_Bay_forecast_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "unit": "g/kg",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_salt",
+                  "name": "Sea Water Salinity (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "unit": "g/kg",
+                  "interval": "hourly"
+                }
+              ],
+              "date_span": true,
+              "date": true,
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "run_task": true,
+              "polygon": true
+            }
+          },
+          {
+            "id": "source_retrieval",
+            "wps_id": "r1",
+            "name": "Contaminants Source Retrieval",
+            "service_label": "Contaminants Source Retrieval Service",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/R1_bulletin_example.jpg",
+            "outputName":"bulletin.png",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Contaminants source retrieval service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:Galway_Bay_forecast_zeta",
+                  "name": "Water Level (Forecasts)",
+                  "layer": "forcoast:Galway_Bay_forecast_zeta",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_zeta",
+                  "name": "Water Level (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_zeta",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_forecast_temp",
+                  "name": "Potential Water Temperature (Forecasts)",
+                  "layer": "forcoast:Galway_Bay_forecast_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Forecast results",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_temp",
+                  "name": "Potential Water Temperature (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Analysis results",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "Galway_Bay_forecast_salt",
+                  "name": "Sea Water Salinity (Forecasts)",
+                  "layer": "Galway_Bay_forecast_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "unit": "g/kg",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_salt",
+                  "name": "Sea Water Salinity (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "unit": "g/kg",
+                  "interval": "hourly"
+                }
+              ],
+              "date_span": true,
+              "hours": true,
+              
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "entry_form": {
+                "title": "Enter time duration for simulation",
+                "value": "Duration (hrs)",
+                "type": "period",
+                "range": [1, 48]
+              },
+              "run_task": true
+              
+            }
+          }
+        ],
+        "bbox": [
+          [
+            -9.3,
+            52.7
+          ],
+          [
+            -8.78,
+            53.7
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bivalve_aquaculture",
+    "name": "Bivalve Aquaculture",
+    "icon": "FORCOAST_Mussel_Logo.png",
+    "areas": [
+      {
+        "id": "sado_estuary",
+        "name": "Sado Estuary (Portugal)",
+        "services": [
+          {
+            "id": "marine_conditions",
+            "service_label": "Marine Conditions Service",
+            "wps_id": "a1",
+            "name": "Marine conditions",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/05/A1_bulletin_example.jpg",
+            "outputName":"bulletin.png",
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Marine Conditions service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:Sado_Estuary_ssh",
+                  "name": "Water Level",
+                  "layer": "forcoast:Sado_Estuary_ssh",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-1,3",
+                  "description": "Modelled water level produced in FORCOAST by Maretec",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_swpt_v2",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:pilot_1_CMEMS_swpt_v2",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Sado_Estuary_temperature",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:Sado_Estuary_temperature",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled sea water temperature data produced in FORCOAST by Maretec",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_sws",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:pilot_1_CMEMS_sws",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Sado_Estuary_salinity",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:Sado_Estuary_salinity",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled sea water salinity produced in FORCOAST by Maretec",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_chl",
+                  "name": "Chloropyll Concentration",
+                  "layer": "forcoast:pilot_1_CMEMS_chl",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS",
+                  "unit": "POM",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_nh4",
+                  "name": "Ammonium Concentration",
+                  "layer": "forcoast:pilot_1_CMEMS_nh4",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed ammonium concentration data at 2.5m from CMEMS",
+                  "unit": "mmol/m\u00B3",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_po4",
+                  "name": "Phosphate Concentration",
+                  "layer": "forcoast:pilot_1_CMEMS_po4",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed phosphate concentration data at 2.5m from CMEMS",
+                  "unit": "mmol/m\u00B3",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_oxy",
+                  "name": "Oxygen Concentration",
+                  "layer": "forcoast:pilot_1_CMEMS_oxy",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS",
+                  "unit": "mg/L",
+                  "interval": "daily"
+                },
+
+                {
+                  "id": "forcoast:Sado_Estuary_y_wind",
+                  "name": "Northward Velocity of Wind",
+                  "layer": "forcoast:Sado_Estuary_y_wind",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled north with velocity data produced in FORCOAST by Maretec",
+                  "unit": "ms",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_east_v",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_1_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Sado_Estuary_x_wind",
+                  "name": "Eastward Velocity of Wind",
+                  "layer": "forcoast:Sado_Estuary_x_wind",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Sado_Estuary_wind_modulus",
+                  "name": "Wind Speed",
+                  "layer": "forcoast:Sado_Estuary_wind_modulus",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,15",
+                  "description": "Modelled wind speed produced in FORCOAST by Maretec",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_1_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid",
+                  "layer": "forcoast:pilot_1_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed surface height from CMEMS",
+                  "unit": "m",
+                  "interval": "hourly"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at location of interest"
+              },
+              "entry_form": {
+                "title": "Enter workability limit value",
+                "value": "Limit value (m)",
+                "type": "lim",
+                "range": [0, 2]
+              },
+              "telegram_form": {
+                "title": "Enter Telegram ID",
+                "value": "Telegram ID",
+                "type": "telegram_id"
+              },
+              "date": true,
+              "run_task": true
+            }
+          }
+        ],
+        "bbox": [
+          [
+            -9.8,
+            37.9
+          ],
+          [
+            -8.4,
+            39.5
+          ]
+        ]
+      },
+      {
+        "id": "southern_north_sea",
+        "name": "Southern North Sea (Belgium)",
+        "services": [
+          {
+            "id": "source_retrieval",
+            "service_label": "Contaminant Source Retrieval Service",
+            "wps_id": "r1",
+            "name": "Contaminants Source Retrieval",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/07/R1_bulletin_example_north_sea.jpg",
+            "outputName":"bulletin.png",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Contaminats source retrieval service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
+            "components": {
+             "layers": [
+                {
+                  "id": "forcoast:pilot_4_ERDAPP_north_v_v2",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_4_ERDAPP_north_v_v2",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed sea surface velocity from ERDDAP",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_4_ERDAPP_east_v_v2",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_4_ERDAPP_east_v_v2",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface velocity from ERDDAP",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                }
+              ],
+              "date_span": true,
+              "date": true,
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "entry_form": {
+                "title": "Enter time duration for simulation",
+                "value": "Duration (hrs)",
+                "type": "period",
+                "range": [1, 48]
+              },
+              "run_task": true
+            }
+          },
+          { 
+            "id": "spat_capture",
+            "wps_id": "a4",
+            "name": "Spat Capture Assistance",
+            "service_label": "Spat Capture Assistance Service",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/07/A4_bulletin_example_north_sea.jpg",
+            "outputName":"bulletin.png",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the spat capture assistance service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "The Spat Capture Assistance service offers a time window estimate of when do larvae spats arrive to your site from the specified sources.",
+            "components": {
+             "layers": [
+             {
+                "id": "forcoast:spawning_grounds_oyster",
+                "name": "Spawning Grounds for Oysters",
+                "layer": "forcoast:spawning_grounds_oyster",
+                "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                "icon": "",
+                "colorscalerange": "auto",
+                "description": "Spawning grounds for Oysters",
+                "unit": "-",
+                "interval": "No time dimension"
+              },
+              {
+              "id": "forcoast:surf_temp_daily_avg_north_sea_a4",
+              "name": "Daily Average Surface Temperature",
+              "layer": "forcoast:surf_temp_daily_avg_north_sea_a4",
+              "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+              "icon": "",
+              "colorscalerange": "auto",
+              "description": "Daily average surface temperature",
+              "unit": "\u00B0C",
+              "interval": "hourly"
+              }
+              ],
+              "date_span": true,
+             "presets": [
+              {
+                "name": "None", 
+                "presetType": ["ptm","","","","","",""], 
+                "presetValue": ["0","","","","","",""]
+              },
+              {
+                "name": "Oysters", 
+                "presetType": ["ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
+                "presetValue": [0,15,7,576,20,30,30]
+              }, 
+              { "name": "Mussels",
+              "presetType": ["ptm", "tt", "gdt", "ttcs", "pldmin", "pldmax", "sd"], 
+              "presetValue": [0,9,7,576,25,45,30]
+              }
+             ],
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "entry_form_a4": {
+                "title":"Enter the parameters"
+              },
+              "run_task": true
+            }
+          }
+      ],
+        "bbox": [
+          [
+            -2.5,
+            49
+          ],
+          [
+            8,
+            54
+          ]
+        ]
+      },
+      {
+        "id": "limfjord",
+        "name": "Limfjord (Denmark)",
+        "services": [
+          {
+            "id": "marine_conditions",
+            "service_label": "Marine Conditions Service",
+            "wps_id": "a1",
+            "name": "Marine Conditions",
+            "example":"https://forcoast.eu/wp-content/uploads/2022/07/A1_bulletin_example_limfjord.jpg",
+            "outputName":"bulletin.png",
+            "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Marine Conditions service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:dk_elev",
+                  "name": "Sea Surface Elevation",
+                  "layer": "forcoast:dk_elev",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-1,1",
+                  "description": "Modelled water level produced in FORCOAST by DMI",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:dk_salt",
+                  "name": "Salinity",
+                  "layer": "forcoast:dk_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by DMI",
+                  "unit": "g/kg",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:dk_temp",
+                  "name": "Water Temperature",
+                  "layer": "forcoast:dk_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by DMI",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:dk_currentspeed",
+                  "name": "Current Speed",
+                  "layer": "forcoast:dk_currentspeed",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-1,1",
+                  "description": "Modelled current velocity produced in FORCOAST by DMI",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:dk_windspeed",
+                  "name": "Wind Speed",
+                  "layer": "forcoast:dk_windspeed",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-1,1",
+                  "description": "Modelled wind speed produced in FORCOAST by DMI",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at location of interest"
+              },
+              "entry_form": {
+                "title": "Enter workability limit value",
+                "value": "Limit value (m)",
+                "type": "lim",
+                "range": [0, 2]
+              },
+              "telegram_form": {
+                "title": "Enter Telegram ID",
+                "value": "Telegram ID",
+                "type": "telegram_id"
+              },
+              "date": true,
+              "run_task": true
+            }
+          },
+          {
+            "id": "site_prospection",
+            "service_label": "Site Prospection Service",
+            "wps_id": "a3",
+            "name": "Site Prospection",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/07/A3_bulletin_example_limfjord.jpg",
+            "outputName":"bulletin.png",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the site prospection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",      
+            "description": "The Site Prospection service offers information about the suitability of new and existing sites for bottom aquaculture activities.",
+            "components": {
+              "layers":[
+                {
+                  "id": "forcoast:a3_limfjord_botchl",
+                  "name": "Bottom Chlorophyll Concentration",
+                  "layer":"forcoast:a3_limfjord_botchl",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Chorophyll concentration on bottom from Aarhus University",
+                  "unit": "mg/m\u00B3",
+                  "interval": "monthly"
+                },
+                {
+                  "id": "forcoast:a3_limfjord_botS",
+                  "name": "Bottom Salinity",
+                  "layer":"forcoast:a3_limfjord_botS",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Salinity on the bottom from Aarhus University",
+                  "unit": "g/kg",
+                  "interval": "monthly"
+                },
+                {
+                  "id": "forcoast:a3_limfjord_botT",
+                  "name": "Bottom Temperature",
+                  "layer":"forcoast:a3_limfjord_botT",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Temperature on the bottom",
+                  "unit": "\u00B0C",
+                  "interval": "monthly"
+                },
+                {
+                  "id": "forcoast:a3_limfjord_botoxy",
+                  "name": "Bottom Oxygen Concentration",
+                  "layer":"forcoast:a3_limfjord_botoxy",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Oxygen concentration on the bottom from Aarhus University",
+                  "unit": "mmol/m\u00B3",
+                  "interval": "monthly"
+                },
+                {
+                  "id": "forcoast:a3_limfjord_resup",
+                  "name": "Resuspension of Sediments",
+                  "layer":"forcoast:a3_limfjord_resup",
+                  "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon":"",
+                  "colorscalerange": "auto",
+                  "description": "Resuspension of sediments from Aarhus University",
+                  "unit": "g-POM/m\u00B2/d",
+                  "interval": "monthly"
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at location of interest"
+              },
+              "entry_form_a3": {
+                  "title":"Enter the parameters",
+                  "value_1":"Enter a year",
+                  "type_1":"years",
+                  "value_2":"Enter month",
+                  "type_2":"mb",
+                  "type_3":"me",
+                  "value_4":"Salinity treshold",
+                  "type_4":"sl",
+                  "type_5":"su",
+                  "value_6":"Temperature treshold",
+                  "type_6":"tl",
+                  "type_7":"tu"
+                },
+              "entry_form_a3_optional": {
+                  "title":"Optional parameters",
+                  "value_8":"Half saturation constant of food",
+                  "type_8":"kf",
+                  "value_9":"Oxygen lower treshold",
+                  "type_9":"o",
+                  "value_10":"Resuspension treshold",
+                  "type_10":"kr",
+                  "value_11":"Expected decay",
+                  "type_11":"d"
+                },
+              "run_task": true,
+              "polygon": true
+            }
+          }
+        ],
+        "bbox": [
+          [
+            8.05,
+            56.44
+          ],
+          [
+            9.86,
+            57.19
+          ]
+        ]
+      },
+      {
+        "id": "eforie",
+        "name": "Western Black Sea (Romania)",
+        "services": [
+          {
+            "id": "land_pollution",
+            "service_label": "Land Pollution Service",
+            "wps_id": "a2",
+            "name": "Land Pollution",
+            "example":"https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
+            "outputName":"bulletin.gif",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the land pollution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:pilot_7_CMEMS_swpt",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:pilot_7_CMEMS_swpt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_T_votemper",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:Eforie_bay_T_votemper",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Sea water temperature produced in FORCOAST",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_sws",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:pilot_7_CMEMS_sws",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_T_vosaline",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:Eforie_bay_T_vosaline",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled salinity produced by FORCOAST",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_oxy",
+                  "name": "Oxygen Concentration",
+                  "layer": "forcoast:pilot_7_CMEMS_oxy",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS",
+                  "unit": "mg/L",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_no3",
+                  "name": "Nitrate Concentration",
+                  "layer": "forcoast:pilot_7_CMEMS_no3",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed nitrate concentration data at 2.5m from CMEMS",
+                  "unit": "mmol/m\u00B3",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_ph",
+                  "name": "pH of Sea Water",
+                  "layer": "forcoast:pilot_7_CMEMS_ph",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
+                  "unit": "pH",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_chl_v2",
+                  "name": "Chloropyll Concentration",
+                  "layer": "forcoast:pilot_7_CMEMS_chl_v2",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS",
+                  "unit": "ppm",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid",
+                  "layer": "forcoast:pilot_7_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed surface height from CMEMS",
+                  "unit": "m",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_north_v",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_7_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_V_vomecrty",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_V_vomecrty",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Nortward velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_east_v",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_7_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_U_vozocrtx",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_U_vozocrtx",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Eatstward velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_W_vovecrtz",
+                  "name": "Vertical velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_W_vovecrtz",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled vertical velocity produced in FORCOAST by",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_wave_drift_x",
+                  "name": "Wave Drift East",
+                  "layer": "forcoast:pilot_7_CMEMS_wave_drift_x",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_wave_drift_y",
+                  "name": "Wave Drift North",
+                  "layer": "forcoast:pilot_7_CMEMS_wave_drift_y",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_wave_mean_per",
+                  "name": "Spectral Moments Wave Period",
+                  "layer": "forcoast:pilot_7_CMEMS_wave_mean_per",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave period data from CMEMS",
+                  "unit": "s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_wave_sig",
+                  "name": "Spectral Significant Wave Height",
+                  "layer": "forcoast:pilot_7_CMEMS_wave_sig",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed wave significance data from CMEMS",
+                  "unit": "m",
+                  "interval": "hourly"
+                }
+              ],
+              "date_span": true,
+              "date": true,
+              "draggable_marker": {
+                "title": "Place marker at source location"
+              },
+              "run_task": true,
+              "polygon": true
+            }
+          }
+        ],
+        "bbox": [
+          [
+            28.5,
+            43.9
+          ],
+          [
+            29,
+            44.5
+          ]
+        ]
+      },
+      {
+        "id": "northern_adriatic_sea",
+        "name": "Northern Adriatic Sea (Italy)",
+        "services": [
+          {
+            "id": "front_detection",
+            "service_label": "Fronts Detection Service",
+            "wps_id": "f2",
+            "name": "Fronts detection",
+            "example": "https://forcoast.eu/wp-content/uploads/2022/07/adriatic_fronts_animation.webm",
+            "outputName":"bulletin.png",
+            "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
+            "contact": "info@forcoast.eu",
+            "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Front detection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
+            "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
+            "dates": [
+              "2021-01-20",
+              "2021-01-21",
+              "2021-01-22",
+              "2021-01-23",
+              "2021-01-24",
+              "2021-01-25",
+              "2021-01-26",
+              "2021-01-27",
+              "2021-01-28",
+              "2021-01-29",
+              "2021-01-30"
+            ],
+            "components": {
+              "layers": [
+                {
+                  "id": "forcoast:pilot_8_CMEMS_sst",
+                  "name": "Sea Surface Temperature",
+                  "layer": "forcoast:pilot_8_CMEMS_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed sea surface temperature data from CMEMS",
+                  "unit": "K",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Northern_Adriatic_sea_hindercast_thetao",
+                  "name": "Sea Surface Temperature(HINDCAST)",
+                  "layer": "forcoast:Northern_Adriatic_sea_hindercast_thetao",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Modelled sea surface temperature produced in FORCOAST by OGS",
+                  "unit": "K",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Northern_Adriatic_sea_forecast_thetao",
+                  "name": "Sea Surface Temperature(FORECAST)",
+                  "layer": "forcoast:Northern_Adriatic_sea_forecast_thetao",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Modelled sea surface potential temperature produced in FORCOAST by OGS",
+                  "unit": "K",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_8_CMEMS_chl",
+                  "name": "Chlorophyll Concentration",
+                  "layer": "forcoast:pilot_8_CMEMS_chl",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Remotely sensed chlorophyll concentration data from CMEMS",
+                  "unit": "POM",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_8_CMEMS_north_v",
+                  "name": "Northward Sea Water Velocity",
+                  "layer": "forcoast:pilot_8_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:pilot_8_CMEMS_east_v",
+                  "name": "Eastward Sea Water Velocity",
+                  "layer": "forcoast:pilot_8_CMEMS_east_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:northernadriatic_fronts_sst",
+                  "name": "Frontal Zones Temperature",
+                  "layer": "forcoast:northernadriatic_fronts_sst",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
+                  "unit": "Index",
+                  "interval": "hourly",
+                  "forcoastLayer": true
+                }
+              ],
+              "date_span": true,
+              "draggable_marker": {
+                "title": "Place marker at output location"
+              }
+            }
+          }
+        ],
+        "bbox": [
+          [
+            12,
+            43.2
+          ],
+          [
+            16,
+            46.32
+          ]
+        ]
+      }
+    ]
+  }
+]
+
