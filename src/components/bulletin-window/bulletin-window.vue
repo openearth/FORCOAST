@@ -3,11 +3,7 @@
     <v-dialog v-model="dialog" width="unset">
       <v-card height="unset" width="unset">
         <div id="bulletin-container" ref="savecontent" v-on-clickaway="closeDialog">
-          <v-img v-if="this.outputName.substr(this.outputName.length-3, 3) == 'png'" :src="image"/>
-          <video-player
-          v-if="this.outputName.substr(this.outputName.length-3, 3) == 'mp4'"
-          :src="image"
-          ></video-player>
+          <v-img :src="image"/>
         </div>
         <v-card-actions class="justify-center">       
           <v-btn color="primary" 
@@ -25,7 +21,6 @@
 <script>
 import featureInfo from "@/lib/featureInfo";
 import { mixin as clickaway } from 'vue-clickaway';
-import videoPlayer from "@thuoe/mp4-video-player";
 
 export default {
   // see https://www.smashingmagazine.com/2020/01/data-components-vue-js/
@@ -44,9 +39,6 @@ export default {
       dialog: true,
       image: "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/" + this.outputName
     };
-  },
-  components: {
-    'video-player': videoPlayer,
   },
   mixins: [ clickaway ],
   template: '<p v-on-clickaway="away">Click away</p>',
