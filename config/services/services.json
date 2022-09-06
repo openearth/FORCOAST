@@ -44,6 +44,17 @@
                   "interval": "daily"
                 },
                 {
+                  "id": "forcoast:Eforie_bay_T_votemper",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:Eforie_bay_T_votemper",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Sea water temperature produced by FORCOAST",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
                   "id": "forcoast:pilot_3_CMEMS_sws",
                   "name": "Sea Water Salinity",
                   "layer": "forcoast:pilot_3_CMEMS_sws",
@@ -51,6 +62,17 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_T_vosaline",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:Eforie_bay_T_vosaline",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled salinity produced by FORCOAST",
                   "unit": "g/kg",
                   "interval": "daily"
                 },
@@ -77,13 +99,46 @@
                   "interval": "daily"
                 },
                 {
+                  "id": "forcoast:Eforie_bay_V_vomecrty",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_V_vomecrty",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Nortward velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
                   "id": "forcoast:pilot_3_CMEMS_east_v",
                   "name": "Eastward Velocity of Sea Water",
                   "layer": "forcoast:pilot_3_CMEMS_east_v",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
+                  "description": "Remotely sensed eastward velocity data  from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_U_vozocrtx",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_U_vozocrtx",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Eatstward velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_W_vovecrtz",
+                  "name": "Vertical velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_U_vozocrtx",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled vertical velocity produced by FORCOAST",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -312,10 +367,10 @@
             "components": {
               "layers": [
                 {
-                  "id": "zeta",
-                  "name": "Water Level",
-                  "layer": "zeta",
-                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "id": "forcoast:Galway_Bay_forecast_zeta",
+                  "name": "Water Level (Forecasts)",
+                  "layer": "forcoast:Galway_Bay_forecast_zeta",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-2,2",
                   "description": "Modelled water level produced in FORCOAST by Marine Institute",
@@ -323,21 +378,54 @@
                   "interval": "hourly"
                 },
                 {
-                  "id": "temp",
-                  "name": "Water Temperature",
-                  "layer": "temp",
-                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "id": "forcoast:Galway_Bay_analysis_zeta",
+                  "name": "Water Level (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_zeta",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_forecast_temp",
+                  "name": "Potential Water Temperature (Forecasts)",
+                  "layer": "forcoast:Galway_Bay_forecast_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Forecast results",
                   "unit": "\u00B0C",
                   "interval": "hourly"
                 },
                 {
-                  "id": "salt",
-                  "name": "Salinity",
-                  "layer": "salt",
-                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "id": "forcoast:Galway_Bay_analysis_temp",
+                  "name": "Potential Water Temperature (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Analysis results",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "Galway_Bay_forecast_salt",
+                  "name": "Sea Water Salinity (Forecasts)",
+                  "layer": "Galway_Bay_forecast_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "unit": "g/kg",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_salt",
+                  "name": "Sea Water Salinity (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "0,30",
                   "description": "Modelled salinity produced in FORCOAST by Marine Institute",
@@ -368,14 +456,69 @@
             "components": {
               "layers": [
                 {
-                  "id": "zeta",
-                  "name": "Water Level",
-                  "layer": "zeta",
-                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "id": "forcoast:Galway_Bay_forecast_zeta",
+                  "name": "Water Level (Forecasts)",
+                  "layer": "forcoast:Galway_Bay_forecast_zeta",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-2,2",
                   "description": "Modelled water level produced in FORCOAST by Marine Institute",
                   "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_zeta",
+                  "name": "Water Level (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_zeta",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_forecast_temp",
+                  "name": "Potential Water Temperature (Forecasts)",
+                  "layer": "forcoast:Galway_Bay_forecast_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Forecast results",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_temp",
+                  "name": "Potential Water Temperature (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_temp",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "-10,30",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Analysis results",
+                  "unit": "\u00B0C",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "Galway_Bay_forecast_salt",
+                  "name": "Sea Water Salinity (Forecasts)",
+                  "layer": "Galway_Bay_forecast_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "unit": "g/kg",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Galway_Bay_analysis_salt",
+                  "name": "Sea Water Salinity (Analysis)",
+                  "layer": "forcoast:Galway_Bay_analysis_salt",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "0,30",
+                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "unit": "g/kg",
                   "interval": "hourly"
                 }
               ],
@@ -432,12 +575,11 @@
             "components": {
               "layers": [
                 {
-                  "id": "ssh",
+                  "id": "forcoast:Sado_Estuary_ssh",
                   "name": "Water Level",
-                  "layer": "ssh",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
+                  "layer": "forcoast:Sado_Estuary_ssh",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
-                  "styles": "boxfill/sst_36",
                   "colorscalerange": "-1,3",
                   "description": "Modelled water level produced in FORCOAST by Maretec",
                   "unit": "m",
@@ -455,6 +597,17 @@
                   "interval": "daily"
                 },
                 {
+                  "id": "forcoast:Sado_Estuary_temperature",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:Sado_Estuary_temperature",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled sea water temperature data produced in FORCOAST by Maretec",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
                   "id": "forcoast:pilot_1_CMEMS_sws",
                   "name": "Sea Water Salinity",
                   "layer": "forcoast:pilot_1_CMEMS_sws",
@@ -462,6 +615,17 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Sado_Estuary_salinity",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:Sado_Estuary_salinity",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled sea water salinity produced in FORCOAST by Maretec",
                   "unit": "g/kg",
                   "interval": "daily"
                 },
@@ -509,25 +673,15 @@
                   "unit": "mg/L",
                   "interval": "daily"
                 },
+
                 {
-                  "id": "vm",
-                  "name": "Sea Water Velocity",
-                  "layer": "vm",
-                  "url": "http://thredds.maretec.org/thredds/wms/MOHID_WATER/LISOCEAN_0.003DEG_50L_3H/FORECAST/Latest.nc",
-                  "icon": "",
-                  "colorscalerange": "-1,1",
-                  "description": "Modelled current velocity produced in FORCOAST by Maretec",
-                  "unit": "m/s",
-                  "interval": "hourly"
-                },
-                {
-                  "id": "forcoast:pilot_1_CMEMS_north_v",
-                  "name": "Northward Velocity of Sea Water",
-                  "layer": "forcoast:pilot_1_CMEMS_north_v",
+                  "id": "forcoast:Sado_Estuary_y_wind",
+                  "name": "Northward Velocity of Wind",
+                  "layer": "forcoast:Sado_Estuary_y_wind",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed water velocity from CMEMS",
+                  "description": "Modelled north with velocity data produced in FORCOAST by Maretec",
                   "unit": "ms",
                   "interval": "daily"
                 },
@@ -543,10 +697,21 @@
                   "interval": "daily"
                 },
                 {
-                  "id": "wind_modulus",
+                  "id": "forcoast:Sado_Estuary_x_wind",
+                  "name": "Eastward Velocity of Wind",
+                  "layer": "forcoast:Sado_Estuary_x_wind",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Sado_Estuary_wind_modulus",
                   "name": "Wind Speed",
-                  "layer": "wind_modulus",
-                  "url": "http://thredds.maretec.org/thredds/wms/WRF/LISOCEAN_3KM_1L_1H/FORECAST/2021110600.nc",
+                  "layer": "forcoast:Sado_Estuary_wind_modulus",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "0,15",
                   "description": "Modelled wind speed produced in FORCOAST by Maretec",
@@ -959,6 +1124,17 @@
                   "interval": "daily"
                 },
                 {
+                  "id": "forcoast:Eforie_bay_T_votemper",
+                  "name": "Sea Water Temperature",
+                  "layer": "forcoast:Eforie_bay_T_votemper",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Sea water temperature produced in FORCOAST",
+                  "unit": "\u00B0C",
+                  "interval": "daily"
+                },
+                {
                   "id": "forcoast:pilot_7_CMEMS_sws",
                   "name": "Sea Water Salinity",
                   "layer": "forcoast:pilot_7_CMEMS_sws",
@@ -966,6 +1142,17 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
+                  "unit": "g/kg",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_T_vosaline",
+                  "name": "Sea Water Salinity",
+                  "layer": "forcoast:Eforie_bay_T_vosaline",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled salinity produced by FORCOAST",
                   "unit": "g/kg",
                   "interval": "daily"
                 },
@@ -1036,6 +1223,17 @@
                   "interval": "daily"
                 },
                 {
+                  "id": "forcoast:Eforie_bay_V_vomecrty",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_V_vomecrty",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Nortward velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
                   "id": "forcoast:pilot_7_CMEMS_east_v",
                   "name": "Eastward Velocity of Sea Water",
                   "layer": "forcoast:pilot_7_CMEMS_east_v",
@@ -1043,6 +1241,28 @@
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_U_vozocrtx",
+                  "name": "Eastward Velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_U_vozocrtx",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Eatstward velocity produced by FORCOAST",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Eforie_bay_W_vovecrtz",
+                  "name": "Vertical velocity of Sea Water",
+                  "layer": "forcoast:Eforie_bay_W_vovecrtz",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled vertical velocity produced in FORCOAST by",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -1150,6 +1370,28 @@
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
                   "description": "Remotely sensed sea surface temperature data from CMEMS",
+                  "unit": "K",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Northern_Adriatic_sea_hindercast_thetao",
+                  "name": "Sea Surface Temperature(HINDCAST)",
+                  "layer": "forcoast:Northern_Adriatic_sea_hindercast_thetao",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Modelled sea surface temperature produced in FORCOAST by OGS",
+                  "unit": "K",
+                  "interval": "daily"
+                },
+                {
+                  "id": "forcoast:Northern_Adriatic_sea_forecast_thetao",
+                  "name": "Sea Surface Temperature(FORECAST)",
+                  "layer": "forcoast:Northern_Adriatic_sea_forecast_thetao",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "0.01,10",
+                  "description": "Modelled sea surface potential temperature produced in FORCOAST by OGS",
                   "unit": "K",
                   "interval": "daily"
                 },
@@ -1276,3 +1518,4 @@
     ]
   }
 ]
+
