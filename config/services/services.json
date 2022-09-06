@@ -322,6 +322,18 @@
                   "unit": "Index",
                   "interval": "hourly",
                   "forcoastLayer": true
+                },
+                {
+                  "id": "forcoast:biscay_fronts_chl",
+                  "name": "Frontal Zones Chlorophyll",
+                  "layer": "forcoast:biscay_fronts_chl",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Frontal zone maps based on modelled chlorophyll at the surface layer produced in FORCOAST",
+                  "unit": "Index",
+                  "interval": "daily",
+                  "forcoastLayer": true
                 }
               ],
               "date_span": true,
@@ -1438,6 +1450,18 @@
                   "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
                   "unit": "Index",
                   "interval": "hourly",
+                  "forcoastLayer": true
+                },
+                {
+                  "id": "forcoast:northernadriatic_fronts_chl",
+                  "name": "Frontal Zones Chlorophyll",
+                  "layer": "forcoast:northernadriatic_fronts_chl",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "sea_temp.png",
+                  "colorscalerange": "10,30",
+                  "description": "Frontal zone maps based on modelled chlorophyll at the surface layer produced in FORCOAST",
+                  "unit": "Index",
+                  "interval": "daily",
                   "forcoastLayer": true
                 }
               ],
