@@ -51,7 +51,7 @@ import { mapActions } from "vuex";
 export default {
   data: () => ({
     menu: false,
-    date: new Date(Date.now() - 86400000).toISOString().split('T')[0],
+    date: "",
   }),
   watch: {
     date() {
