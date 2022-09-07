@@ -332,8 +332,7 @@
                   "colorscalerange": "10,30",
                   "description": "Frontal zone maps based on modelled chlorophyll at the surface layer produced in FORCOAST",
                   "unit": "Index",
-                  "interval": "daily",
-                  "forcoastLayer": true
+                  "interval": "daily"
                 }
               ],
               "date_span": true,
@@ -1461,8 +1460,7 @@
                   "colorscalerange": "10,30",
                   "description": "Frontal zone maps based on modelled chlorophyll at the surface layer produced in FORCOAST",
                   "unit": "Index",
-                  "interval": "daily",
-                  "forcoastLayer": true
+                  "interval": "daily"
                 }
               ],
               "date_span": true,
