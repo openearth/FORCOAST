@@ -56,11 +56,9 @@ export default {
             trueCount += 1
           } 
           if (trueCount == 5){
-            console.log("it is inside")
             this.setServiceLimitsBBox(true)
           }
           else {
-            console.log("else")
             this.setServiceLimitsBBox(false)
           }
         }
@@ -94,6 +92,7 @@ export default {
           if ( this.inside == false ) {
             this.marker.setPopup(popup)
           }
+          this.setServiceLimitsMarker(this.inside)
     }
     
      
