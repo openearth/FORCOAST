@@ -43,8 +43,8 @@
             v-model="selectHour"
             prepend-icon="mdi-clock-outline"
             single-line
-            
-            
+            hint="In Universal Time (UTC)"
+            persistent-hint
             ></v-select>
         </v-col> 
        </v-row>     
@@ -60,12 +60,12 @@ export default {
     date: "",
     selectHour: "",
     hoursArray: [
-          '00:00', '01:00', '02:00', '03:00',
-          '04:00', '05:00', '06:00', '07:00',
-          '08:00', '09:00', '10:00',
-          '11:00', '12:00', '13:00', '14:00', '15:00',
-          '16:00', '17:00', '18:00', '19:00', '20:00',
-          '21:00', '22:00', '23:00',
+          '00:00 UTC', '01:00 UTC', '02:00 UTC', '03:00 UTC',
+          '04:00 UTC', '05:00 UTC', '06:00 UTC', '07:00 UTC',
+          '08:00 UTC', '09:00 UTC', '10:00 UTC',
+          '11:00 UTC', '12:00 UTC', '13:00 UTC', '14:00 UTC', '15:00 UTC',
+          '16:00 UTC', '17:00 UTC', '18:00 UTC', '19:00 UTC', '20:00 UTC',
+          '21:00 UTC', '22:00 UTC', '23:00 UTC',
 
     ],
     object: {
@@ -84,7 +84,6 @@ export default {
     },
     setHours(payload) {
       this.object = payload
-      this.valueArray[0] = this.object.value
       this.setCalculationsHours(this.valueArray)
     },
   },  
@@ -94,7 +93,7 @@ export default {
       this.setCalculationsTime(this.date);
     },
     selectHour() {
-      this.setCalculationsHours(this.selectHour)
+      this.setCalculationsHours(this.selectHour.substr(0,5))
     },
   },
   computed: {
