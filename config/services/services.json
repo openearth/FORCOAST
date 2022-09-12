@@ -133,12 +133,12 @@
                 },
               {
                 "id": "forcoast:HSI_Whiting",
-                "name": "HSI-Whiting",
+                "name": "Index for species: Whiting",
                 "layer": "forcoast:HSI_Whiting",
                 "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                 "icon": "fish.png",
                 "colorscalerange": "auto",
-                "description": "Index for fishing",
+                "description": "Index for whiting fish",
                 "unit": "Index",
                 "interval": "daily",
                 "forcoastLayer": true
