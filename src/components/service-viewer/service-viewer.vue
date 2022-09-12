@@ -56,7 +56,7 @@
       <div v-if="checkLayer" >
          <v-btn disabled block color="primary">Graph Disabled</v-btn>
       </div>    
-       <div v-else-if="timeSpan.length && this.selectedLayer || timeSpanUnfiltered.length && selectedLayer">  
+       <div v-else-if="(timeSpan.length && this.selectedLayer) || timeSpanUnfiltered.length <= 1500 && selectedLayer">  
         <v-btn block color="primary" @click="dialog = true">Create graph</v-btn>        
         <timeseries-graph
           v-if="dialog"

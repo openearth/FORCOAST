@@ -17,6 +17,7 @@
             "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "ionut.serban@terrasigna.com",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the suitable fishing areas service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "The Suitable Fishing Areas service offers information about the most likely areas to find the fish species of choice.",
             "components": {
@@ -230,6 +231,7 @@
             "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "dlowe@marineinstruments.es",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Front detection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "components": {
@@ -373,6 +375,7 @@
             "example": "https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "diego.pereiro@marine.ie",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Land polution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
@@ -462,6 +465,7 @@
             "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "diego.pereiro@marine.ie",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Contaminants source retrieval service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
@@ -535,7 +539,6 @@
               ],
               "date_span": true,
               "hours": true,
-              
               "draggable_marker": {
                 "title": "Place marker at source location"
               },
@@ -582,6 +585,7 @@
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "Francisco.campuzano@colabatlantic.com",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Marine Conditions service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "components": {
               "layers": [
@@ -785,6 +789,7 @@
             "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "lbarbut@naturalsciences.be",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Contaminats source retrieval service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing with an estimation of the source of contaminants that affect the farming or oysterground location in the form of a map, highlighting the areas with higher probability of being the contaminant source.",
             "components": {
@@ -813,7 +818,7 @@
                 }
               ],
               "date_span": true,
-              "date": true,
+              "hours": true,
               "draggable_marker": {
                 "title": "Place marker at source location"
               },
@@ -835,6 +840,7 @@
             "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "lbarbut@naturalsciences.be",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the spat capture assistance service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "The Spat Capture Assistance service offers a time window estimate of when do larvae spats arrive to your site from the specified sources.",
             "components": {
@@ -914,6 +920,7 @@
             "description": "Providing shellfish farmers information about marine conditions at their farming sites, which will support them with scheduling their daily operations and planning and reducing associated costs.",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "js@dmi.dk",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Marine Conditions service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "components": {
               "layers": [
@@ -1001,6 +1008,7 @@
             "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "mam@ecos.au.dk",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the site prospection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",      
             "description": "The Site Prospection service offers information about the suitability of new and existing sites for bottom aquaculture activities.",
             "components": {
@@ -1119,6 +1127,7 @@
             "outputName":"bulletin.gif",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "luc@seamod.ro",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the land pollution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
@@ -1356,6 +1365,7 @@
             "outputName":"bulletin.png",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "squerin@inogs.it",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Front detection service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Providing maps of frontal areas, based on sea surface temperature and chlorophyll a concentrations, to identify suitable habitat for small pelagic fish. This information enables the fishermen to increase catches, reduce unwanted bycatch and to save fuel.",
             "dates": [
@@ -1478,6 +1488,7 @@
             "example": "https://forcoast.eu/wp-content/uploads/2022/06/A2_bulletin_example.jpg",
             "feedback": "https://forms.gle/TTyx586Jrzup8h16A",
             "contact": "info@forcoast.eu",
+            "contact_partner": "squerin@inogs.it",
             "mail_body": "I am interested in receiving a free trial for daily forecast bulletins by the Land polution service. I hereby share my contact information for the FORCOAST service manager to get in touch and discuss possibilities.%0A%0AName:%0AOrganisation:%0AIntended use:%0ALocation of interest (coordinates):%0A%0ABest regards,",
             "description": "Enabling shellfish farmers to evaluate the risk of harmful discharges reaching their farm sites, providing lead time to take action and reduce costs associated with spill events.",
             "components": {
