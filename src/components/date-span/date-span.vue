@@ -83,6 +83,13 @@
         </v-menu>
       </v-col>
     </v-row>
+  <div class="px-5 pb-3 flex-grow-1 overflow-y-auto"
+       style="color:brown;
+              margin-top:-4px;
+              margin-bottom: -32px"
+       v-if="timeSpanUnfiltered.length > 1500 && this.activeLayers[0].interval"> 
+       Maximum of 1500 data values exceeded
+      </div>
   </div>
 </template>
 <script>
@@ -108,7 +115,7 @@ export default {
     },
   },
   computed: { 
-    ...mapState("layers", ["selectedService", "activeLayers"]),
+    ...mapState("layers", ["selectedService", "activeLayers", "timeSpanUnfiltered"]),
     timeExtent() {
       return filterExtentYyyyMmDdUnique(this.timeExtentISO)
     }
@@ -124,8 +131,8 @@ export default {
       this.timeSpan.push(this.endDate);
     },
     timeExtent() {
-      this.startDate = this.timeExtent[0];
-      this.min = this.startDate;
+      this.startDate = this.timeExtent[Math.max(0, this.timeExtent.length - 30)];
+      this.min = this.timeExtent[0];
       this.endDate = this.timeExtent[this.timeExtent.length - 1];
       this.max = this.endDate;
     },
@@ -177,8 +184,8 @@ export default {
         }
       },
       initValues() {
-        this.startDate = this.timeExtent[0];
-        this.min = this.startDate;
+        this.startDate = this.timeExtent[Math.max(0, this.timeExtent.length - 30)];
+        this.min = this.timeExtent[0];
         this.endDate = this.timeExtent[this.timeExtent.length - 1];
         this.max = this.endDate;
       }
