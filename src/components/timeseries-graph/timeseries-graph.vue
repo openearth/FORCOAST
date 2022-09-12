@@ -42,6 +42,7 @@ export default {
       dialog: true,
       graph: null,
       timeAxisName: [],
+      timeAxisTitle: ""
     };
   },
   mixins: [ clickaway ],
@@ -94,8 +95,10 @@ export default {
         array.forEach((date, index) => {
           this.timeAxisName[index] = date.substr(0, 10) + ':' + date.substr(11, 2) + 'h'
         });
+        this.timeAxisTitle = "Time (🕑 UTC)"
       } else {
         this.timeAxisName = array
+        this.timeAxisTitle = "Date"
       }
     },
     closeDialog() {
@@ -130,7 +133,7 @@ export default {
         xAxis: {
           type: "category",
           data: this.timeAxisName,
-          name: "Time (🕑 UTC)",
+          name: this.timeAxisTitle,
           nameLocation: "center",
           nameTextStyle: {
             fontSize: 16,
