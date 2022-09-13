@@ -163,6 +163,14 @@ export default {
           if (this.selectedService.name == "Site Prospection") {
           this.setTimeSpanUnfiltered(filteredDays)
           }
+          else if (this.activeLayers[0].specialInterval == "3h") {
+            let days3h = []
+            var i = 0
+            for (i = 0; i < days.length; i=i+3) {
+              days3h.push(days[i]);
+              this.setTimeSpanUnfiltered(days3h) 
+            }
+          }
           else {
           this.setTimeSpanUnfiltered(days) 
           }

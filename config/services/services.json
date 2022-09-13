@@ -543,7 +543,8 @@
                   "colorscalerange": "-1,3",
                   "description": "Modelled water level produced in FORCOAST by Maretec",
                   "unit": "m",
-                  "interval": "hourly"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_swpt_v2",
@@ -676,7 +677,8 @@
                   "colorscalerange": "0,15",
                   "description": "Modelled wind speed produced in FORCOAST by Maretec",
                   "unit": "m/s",
-                  "interval": "hourly"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_zos",
@@ -1097,7 +1099,8 @@
                   "colorscalerange": "280,300",
                   "description": "Modelled Sea water temperature produced in FORCOAST",
                   "unit": "\u00B0C",
-                  "interval": "hourly"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_sws",
@@ -1119,7 +1122,8 @@
                   "colorscalerange": "280,300",
                   "description": "Modelled salinity produced by FORCOAST",
                   "unit": "g/kg",
-                  "interval": "hourly"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_oxy",
@@ -1196,7 +1200,8 @@
                   "colorscalerange": "280,300",
                   "description": "Modelled Nortward velocity produced by FORCOAST",
                   "unit": "m/s",
-                  "interval": "hourly"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_east_v",
@@ -1218,7 +1223,8 @@
                   "colorscalerange": "280,300",
                   "description": "Modelled Eatstward velocity produced by FORCOAST",
                   "unit": "m/s",
-                  "interval": "hourly"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:Eforie_bay_W_vovecrtz",
@@ -1229,7 +1235,8 @@
                   "colorscalerange": "280,300",
                   "description": "Modelled vertical velocity produced in FORCOAST by",
                   "unit": "m/s",
-                  "interval": "hourly"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_wave_drift_x",
