@@ -18,7 +18,7 @@
           &nbsp;
           <v-icon color="#008fc5" class="outlined" @click="goToManual">mdi-help</v-icon>
           &nbsp;
-          <v-icon color="#008fc5" class="outlined" @click="cookies = true">mdi-cookie-outline</v-icon>
+          <v-icon color="#008fc5" class="outlined" @click="cookies = true">mdi-file-document-edit-outline</v-icon>
           <legal-dialog-accepted v-if="cookies" @close-cookies="cookies = false"></legal-dialog-accepted>
         </v-container>
       </template>
