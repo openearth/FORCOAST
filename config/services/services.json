@@ -566,7 +566,8 @@
                   "colorscalerange": "280,300",
                   "description": "Modelled sea water temperature data produced in FORCOAST by Maretec",
                   "unit": "\u00B0C",
-                  "interval": "daily"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_sws",
@@ -588,7 +589,8 @@
                   "colorscalerange": "280,300",
                   "description": "Modelled sea water salinity produced in FORCOAST by Maretec",
                   "unit": "g/kg",
-                  "interval": "daily"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_chl",
@@ -644,7 +646,8 @@
                   "colorscalerange": "280,300",
                   "description": "Modelled north with velocity data produced in FORCOAST by Maretec",
                   "unit": "ms",
-                  "interval": "daily"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_east_v",
@@ -666,7 +669,8 @@
                   "colorscalerange": "280,300",
                   "description": "Remotely sensed water velocity from CMEMS",
                   "unit": "m/s",
-                  "interval": "daily"
+                  "interval": "hourly",
+                  "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:Sado_Estuary_wind_modulus",
@@ -1355,7 +1359,7 @@
                   "colorscalerange": "0.01,10",
                   "description": "Modelled sea surface temperature produced in FORCOAST by OGS",
                   "unit": "K",
-                  "interval": "daily"
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:Northern_Adriatic_sea_forecast_thetao",
@@ -1366,7 +1370,7 @@
                   "colorscalerange": "0.01,10",
                   "description": "Modelled sea surface potential temperature produced in FORCOAST by OGS",
                   "unit": "K",
-                  "interval": "daily"
+                  "interval": "hourly"
                 },
                 {
                   "id": "forcoast:pilot_8_CMEMS_chl",
