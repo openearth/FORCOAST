@@ -26,7 +26,6 @@ You are not allowed to use this website and its Data Products without an agreeme
 - 2.3 Front detection Service Module
   - 2.3.1	The purpose of the Front detection Service Module is to provide ...
   - 2.3.2	The Front detection Service Module consists of purely indicative data. User hereby agrees NOT to use the Front detection Service Module for any decision-making or operational purposes.  
-- 2.4 Etc<br/>
 <br/>
 <b>Article 3</b>: License
 - 3.1	The Consortium grants User a non-exclusive, worldwide, royalty-free, non-transferable and non-sublicensable license to use the Website and its Data Products strictly for the purpose and in accordance with the limitations specified in this User Agreement. This license is provided solely under the condition that User complies with the provisions of this User Agreement.<br/>
@@ -51,7 +50,6 @@ You are not allowed to use this website and its Data Products without an agreeme
 - 6.2	User acknowledges and agrees to the warranty provisions specified below that are applicable to the type of dataset for which User accesses or downloads Data Products.
   - 6.2.1	Suitable fishing areas Service Module: The Consortium does not guarantee, or imply in any way, that the Suitable fishing areas Service Module corresponds to marine conditions at User’s selected area(s) and timeframe(s).
   - 6.2.2 	Front detection Service Module: The Consortium does not guarantee, or imply in any way, that the Front detection Service Module corresponds to marine conditions at User’s selected area(s) and timeframe(s).
-  - 6.2.3	Etc
 - 6.3	The Website may contain links to websites of third parties and while these links are selected with all possible care, The Consortium cannot guarantee the contents and the functioning of the website of third parties.
 - 6.4	The Consortium expressly disclaims any implied warranty or merchantability, fitness for a particular purpose, or for failure of performance and any and all liability for any loss or damage whatsoever suffered as a result of User’s use or reliance upon the Website and the resulting Data Products.
 - 6.5	Furthermore, The Consortium does not guarantee that the Website and resulting Data Products are free of viruses and work without errors and/or interruptions.
@@ -74,7 +72,7 @@ You are not allowed to use this website and its Data Products without an agreeme
 - 10.3	Any disputes arising from and/or connected to the User Agreement, and any agreements arising therefrom, shall be submitted solely to the competent court of The Hague, the Netherlands.
 - 10.4	User agrees that the Website and the resulting Data Products do not give rise to personal jurisdiction over The Consortium, either specific or personal, in jurisdictions other than the laws of the Netherlands. This Agreement and all the agreements arising therefrom are governed exclusively by the laws of the Netherlands.<br/>
 <br/>
-About The Consortium:<br/>
+About The Consortium: This Website and the Data Products have been composed by, or at any rate by order of The Consortium. <br/>
 <br/>
-This Website and the Data Products have been composed by, or at any rate by order of the consortium. This website does not process any Personal Data as meant under the GDPR. Deltares and the set-up of this website comply with GDPR. Please find the Deltares policy statement on privacy and security policy <a href="https://forcoast.eu/wp-content/uploads/2022/09/Beleidsverklaring-Deltares-omtrent-informatiebeveiling-en-privacy.pdf" target="_blank">here</a>.<br/>
+This website does not process any Personal Data as meant under the GDPR. Deltares and the set-up of this website comply with GDPR. Please find the Deltares policy statement on privacy and security policy <a href="https://forcoast.eu/wp-content/uploads/2022/09/Beleidsverklaring-Deltares-omtrent-informatiebeveiling-en-privacy.pdf" target="_blank">here</a>.<br/>
 <br/>
