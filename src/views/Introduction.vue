@@ -19,6 +19,14 @@
             </td>
         </tr>
     </table>
+    <v-divider class="mt-4 mb-4" /> 
+    <div> <b>Useful Links:</b><br/>
+      <a href="https://forcoast.eu" target="_blank">FORCOAST Website</a><br/>
+      <a href="https://forcoast.eu/home/privacy-policy/" target="_blank">Privacy Policies</a><br/>
+      <a href="https://forcoast.eu/home/disclaimer/" target="_blank">Disclaimer</a><br/>
+      <a href="https://forcoast.eu/home/general-terms-and-conditions/" target="_blank">General Terms and Conditions</a><br/>
+      <a href="https://forcoast.eu/home/cookies-policies/" target="_blank">Cookies Policies</a>
+    </div>
   </div>
 </template>
 

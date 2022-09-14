@@ -17,6 +17,9 @@
           ></monitor-window>
           &nbsp;
           <v-icon color="#008fc5" class="outlined" @click="goToManual">mdi-help</v-icon>
+          &nbsp;
+          <v-icon color="#008fc5" class="outlined" @click="cookies = true">mdi-cookie-outline</v-icon>
+          <legal-dialog-accepted v-if="cookies" @close-cookies="cookies = false"></legal-dialog-accepted>
         </v-container>
       </template>
   </v-navigation-drawer>
@@ -25,14 +28,17 @@
 <script>
 
 import monitorWindow from "@/components/monitor-window";
+import legalDialogAccepted from "@/components/legal-dialog-accepted";
 
 export default {
   components: {
-    monitorWindow
+    monitorWindow,
+    legalDialogAccepted
   },
   data() { 
     return {
-      dialog: false
+      dialog: false,
+      cookies: false
     }
   },
   methods:{

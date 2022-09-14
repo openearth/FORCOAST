@@ -1,0 +1,1 @@
+export { default } from "./legal-dialog-accepted.vue"
