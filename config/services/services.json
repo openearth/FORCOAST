@@ -752,7 +752,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed sea surface velocity from ERDDAP",
+                  "description": "Remotely sensed sea surface velocity from RBINS",
                   "unit": "m/s",
                   "interval": "hourly"
                 },
@@ -763,7 +763,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface velocity from ERDDAP",
+                  "description": "Remotely sensed sea surface velocity from RBINS",
                   "unit": "m/s",
                   "interval": "hourly"
                 }
@@ -814,7 +814,7 @@
               "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
               "icon": "",
               "colorscalerange": "auto",
-              "description": "Daily average surface temperature",
+              "description": "Daily average surface temperature from RBINS",
               "unit": "\u00B0C",
               "interval": "daily"
               }
