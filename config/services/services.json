@@ -816,7 +816,7 @@
               "colorscalerange": "auto",
               "description": "Daily average surface temperature",
               "unit": "\u00B0C",
-              "interval": "hourly"
+              "interval": "daily"
               }
               ],
               "date_span": true,
