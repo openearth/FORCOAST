@@ -6,6 +6,9 @@
           <v-subheader v-if="layer.forcoastLayer" 
                        :key="layer.forcoastLayer"
                        class="ForcoastLayer"> Layers produced by FORCOAST: </v-subheader>
+          <v-subheader v-if="selectedTime == '9999-01-01T00:00:00.000Z' && layer.id == activeLayers[0].id" 
+                       :key="layer.name"
+                       class="ErrorLayer"> Something went wrong when retrieving the data! </v-subheader>
           <v-list-item :key="layer.id" :ripple="false">
             <v-list-item-action>
               <v-switch v-model="selectedIds" :value="layer.id" dense></v-switch>
@@ -55,7 +58,7 @@ export default {
     return { root, activeLegend, setActiveLegend, selectedIds, selectedLayers };
   },
   computed: {
-    ...mapState("layers",["basemap"]),
+    ...mapState("layers",["basemap", "selectedTime", "activeLayers"]),
   },
   watch: {
     selectedLayers(newSelectedLayers) {
@@ -84,5 +87,12 @@ export default {
   font-size: 15px;
   text-decoration: underline;
   color: black
+}
+.ErrorLayer{
+  margin-left: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  text-align: center;
+  color: brown
 }
 </style>

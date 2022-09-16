@@ -3,6 +3,7 @@
        and even in the same type of server.
 
 */
+import { active } from "sortablejs";
 import removeSpaceFromTime from "./formatTime/remove-space-from-time";
 import getTimeExtentCaseP1d from "./get-time-extent-case-p1d";
 
@@ -30,6 +31,8 @@ export default((capabilities, activeLayer) => {
                                              : layer.Extent._text.split(",");
     }catch(error){
       console.log("Something went wrong when tried to retrieve the timeExtent from the capabilities")
+      extent = ["9999-01-01T00:00:00.000Z"]
+      return extent
     } 
     
   } else {
@@ -43,7 +46,13 @@ export default((capabilities, activeLayer) => {
     try{
       extent =  Array.isArray(layer.Extent) ? layer.Extent[0]._text.split(",") : layer.Extent._text.split(",") ;
     }catch(error){
-      console.log("Something went wrong when tried to retrieve the timeExtent from the capabilities")
+      if (activeLayer.id == "forcoast:spawning_grounds_oyster") {
+        console.log("Layer has no time capability!")
+      } else {
+        console.log("Something went wrong when tried to retrieve the timeExtent from the capabilities")
+        extent = ["9999-01-01T00:00:00.000Z"]
+        return extent
+      }
     }
   }
   if (!extent){

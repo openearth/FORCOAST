@@ -237,17 +237,6 @@
                   "interval": "daily"
                 },
                 {
-                  "id": "forcoast:biscay_sst",
-                  "name": "Water Temperature",
-                  "layer": "forcoast:biscay_sst",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by AZTI",
-                  "unit": "\u00B0C",
-                  "interval": "hourly"
-                },
-                {
                   "id": "forcoast:pilot_2_CMEMS_zos",
                   "name": "Sea Surface Height above Geoid",
                   "layer": "forcoast:pilot_2_CMEMS_zos",
@@ -265,7 +254,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
-                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
+                  "description": "Frontal zones based on modelled water temperature at the surface (by EuskOOS), layer produced in FORCOAST",
                   "unit": "Index",
                   "interval": "hourly",
                   "forcoastLayer": true
@@ -277,7 +266,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
-                  "description": "Frontal zone maps based on modelled chlorophyll at the surface layer produced in FORCOAST",
+                  "description": "Frontal zones based on modelled chlorophyll at the surface (by EuskOOS), layer produced in FORCOAST",
                   "unit": "Index",
                   "interval": "daily"
                 }
@@ -354,7 +343,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Forecast results",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute",
                   "unit": "\u00B0C",
                   "interval": "daily"
                 },
@@ -365,7 +354,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Analysis results",
+                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute",
                   "unit": "\u00B0C",
                   "interval": "daily"
                 },
@@ -422,7 +411,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-2,2",
-                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "description": "Modelled water level, produced by Marine Institute",
                   "unit": "m",
                   "interval": "daily"
                 },
@@ -433,7 +422,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-2,2",
-                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "description": "Modelled water level, produced by Marine Institute",
                   "unit": "m",
                   "interval": "daily"
                 },
@@ -444,7 +433,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Forecast results",
+                  "description": "Modelled water temperature at the surface layer, produced by Marine Institute",
                   "unit": "\u00B0C",
                   "interval": "daily"
                 },
@@ -455,7 +444,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "-10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute-Analysis results",
+                  "description": "Modelled water temperature at the surface layer, produced by Marine Institute",
                   "unit": "\u00B0C",
                   "interval": "daily"
                 },
@@ -466,7 +455,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "0,30",
-                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "description": "Modelled water salinity, produced by Marine Institute",
                   "unit": "g/kg",
                   "interval": "daily"
                 },
@@ -477,7 +466,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "0,30",
-                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
+                  "description": "Modelled water salinity, produced by Marine Institute",
                   "unit": "g/kg",
                   "interval": "daily"
                 }
@@ -535,20 +524,31 @@
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:Sado_Estuary_ssh",
-                  "name": "Water Level",
-                  "layer": "forcoast:Sado_Estuary_ssh",
+                  "id": "forcoast:Sado_Estuary_v2_ssh",
+                  "name": "Sea Surface Height above Geoid (Maretec)",
+                  "layer": "forcoast:Sado_Estuary_v2_ssh",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,3",
-                  "description": "Modelled water level produced in FORCOAST by Maretec",
+                  "description": "Modelled water level, produced by Maretec",
                   "unit": "m",
                   "interval": "hourly",
                   "specialInterval": "3h"
                 },
                 {
+                  "id": "forcoast:pilot_1_CMEMS_zos",
+                  "name": "Sea Surface Height above Geoid (CMEMS)",
+                  "layer": "forcoast:pilot_1_CMEMS_zos",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed sea surface height from CMEMS",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
                   "id": "forcoast:pilot_1_CMEMS_swpt_v2",
-                  "name": "Sea Water Temperature",
+                  "name": "Sea Water Temperature (CMEMS)",
                   "layer": "forcoast:pilot_1_CMEMS_swpt_v2",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -558,20 +558,20 @@
                   "interval": "daily"
                 },
                 {
-                  "id": "forcoast:Sado_Estuary_temperature",
-                  "name": "Sea Water Temperature",
-                  "layer": "forcoast:Sado_Estuary_temperature",
+                  "id": "forcoast:Sado_Estuary_v2_temperature",
+                  "name": "Sea Water Temperature (Maretec)",
+                  "layer": "forcoast:Sado_Estuary_v2_temperature",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Modelled sea water temperature data produced in FORCOAST by Maretec",
+                  "description": "Modelled sea water temperature at 0.2m produced by Maretec",
                   "unit": "\u00B0C",
                   "interval": "hourly",
                   "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_sws",
-                  "name": "Sea Water Salinity",
+                  "name": "Sea Water Salinity (CMEMS)",
                   "layer": "forcoast:pilot_1_CMEMS_sws",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -581,13 +581,13 @@
                   "interval": "daily"
                 },
                 {
-                  "id": "forcoast:Sado_Estuary_salinity",
-                  "name": "Sea Water Salinity",
-                  "layer": "forcoast:Sado_Estuary_salinity",
+                  "id": "forcoast:Sado_Estuary_v2_salinity",
+                  "name": "Sea Water Salinity (Maretec)",
+                  "layer": "forcoast:Sado_Estuary_v2_salinity",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Modelled sea water salinity produced in FORCOAST by Maretec",
+                  "description": "Modelled sea water salinity at 0.2m produced by Maretec",
                   "unit": "g/kg",
                   "interval": "hourly",
                   "specialInterval": "3h"
@@ -636,18 +636,16 @@
                   "unit": "mg/L",
                   "interval": "daily"
                 },
-
                 {
-                  "id": "forcoast:Sado_Estuary_y_wind",
-                  "name": "Northward Velocity of Wind",
-                  "layer": "forcoast:Sado_Estuary_y_wind",
+                  "id": "forcoast:pilot_1_CMEMS_north_v",
+                  "name": "Northward Velocity of Sea Water",
+                  "layer": "forcoast:pilot_1_CMEMS_north_v",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Modelled north with velocity data produced in FORCOAST by Maretec",
-                  "unit": "ms",
-                  "interval": "hourly",
-                  "specialInterval": "3h"
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
                 },
                 {
                   "id": "forcoast:pilot_1_CMEMS_east_v",
@@ -661,13 +659,26 @@
                   "interval": "daily"
                 },
                 {
+                  "id": "forcoast:Sado_Estuary_y_wind",
+                  "name": "Northward Velocity of Wind",
+                  "layer": "forcoast:Sado_Estuary_y_wind",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled wind velocity, produced by Maretec",
+                  "unit": "ms",
+                  "interval": "hourly",
+                  "specialInterval": "3h"
+                },
+
+                {
                   "id": "forcoast:Sado_Estuary_x_wind",
                   "name": "Eastward Velocity of Wind",
                   "layer": "forcoast:Sado_Estuary_x_wind",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed water velocity from CMEMS",
+                  "description": "Modelled wind velocity, produced by Maretec",
                   "unit": "m/s",
                   "interval": "hourly",
                   "specialInterval": "3h"
@@ -679,21 +690,10 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "0,15",
-                  "description": "Modelled wind speed produced in FORCOAST by Maretec",
+                  "description": "Modelled wind velocity, produced by Maretec",
                   "unit": "m/s",
                   "interval": "hourly",
                   "specialInterval": "3h"
-                },
-                {
-                  "id": "forcoast:pilot_1_CMEMS_zos",
-                  "name": "Sea Surface Height above Geoid",
-                  "layer": "forcoast:pilot_1_CMEMS_zos",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed surface height from CMEMS",
-                  "unit": "m",
-                  "interval": "hourly"
                 }
               ],
               "date_span": true,
@@ -752,7 +752,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed sea surface velocity from RBINS",
+                  "description": "Remotely sensed sea surface velocity, by RBINS",
                   "unit": "m/s",
                   "interval": "hourly"
                 },
@@ -763,7 +763,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface velocity from RBINS",
+                  "description": "Remotely sensed sea surface velocity, by RBINS",
                   "unit": "m/s",
                   "interval": "hourly"
                 }
@@ -803,7 +803,7 @@
                 "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                 "icon": "",
                 "colorscalerange": "auto",
-                "description": "Spawning grounds for Oysters",
+                "description": "Known spawning grounds for Oysters",
                 "unit": "-",
                 "interval": "No time dimension"
               },
@@ -814,7 +814,7 @@
               "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
               "icon": "",
               "colorscalerange": "auto",
-              "description": "Daily average surface temperature from RBINS",
+              "description": "Daily average surface temperature, by RBINS",
               "unit": "\u00B0C",
               "interval": "daily"
               }
@@ -882,7 +882,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,1",
-                  "description": "Modelled water level produced in FORCOAST by DMI",
+                  "description": "Modelled water level, produced by DMI",
                   "unit": "m",
                   "interval": "hourly"
                 },
@@ -893,7 +893,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "0,30",
-                  "description": "Modelled salinity produced in FORCOAST by DMI",
+                  "description": "Modelled salinity, produced by DMI",
                   "unit": "g/kg",
                   "interval": "hourly"
                 },
@@ -904,7 +904,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by DMI",
+                  "description": "Modelled water temperature at the surface layer, produced by DMI",
                   "unit": "\u00B0C",
                   "interval": "hourly"
                 },
@@ -915,7 +915,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,1",
-                  "description": "Modelled current velocity produced in FORCOAST by DMI",
+                  "description": "Modelled current velocity, produced by DMI",
                   "unit": "m/s",
                   "interval": "hourly"
                 },
@@ -926,7 +926,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-1,1",
-                  "description": "Modelled wind speed produced in FORCOAST by DMI",
+                  "description": "Modelled wind speed, produced by DMI",
                   "unit": "m/s",
                   "interval": "hourly"
                 }
@@ -993,7 +993,7 @@
                   "url":"https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon":"",
                   "colorscalerange": "auto",
-                  "description": "Temperature on the bottom",
+                  "description": "Temperature on the bottom from Aarhus University",
                   "unit": "\u00B0C",
                   "interval": "monthly"
                 },
@@ -1085,7 +1085,7 @@
               "layers": [
                 {
                   "id": "forcoast:pilot_7_CMEMS_swpt",
-                  "name": "Sea Water Temperature",
+                  "name": "Sea Water Temperature (CMEMS)",
                   "layer": "forcoast:pilot_7_CMEMS_swpt",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1096,19 +1096,19 @@
                 },
                 {
                   "id": "forcoast:Eforie_bay_T_votemper",
-                  "name": "Sea Water Temperature",
+                  "name": "Sea Water Temperature (Seamod.ro)",
                   "layer": "forcoast:Eforie_bay_T_votemper",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Modelled Sea water temperature produced in FORCOAST",
+                  "description": "Modelled Sea water temperature, produced by Seamod.ro",
                   "unit": "\u00B0C",
                   "interval": "hourly",
                   "specialInterval": "3h"
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_sws",
-                  "name": "Sea Water Salinity",
+                  "name": "Sea Water Salinity (CMEMS)",
                   "layer": "forcoast:pilot_7_CMEMS_sws",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1119,12 +1119,12 @@
                 },
                 {
                   "id": "forcoast:Eforie_bay_T_vosaline",
-                  "name": "Sea Water Salinity",
+                  "name": "Sea Water Salinity (Seamod.ro)",
                   "layer": "forcoast:Eforie_bay_T_vosaline",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Modelled salinity produced by FORCOAST",
+                  "description": "Modelled salinity, produced by Seamod.ro",
                   "unit": "g/kg",
                   "interval": "hourly",
                   "specialInterval": "3h"
@@ -1186,8 +1186,31 @@
                 },
                 {
                   "id": "forcoast:pilot_7_CMEMS_north_v",
-                  "name": "Northward Velocity of Sea Water",
+                  "name": "Northward Velocity of Sea Water (CMEMS)",
                   "layer": "forcoast:pilot_7_CMEMS_north_v",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Remotely sensed water velocity from CMEMS",
+                  "unit": "m/s",
+                  "interval": "daily"
+                },                
+                {
+                  "id": "forcoast:Eforie_bay_V_vomecrty",
+                  "name": "Northward Velocity of Sea Water (Seamod.ro)",
+                  "layer": "forcoast:Eforie_bay_V_vomecrty",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "fish.png",
+                  "colorscalerange": "280,300",
+                  "description": "Modelled Northward velocity, produced by Seamod.ro",
+                  "unit": "m/s",
+                  "interval": "hourly",
+                  "specialInterval": "3h"
+                },
+                {
+                  "id": "forcoast:pilot_7_CMEMS_east_v",
+                  "name": "Eastward Velocity of Sea Water (CMEMS)",
+                  "layer": "forcoast:pilot_7_CMEMS_east_v",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
@@ -1196,36 +1219,13 @@
                   "interval": "daily"
                 },
                 {
-                  "id": "forcoast:Eforie_bay_V_vomecrty",
-                  "name": "Northward Velocity of Sea Water",
-                  "layer": "forcoast:Eforie_bay_V_vomecrty",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Modelled Nortward velocity produced by FORCOAST",
-                  "unit": "m/s",
-                  "interval": "hourly",
-                  "specialInterval": "3h"
-                },
-                {
-                  "id": "forcoast:pilot_7_CMEMS_east_v",
-                  "name": "Eastward Velocity of Sea Water",
-                  "layer": "forcoast:pilot_7_CMEMS_east_v",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
-                  "unit": "m/s",
-                  "interval": "daily"
-                },
-                {
                   "id": "forcoast:Eforie_bay_U_vozocrtx",
-                  "name": "Eastward Velocity of Sea Water",
+                  "name": "Eastward Velocity of Sea Water (Seamod.ro)",
                   "layer": "forcoast:Eforie_bay_U_vozocrtx",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Modelled Eatstward velocity produced by FORCOAST",
+                  "description": "Modelled Eastward velocity, produced by Seamod.ro",
                   "unit": "m/s",
                   "interval": "hourly",
                   "specialInterval": "3h"
@@ -1237,7 +1237,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Modelled vertical velocity produced in FORCOAST by",
+                  "description": "Modelled vertical velocity, produced by Seamod.ro",
                   "unit": "m/s",
                   "interval": "hourly",
                   "specialInterval": "3h"
@@ -1341,7 +1341,7 @@
               "layers": [
                 {
                   "id": "forcoast:pilot_8_CMEMS_sst",
-                  "name": "Sea Surface Temperature",
+                  "name": "Sea Surface Temperature (CMEMS)",
                   "layer": "forcoast:pilot_8_CMEMS_sst",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1352,23 +1352,23 @@
                 },
                 {
                   "id": "forcoast:Northern_Adriatic_sea_hindercast_thetao",
-                  "name": "Sea Surface Temperature(HINDCAST)",
+                  "name": "Sea Surface Temperature (OGS, Analysis)",
                   "layer": "forcoast:Northern_Adriatic_sea_hindercast_thetao",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Modelled sea surface temperature produced in FORCOAST by OGS",
+                  "description": "Modelled sea surface temperature, produced by OGS",
                   "unit": "K",
                   "interval": "hourly"
                 },
                 {
                   "id": "forcoast:Northern_Adriatic_sea_forecast_thetao",
-                  "name": "Sea Surface Temperature(FORECAST)",
+                  "name": "Sea Surface Temperature(OGS, Forecast)",
                   "layer": "forcoast:Northern_Adriatic_sea_forecast_thetao",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Modelled sea surface potential temperature produced in FORCOAST by OGS",
+                  "description": "Modelled sea surface potential temperature, produced by OGS",
                   "unit": "K",
                   "interval": "hourly"
                 },
@@ -1412,7 +1412,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
-                  "description": "Frontal zone maps based on modelled water temperature at the surface layer produced in FORCOAST",
+                  "description": "Frontal zones based on modelled water temperature at the surface (by OGS), layer produced in FORCOAST",
                   "unit": "Index",
                   "interval": "hourly",
                   "forcoastLayer": true
@@ -1424,7 +1424,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "sea_temp.png",
                   "colorscalerange": "10,30",
-                  "description": "Frontal zone maps based on modelled chlorophyll at the surface layer produced in FORCOAST",
+                  "description": "Frontal zones based on modelled chlorophyll at the surface (by OGS), layer produced in FORCOAST",
                   "unit": "Index",
                   "interval": "daily"
                 }
@@ -1450,36 +1450,69 @@
             "components": {
               "layers": [
                 {
-                  "id": "zeta",
-                  "name": "Water Level",
-                  "layer": "zeta",
-                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "id": "forcoast:Northern_Adriatic_sea_hindercast_uo",
+                  "name": "Eastward Sea Water Velocity (Analysis)",
+                  "layer": "forcoast:Northern_Adriatic_sea_hindercast_uo",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
                   "colorscalerange": "-2,2",
-                  "description": "Modelled water level produced in FORCOAST by Marine Institute",
+                  "description": "Modelled water water velocity, produced by OGS",
                   "unit": "m",
                   "interval": "hourly"
                 },
                 {
-                  "id": "temp",
-                  "name": "Water Temperature",
-                  "layer": "temp",
-                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
-                  "icon": "sea_temp.png",
-                  "colorscalerange": "-10,30",
-                  "description": "Modelled water temperature at the surface layer produced in FORCOAST by Marine Institute",
-                  "unit": "\u00B0C",
+                  "id": "forcoast:Northern_Adriatic_sea_forecast_uo",
+                  "name": "Eastward Sea Water Velocity (Forecast)",
+                  "layer": "forcoast:Northern_Adriatic_sea_forecast_uo",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water water velocity, produced by OGS",
+                  "unit": "m/s",
                   "interval": "hourly"
                 },
                 {
-                  "id": "salt",
-                  "name": "Salinity",
-                  "layer": "salt",
-                  "url": "https://milas.marine.ie/thredds/wms/IMI_ROMS_HYDRO/GALWAY_BAY_NATIVE_70M_8L_1H/AGGREGATE",
+                  "id": "forcoast:Northern_Adriatic_sea_hindercast_vo",
+                  "name": "Northward Sea Water Velocity (Analysis)",
+                  "layer": "forcoast:Northern_Adriatic_sea_hindercast_vo",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
-                  "colorscalerange": "0,30",
-                  "description": "Modelled salinity produced in FORCOAST by Marine Institute",
-                  "unit": "g/kg",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water water velocity, produced by OGS",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Northern_Adriatic_sea_forecast_vo",
+                  "name": "Northward Sea Water Velocity (Forecast)",
+                  "layer": "forcoast:Northern_Adriatic_sea_forecast_vo",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water water velocity, produced by OGS",
+                  "unit": "m/s",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Northern_Adriatic_sea_hindercast_wo",
+                  "name": "Vertical Sea Water Velocity (Analysis)",
+                  "layer": "forcoast:Northern_Adriatic_sea_hindercast_wo",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water water velocity, produced by OGS",
+                  "unit": "m",
+                  "interval": "hourly"
+                },
+                {
+                  "id": "forcoast:Northern_Adriatic_sea_forecast_wo",
+                  "name": "Vertical Sea Water Velocity (Forecast)",
+                  "layer": "forcoast:Northern_Adriatic_sea_forecast_wo",
+                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
+                  "icon": "",
+                  "colorscalerange": "-2,2",
+                  "description": "Modelled water water velocity, produced by OGS",
+                  "unit": "m/s",
                   "interval": "hourly"
                 }
               ],
