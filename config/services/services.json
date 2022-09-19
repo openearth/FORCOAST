@@ -525,7 +525,7 @@
               "layers": [
                 {
                   "id": "forcoast:Sado_Estuary_v2_ssh",
-                  "name": "Sea Surface Height above Geoid (Maretec)",
+                  "name": "Sea Surface Height above Geoid",
                   "layer": "forcoast:Sado_Estuary_v2_ssh",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "",
@@ -536,30 +536,8 @@
                   "specialInterval": "3h"
                 },
                 {
-                  "id": "forcoast:pilot_1_CMEMS_zos",
-                  "name": "Sea Surface Height above Geoid (CMEMS)",
-                  "layer": "forcoast:pilot_1_CMEMS_zos",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface height from CMEMS",
-                  "unit": "m",
-                  "interval": "hourly"
-                },
-                {
-                  "id": "forcoast:pilot_1_CMEMS_swpt_v2",
-                  "name": "Sea Water Temperature (CMEMS)",
-                  "layer": "forcoast:pilot_1_CMEMS_swpt_v2",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS",
-                  "unit": "\u00B0C",
-                  "interval": "daily"
-                },
-                {
                   "id": "forcoast:Sado_Estuary_v2_temperature",
-                  "name": "Sea Water Temperature (Maretec)",
+                  "name": "Sea Water Temperature",
                   "layer": "forcoast:Sado_Estuary_v2_temperature",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -570,19 +548,8 @@
                   "specialInterval": "3h"
                 },
                 {
-                  "id": "forcoast:pilot_1_CMEMS_sws",
-                  "name": "Sea Water Salinity (CMEMS)",
-                  "layer": "forcoast:pilot_1_CMEMS_sws",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
-                  "unit": "g/kg",
-                  "interval": "daily"
-                },
-                {
                   "id": "forcoast:Sado_Estuary_v2_salinity",
-                  "name": "Sea Water Salinity (Maretec)",
+                  "name": "Sea Water Salinity",
                   "layer": "forcoast:Sado_Estuary_v2_salinity",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1084,19 +1051,8 @@
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:pilot_7_CMEMS_swpt",
-                  "name": "Sea Water Temperature (CMEMS)",
-                  "layer": "forcoast:pilot_7_CMEMS_swpt",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS",
-                  "unit": "\u00B0C",
-                  "interval": "daily"
-                },
-                {
                   "id": "forcoast:Eforie_bay_T_votemper",
-                  "name": "Sea Water Temperature (Seamod.ro)",
+                  "name": "Sea Water Temperature",
                   "layer": "forcoast:Eforie_bay_T_votemper",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1107,19 +1063,8 @@
                   "specialInterval": "3h"
                 },
                 {
-                  "id": "forcoast:pilot_7_CMEMS_sws",
-                  "name": "Sea Water Salinity (CMEMS)",
-                  "layer": "forcoast:pilot_7_CMEMS_sws",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
-                  "unit": "g/kg",
-                  "interval": "daily"
-                },
-                {
                   "id": "forcoast:Eforie_bay_T_vosaline",
-                  "name": "Sea Water Salinity (Seamod.ro)",
+                  "name": "Sea Water Salinity",
                   "layer": "forcoast:Eforie_bay_T_vosaline",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1183,21 +1128,10 @@
                   "description": "Remotely sensed surface height from CMEMS",
                   "unit": "m",
                   "interval": "daily"
-                },
-                {
-                  "id": "forcoast:pilot_7_CMEMS_north_v",
-                  "name": "Northward Velocity of Sea Water (CMEMS)",
-                  "layer": "forcoast:pilot_7_CMEMS_north_v",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed water velocity from CMEMS",
-                  "unit": "m/s",
-                  "interval": "daily"
-                },                
+                },            
                 {
                   "id": "forcoast:Eforie_bay_V_vomecrty",
-                  "name": "Northward Velocity of Sea Water (Seamod.ro)",
+                  "name": "Northward Velocity of Sea Water",
                   "layer": "forcoast:Eforie_bay_V_vomecrty",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1208,19 +1142,8 @@
                   "specialInterval": "3h"
                 },
                 {
-                  "id": "forcoast:pilot_7_CMEMS_east_v",
-                  "name": "Eastward Velocity of Sea Water (CMEMS)",
-                  "layer": "forcoast:pilot_7_CMEMS_east_v",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "280,300",
-                  "description": "Remotely sensed water velocity from CMEMS",
-                  "unit": "m/s",
-                  "interval": "daily"
-                },
-                {
                   "id": "forcoast:Eforie_bay_U_vozocrtx",
-                  "name": "Eastward Velocity of Sea Water (Seamod.ro)",
+                  "name": "Eastward Velocity of Sea Water",
                   "layer": "forcoast:Eforie_bay_U_vozocrtx",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1340,19 +1263,8 @@
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:pilot_8_CMEMS_sst",
-                  "name": "Sea Surface Temperature (CMEMS)",
-                  "layer": "forcoast:pilot_8_CMEMS_sst",
-                  "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
-                  "icon": "fish.png",
-                  "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed sea surface temperature data from CMEMS",
-                  "unit": "K",
-                  "interval": "daily"
-                },
-                {
                   "id": "forcoast:Northern_Adriatic_sea_hindercast_thetao",
-                  "name": "Sea Surface Temperature (OGS, Analysis)",
+                  "name": "Sea Surface Temperature (Analysis)",
                   "layer": "forcoast:Northern_Adriatic_sea_hindercast_thetao",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
@@ -1363,7 +1275,7 @@
                 },
                 {
                   "id": "forcoast:Northern_Adriatic_sea_forecast_thetao",
-                  "name": "Sea Surface Temperature(OGS, Forecast)",
+                  "name": "Sea Surface Temperature(Forecast)",
                   "layer": "forcoast:Northern_Adriatic_sea_forecast_thetao",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
