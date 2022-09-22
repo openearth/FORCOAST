@@ -3,7 +3,13 @@
     <v-dialog v-model="dialog" width="unset">
       <v-card height="unset" width="unset">
         <div id="bulletin-container" ref="savecontent" v-on-clickaway="closeDialog">
-          <v-img :src="image"/>
+          <video v-if="this.outputName.substr(this.outputName.length-4, 4) == 'webm'" 
+                 :src="image" 
+                 autoplay 
+                 height="540px" width="960px" 
+                 controls />
+          <v-img v-if="this.outputName.substr(this.outputName.length-3, 3) == 'png'"  
+                 :src="image" />
         </div>
         <v-card-actions class="justify-center">       
           <v-btn color="primary" 

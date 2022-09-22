@@ -27,8 +27,7 @@
         </v-col>
         </v-col>
         <v-col cols="12" v-if="status ==='successful'">
-          <v-btn v-if="this.outputName.substr(this.outputName.length-3, 3) == 'png'"  block color="primary" @click="dialog = true">Get results</v-btn>
-           <v-btn v-if="this.outputName.substr(this.outputName.length-3, 3) == 'mp4'"  block color="primary" :href="'https://wps.forcoast.apps.k.terrasigna.com/results/' + this.jobId + '-0/cwl-output/' + this.outputName" target="_blank">Get results</v-btn>
+          <v-btn block color="primary" @click="dialog = true">Get results</v-btn>
           <bulletin-window
             v-if="dialog"
             :jobId="jobId"
