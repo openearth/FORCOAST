@@ -10,7 +10,7 @@
       <p  data-v-step="3">{{ service.description }}</p>
       <v-divider class="mt-4 mb-4" />
       <p>An <b>example bulletin</b> produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
-      <p>To <b>test the service</b> for a location of choice, follow the instructions in the Service runner section below.</p>
+      <p>To <b>test the service</b> for a location of choice, follow the <a href="https://forcoast.eu/wp-content/uploads/2022/06/FORCOAST-User-Manual-Prototype-II.pdf" target="_blank">instructions</a> in the Service runner section below.</p>
       <p>We appreciate <b>your feedback</b> on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <!-- <p>If you are interested in a trial <a v-bind:href="'mailto:' + service.contact">e-mail us</a></p> -->
       <p>If you are interested to receive <b>daily bulletins</b> by instant messaging app as a free trial <a v-bind:href="'mailto:' + service.contact + '?cc=info@forcoast.eu&subject=Free%20trial%20' + service.name + '%20service&body=' + service.mail_body">e-mail us</a></p>
@@ -325,7 +325,7 @@ export default {
     checkLayer() {
       this.activeLayers       
       if (this.activeLayers.length != 0) {
-        if (this.activeLayers[0].name === 'Frontal Zones Temperature' || this.activeLayers[0].name === 'Spawning Grounds for Oysters') {
+        if (this.activeLayers[0].name === 'Frontal Zones Temperature' || this.activeLayers[0].name === 'Frontal Zones Chlorophyll' || this.activeLayers[0].name === 'Spawning Grounds for Oysters') {
           return true;
         }
           else {
