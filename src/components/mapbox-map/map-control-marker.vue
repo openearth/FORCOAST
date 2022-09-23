@@ -182,7 +182,7 @@ export default {
               && this.selectedAreaId() == "bay_of_biscay") {
           this.serviceArea = this.limitsF2Biscay
           }
-        if (this.selectedService().wps_id == "f2"
+        if ( (this.selectedService().wps_id == "f2" || this.selectedService().wps_id == "a2")
               && this.selectedAreaId() == "northern_adriatic_sea") {
           this.serviceArea = this.limitsF2Adriatic
           }
