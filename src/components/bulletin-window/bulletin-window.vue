@@ -11,7 +11,7 @@
           <v-img v-if="this.outputName.substr(this.outputName.length-3, 3) == 'png'"  
                  :src="image" />
         </div>
-        <div class="pa-2" style="border-top-style:groove; text-align:center"><b>Video not playing? Click <a :href="image" target="_blank">here</a></b></div>
+        <div class="pa-2" style="border-top-style:groove; text-align:center">Video not playing? Click <a :href="image" target="_blank">here</a></div>
         <v-card-actions class="justify-center">       
           <v-btn color="primary" 
                  bottom 
