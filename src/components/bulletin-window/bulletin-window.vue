@@ -8,10 +8,12 @@
                  autoplay 
                  height="540px" width="960px" 
                  controls />
-          <v-img v-if="this.outputName.substr(this.outputName.length-3, 3) == 'png'"  
+                 <div v-if="this.outputName.substr(this.outputName.length-4, 4) == 'webm'" class="pa-2" style="text-align:center">
+                  Video not playing? Click <a :href="image" target="_blank">here</a>
+                </div>
+          <v-img v-if="this.outputName.substr(this.outputName.length-3, 3) == 'png' || this.outputName.substr(this.outputName.length-3, 3) == 'gif'"  
                  :src="image" />
         </div>
-        <div class="pa-2" style="text-align:center">Video not playing? Click <a :href="image" target="_blank">here</a></div>
         <v-card-actions class="justify-center">       
           <v-btn color="primary" 
                  bottom 
