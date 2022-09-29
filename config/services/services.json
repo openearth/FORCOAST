@@ -23,9 +23,9 @@
             "components": {
               "layers": [
                 {
-                  "id": "forcoast:pilot_3_CMEMS_sst",
+                  "id": "forcoast:pilot_3_CMEMS_analysed_sst",
                   "name": "Sea Surface Temperature",
-                  "layer": "forcoast:pilot_3_CMEMS_sst",
+                  "layer": "forcoast:pilot_3_CMEMS_analysed_sst",
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
