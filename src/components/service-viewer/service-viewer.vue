@@ -8,6 +8,7 @@
       <v-divider class="mt-4 mb-4" />
       </div>
       <p  data-v-step="3">{{ service.description }}</p>
+      <p> For more information about this service, <a :href="service.service_webpage" target="_blank">click here</a></p>
       <v-divider class="mt-4 mb-4" />
       <p>An <b>example bulletin</b> produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
       <p>To <b>test the service</b> for a location of choice, follow the <a href="https://forcoast.eu/wp-content/uploads/2022/06/FORCOAST-User-Manual-Prototype-II.pdf" target="_blank">instructions</a> in the Service runner section below.</p>
