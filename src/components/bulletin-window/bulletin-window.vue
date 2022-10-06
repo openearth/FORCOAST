@@ -3,15 +3,15 @@
     <v-dialog v-model="dialog" width="unset">
       <v-card height="unset" width="unset">
         <div id="bulletin-container" ref="savecontent" v-on-clickaway="closeDialog">
-          <video v-if="this.outputName.substr(this.outputName.length-4, 4) == 'webm'" 
+          <video v-if="this.image.substr(this.image.length-4, 4) == 'webm'" 
                  :src="image" 
                  autoplay 
                  height="540px" width="960px" 
                  controls />
-                 <div v-if="this.outputName.substr(this.outputName.length-4, 4) == 'webm'" class="pa-2" style="text-align:center">
+                 <div v-if="this.image.substr(this.image.length-4, 4) == 'webm'" class="pa-2" style="text-align:center">
                   Video not playing? Click <a :href="image" target="_blank">here</a>
                 </div>
-          <v-img v-if="this.outputName.substr(this.outputName.length-3, 3) == 'png' || this.outputName.substr(this.outputName.length-3, 3) == 'gif'"  
+          <v-img v-if="this.image.substr(this.image.length-3, 3) == 'png' || this.image.substr(this.image.length-3, 3) == 'gif' || this.image.substr(this.image.length-3, 3) == 'jpg'"  
                  :src="image" />
         </div>
         <v-card-actions class="justify-center">       
@@ -34,19 +34,15 @@ import { mixin as clickaway } from 'vue-clickaway';
 export default {
   // see https://www.smashingmagazine.com/2020/01/data-components-vue-js/
   props: {
-    jobId: {
+    imageAdress: {
       type: String, 
       required: true,
     },
-    outputName: {
-      type: String,
-      required: false
-    },   
   },
   data() {
     return {
       dialog: true,
-      image: "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/" + this.outputName
+      image: this.imageAdress
     };
   },
   mixins: [ clickaway ],

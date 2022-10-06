@@ -30,8 +30,7 @@
           <v-btn block color="primary" @click="dialog = true">Get results</v-btn>
           <bulletin-window
             v-if="dialog"
-            :jobId="jobId"
-            :outputName="outputName"
+            :imageAdress="imageAdress"
             @close-dialog="dialog = false"
           ></bulletin-window>
         </v-col>
@@ -62,6 +61,7 @@ export default {
       getStatusAttempt: 0,
       dialog: false,
       jobId: "",
+      imageAdress: "",
     }
   },
   props: {
@@ -99,6 +99,7 @@ export default {
       this.status = statusTemp
       this.jobId = this.statusLink.substring(this.statusLink.lastIndexOf('/') + 1);
       this.getStatusAttempt = this.getStatusAttempt + 1
+      this.imageAdress = "https://wps.forcoast.apps.k.terrasigna.com/results/" + this.jobId + "-0/cwl-output/" + this.outputName
       }
     },
     cancel() {

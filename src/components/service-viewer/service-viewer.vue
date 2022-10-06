@@ -10,7 +10,12 @@
       <p  data-v-step="3">{{ service.description }}</p>
       <p> For more information about this service, <a :href="service.service_webpage" target="_blank">click here</a></p>
       <v-divider class="mt-4 mb-4" />
-      <p>An <b>example bulletin</b> produced by the service is available <a v-bind:href="service.example" target="_blank">here</a> </p>
+      <p>An <b>example bulletin</b> produced by the service is available <a href="#" @click='exampleDialogTrue'>here</a> </p>
+        <bulletin-window
+              v-if="exampleDialog"
+              :imageAdress="service.example"
+              @close-dialog="exampleDialog = false"
+        ></bulletin-window>
       <p>To <b>test the service</b> for a location of choice, follow the <a href="https://forcoast.eu/wp-content/uploads/2022/06/FORCOAST-User-Manual-Prototype-II.pdf" target="_blank">instructions</a> in the Service runner section below.</p>
       <p>We appreciate <b>your feedback</b> on the value of this service, please provide this <a v-bind:href="service.feedback" target="_blank">here</a>.</p>
       <!-- <p>If you are interested in a trial <a v-bind:href="'mailto:' + service.contact">e-mail us</a></p> -->
@@ -219,6 +224,7 @@ import EntryFormA3Optional from '@/components/entry-form-a3-optional'
 import EntryFormA4 from '@/components/entry-form-a4'
 import Presets from '@/components/presets'
 import HourSelection from '@/components/hour-selection'
+import BulletinWindow from '@/components/bulletin-window'
 import { importConfig } from "@/lib/config-utils"
 
 
@@ -242,7 +248,8 @@ export default {
     EntryFormA3Optional,
     EntryFormA4,
     Presets,
-    HourSelection
+    HourSelection,
+    BulletinWindow
   },
   props: {
     service: {
@@ -254,6 +261,7 @@ export default {
     return {
       title: "Select a layer",
       dialog: false,
+      exampleDialog: false,
       presetValues: [],
     };
   },
@@ -373,6 +381,9 @@ export default {
       } else {
         return false
       }
+    },
+    exampleDialogTrue(){
+      this.exampleDialog = true
     }
   },
 };
