@@ -333,7 +333,7 @@ export default {
   },
     checkLayer() {
       this.activeLayers       
-      if (this.activeLayers.length != 0) {
+      if (this.activeLayers[0] != undefined) {
         if (this.activeLayers[0].name === 'Frontal Zones Temperature' || this.activeLayers[0].name === 'Frontal Zones Chlorophyll' || this.activeLayers[0].name === 'Spawning Grounds for Oysters') {
           return true;
         }
