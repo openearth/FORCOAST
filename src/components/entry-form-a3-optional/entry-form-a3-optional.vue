@@ -12,7 +12,7 @@
             :rules="[rules.isFloat,
                      rules.inRange(0,10)]"
             v-on:input="entryValue"
-            hint="mg-C/mg-Chla"
+            hint="mg/m³ (Chl)"
             persistent-hint
           >
             <template v-slot:append>
@@ -72,7 +72,7 @@
             :rules="[rules.isFloat,
                      rules.inRange(0,2)]"
             v-on:input="entryValue"
-            hint="g-POM/m2/d"
+            hint="g/m²/d (POM)" 
             persistent-hint
             >
             <template v-slot:append>
@@ -112,7 +112,7 @@
                     ℹ
                   </v-icon>
                 </template>
-                  This value represents the coefficinet of expected decay.
+                  This value represents the coefficient of expected decay.
               </v-tooltip>
             </template>
           </v-text-field>

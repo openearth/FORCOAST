@@ -3,7 +3,7 @@
     <v-container>
     <v-row>
       <v-col cols="4">
-        <v-subheader>Enter a start date</v-subheader>
+        <v-subheader>Enter range of months</v-subheader>
       </v-col>      
       <v-col cols="4">
         <dropdown class="my-dropdown-toggle"
@@ -16,24 +16,30 @@
       </v-col>
       <v-col cols="4">
         <dropdown class="my-dropdown-toggle"
-                  :options="yearsArray"
-                  :selected="object" 
-                  v-on:updateOption="setYearBegin" 
-                  :placeholder="selectYear"
-                  :closeOnOutsideClick="true">
-        </dropdown>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="4">
-        <v-subheader>Enter an end date</v-subheader>
-      </v-col>      
-      <v-col cols="4">
-        <dropdown class="my-dropdown-toggle"
                   :options="monthsArray"
                   :selected="object" 
                   v-on:updateOption="setMonthEnd" 
                   :placeholder="selectMonth"
+                  :closeOnOutsideClick="true">
+        </dropdown>
+      </v-col>
+    </v-row>
+    <v-row 
+        style="height:0px"
+        v-if="valueArray[2]>valueArray[3]"
+        >
+        <v-subheader class="date-rules">End month must be the same or later than the start month</v-subheader>
+    </v-row>
+    <v-row>
+      <v-col cols="4">
+        <v-subheader>Enter the range of years</v-subheader>
+      </v-col>      
+      <v-col cols="4">
+        <dropdown class="my-dropdown-toggle"
+                  :options="yearsArray"
+                  :selected="object" 
+                  v-on:updateOption="setYearBegin" 
+                  :placeholder="selectYear"
                   :closeOnOutsideClick="true">
         </dropdown>
       </v-col>
@@ -49,10 +55,9 @@
     </v-row>
     <v-row 
         style="height:0px"
-        v-if="valueArray[0]>valueArray[1] || 
-              (valueArray[0]==valueArray[1] && valueArray[2]>valueArray[3])"
+        v-if="valueArray[0]>valueArray[1]"
         >
-        <v-subheader class="date-rules">End date must be the same or later than the start date</v-subheader>
+        <v-subheader class="date-rules">End year must be the same or later than the start month</v-subheader>
     </v-row>
     <v-row>
       <v-col cols="4">
