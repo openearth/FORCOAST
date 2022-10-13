@@ -13,7 +13,9 @@
             <v-list-item-action>
               <v-switch v-model="selectedIds" :value="layer.id" dense></v-switch>
             </v-list-item-action>
-            <v-tooltip bottom>
+            <v-tooltip 
+            bottom
+            max-width="500">
               <template v-slot:activator="{ on }">
             <v-list-item-content v-on="on">
               <v-list-item-title>

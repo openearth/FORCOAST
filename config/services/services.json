@@ -30,7 +30,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS",
+                  "description": "Remotely sensed sea surface temperature data obtained from CMEMS, source: SST_BS_SST_L4_NRT_OBSERVATIONS_010_006",
                   "unit": "\u00B0C",
                   "interval": "daily"
                 },
@@ -41,7 +41,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS",
+                  "description": "Remotely sensed sea water temperature data at 2.5m from CMEMS, source: SST_BS_SST_L4_NRT_OBSERVATIONS_010_006",
                   "unit": "\u00B0C",
                   "interval": "daily"
                 },
@@ -52,7 +52,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS",
+                  "description": "Remotely sensed sea water salinity data at 2.5m from CMEMS, source: SST_BS_SST_L4_NRT_OBSERVATIONS_010_006",
                   "unit": "g/kg",
                   "interval": "daily"
                 },
@@ -63,7 +63,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed surface height from CMEMS",
+                  "description": "Remotely sensed surface height from CMEMS, source: SST_BS_SST_L4_NRT_OBSERVATIONS_010_006",
                   "unit": "m",
                   "interval": "daily"
                 },
@@ -74,7 +74,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed water velocity from CMEMS",
+                  "description": "Remotely sensed water velocity from CMEMS, source: SST_BS_SST_L4_NRT_OBSERVATIONS_010_006",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -85,7 +85,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed eastward velocity data  from CMEMS",
+                  "description": "Remotely sensed eastward velocity data  from CMEMS, source: SST_BS_SST_L4_NRT_OBSERVATIONS_010_006",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -96,7 +96,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "description": "Remotely sensed wave drift data from CMEMS, source: BLKSEA_MULTIYEAR_WAV_007_006",
                   "unit": "m/s",
                   "interval": "hourly"
                 },
@@ -107,7 +107,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "description": "Remotely sensed wave drift data from CMEMS, source: BLKSEA_MULTIYEAR_WAV_007_006",
                   "unit": "m/s",
                   "interval": "hourly"
                 },
@@ -118,7 +118,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave period data from CMEMS",
+                  "description": "Remotely sensed wave period data from CMEMS, source: BLKSEA_MULTIYEAR_WAV_007_006",
                   "unit": "s"
                 },
                 {
@@ -128,7 +128,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave significance data from CMEMS",
+                  "description": "Remotely sensed wave significance data from CMEMS, source: BLKSEA_MULTIYEAR_WAV_007_006",
                   "unit": "m",
                   "interval": "hourly"
                 },
@@ -190,7 +190,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS",
+                  "description": "Remotely sensed sea water temperature data at 0.5m from CMEMS, source: IBI_ANALYSISFORECAST_PHY_005_001",
                   "unit": "\u00B0C",
                   "interval": "daily"
                 },
@@ -201,7 +201,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS",
+                  "description": "Remotely sensed sea water salinity data at 0.5m from CMEMS, source: IBI_ANALYSISFORECAST_PHY_005_001",
                   "unit": "g/kg",
                   "interval": "daily"
                 },
@@ -212,7 +212,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed chlorophyll concentration data at 0.5m from CMEMS",
+                  "description": "Remotely sensed chlorophyll concentration data at 0.5m from CMEMS, source: IBI_ANALYSISFORECAST_BGC_005_004",
                   "unit": "POM",
                   "interval": "daily"
                 },
@@ -223,7 +223,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "description": "Remotely sensed sea water velocity data from CMEMS, source: IBI_ANALYSISFORECAST_PHY_005_001",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -234,7 +234,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "description": "Remotely sensed sea water velocity data from CMEMS, source: IBI_ANALYSISFORECAST_PHY_005_001",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -245,7 +245,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed surface height from CMEMS",
+                  "description": "Remotely sensed surface height from CMEMS, source: IBI_ANALYSISFORECAST_PHY_005_001",
                   "unit": "m",
                   "interval": "hourly"
                 },
@@ -571,7 +571,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS",
+                  "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS, source: IBI_ANALYSISFORECAST_BGC_005_004",
                   "unit": "POM",
                   "interval": "daily"
                 },
@@ -582,7 +582,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed ammonium concentration data at 2.5m from CMEMS",
+                  "description": "Remotely sensed ammonium concentration data at 2.5m from CMEMS, source: IBI_ANALYSISFORECAST_BGC_005_004",
                   "unit": "mmol/m\u00B3",
                   "interval": "daily"
                 },
@@ -593,7 +593,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed phosphate concentration data at 2.5m from CMEMS",
+                  "description": "Remotely sensed phosphate concentration data at 2.5m from CMEMS, source: IBI_ANALYSISFORECAST_BGC_005_004",
                   "unit": "mmol/m\u00B3",
                   "interval": "daily"
                 },
@@ -604,7 +604,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS",
+                  "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS, source: IBI_ANALYSISFORECAST_BGC_005_004",
                   "unit": "mg/L",
                   "interval": "daily"
                 },
@@ -615,7 +615,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed water velocity from CMEMS",
+                  "description": "Remotely sensed water velocity from CMEMS, source: GLOBAL_ANALYSIS_FORECAST_PHY_001_024",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -626,7 +626,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed water velocity from CMEMS",
+                  "description": "Remotely sensed water velocity from CMEMS, source: GLOBAL_ANALYSIS_FORECAST_PHY_001_024",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -725,7 +725,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed sea surface velocity, by RBINS",
+                  "description": "Remotely sensed sea surface velocity, by RBINS, source: GLOBAL_ANALYSIS_FORECAST_PHY_001_024",
                   "unit": "m/s",
                   "interval": "hourly"
                 },
@@ -736,7 +736,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea surface velocity, by RBINS",
+                  "description": "Remotely sensed sea surface velocity, by RBINS, source: GLOBAL_ANALYSIS_FORECAST_PHY_001_024",
                   "unit": "m/s",
                   "interval": "hourly"
                 }
@@ -1113,7 +1113,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS",
+                  "description": "Remotely sensed oxygen concentration data at 2.5m from CMEMS, source: BLKSEA_ANALYSIS_FORECAST_BIO_007_010",
                   "unit": "mg/L",
                   "interval": "daily"
                 },
@@ -1124,7 +1124,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed nitrate concentration data at 2.5m from CMEMS",
+                  "description": "Remotely sensed nitrate concentration data at 2.5m from CMEMS, source: BLKSEA_ANALYSIS_FORECAST_BIO_007_010",
                   "unit": "mmol/m\u00B3",
                   "interval": "daily"
                 },
@@ -1135,7 +1135,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS",
+                  "description": "Remotely sensed pH sea water data at 2.5m from CMEMS, source: BLKSEA_ANALYSIS_FORECAST_BIO_007_010",
                   "unit": "pH",
                   "interval": "daily"
                 },
@@ -1146,7 +1146,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS",
+                  "description": "Remotely sensed chlorophyll concentration data at 2.5m from CMEMS, source: BLKSEA_ANALYSIS_FORECAST_BIO_007_010",
                   "unit": "ppm",
                   "interval": "daily"
                 },
@@ -1157,7 +1157,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed surface height from CMEMS",
+                  "description": "Remotely sensed surface height from CMEMS, source: BLKSEA_ANALYSIS_FORECAST_BIO_007_010",
                   "unit": "m",
                   "interval": "daily"
                 },            
@@ -1204,7 +1204,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "description": "Remotely sensed wave drift data from CMEMS, source: BLKSEA_MULTIYEAR_WAV_007_006",
                   "unit": "m/s",
                   "interval": "hourly"
                 },
@@ -1215,7 +1215,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave drift data from CMEMS",
+                  "description": "Remotely sensed wave drift data from CMEMS, source: BLKSEA_MULTIYEAR_WAV_007_006",
                   "unit": "m/s",
                   "interval": "hourly"
                 },
@@ -1226,7 +1226,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave period data from CMEMS",
+                  "description": "Remotely sensed wave period data from CMEMS, source: BLKSEA_MULTIYEAR_WAV_007_006",
                   "unit": "s",
                   "interval": "hourly"
                 },
@@ -1237,7 +1237,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed wave significance data from CMEMS",
+                  "description": "Remotely sensed wave significance data from CMEMS, source: BLKSEA_MULTIYEAR_WAV_007_006",
                   "unit": "m",
                   "interval": "hourly"
                 }
@@ -1324,7 +1324,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "0.01,10",
-                  "description": "Remotely sensed chlorophyll concentration data from CMEMS",
+                  "description": "Remotely sensed chlorophyll concentration data from CMEMS, source: MEDSEA_ANALYSISFORECAST_BGC_006_014",
                   "unit": "POM",
                   "interval": "daily"
                 },
@@ -1335,7 +1335,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "description": "Remotely sensed sea water velocity data from CMEMS, source: MEDSEA_ANALYSISFORECAST_PHY_006_013",
                   "unit": "m/s",
                   "interval": "daily"
                 },
@@ -1346,7 +1346,7 @@
                   "url": "https://forecoast.apps.k.terrasigna.com/geoserver/ows",
                   "icon": "fish.png",
                   "colorscalerange": "280,300",
-                  "description": "Remotely sensed sea water velocity data from CMEMS",
+                  "description": "Remotely sensed sea water velocity data from CMEMS, source: MEDSEA_ANALYSISFORECAST_PHY_006_013",
                   "unit": "m/s",
                   "interval": "daily"
                 },
