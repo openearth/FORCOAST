@@ -1,1 +1,1 @@
-This services uses water temperature and salinity to calculate an index (HSI) for the localization of the optimal condition for fishing activities. The service is run every day and the results can be found in the Data viewer tab.
+This service uses water temperature and salinity to calculate an index (HSI) for the localization of the optimal condition for fishing activities. The service is run every day and the results can be found in the Data viewer tab.

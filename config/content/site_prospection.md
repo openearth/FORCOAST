@@ -13,4 +13,4 @@ To run the Site Prospection service, go through the following steps:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This should be done within the area marked by 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the purple bounding box  
 
-Each simulations takes <u>1-2 minutes</u> indicatively
+Each simulation takes <u>1-2 minutes</u> indicatively

@@ -13,4 +13,4 @@ To run the Contaminant Source Retrieval service, go through the following steps:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESULTS' to access the information bulletin with
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the results of your simulation
 
-Each simulations takes <u>10-15 minutes</u> indicatively
+Each simulation takes <u>10-15 minutes</u> indicatively

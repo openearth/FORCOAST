@@ -1,2 +1,2 @@
-Frontal areas are those where there is a sharp gradient in certain properties of seawater, such as temperature or cholorophyll-a concentration. These areas are  characterized by a higher-than-normal biological activity, and therefore 
+Frontal areas are those where there is a sharp gradient in certain properties of seawater, such as temperature or chlorophyll-a concentration. These areas are characterized by a higher-than-normal biological activity, and therefore 
 can be used as an indicator of the presence of certain commercial fish species. This service forecasts the presence of these fronts. A visualization of the service results can be found in the Data viewer tab.

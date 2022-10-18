@@ -32,7 +32,7 @@ You are not allowed to use this website and its Data Products without an agreeme
 <br/>
 <b>Article 4</b>: Use of the Website and Data Products
 - 4.1	User acknowledges and agrees
-    - a)	that User is only authorized to use the Website and Data Products within its own organisation and for its own use;
+    - a)	that User is only authorized to use the Website and Data Products within its own organization and for its own use;
     - b)	not to use the Website and Data Products in any manner whereby Users claims, acts like or appears to be, endorsed by, owned by or affiliated with The Consortium;
     - c)	that the use of the Website and Data Products is at User’s own risk and expense;
     - d)	to interpret any data and information resulting from the Website and Data Products with care, to ensure not to conclude false understandings of possible impacts;
